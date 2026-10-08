@@ -16,8 +16,6 @@ O Anki é um software de código aberto para estudo com cartões de memorizaçã
 | Tecnologia | Uso no projeto |
 |------------|----------------|
 | [MkDocs](https://www.mkdocs.org) | Gerador de sites estáticos para documentação, a partir de arquivos Markdown |
-| [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/) | Tema do site, com navegação, busca e modo claro/escuro |
-| [Read the Docs](https://readthedocs.org) | Hospedagem e publicação automática da documentação |
 | [GitHub](https://github.com) | Controle de versão e colaboração da equipe |
 | Markdown | Linguagem usada para escrever as páginas |
 
