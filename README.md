@@ -1,4 +1,4 @@
-# Gestão da Configuração e Evolução de Software - Kdenlive
+# Qualidade de Software - Anki
 
 <p align="center">
   <img src="docs/assets/logo.png" alt="Anki Logo" width="200"/>
