@@ -9,6 +9,6 @@ Este projeto tem como objetivo **avaliar a qualidade do software Anki** a partir
 O Anki é um software de código aberto para estudo com cartões de memorização (flashcards) e repetição espaçada.
 ## Equipe
 
-| <img src="" width="150px"> | <img src="" width="150px"> | <img src="" width="150px"> | <img src="" width="150px"> | <img src="https://github.com/Karolina91.png" width="150px"> | <img src="" width="150px"> |
+| <img src="https://github.com/Bryan70897.png" width="150px"> | <img src="https://github.com/dantescarpati.png" width="150px"> | <img src="https://github.com/Davi-Unb.png" width="150px"> | <img src="https://github.com/Karolina91.png" width="150px"> | <img src="https://github.com/siqueira-prog.png" width="150px"> | <img src="https://github.com/Pedro-Henrique3.png" width="150px"> |
 | :---: | :---: | :---: | :---: | :---: | :---: |
-|  |  |  |  | [Karolina Vieira](https://github.com/Karolina91) |  |
+| [Bryan](https://github.com/Bryan70897) | [Dante](https://github.com/dantescarpati) | [Davi](https://github.com/Davi-Unb) | [Karolina Vieira](https://github.com/Karolina91) | [Mateus](https://github.com/siqueira-prog) | [Pedro Henrique](https://github.com/Pedro-Henrique3) |
