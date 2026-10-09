@@ -1,7 +1,7 @@
 # Qualidade de Software - Anki
 
 <p align="center">
-  <img src="docs/assets/logo.png" alt="Anki Logo" width="200"/>
+  <img src="docs/assets/logo.png" alt="Anki Logo" width=""/>
 </p>
 
 
@@ -20,7 +20,6 @@ O Anki é um software de código aberto para estudo com cartões de memorizaçã
 
 ## Equipe
 
-<<<<<<< HEAD
 | <img src="https://github.com/Bryan70897.png" width="150px"> | <img src="https://github.com/dantescarpati.png" width="150px"> | <img src="https://github.com/Davi-Unb.png" width="150px"> |
 | :---: | :---: | :---: |
 | [Bryan](https://github.com/Bryan70897) | [Dante](https://github.com/dantescarpati) | [Davi](https://github.com/Davi-Unb) |
@@ -28,8 +27,3 @@ O Anki é um software de código aberto para estudo com cartões de memorizaçã
 | <img src="https://github.com/Karolina91.png" width="150px"> | <img src="https://github.com/siqueira-prog.png" width="150px"> | <img src="https://github.com/Pedro-Henrique3.png" width="150px"> |
 | :---: | :---: | :---: |
 | [Karolina Vieira](https://github.com/Karolina91) | [Mateus](https://github.com/siqueira-prog) | [Pedro Henrique](https://github.com/Pedro-Henrique3) |
-=======
-| <img src="https://github.com/Bryan70897.png" width="150px"> | <img src="https://github.com/dantescarpati.png" width="150px"> | <img src="https://github.com/Davi-Unb.png" width="150px"> | <img src="https://github.com/Karolina91.png" width="150px"> | <img src="https://github.com/siqueira-prog.png" width="150px"> | <img src="https://github.com/Pedro-Henrique3.png" width="150px"> |
-| :---: | :---: | :---: | :---: | :---: | :---: |
-| [Bryan](https://github.com/Bryan70897) | [Dante](https://github.com/dantescarpati) | [Davi](https://github.com/Davi-Unb) | [Karolina Vieira](https://github.com/Karolina91) | [Mateus](https://github.com/siqueira-prog) | [Pedro Henrique](https://github.com/Pedro-Henrique3) |8
->>>>>>> cd9e5b040fcbb4c8b9048aa562f790a07349d23d
