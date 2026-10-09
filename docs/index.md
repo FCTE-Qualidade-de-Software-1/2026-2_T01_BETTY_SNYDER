@@ -13,12 +13,13 @@ Turma T01 · Semestre 2026-2
 
 ## Sobre o projeto
 
-Este projeto tem como objetivo avaliar a qualidade do software Anki por meio da análise de três características principais: **usabilidade, eficiência de desempenho e portabilidade**. 
+Este projeto tem como objetivo avaliar a qualidade do software Anki por meio da análise de três características principais: **usabilidade, eficiência de desempenho e portabilidade**.
 
-- A **usabilidade** busca verificar se a interface é intuitiva e fácil de utilizar, permitindo que os usuários criem, organizem e revisem seus cartões de estudo com facilidade. 
-- A **eficiência de desempenho** considera o comportamento do software durante a execução de suas funcionalidades, observando aspectos como tempo de resposta e utilização de recursos. 
-- Já a **portabilidade** avalia a capacidade do Anki de funcionar em diferentes sistemas operacionais e ambientes, garantindo maior flexibilidade de acesso. 
+- A **usabilidade** busca verificar se a interface é intuitiva e fácil de utilizar, permitindo que os usuários criem, organizem e revisem seus cartões de estudo com facilidade.
+- A **eficiência de desempenho** considera o comportamento do software durante a execução de suas funcionalidades, observando aspectos como tempo de resposta e utilização de recursos.
+- Já a **portabilidade** avalia a capacidade do Anki de funcionar em diferentes sistemas operacionais e ambientes, garantindo maior flexibilidade de acesso.
 
+Dessa forma, pretende-se identificar os pontos positivos e as possíveis limitações do software em relação a essas características.
 
 !!! info "O que é o Anki?"
     Um software de código aberto para estudo com cartões de memorização (*flashcards*) e repetição espaçada.Seu principal objetivo é tornar o processo de aprendizagem mais eficiente, ajudando os usuários a revisar as informações nos intervalos mais adequados para favorecer a retenção do conhecimento a longo prazo. Seu sistema de revisão considera o desempenho do usuário e programa as próximas revisões de acordo com a dificuldade de cada cartão, priorizando os conteúdos que precisam de mais atenção.
