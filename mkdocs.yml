@@ -1,10 +1,13 @@
 site_name: BETTY SNYDER
 site_url: https://FCTE-Qualidade-de-Software-1.github.io/2026-2_T01_BETTY_SNYDER/
 nav:
-  - Home: index.md
-  - Artigo: artigo.md
+  - Início: index.md
   - Fase 1: fase1.md
   - Fase 2: fase2.md
+  - Artigo: artigo.md
+  - Atas:
+      - Reunião 01 — Ata: atas/reuniao-01-ata.md
+      - Reunião 01 — Decisões: atas/reuniao-01-decisoes.md
 
 theme:
   name: material
