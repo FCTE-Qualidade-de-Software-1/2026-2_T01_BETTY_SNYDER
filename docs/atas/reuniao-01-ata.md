@@ -10,7 +10,7 @@
 | Data | 7 de outubro de 2026 (quarta-feira) |
 | Horário | 10h41 às 11h01 (cerca de 20 minutos) |
 | Formato | Online, com gravação |
-| Gravação | [gravação da reunião 01](COLE_AQUI_O_LINK_DA_GRAVACAO) |
+| Gravação | [gravação da reunião 01](https://youtu.be/rpLn9-Eqy-s) |
 | Assunto | Abertura do projeto final e preparação para o Ponto de Controle 1 |
 | Redator | Davi Severiano Freitas |
 
