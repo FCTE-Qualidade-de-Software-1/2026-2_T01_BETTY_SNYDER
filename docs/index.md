@@ -7,7 +7,7 @@
 Turma T01 · Semestre 2026-2
 
 [Ver artigo](artigo.md){ .md-button .md-button--primary }
-[Fase 1](fase1.md){ .md-button }
+[Ver atas](atas/reuniao-01-ata.md){ .md-button }
 
 </div>
 
@@ -22,7 +22,7 @@ Este projeto tem como objetivo avaliar a qualidade do software Anki por meio da 
 Dessa forma, pretende-se identificar os pontos positivos e as possíveis limitações do software em relação a essas características.
 
 !!! info "O que é o Anki?"
-    Um software de código aberto para estudo com cartões de memorização (*flashcards*) e repetição espaçada.Seu principal objetivo é tornar o processo de aprendizagem mais eficiente, ajudando os usuários a revisar as informações nos intervalos mais adequados para favorecer a retenção do conhecimento a longo prazo. Seu sistema de revisão considera o desempenho do usuário e programa as próximas revisões de acordo com a dificuldade de cada cartão, priorizando os conteúdos que precisam de mais atenção.
+    Um software de código aberto para estudo com cartões de memorização (*flashcards*) e repetição espaçada. Seu principal objetivo é tornar o processo de aprendizagem mais eficiente, ajudando os usuários a revisar as informações nos intervalos mais adequados para favorecer a retenção do conhecimento a longo prazo. Seu sistema de revisão considera o desempenho do usuário e programa as próximas revisões de acordo com a dificuldade de cada cartão, priorizando os conteúdos que precisam de mais atenção.
 
 ## Navegue pela documentação
 
@@ -51,6 +51,16 @@ Dessa forma, pretende-se identificar os pontos positivos e as possíveis limita�
     Segunda etapa do projeto.
 
     [:octicons-arrow-right-24: Abrir](fase2.md)
+
+-   :material-clipboard-text-outline:{ .lg .middle } **Atas**
+
+    ---
+
+    Registros das reuniões da equipe.
+
+    [:octicons-arrow-right-24: Reunião 01](atas/reuniao-01-ata.md)
+    [:octicons-arrow-right-24: Reunião 02](atas/reuniao-02-ata.md)
+    [:octicons-arrow-right-24: Reunião 03](atas/reuniao-03-ata.md)
 
 </div>
 
