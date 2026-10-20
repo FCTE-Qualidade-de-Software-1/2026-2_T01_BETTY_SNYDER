@@ -1,4 +1,5 @@
 site_name: BETTY SNYDER
+copyright: "Equipe Betty Snyder · FGA0315 Qualidade de Software 1 · Versão E1 (Fases 1 e 2) · Atualizado em 20/10/2026"
 site_url: https://FCTE-Qualidade-de-Software-1.github.io/2026-2_T01_BETTY_SNYDER/
 nav:
   - Início: index.md
