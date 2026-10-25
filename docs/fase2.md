@@ -16,6 +16,6 @@ Em cada categoria há coletor (CSV em `gestao-psm/`) e redator (indicador, inter
 | Desempenho dos Processos | Rev. 1 | \(D_1=1{,}44\); correção 61,5% | Revisão 2 com dados reais | Contagem da Revisão 1 |
 | Calendário e Progresso | 11/10 | ICP 56,3% (\(T_p=16\), \(T_c=9\)) | Redistribuir | `calendario-progresso.csv` |
 | Calendário e Progresso | 18/10 | ICP 21,4% | Redistribuir | `calendario-progresso.csv` |
-| Calendário e Progresso | 25/10 | ICP 26,7% (\(T_c=4\): B1, A3, A4, A5) | Redistribuir 11 restantes | `calendario-progresso.csv` |
+| Calendário e Progresso | 25/10 | ICP 40,0% (\(T_c=6\): B1, A1, A2, A3, A4, A5) | Redistribuir 9 restantes | `calendario-progresso.csv` |
 
 Detalhamento narrativo: [artigo.md — seção 3.2](artigo.md).

@@ -31,8 +31,8 @@ data_corte,tarefa_id,tarefa,responsavel,prazo,status,concluida_no_prazo,evidenci
 2026-10-18,P2-18-SLDF,Slides finais e ensaio cronometrado,Todos,2026-10-18,concluida,sim,Davi/Pedro/Dante 18/10 slides; Davi 19/10 refinar; PC1 em 19/10,Plano Fase 2
 2026-10-19,P2-19-PC1,Apresentação no Ponto de Controle 1,Todos,2026-10-19,concluida,sim,PC1 realizado em 19/10,Plano Fase 2
 2026-10-25,E1-COMUM,Decisões do grupo (ISO 2023; GQM; faixas; frase Fase 3),Equipe,2026-10-22,pendente,nao,,Pendencias_Entrega1_Betty_Snyder_v4.pdf
-2026-10-25,E1-A1,ISO 2023 na Fundamentação e na Fase 1,Dupla A,2026-10-25,pendente,nao,,Pendencias_Entrega1_Betty_Snyder_v4.pdf
-2026-10-25,E1-A2,GQM de Capacidade de interação (seção 5.1),Dupla A,2026-10-24,pendente,nao,,Pendencias_Entrega1_Betty_Snyder_v4.pdf
+2026-10-25,E1-A1,ISO 2023 na Fundamentação e na Fase 1,Dupla A,2026-10-25,concluida,sim,Texto ISO 2023 em main-ieee artigo e fase1 em 25/10/2026,Pendencias_Entrega1_Betty_Snyder_v4.pdf
+2026-10-25,E1-A2,GQM de Capacidade de interação (seção 5.1),Dupla A,2026-10-24,concluida,sim,Secao 5.1 atualizada com G1 H1-H3 T_pp T_exec e triagem em 25/10/2026,Pendencias_Entrega1_Betty_Snyder_v4.pdf
 2026-10-25,E1-A3,PSM de Recursos e Custos (corte 25/10 e CSV),Dupla A,2026-10-25,concluida,sim,"Execucao Dupla A em 25/10/2026: CSV recursos, rastreamento PSM e Apendice/GitPage",Pendencias_Entrega1_Betty_Snyder_v4.pdf
 2026-10-25,E1-A4,Rastreamento do PSM (seção 3.2),Dupla A,2026-10-25,concluida,sim,"Execucao Dupla A em 25/10/2026: CSV recursos, rastreamento PSM e Apendice/GitPage",Pendencias_Entrega1_Betty_Snyder_v4.pdf
 2026-10-25,E1-A5,Apêndice A e GitPage,Dupla A,2026-10-25,concluida,sim,"Execucao Dupla A em 25/10/2026: CSV recursos, rastreamento PSM e Apendice/GitPage",Pendencias_Entrega1_Betty_Snyder_v4.pdf
