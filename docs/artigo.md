@@ -50,15 +50,7 @@ Rojas et al. [Rojas et al. 2025] mapeiam, em revisão sistemática, 68 métricas
 
 O trabalho segue as quatro fases descritas na Seção 2.2: as Fases 1 e 2 compõem a Entrega 1; a Fase 3, com o plano de avaliação, está prevista para o Ponto de Controle 2; e a Fase 4, com a execução, o julgamento e a ação de melhoria, para a Entrega 2.
 
-A equipe, de seis integrantes, divide-se em três duplas, cada uma responsável por uma característica, uma categoria do PSM e uma frente de apoio:
-
-| Dupla | Integrantes | Característica | Categoria PSM | Frente de apoio |
-|---|---|---|---|---|
-| A | Davi e Pedro | Usabilidade | Recursos e Custos | Atas, planilha de horas e termo de consentimento |
-| B | Karolina e Mateus | Eficiência de desempenho | Desempenho dos Processos | Estrutura do artigo e da GitPage |
-| C | Bryan e Dante | Portabilidade | Calendário e Progresso | Repositório e releases |
-
-As decisões são tomadas em reuniões registradas em ata; o artigo é escrito no Overleaf; o repositório no GitHub guarda documentos, atas, dados das medições e a GitPage; e as horas são registradas em planilha compartilhada. Na Entrega 1, por causa do prazo, a equipe decidiu não usar *issues*, *milestones* nem *pull requests*; as tarefas são acompanhadas nos planejamentos e nas atas.
+A equipe, de seis integrantes, organiza-se em três duplas para distribuir as atividades da Entrega 1. As decisões são tomadas em reuniões registradas em ata; o artigo é escrito no Overleaf; o repositório no GitHub guarda documentos, atas, dados das medições e a GitPage; e as horas são registradas em planilha compartilhada. Na Entrega 1, as tarefas são acompanhadas pelos planejamentos, pelas atas e pelo documento de pendências da equipe. Até o momento da consolidação deste registro, **não haviam sido criadas *issues* no GitHub** para esse acompanhamento (a criação de *issues* permanece como possibilidade para a Entrega 2).
 
 ### 3.2. Sistema de Medição PSM
 
@@ -70,25 +62,39 @@ Os construtos seguem o Modelo de Informação de Medição de McGarry et al. [Mc
 
 | Campo | Recursos e Custos | Desempenho dos Processos | Calendário e Progresso |
 |---|---|---|---|
-| Necessidade de informação | O esforço da equipe está dentro do planejado e equilibrado entre os integrantes? | As revisões encontram problemas antes da entrega, e o artigo melhora de uma revisão para a outra? | A equipe cumpre os prazos necessários para chegar ao PC1? |
+| Necessidade de informação | O esforço da equipe está dentro do planejado e equilibrado entre os integrantes? | As revisões encontram problemas antes da entrega, e o artigo melhora de uma revisão para a outra? | A equipe cumpre os prazos necessários para a Entrega 1? |
 | Conceito mensurável | Esforço da equipe | Eficácia das revisões | Progresso das unidades de trabalho |
 | Entidades relevantes | Trabalho dos integrantes; planejamento de horas | Revisões do artigo; seções do artigo | Tarefas planejadas |
 | Atributos | Registros de horas na planilha; horas declaradas como planejadas | Defeitos registrados; seções revisadas; correções feitas | Prazo e situação de cada tarefa |
 | Medidas básicas | (1) Horas reais por integrante; (2) horas planejadas por integrante | (1) Defeitos confirmados; (2) seções revisadas; (3) defeitos corrigidos | (1) Tarefas com prazo até a data; (2) tarefas concluídas no prazo |
-| Método de medição (tipo) | Somar os registros da planilha e as horas declaradas por integrante (objetivo) | Contar os defeitos confirmados em reunião, as seções revisadas e as correções (objetivo) | Contar as tarefas com prazo até a data e as concluídas, confirmadas em reunião (objetivo) |
+| Método de medição (tipo) | Somar os registros da planilha e as horas declaradas por integrante (objetivo) | Contar os defeitos confirmados pelo responsável (não houve reunião em 18/10 nem 21/10), as seções revisadas e as correções (objetivo) | Contar as tarefas com prazo até a data e as concluídas, confirmadas pelo responsável e consolidadas pelo responsável da categoria (objetivo) |
 | Escala, tipo e unidade | Reais maiores ou iguais a 0; razão; hora | Inteiros maiores ou iguais a 0; razão; defeito e seção | Inteiros maiores ou iguais a 0; razão; tarefa |
 | Medidas derivadas e função de medição | Desvio = (reais − planejadas) ÷ planejadas; participação = horas do integrante ÷ horas totais | Densidade = defeitos confirmados ÷ seções revisadas; taxa de correção = corrigidos ÷ confirmados | Conformidade = tarefas concluídas no prazo ÷ tarefas com prazo até a data |
 | Indicador | Desvio total da equipe e participação de cada integrante | Densidade de defeitos por revisão e taxa de correção acumulada | Percentual de conformidade e lista das tarefas atrasadas |
 | Modelo de análise | Comparar o desvio e as participações com os limites | Comparar a densidade entre revisões consecutivas | Comparar a conformidade com o limite |
-| Critério de decisão | Desvio acima de 30% leva a replanejar a carga; participação abaixo de 10% leva a redistribuir tarefas | Se a densidade não cair entre revisões, as seções com defeito passam por nova revisão antes do PC1 | Conformidade abaixo de 70% leva a redistribuir as tarefas atrasadas |
+| Critério de decisão | Desvio acima de 30% (indicador da equipe) leva a replanejar a carga; participação abaixo de 10% leva a redistribuir tarefas | Se a densidade não cair entre revisões, as seções com defeito passam por nova revisão antes da Entrega 1 | Conformidade abaixo de 70% leva a redistribuir as tarefas atrasadas |
 
 As fontes de dados na Entrega 1 são a planilha de horas, as atas e os documentos de planejamento. Os dados de cada medição são salvos no repositório, na pasta [`gestao-psm`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/tree/main/gestao-psm).
 
 #### 3.2.2. Registro das Medições, Interpretação e Decisões
 
-- **Desempenho dos Processos:** a Revisão 1 do artigo confirmou 13 defeitos em 9 seções (densidade de 1,44 defeito por seção); o primeiro ciclo de correções resolveu 8 (taxa de correção de 61,5%). **Decisão:** as seções com defeitos restantes passam por nova revisão antes da entrega.
-- **Recursos e Custos:** pelos registros datados da planilha de horas, o desvio total foi de −42,0% até 11/10 e de −20,0% até 18/10, e a menor participação passou de 2,8% para 11,0%; após a distribuição das tarefas da Fase 2 entre as duplas, em 14/10, os indicadores voltaram aos limites. **Decisão:** manter a carga e acompanhar os desvios individuais acima de 30% (Mateus e Dante).
-- **Calendário e Progresso:** *a preencher pela Dupla C com os dados da lista de tarefas.*
+O processo de medição do PSM na Entrega 1 segue cortes semanais em **11/10, 18/10 e 25/10/2026**. Em cada categoria há um **coletor** (levanta os dados e grava o CSV em [`gestao-psm`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/tree/main/gestao-psm)) e um **redator** (calcula o indicador, propõe interpretação e decisão e registra no artigo). As decisões constam nesta seção; não houve reunião em 18/10 nem em 21/10, de modo que confirmações pontuais de tarefas ou defeitos são feitas pelo responsável. Ainda não há *issues* no GitHub como fonte de dados.
+
+| Categoria | Data do corte | Medidas básicas | Indicador | Critério | Decisão | Arquivo |
+|---|---|---|---|---|---|---|
+| Recursos e Custos | 11/10/2026 | \(H_{\mathrm{plan}}=20{,}67\) h; \(H_{\mathrm{real}}=11{,}98\) h | Desvio −42,0%; menor participação 2,8% | Desvio da **equipe** > 30% (sobrecarga) ou participação < 10% | Redistribuir (participação); corte julgado retrospectivamente com critérios de 18/10 | `gestao-psm/2026-10-11_recursos-custos.csv` |
+| Recursos e Custos | 18/10/2026 | \(H_{\mathrm{plan}}=49{,}37\) h; \(H_{\mathrm{real}}=39{,}50\) h | Desvio −20,0%; menor participação 11,0% | Idem | Manter a carga; acompanhar desvios individuais < −30% (Mateus e Dante) | `gestao-psm/2026-10-18_recursos-custos.csv` |
+| Recursos e Custos | 25/10/2026 | \(H_{\mathrm{plan}}=78{,}10\) h; \(H_{\mathrm{real}}=42{,}17\) h | Desvio −46,0%; menor participação 10,3% | Idem | Limiar de sobrecarga da equipe não acionado; acompanhar subutilização (Mateus −68,8%; Dante −64,7%) | `gestao-psm/2026-10-25_recursos-custos.csv` |
+| Desempenho dos Processos | Revisão 1 | 13 defeitos; 9 seções; 8 corrigidos | \(D_1=1{,}44\) defeitos/seção; taxa de correção 61,5% | Densidade deve cair entre revisões antes da Entrega 1 | Revisão 2 com dados reais (sem inventar densidade) | Contagem da Revisão 1 |
+| Calendário e Progresso | 11/10/2026 | \(T_p=16\); \(T_c=9\) | \(ICP=56{,}3\%\) | Conformidade < 70% | Redistribuir atrasos (inclui issues/milestones não criadas) | `gestao-psm/calendario-progresso.csv` |
+| Calendário e Progresso | 18/10/2026 | \(T_p=14\); \(T_c=3\) | \(ICP=21{,}4\%\) | Conformidade < 70% | Redistribuir atrasos do Plano da Fase 2 | `gestao-psm/calendario-progresso.csv` |
+| Calendário e Progresso | 25/10/2026 | \(T_p=15\); \(T_c=4\) | \(ICP=26{,}7\%\) | Conformidade < 70% | Redistribuir as 11 tarefas restantes | `gestao-psm/calendario-progresso.csv`; `gestao-psm/2026-10-25_calendario-progresso.csv` |
+
+- **Recursos e Custos.** As medidas básicas foram extraídas da planilha de esforço. Conferiu-se o lançamento da Karolina em 07/10 (reunião, 0,33 h) e em 08/10 (GitPage, 1,75 h): atividades distintas, **sem duplicata indevida**. Nos cortes de 11/10, 18/10 e 25/10, o desvio da equipe foi de −42,0%, −20,0% e **−46,0%** (\(H_{\mathrm{plan}}=78{,}10\) h e \(H_{\mathrm{real}}=42{,}17\) h em 25/10), e a menor participação passou de 2,8% para 11,0% e 10,3%. O critério de desvio de 30% aplica-se ao indicador da *equipe* (sobrecarga); o corte de 11/10 foi julgado retrospectivamente com os critérios de 18/10. **Interpretação:** o desvio de −46,0% em 25/10 indica subutilização do esforço planejado, sem acionar o limiar de sobrecarga (+30%). **Decisão:** manter o acompanhamento da carga e dos desvios individuais inferiores a −30% (em especial Mateus e Dante).
+
+- **Desempenho dos Processos.** Na Revisão 1 foram inspecionadas 9 seções e confirmados 13 defeitos (\(D_1=13/9=1{,}44\) defeitos/seção); 8 foram corrigidos (taxa 61,5%), restando 5. Conta-se como defeito informação incorreta ou sem fonte, divergência com decisão da equipe ou item da rubrica ausente, confirmado pelo responsável (não houve reunião em 18/10 nem 21/10). **Não se inventa densidade da Revisão 2** até a contagem da Revisão 2. **Decisão:** executar a Revisão 2 com dados reais antes da Entrega 1.
+
+- **Calendário e Progresso.** As medidas \(T_p\) e \(T_c\) cruzam atribuições pós-reunião 01, Plano da Fase 2, documento de pendências da Entrega 1, planilha e atas. Quem confirma a conclusão é o responsável da tarefa, consolidado pelo responsável da categoria. A tarefa de criar repositório/*issues*/*milestones* conta como **fora do prazo**: o repositório existe, mas a API do GitHub registrou **0 issues** em 25/10/2026. Nos cortes de 11/10, 18/10 e 25/10 obteve-se \(ICP=56{,}3\%\), \(21{,}4\%\) e \(26{,}7\%\) — todos abaixo de 70%. Em 25/10, \(T_c=4\) (B1 formato IEEE; A3 Recursos; A4 rastreamento; A5 Apêndice/GitPage). **Decisão:** redistribuir as 11 tarefas ainda pendentes até a Entrega 1.
 
 ### 3.3. Declaração de Uso de Inteligência Artificial
 
@@ -396,14 +402,14 @@ Sukmandari, D. G. e Sukardiyono, T. (2017). Analisis aplikasi jadwal perkuliahan
 
 ## Apêndice A. Tabela de Contribuição da Equipe
 
-*Tabela 13. Contribuição de cada integrante para a Entrega 1 (planilha de horas, registros até 19/10/2026; total de 40,5 horas)*
+*Tabela 13. Contribuição de cada integrante para a Entrega 1 (planilha de horas, registros até 25/10/2026; total de 42,17 horas reais)*
 
 | Integrante | Dupla | Atividades realizadas | Esforço (%) |
 |---|---|---|---:|
-| Bryan Smith Rodrigues Cavalcante | C | Reuniões; tabela GQM de Portabilidade, fatores de variação e detalhamento das métricas | 10,7 |
-| Dante Fernandes Scarpati | C | Reuniões; diagramas do modelo de qualidade e do GQM; métricas de Portabilidade; slides | 13,2 |
-| Davi Severiano Freitas | A | Reuniões, atas e organização do trabalho; Fase 1; slides 1 a 5; revisão do artigo | 26,3 |
-| Karolina Vieira Barbosa | B | Reuniões; estrutura e atualizações da GitPage; estudo de Desempenho dos Processos; ajustes no Overleaf | 19,9 |
-| Mateus de Siqueira Silva | B | Layout e textos iniciais do artigo; estudo de Desempenho dos Processos; busca de artigos de referência | 12,3 |
-| Pedro Henrique Freire Rodrigues | A | Reuniões; termo de consentimento; métricas e níveis de Usabilidade; slides 9 e 10 | 17,6 |
+| Bryan Smith Rodrigues Cavalcante | C | Reuniões; tabela GQM de Portabilidade, fatores de variação e detalhamento das métricas | 10,3 |
+| Dante Fernandes Scarpati | C | Reuniões; diagramas do modelo de qualidade e do GQM; métricas de Portabilidade; slides | 12,6 |
+| Davi Severiano Freitas | A | Reuniões, atas e organização do trabalho; Fase 1; slides 1 a 5; revisão do artigo; PSM Recursos (corte 25/10) | 30,0 |
+| Karolina Vieira Barbosa | B | Reuniões; estrutura e atualizações da GitPage; estudo de Desempenho dos Processos; ajustes no Overleaf | 18,4 |
+| Mateus de Siqueira Silva | B | Layout e textos iniciais do artigo; estudo de Desempenho dos Processos; busca de artigos de referência | 11,9 |
+| Pedro Henrique Freire Rodrigues | A | Reuniões; termo de consentimento; métricas e níveis de Usabilidade; slides 9 e 10; rastreamento PSM | 16,9 |
 | **Total** | | | **100** |

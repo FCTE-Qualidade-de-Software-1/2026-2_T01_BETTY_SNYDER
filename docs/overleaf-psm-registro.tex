@@ -1,0 +1,30 @@
+% =========================================================================
+% FRAGMENTO OVERLEAF — Seções 3.1 (trecho), 3.2.1 (ajuste) e 3.2.2 + Apêndice A
+% Cole no main IEEE no lugar dos trechos correspondentes.
+% Atualizado em 25/10/2026 (sem nomes de Dupla A/B/C no corpo; 0 issues no GitHub).
+% =========================================================================
+
+% --- Parágrafo da seção Organização / 3.1 (após o texto das quatro fases) ---
+A equipe, de seis integrantes, organiza-se em três duplas para distribuir as atividades da Entrega~1. As decisões são tomadas em reuniões registradas em ata; o artigo é escrito no Overleaf; o repositório no GitHub guarda documentos, atas, dados das medições e a GitPage; e as horas são registradas em planilha compartilhada. Na Entrega~1, as tarefas são acompanhadas pelos planejamentos, pelas atas e pelo documento de pendências da equipe. Até a consolidação deste registro, não haviam sido criadas \textit{issues} no GitHub para esse acompanhamento (possibilidade a reavaliar na Entrega~2).
+
+% --- Método Calendário / Desempenho (linha da tabela) ---
+% Desempenho: defeitos confirmados pelo responsável (não houve reunião em 18/10 nem 21/10).
+% Calendário: conclusões confirmadas pelo responsável e consolidadas pelo responsável da categoria.
+
+\subsubsection{Registro das Medições, Interpretação e Decisões}
+\label{sec:psm_registro}
+O processo de medição do PSM na Entrega~1 segue cortes semanais em 11/10, 18/10 e 25/10/2026. Em cada categoria há um coletor (levanta os dados e grava o CSV em \texttt{gestao-psm/}) e um redator (calcula o indicador, propõe interpretação e decisão e registra no artigo). As decisões constam nesta seção; não houve reunião em 18/10 nem em 21/10, de modo que confirmações pontuais de tarefas ou defeitos são feitas pelo responsável. Ainda não há \textit{issues} no GitHub como fonte de dados.
+
+\begin{itemize}
+    \item \textbf{Recursos e Custos.}
+    As medidas básicas foram extraídas da planilha de esforço. Conferiu-se o lançamento da Karolina em 07/10 (reunião, $0{,}33$~h) e em 08/10 (GitPage, $1{,}75$~h): atividades distintas, sem duplicata indevida. Nos cortes de 11/10, 18/10 e 25/10, o desvio da equipe foi de $-42{,}0\%$, $-20{,}0\%$ e $-46{,}0\%$ ($H_{\mathrm{plan}}=78{,}10$~h e $H_{\mathrm{real}}=42{,}17$~h em 25/10), e a menor participação passou de $2{,}8\%$ para $11{,}0\%$ e $10{,}3\%$. O critério de desvio de $30\%$ aplica-se ao indicador da \textit{equipe} (sobrecarga); o corte de 11/10 foi julgado retrospectivamente com os critérios de 18/10. \textbf{Interpretação:} o desvio de $-46{,}0\%$ em 25/10 indica subutilização do esforço planejado, sem acionar o limiar de sobrecarga ($+30\%$). \textbf{Decisão:} manter o acompanhamento da carga e dos desvios individuais inferiores a $-30\%$ (em especial Mateus e Dante). Arquivos: \texttt{gestao-psm/2026-10-11\_recursos-custos.csv}, \texttt{2026-10-18\_recursos-custos.csv}, \texttt{2026-10-25\_recursos-custos.csv}.
+
+    \item \textbf{Desempenho dos Processos.}
+    Na Revisão~1 foram inspecionadas 9 seções e confirmados 13 defeitos ($D_1=13/9=1{,}44$ defeitos/seção); 8 foram corrigidos (taxa $61{,}5\%$). Defeito = informação incorreta ou sem fonte, divergência com decisão da equipe ou item da rubrica ausente, confirmado pelo responsável. Não se inventa densidade da Revisão~2 até a contagem da Revisão~2. \textbf{Decisão:} executar a Revisão~2 com dados reais antes da Entrega~1.
+
+    \item \textbf{Calendário e Progresso.}
+    As medidas $T_p$ e $T_c$ cruzam atribuições pós-reunião~01, Plano da Fase~2, documento de pendências da Entrega~1, planilha e atas. Quem confirma a conclusão é o responsável da tarefa, consolidado pelo responsável da categoria. A tarefa de criar repositório/\textit{issues}/\textit{milestones} conta como fora do prazo: o repositório existe, mas não há \textit{issues} no GitHub (verificado em 25/10/2026). Nos cortes de 11/10, 18/10 e 25/10 obteve-se $ICP=56{,}3\%$ ($T_p=16$, $T_c=9$), $21{,}4\%$ e $26{,}7\%$ ($T_p=15$, $T_c=4$: B1, A3, A4 e A5). \textbf{Decisão:} redistribuir as 11 tarefas ainda pendentes até a Entrega~1. Arquivos: \texttt{gestao-psm/calendario-progresso.csv}, \texttt{gestao-psm/2026-10-25\_calendario-progresso.csv}.
+\end{itemize}
+
+% --- Apêndice A: mantém coluna Dupla; percentuais até 25/10; total 42,17 h reais ---
+% Bryan C 10,3; Dante C 12,6; Davi A 30,0; Karolina B 18,4; Mateus B 11,9; Pedro A 16,9; Total 100.
