@@ -1,0 +1,5 @@
+data_corte,Tp,Tc,ICP_percentual,criterio_limite_percentual,interpretacao,decisao,fonte_lista
+2026-10-11,16,9,56.3,70,"Ciclo pos-reuniao 01 (textos Overleaf ate 11/10; reuniao 12/10). R01-C-REPO fora do prazo: repositorio ok mas 0 issues no GitHub. Dupla B no prazo; atrasos A e C.",Redistribuir atrasos,calendario-progresso.csv; planilha; reuniao-02-ata.md
+2026-10-18,14,3,21.4,70,"Plano Fase 2 ate 18/10. No prazo: Fase 1 artigo; Apendice A; slides/ensaio. Sem reuniao 18/10.",Redistribuir atrasos,calendario-progresso.csv; Plano Fase 2
+2026-10-19,1,1,100.0,70,PC1 no prazo,Manter plano de correcoes pos-PC1,calendario-progresso.csv
+2026-10-25,15,4,26.7,70,"Pendencias E1 ate 25/10. No prazo: B1 IEEE; A3 Recursos; A4 rastreamento; A5 Apendice/GitPage. Sem issues no GitHub.",Redistribuir as 11 tarefas restantes,calendario-progresso.csv; Pendencias E1
