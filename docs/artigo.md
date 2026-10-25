@@ -197,49 +197,45 @@ Antes da entrevista ou do preenchimento do formulário de avaliação, a pessoa 
 
 | Questão | Hipótese |
 |---|---|
-| **Q1** (Reconhecibilidade da adequação): um estudante que nunca usou o Anki consegue identificar, pela interface, quais funções usar para criar seus cards e estudar? | **H1:** no Grupo A, \(T_{rf}\) e \(T_{ip}\) das funções principais (criar baralho, adicionar cards e estudar) ficam em *alvo* ou *excelente*; nota, tipo de nota e card ficam em *mínimo* ou *insatisfatório*. |
-| **Q2** (Facilidade de aprendizado): um estudante iniciante consegue aprender, sem ajuda, a criar uma conta no AnkiWeb, criar um baralho, adicionar cards, revisá-los e sincronizar a coleção? | **H2:** no Grupo A, \(T_{pp}\) e \(T_{aprend}\) em baralho, cards e revisão ficam em *alvo* ou *excelente*; conta e primeira sincronização ficam em *mínimo* ou *insatisfatório*. |
-| **Q3** (Operabilidade): as tarefas do estudo diário podem ser executadas com pouco esforço por quem já usa o Anki? | **H3:** no Grupo B, \(T_{ct}\), \(T_{exec}\) e \(N_{ações}\) em revisar e adicionar cards ficam em *alvo* ou *excelente*; a diferença \(\lvert\Delta\rvert\) entre Grupos A e B (médias de \(T_{ct}\), \(T_{exec}\) e \(N_{ações}\)) é maior em conta e sincronização do que em revisar e adicionar cards. |
+| **Q1** (Reconhecibilidade da adequação): um estudante que nunca usou o Anki consegue identificar, pela interface, quais funções usar para criar seus cards e estudar? | **H1:** no Grupo A, \(T_{rf}\) das funções principais (criar baralho, adicionar cards e estudar) fica em *alvo* ou *excelente*; nota, tipo de nota e card ficam em *mínimo* ou *insatisfatório*. |
+| **Q2** (Facilidade de aprendizado): um estudante iniciante consegue aprender, sem ajuda, a criar uma conta no AnkiWeb, criar um baralho, adicionar cards, revisá-los e sincronizar a coleção? | **H2:** no Grupo A, \(T_{sa}\) e \(T_{\mathrm{aprend}}\) em baralho, cards e revisão ficam em *alvo* ou *excelente*; conta e primeira sincronização ficam em *mínimo* ou *insatisfatório*. |
+| **Q3** (Operabilidade): as tarefas do estudo diário podem ser executadas com pouco esforço por quem já usa o Anki? | **H3:** no Grupo B, \(T_{ct}\) e \(T_{\mathrm{exec}}\) em revisar e adicionar cards ficam em *alvo* ou *excelente*; a diferença \(\lvert\Delta\rvert\) entre Grupos A e B (médias de \(T_{ct}\) e \(T_{\mathrm{exec}}\)) é maior em conta e sincronização do que em revisar e adicionar cards. |
 
 #### 5.1.4. Fatores de Variação
 
-Três fatores, obtidos na triagem e no perfil, podem influenciar os resultados: **familiaridade com informática** (ordinal: baixa, média ou alta) afeta H2 e H3 via tempos e ajudas em conta e sincronização; **experiência prévia com aplicativos de flashcards** (nominal) afeta H1 (reconhecimento de funções); e **sistema operacional** (nominal) afeta H2 e H3 via \(T_{exec}\) e \(N_{ações}\).
+Três fatores, obtidos na triagem e no perfil, podem influenciar os resultados: **familiaridade com informática** (ordinal: baixa, média ou alta) afeta H2 e H3 via tempos e ajudas em conta e sincronização; **experiência prévia com aplicativos de flashcards** (nominal) afeta H1 (reconhecimento de funções); e **sistema operacional** (nominal) afeta H2 e H3 via \(T_{\mathrm{exec}}\).
 
 #### 5.1.5. Métricas
 
-A Tabela 5 resume as métricas (Plano de Medição, Aula 08). Todas são de escala de razão e coletadas em sessões observadas com consentimento registrado, nas tarefas da Fase 1 (criar baralho, adicionar cards, revisar, criar conta no AnkiWeb, login e sincronizar).
+A Tabela 5 resume as seis métricas do escopo (Plano de Medição, Aula 08). Todas são de escala de razão e coletadas em sessões observadas com consentimento registrado. Cada métrica indica a referência acadêmica de origem; \(T_{rf}\) e \(R_t\) têm operacionalização própria, relacionada às referências citadas.
 
-*Tabela 5. Métricas de Capacidade de interação: definição, cálculo, coleta e faixa*
+*Tabela 5. Métricas de Capacidade de interação: definição, cálculo, referência e faixa*
 
-| Métrica | Q | Definição / cálculo | Fonte e procedimento de coleta | Faixa |
+| Métrica | Q | Definição / cálculo | Referência de origem | Faixa |
 |---|---|---|---|---|
-| Taxa de reconhecimento de funções (\(T_{rf}\)) | Q1 | % de iniciantes que indicam a função correta; \(N_{\mathrm{reconh.}}/N_{\mathrm{part.}} \times 100\%\) | Avaliador descreve a tarefa sem jargão; acerto antes de qualquer ajuda | 0–100% |
-| Taxa de identificação de propósito (\(T_{ip}\)) | Q1 | % de respostas corretas sobre o propósito; \(N_{\mathrm{ident.}}/(N_{\mathrm{itens}} \cdot N_{\mathrm{part.}}) \times 100\%\) | Explicação do participante classificada por gabarito alinhado ao manual | 0–100% |
-| Tempo de aprendizagem (\(T_{\mathrm{aprend}}\)) | Q2 | Média do tempo total do Grupo A no roteiro completo | Cronômetro do início da 1ª tarefa à conclusão da última (ou abandono) | > 0 min |
-| Taxa de sucesso na primeira passagem (\(T_{pp}\)) | Q2 | % de tarefas corretas na 1ª execução do roteiro; \(N_{\mathrm{corretas}}/N_{\mathrm{propostas}} \times 100\%\) | Checklist por tarefa (“sem ajuda” / “com ajuda”) ao verificar o estado do produto | 0–100% |
-| Redução do tempo de execução (\(R_t\)) | Q2 | \((t_1 - t_2)/t_1 \times 100\%\) | Mesma tarefa repetida na sessão, sem nova instrução | pode ser < 0 |
-| Taxa de conclusão de tarefas (\(T_{ct}\)) | Q3 | % concluídas por grupo; \(N_{\mathrm{concluídas}}/N_{\mathrm{propostas}} \times 100\%\) | Roteiro de operabilidade; conclusão, abandono ou falha | 0–100% |
-| Tempo de execução da tarefa (\(T_{\mathrm{exec}}\)) | Q3 | Média do tempo da pessoa do recebimento da tarefa até o sucesso (também mediana), por tarefa e grupo | Cronômetro de tarefa humana (não tempo de resposta do sistema); SO registrado | > 0 min |
-| Número médio de ações (\(N_{\mathrm{ações}}\)) | Q3 | Média de cliques, atalhos e entradas por tarefa | Contagem pelo avaliador, incluindo correção de erro | inteiro ≥ 0 |
+| Taxa de reconhecimento de funções (\(T_{rf}\)) | Q1 | % de iniciantes que indicam a função correta; \(N_{\mathrm{reconh.}}/N_{\mathrm{part.}} \times 100\%\) (operacionalização própria) | Relacionada a Sellier et al. [Sellier et al. 2024] | 0–100% |
+| Tempo de aprendizagem (\(T_{\mathrm{aprend}}\)) | Q2 | Média do tempo total do Grupo A no roteiro completo | Vogel et al. [Vogel et al. 2021] | > 0 min |
+| Taxa de sucesso após aprendizagem (\(T_{sa}\)) | Q2 | \(\displaystyle T_{sa}=\frac{N_{\text{tentativas concluídas com sucesso}}}{N_{\text{tentativas realizadas}}}\times 100\%\) | Bird et al. [Bird et al. 2022] | 0–100% |
+| Redução do tempo de execução (\(R_t\)) | Q2 | \((t_1 - t_2)/t_1 \times 100\%\) (operacionalização própria) | Relacionada a Marrella e Catarci [Marrella e Catarci 2018] | pode ser < 0 |
+| Taxa de conclusão de tarefas (\(T_{ct}\)) | Q3 | % concluídas por grupo; \(N_{\mathrm{concluídas}}/N_{\mathrm{propostas}} \times 100\%\) | Bird et al. [Bird et al. 2022] | 0–100% |
+| Tempo de execução da tarefa (\(T_{\mathrm{exec}}\)) | Q3 | Média do tempo da pessoa do recebimento da tarefa até o sucesso (também mediana), por tarefa e grupo | Bird et al. [Bird et al. 2022] | > 0 min |
 
 #### 5.1.6. Níveis de Pontuação e Critérios de Julgamento
 
-Os níveis da Tabela 6 foram fixados antes da coleta. Os limites de \(T_{\mathrm{exec}}\) medem o tempo da pessoa para concluir a tarefa e foram definidos por acordo da equipe (os limiares de 3, 9 e 12 s de Hoxmeier e DiCesare [Hoxmeier e DiCesare 2000] aplicam-se ao tempo de resposta do sistema na Eficiência de desempenho, não a estas tarefas). Os demais limites também foram definidos por acordo da equipe, por falta de dados históricos do Anki. O caminho mínimo de cada tarefa, usado em \(N_{\mathrm{ações}}\), será fixado no plano de avaliação (Fase 3).
+Os níveis da Tabela 6 foram fixados antes da coleta. Os limites de \(T_{\mathrm{exec}}\) medem o tempo da pessoa para concluir a tarefa e foram definidos por acordo da equipe (os limiares de 3, 9 e 12 s de Hoxmeier e DiCesare [Hoxmeier e DiCesare 2000] aplicam-se ao tempo de resposta do sistema na Eficiência de desempenho, não a estas tarefas). Os demais limites também foram definidos por acordo da equipe, por falta de dados históricos do Anki.
 
 *Tabela 6. Níveis de pontuação das métricas de Capacidade de interação*
 
 | Métrica | Insatisfatório | Mínimo | Alvo | Excelente |
 |---|---|---|---|---|
 | \(T_{rf}\) (Q1) | abaixo de 60% | 60% a 75% | 75% a 90% | 90% ou mais |
-| \(T_{ip}\) (Q1) | abaixo de 55% | 55% a 70% | 70% a 85% | 85% ou mais |
 | \(T_{\mathrm{aprend}}\) (Q2) | acima de 40 min ou abandono | 25 a 40 min | 15 a 25 min | menos de 15 min |
-| \(T_{pp}\) (Q2) | abaixo de 60% ou intervenção recorrente | 60% a 75% | 75% a 90% sem ajuda, ou 90% ou mais com uma ajuda | 90% ou mais sem ajuda |
+| \(T_{sa}\) (Q2) | abaixo de 60% ou intervenção recorrente | 60% a 75% | 75% a 90% sem ajuda, ou 90% ou mais com uma ajuda | 90% ou mais sem ajuda |
 | \(R_t\) (Q2) | abaixo de 5% ou negativa | 5% a 20% | 20% a 40% | 40% ou mais |
 | \(T_{ct}\), frequentes (Q3) | abaixo de 80% ou abandono | 80% a 90%, ou 100% com uma ajuda | 90% ou mais sem ajuda | 100% sem ajuda |
 | \(T_{\mathrm{exec}}\) (Q3) | acima de 10 min ou falha | 5 a 10 min | 2 a 5 min | menos de 2 min |
-| \(N_{\mathrm{ações}}\) (Q3) | mais de 3 vezes o caminho mínimo | até 3 vezes | até 2 vezes | até 1,5 vez |
 
-**Regra de julgamento.** O julgamento procede de baixo para cima [Basili et al. 1994]: cada métrica é classificada em uma faixa, as faixas são agregadas por questão e as questões respondem ao G1. Uma questão é atendida quando suas métricas essenciais (\(T_{rf}\) e \(T_{ip}\) em Q1; \(T_{pp}\) e \(T_{\mathrm{aprend}}\) em Q2; \(T_{ct}\) e \(T_{\mathrm{exec}}\) em Q3) estão no alvo ou acima; havendo divergência, prevalece a faixa mais baixa, e \(R_t\) e \(N_{\mathrm{ações}}\) servem de evidência de apoio. H1–H3 são julgadas pelos valores esperados da Tabela 4. Os fatores de variação não alteram os limites, mas são reportados na interpretação. As faixas mínimo e insatisfatório tornam-se recomendações priorizadas, e a mais relevante alimenta a ação de melhoria da Entrega 2.
+**Regra de julgamento.** O julgamento procede de baixo para cima [Basili et al. 1994]: cada métrica é classificada em uma faixa, as faixas são agregadas por questão e as questões respondem ao G1. Uma questão é atendida quando suas métricas essenciais (\(T_{rf}\) em Q1; \(T_{sa}\) e \(T_{\mathrm{aprend}}\) em Q2; \(T_{ct}\) e \(T_{\mathrm{exec}}\) em Q3) estão no alvo ou acima; havendo divergência, prevalece a faixa mais baixa, e \(R_t\) serve de evidência de apoio. H1–H3 são julgadas pelos valores esperados da Tabela 4. Os fatores de variação não alteram os limites, mas são reportados na interpretação. As faixas mínimo e insatisfatório tornam-se recomendações priorizadas, e a mais relevante alimenta a ação de melhoria da Entrega 2.
 
 ### 5.2. Eficiência de Desempenho
 
@@ -384,6 +380,8 @@ Este artigo apresentou as Fases 1 e 2 da avaliação do Anki Desktop e do AnkiWe
 
 Basili, V. R., Caldiera, G. e Rombach, H. D. (1994). The Goal Question Metric approach. In Marciniak, J. J., editor, *Encyclopedia of Software Engineering*, p. 528–532. John Wiley & Sons.
 
+Bird, M., Carter, N., Lim, A., Kazmie, N., Fajardo, C., Reaume, S. e McGillion, M. H. (2022). A novel hospital-to-home system for children with medical complexities: Usability testing study. *JMIR Formative Research*, 6(8):e34572.
+
 Galin, D. (2018). *Software Quality: Concepts and Practice*. John Wiley & Sons, IEEE Press, New York, NY.
 
 Hoxmeier, J. A. e DiCesare, C. (2000). System response time and user satisfaction: An experimental study of browser-based applications. In *Proceedings of AMCIS 2000*, p. 1–6.
@@ -396,6 +394,8 @@ Jayanto, R. D. e Jati, H. (2017). Evaluasi kualitas aplikasi mobile kamus istila
 
 Lund, A. M. (2001). Measuring usability with the USE Questionnaire. *Usability Interface*, 8(2):3–6.
 
+Marrella, A. e Catarci, T. (2018). Measuring the learnability of interactive systems using a Petri net based approach. In *Proceedings of the 2018 Designing Interactive Systems Conference (DIS '18)*, p. 1309–1319. ACM, New York, NY.
+
 McGarry, J., Card, D., Jones, C., Layman, B., Clark, E., Dean, J. e Hall, F. (2002). *Practical Software Measurement: Objective Information for Decision Makers*. Addison-Wesley, Boston, MA.
 
 Milichiewicz, R. e Badurowicz, M. (2025). Comparative analysis of cross-platform application development tools in terms of operating system integration. *Journal of Computer Science Institute*, 36:357–364.
@@ -406,7 +406,11 @@ Practical Software and Systems Measurement (2021). *PSM Continuous Iterative Dev
 
 Rojas, H., Renteria, R. e Martinez, V. (2025). Understanding performance efficiency in ISO/IEC 25000: A systematic literature review. *International Journal on Informatics Visualization (JOIV)*, 9(6):2405–2417.
 
+Sellier, Q., Sluÿters, A., Vanderdonckt, J. e Poncin, I. (2024). Evaluating gesture user interfaces: Quantitative measures, qualitative scales, and method. *International Journal of Human-Computer Studies*, 186:103245.
+
 Sukmandari, D. G. e Sukardiyono, T. (2017). Analisis aplikasi jadwal perkuliahan berbasis android berdasarkan standar ISO 25010. *Elinvo (Electronics, Informatics, and Vocational Education)*, 2(1):80–84.
+
+Vogel, M., Knapik, P., Cohrs, M., Szyperrek, B., Pueschel, W., Etzel, H., Fiebig, D., Rausch, A. e Kuhrmann, M. (2021). Metrics in automotive software development: A systematic literature review. *Journal of Software: Evolution and Process*, 33(2):e2296.
 
 ## Apêndice A. Tabela de Contribuição da Equipe
 
