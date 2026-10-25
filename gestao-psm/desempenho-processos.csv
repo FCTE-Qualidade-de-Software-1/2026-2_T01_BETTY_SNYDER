@@ -1,0 +1,11 @@
+identificador,revisão,seção,tipo,descrição,quem apontou,confirmado,corrigido
+01,2,2.1,Erro de conteúdo,Norma desatualizada,Davi Severiano,Sim,,
+08,2,2.2,Informação ausente,"Não explica de onde vêm as quatro fases adotadas, sendo que a ISO/IEC 25040 define cinco atividades.",Davi Severiano,,
+09,2,2.3,Inconsistência entre seções,O termo usado para o propósito não é coerente com o propósito definido nos objetivos GQM.,Davi Severiano,,
+06,2,3.1,Erro de conteúdo,"A frase ""não usamos issues"" está desatualizada: após o PC1, as tarefas passaram a ser acompanhadas por issues.",Davi Severiano,,
+02,2,4.4,Inconsistência entre seções,Usa os nomes antigos das características e não informa as seis características fora do escopo; o texto não está alinhado com a seção 2.1 nem com a Figura 1.,Davi Severiano,,
+03,2,4.5,Inconsistência entre seções,Usa os nomes antigos das características e não informa as seis características fora do escopo; o texto não está alinhado com a seção 2.1 nem com a Figura 1.,Davi Severiano,,
+04,2,4.6,Inconsistência entre seções,Usa os nomes antigos das características e não informa as seis características fora do escopo; o texto não está alinhado com a seção 2.1 nem com a Figura 1.,Davi Severiano,,
+05,2,5.1,Erro de conteúdo,Limites de tempo inadequados; nome de métrica incompatível com o procedimento; citação de Lund indevida; H3 sem forma de comparação.,Davi Severiano,,
+07,2,5.2,Informação ausente,Faltam definição e cálculo das métricas; níveis incompletos (RAM; CPU; vazão; I/O); falta a ressalva do Ubuntu.,Davi Severiano,,
+10,2,5.3,Informação ausente,Faltam níveis; lista dos 10 critérios do checklist; ligação das métricas às questões; há métricas duplicadas.,Davi Severiano,,
