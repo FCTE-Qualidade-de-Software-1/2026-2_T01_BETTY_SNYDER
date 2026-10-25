@@ -89,8 +89,8 @@ O Anki Desktop possui 16 janelas principais:
 
 ### Massa de dados
 
-- **Coleções sintéticas**, geradas com o pacote `anki` (biblioteca Python do próprio Anki, publicada no PyPI), em tamanhos controlados, por exemplo 10 mil, 50 mil e 100 mil cards, iguais em todos os ambientes. São usadas nos testes de Eficiência de desempenho e Portabilidade.
-- **Baralhos compartilhados no AnkiWeb**, importados como dados realistas nos testes de Usabilidade.
+- **Coleções sintéticas**, geradas com o pacote `anki` (biblioteca Python do próprio Anki, publicada no PyPI), em tamanhos controlados, por exemplo 10 mil, 50 mil e 100 mil cards, iguais em todos os ambientes. São usadas nos testes de Eficiência de desempenho e Flexibilidade.
+- **Baralhos compartilhados no AnkiWeb**, importados como dados realistas nos testes de Capacidade de interação.
 
 ### Requisitos de software
 
@@ -105,30 +105,30 @@ A página de download e o manual não definem memória ou processador mínimos; 
 
 ## Modelo de qualidade
 
-O modelo de qualidade de produto da ISO/IEC 25010:2011 foi adaptado ao Anki a partir dos componentes avaliados. A adaptação liga as características da norma, que são abstratas, aos componentes com os quais o estudante interage:
+O modelo de qualidade de produto da ISO/IEC 25010:2023 foi adaptado ao Anki a partir dos componentes avaliados. A adaptação liga as características da norma, que são abstratas, aos componentes com os quais o estudante interage e restringe o escopo às subcaracterísticas da Figura 1:
 
 | Componente avaliado | Características |
 |---|---|
-| Interface do usuário do Anki Desktop | Usabilidade |
-| Criação de conta no AnkiWeb, login e sincronização | Usabilidade, Eficiência de desempenho e Portabilidade |
-| Execução do Anki Desktop em Windows, macOS e Ubuntu | Eficiência de desempenho e Portabilidade |
-| Instalação e desinstalação do Anki Desktop | Portabilidade |
+| Interface do usuário do Anki Desktop | Capacidade de interação |
+| Criação de conta no AnkiWeb, login e sincronização | Capacidade de interação, Eficiência de desempenho e Flexibilidade |
+| Execução do Anki Desktop em Windows, macOS e Ubuntu | Eficiência de desempenho e Flexibilidade |
+| Instalação e desinstalação do Anki Desktop | Flexibilidade |
 
 ![Modelo de qualidade adaptado ao Anki Desktop e ao AnkiWeb](assets/modelo-qualidade.png)
 
-*Figura 1. Modelo de qualidade adaptado. De cima para baixo: componentes avaliados, características e subcaracterísticas avaliadas na Fase 2.*
+*Figura 1. Modelo de qualidade adaptado (ISO/IEC 25010:2023). De cima para baixo: componentes avaliados, características e subcaracterísticas avaliadas na Fase 2.*
 
 ## Seleção e priorização das características
 
-A ênfase de cada característica foi definida pela combinação de dois critérios: o impacto para o estudante (quanto uma falha atrapalha o uso) e a viabilidade de medição com os recursos e o prazo da equipe. A escolha de Usabilidade foi acordada com a requisitante.
+A ênfase de cada característica foi definida pela combinação de dois critérios: o impacto para o estudante (quanto uma falha atrapalha o uso) e a viabilidade de medição com os recursos e o prazo da equipe. A escolha de Capacidade de interação foi acordada com a requisitante.
 
-| Característica (ISO/IEC 25010:2011) | Impacto para o estudante | Viabilidade de medição | Ênfase |
+| Característica (ISO/IEC 25010:2023) | Impacto para o estudante | Viabilidade de medição | Ênfase |
 |---|---|---|---:|
-| Usabilidade | Alto: todo estudante usa a interface sem treinamento | Média: exige testes com participantes | 5 |
+| Capacidade de interação | Alto: todo estudante usa a interface sem treinamento | Média: exige testes com participantes | 5 |
 | Eficiência de desempenho | Médio: notebooks variados e coleções que crescem | Alta: medições instrumentadas | 3 |
-| Portabilidade | Médio: estudantes usam sistemas diferentes e trocam de computador | Alta: instalação e migração controladas | 3 |
+| Flexibilidade | Médio: estudantes usam sistemas diferentes e trocam de computador | Alta: instalação e migração controladas | 3 |
 
-As cinco características não escolhidas ficam fora do escopo por acordo com a requisitante.
+As seis características não escolhidas ficam fora do escopo por acordo com a requisitante.
 
 ## Escopo, profundidade e objetos da avaliação
 
@@ -138,7 +138,7 @@ Instalação e desinstalação, interface do usuário e execução do Anki Deskt
 
 ### Abrangência
 
-- Três características da ISO/IEC 25010:2011: Usabilidade, Eficiência de desempenho e Portabilidade, com as subcaracterísticas escolhidas na [Fase 2](fase2.md).
+- Três características da ISO/IEC 25010:2023: Capacidade de interação, Eficiência de desempenho e Flexibilidade, com as subcaracterísticas da Figura 1 e da [Fase 2](fase2.md).
 - Plataformas: Windows, macOS e Ubuntu.
 - No AnkiWeb, apenas criação de conta, login e sincronização.
 
@@ -166,7 +166,8 @@ Instalação e desinstalação, interface do usuário e execução do Anki Deskt
 | AnkiDroid e AnkiMobile | São produtos e bases de código separados, e o tempo da equipe não cobre mais plataformas |
 | Algoritmo de agendamento | Sua eficácia para a memorização exigiria acompanhar usuários por semanas e não corresponde às características escolhidas |
 | Demais funções do AnkiWeb | O estudo pelo navegador e os baralhos compartilhados não fazem parte do fluxo de sincronização definido |
-| Cinco características não escolhidas | Ficam fora do escopo por acordo com a requisitante |
+| Seis características não escolhidas | Ficam fora do escopo por acordo com a requisitante |
+| Subcaracterísticas não mostradas na Figura 1 | Fora do escopo da avaliação, ainda que pertençam às três características escolhidas |
 
 ## Relação com os Objetivos de Desenvolvimento Sustentável
 
@@ -175,7 +176,7 @@ A avaliação se relaciona ao **ODS 4 — Educação de Qualidade**.
 | Meta | Relação com a avaliação |
 |---|---|
 | 4.3 — acesso igualitário à educação superior de qualidade, a preços acessíveis | O Anki Desktop é gratuito e apoia o estudo autônomo de estudantes de graduação |
-| 4.4 — jovens e adultos com habilidades relevantes | O indicador 4.4.1, sobre habilidades em tecnologias da informação e comunicação, se relaciona à facilidade de aprendizado avaliada em Usabilidade |
-| 4.5 — eliminar disparidades e garantir acesso a pessoas em situação de vulnerabilidade, incluindo pessoas com deficiência | Relaciona-se à Portabilidade, que busca o funcionamento em diferentes sistemas e computadores, e aos aspectos de inclusão da interface |
+| 4.4 — jovens e adultos com habilidades relevantes | O indicador 4.4.1, sobre habilidades em tecnologias da informação e comunicação, se relaciona à facilidade de aprendizado avaliada em Capacidade de interação |
+| 4.5 — eliminar disparidades e garantir acesso a pessoas em situação de vulnerabilidade, incluindo pessoas com deficiência | Relaciona-se à Flexibilidade, que busca o funcionamento em diferentes sistemas e computadores, e aos aspectos de inclusão da interface |
 
 Pontos de melhoria que reduzem barreiras de uso ampliam o alcance de uma ferramenta gratuita de estudo, o que contribui para essas metas.

@@ -1,4 +1,4 @@
-# Avaliação da Qualidade do Anki Desktop e do AnkiWeb segundo a ISO/IEC 25010:2011
+# Avaliação da Qualidade do Anki Desktop e do AnkiWeb segundo a ISO/IEC 25010:2023
 
 **Bryan Smith Rodrigues Cavalcante, Dante Fernandes Scarpati, Davi Severiano Freitas, Karolina Vieira Barbosa, Mateus de Siqueira Silva e Pedro Henrique Freire Rodrigues**
 
@@ -10,9 +10,9 @@ Faculdade de Ciências e Tecnologias em Engenharia (FCTE) / Faculdade UnB Gama (
 
 ---
 
-**Resumo.** Este artigo especifica a avaliação da qualidade do Anki Desktop 26.09.3 e do fluxo de conta, login e sincronização do AnkiWeb, com base na ISO/IEC 25010:2011. Na Fase 1, definem-se o requisitante, o propósito de indicar pontos de melhoria do ponto de vista do estudante, o modelo de qualidade adaptado e o escopo. Na Fase 2, o GQM deriva objetivos, questões, hipóteses, métricas, níveis de pontuação e critérios de julgamento para Usabilidade, Eficiência de desempenho e Portabilidade. A gestão do projeto é acompanhada pelo PSM.
+**Resumo.** Este artigo especifica a avaliação da qualidade do Anki Desktop 26.09.3 e do fluxo de conta, login e sincronização do AnkiWeb, com base na ISO/IEC 25010:2023. Na Fase 1, definem-se o requisitante, o propósito de indicar pontos de melhoria do ponto de vista do estudante, o modelo de qualidade adaptado e o escopo. Na Fase 2, o GQM deriva objetivos, questões, hipóteses, métricas, níveis de pontuação e critérios de julgamento para Capacidade de interação, Eficiência de desempenho e Flexibilidade. A gestão do projeto é acompanhada pelo PSM.
 
-**Abstract.** This paper specifies the quality evaluation of Anki Desktop 26.09.3 and of the AnkiWeb account, login and synchronization flow, based on ISO/IEC 25010:2011. Phase 1 defines the requester, the purpose of identifying improvement points from the student's point of view, the adapted quality model and the scope. Phase 2 uses the Goal-Question-Metric approach to derive goals, questions, hypotheses, metrics, scoring levels and judgment criteria for Usability, Performance Efficiency and Portability. Project management is monitored with Practical Software Measurement (PSM).
+**Abstract.** This paper specifies the quality evaluation of Anki Desktop 26.09.3 and of the AnkiWeb account, login and synchronization flow, based on ISO/IEC 25010:2023. Phase 1 defines the requester, the purpose of identifying improvement points from the student's point of view, the adapted quality model and the scope. Phase 2 uses the Goal-Question-Metric approach to derive goals, questions, hypotheses, metrics, scoring levels and judgment criteria for Interaction Capability, Performance Efficiency and Flexibility. Project management is monitored with Practical Software Measurement (PSM).
 
 ---
 
@@ -20,13 +20,13 @@ Faculdade de Ciências e Tecnologias em Engenharia (FCTE) / Faculdade UnB Gama (
 
 O processo de garantia da qualidade de software consolidou-se como disciplina nuclear da Engenharia de Software moderna, estabelecendo critérios objetivos para que produtos atendam tanto às expectativas funcionais dos usuários quanto a restrições de engenharia e desempenho [Galin 2018]. No contexto de ferramentas educacionais, o **Anki Desktop** ([github.com/ankitects/anki](https://github.com/ankitects/anki)) é uma plataforma de memorização ativa por repetição espaçada (*Spaced Repetition System*, SRS), construída com Python, Rust e a interface gráfica PyQt/QtWebEngine, que funciona em diferentes sistemas operacionais e armazena as coleções localmente em SQLite.
 
-O presente trabalho, conduzido pela **Equipe Betty Snyder** na disciplina de Qualidade de Software 1 da Universidade de Brasília (FGA/FCTE-UnB), tem como objetivo avaliar a qualidade de produto do Anki Desktop (versão 26.09.3) e do fluxo de conta, login e sincronização do AnkiWeb, para indicar pontos de melhoria do ponto de vista do estudante. A avaliação segue a ISO/IEC 25010:2011 [ISO/IEC 2011a] e o processo de avaliação de produto [ISO/IEC 2011b], e a gestão do projeto é acompanhada pelo *Practical Software Measurement* (PSM) [McGarry et al. 2002].
+O presente trabalho, conduzido pela **Equipe Betty Snyder** na disciplina de Qualidade de Software 1 da Universidade de Brasília (FGA/FCTE-UnB), tem como objetivo avaliar a qualidade de produto do Anki Desktop (versão 26.09.3) e do fluxo de conta, login e sincronização do AnkiWeb, para indicar pontos de melhoria do ponto de vista do estudante. A avaliação segue a ISO/IEC 25010:2023 [ISO/IEC 2023a] e o processo de avaliação de produto [ISO/IEC 2023b], e a gestão do projeto é acompanhada pelo *Practical Software Measurement* (PSM) [McGarry et al. 2002].
 
 ## 2. Fundamentação Teórica e Trabalhos Relacionados
 
-### 2.1. O Modelo de Qualidade de Produto ISO/IEC 25010:2011
+### 2.1. O Modelo de Qualidade de Produto ISO/IEC 25010:2023
 
-A família de normas ISO/IEC 25000 (SQuaRE) estrutura a qualidade do produto de software em oito características principais [ISO/IEC 2011a]. No escopo deste projeto, foram selecionadas três: **Usabilidade** (reconhecibilidade da adequação, facilidade de aprendizado, operabilidade, proteção contra erro do usuário, estética da interface e acessibilidade), **Eficiência de desempenho** (comportamento no tempo, utilização de recursos e capacidade) e **Portabilidade** (adaptabilidade, instalabilidade e substituibilidade). As subcaracterísticas efetivamente avaliadas são definidas na Fase 2 (Seção 5).
+A família de normas ISO/IEC 25000 (SQuaRE) estrutura a qualidade do produto de software em nove características principais [ISO/IEC 2023a]: adequação funcional, eficiência de desempenho, compatibilidade, capacidade de interação (antiga usabilidade), confiabilidade, segurança, manutenibilidade, flexibilidade (antiga portabilidade) e *safety* (segurança operacional). A **capacidade de interação** compreende reconhecibilidade da adequação, facilidade de aprendizado, operabilidade, proteção contra erro do usuário, engajamento do usuário, inclusividade, assistência ao usuário e autodescritividade; a **flexibilidade** compreende adaptabilidade, escalabilidade, instalabilidade e substituibilidade. No escopo deste projeto, foram selecionadas três características: **Capacidade de interação**, **Eficiência de desempenho** e **Flexibilidade**. As subcaracterísticas efetivamente avaliadas constam na Figura 1 e são detalhadas na Fase 2 (Seção 5).
 
 ### 2.2. Processo de Avaliação de Produto
 
@@ -88,13 +88,13 @@ O processo de medição do PSM na Entrega 1 segue cortes semanais em **11/10, 18
 | Desempenho dos Processos | Revisão 1 | 13 defeitos; 9 seções; 8 corrigidos | \(D_1=1{,}44\) defeitos/seção; taxa de correção 61,5% | Densidade deve cair entre revisões antes da Entrega 1 | Revisão 2 com dados reais (sem inventar densidade) | Contagem da Revisão 1 |
 | Calendário e Progresso | 11/10/2026 | \(T_p=16\); \(T_c=9\) | \(ICP=56{,}3\%\) | Conformidade < 70% | Redistribuir atrasos (inclui issues/milestones não criadas) | `gestao-psm/calendario-progresso.csv` |
 | Calendário e Progresso | 18/10/2026 | \(T_p=14\); \(T_c=3\) | \(ICP=21{,}4\%\) | Conformidade < 70% | Redistribuir atrasos do Plano da Fase 2 | `gestao-psm/calendario-progresso.csv` |
-| Calendário e Progresso | 25/10/2026 | \(T_p=15\); \(T_c=4\) | \(ICP=26{,}7\%\) | Conformidade < 70% | Redistribuir as 11 tarefas restantes | `gestao-psm/calendario-progresso.csv`; `gestao-psm/2026-10-25_calendario-progresso.csv` |
+| Calendário e Progresso | 25/10/2026 | \(T_p=15\); \(T_c=6\) | \(ICP=40{,}0\%\) | Conformidade < 70% | Redistribuir as 9 tarefas restantes | `gestao-psm/calendario-progresso.csv`; `gestao-psm/2026-10-25_calendario-progresso.csv` |
 
 - **Recursos e Custos.** As medidas básicas foram extraídas da planilha de esforço. Conferiu-se o lançamento da Karolina em 07/10 (reunião, 0,33 h) e em 08/10 (GitPage, 1,75 h): atividades distintas, **sem duplicata indevida**. Nos cortes de 11/10, 18/10 e 25/10, o desvio da equipe foi de −42,0%, −20,0% e **−46,0%** (\(H_{\mathrm{plan}}=78{,}10\) h e \(H_{\mathrm{real}}=42{,}17\) h em 25/10), e a menor participação passou de 2,8% para 11,0% e 10,3%. O critério de desvio de 30% aplica-se ao indicador da *equipe* (sobrecarga); o corte de 11/10 foi julgado retrospectivamente com os critérios de 18/10. **Interpretação:** o desvio de −46,0% em 25/10 indica subutilização do esforço planejado, sem acionar o limiar de sobrecarga (+30%). **Decisão:** manter o acompanhamento da carga e dos desvios individuais inferiores a −30% (em especial Mateus e Dante).
 
 - **Desempenho dos Processos.** Na Revisão 1 foram inspecionadas 9 seções e confirmados 13 defeitos (\(D_1=13/9=1{,}44\) defeitos/seção); 8 foram corrigidos (taxa 61,5%), restando 5. Conta-se como defeito informação incorreta ou sem fonte, divergência com decisão da equipe ou item da rubrica ausente, confirmado pelo responsável (não houve reunião em 18/10 nem 21/10). **Não se inventa densidade da Revisão 2** até a contagem da Revisão 2. **Decisão:** executar a Revisão 2 com dados reais antes da Entrega 1.
 
-- **Calendário e Progresso.** As medidas \(T_p\) e \(T_c\) cruzam atribuições pós-reunião 01, Plano da Fase 2, documento de pendências da Entrega 1, planilha e atas. Quem confirma a conclusão é o responsável da tarefa, consolidado pelo responsável da categoria. A tarefa de criar repositório/*issues*/*milestones* conta como **fora do prazo**: o repositório existe, mas a API do GitHub registrou **0 issues** em 25/10/2026. Nos cortes de 11/10, 18/10 e 25/10 obteve-se \(ICP=56{,}3\%\), \(21{,}4\%\) e \(26{,}7\%\) — todos abaixo de 70%. Em 25/10, \(T_c=4\) (B1 formato IEEE; A3 Recursos; A4 rastreamento; A5 Apêndice/GitPage). **Decisão:** redistribuir as 11 tarefas ainda pendentes até a Entrega 1.
+- **Calendário e Progresso.** As medidas \(T_p\) e \(T_c\) cruzam atribuições pós-reunião 01, Plano da Fase 2, documento de pendências da Entrega 1, planilha e atas. Quem confirma a conclusão é o responsável da tarefa, consolidado pelo responsável da categoria. A tarefa de criar repositório/*issues*/*milestones* conta como **fora do prazo**: o repositório existe, mas a API do GitHub registrou **0 issues** em 25/10/2026. Nos cortes de 11/10, 18/10 e 25/10 obteve-se \(ICP=56{,}3\%\), \(21{,}4\%\) e \(40{,}0\%\) — todos abaixo de 70%. Em 25/10, \(T_c=6\) (B1 formato IEEE; A1 ISO 2023; A2 GQM Capacidade de interação; A3 Recursos; A4 rastreamento; A5 Apêndice/GitPage). **Decisão:** redistribuir as 9 tarefas ainda pendentes até a Entrega 1.
 
 ### 3.3. Declaração de Uso de Inteligência Artificial
 
@@ -127,55 +127,55 @@ O produto avaliado é o Anki Desktop, versão 26.09.3, e o AnkiWeb, na versão e
 
 O Anki Desktop possui oito funções principais: login na conta AnkiWeb; criação de baralhos; escrita de cards; revisão de cards, na qual o estudante avalia a própria resposta e o agendamento define quando o card volta; busca e edição no navegador de cards; importação e exportação; sincronização; e configuração das opções de estudo. A avaliação dedica-se principalmente à criação de baralhos, à escrita e à revisão de cards, ao login e à sincronização. A interface possui 16 janelas principais, como a janela principal, Adicionar, Navegador de cards, Opções do baralho, Importar, Exportar e Login de sincronização.
 
-Há massa de dados de duas fontes: coleções sintéticas geradas com o pacote `anki` (por exemplo, 10 mil, 50 mil e 100 mil cards), para Eficiência de desempenho e Portabilidade; e baralhos compartilhados no AnkiWeb, para os testes de Usabilidade. Os requisitos de software declarados pelo fabricante (apps.ankiweb.net e docs.ankiweb.net, consultados em 14/10/2026) são: Windows 10 versão 1703 ou posterior (x64) ou Windows 11 (ARM); macOS 13 ou posterior, em Apple Silicon ou Intel; distribuição Linux de 2022 ou posterior (x64, glibc 2.35+) ou de 2024 ou posterior (ARM, glibc 2.39+), com o pacote `zstd`; e, para o AnkiWeb, navegador atualizado e internet. Não há requisitos mínimos de memória ou processador.
+Há massa de dados de duas fontes: coleções sintéticas geradas com o pacote `anki` (por exemplo, 10 mil, 50 mil e 100 mil cards), para Eficiência de desempenho e Flexibilidade; e baralhos compartilhados no AnkiWeb, para os testes de Capacidade de interação. Os requisitos de software declarados pelo fabricante (apps.ankiweb.net e docs.ankiweb.net, consultados em 14/10/2026) são: Windows 10 versão 1703 ou posterior (x64) ou Windows 11 (ARM); macOS 13 ou posterior, em Apple Silicon ou Intel; distribuição Linux de 2022 ou posterior (x64, glibc 2.35+) ou de 2024 ou posterior (ARM, glibc 2.39+), com o pacote `zstd`; e, para o AnkiWeb, navegador atualizado e internet. Não há requisitos mínimos de memória ou processador.
 
 ### 4.4. Modelo de Qualidade
 
-O modelo de qualidade da ISO/IEC 25010:2011 foi adaptado ao Anki a partir dos componentes do produto submetidos à avaliação (Figura 1). A adaptação é justificada pela necessidade de mapear as características da norma, que são abstratas, para os componentes com os quais o estudante interage: a instalação e desinstalação foram mapeadas para a **Portabilidade**; a interface gráfica e a revisão de cards, para a **Usabilidade**; a execução nos diferentes sistemas operacionais, para a **Eficiência de desempenho** e a **Portabilidade**; e o fluxo de conta e sincronização do AnkiWeb, para as três características, pois impacta desde o acesso inicial até a integridade dos dados.
+O modelo de qualidade da ISO/IEC 25010:2023 foi adaptado ao Anki a partir dos componentes do produto submetidos à avaliação (Figura 1). A adaptação mapeia as características da norma, que são abstratas, para os componentes com os quais o estudante interage e restringe o escopo às subcaracterísticas mostradas na figura: a instalação e desinstalação, para a **Flexibilidade** (adaptabilidade, instalabilidade e substituibilidade); a interface gráfica e a revisão de cards, para a **Capacidade de interação** (reconhecibilidade da adequação, facilidade de aprendizado e operabilidade); a execução nos diferentes sistemas operacionais, para a **Eficiência de desempenho** e a **Flexibilidade**; e o fluxo de conta e sincronização do AnkiWeb, para as três características.
 
 ![Modelo de qualidade adaptado ao Anki Desktop e ao AnkiWeb](assets/modelo-qualidade.png)
 
-*Figura 1. Modelo de qualidade adaptado ao Anki Desktop e ao AnkiWeb, a partir da ISO/IEC 25010:2011 [ISO/IEC 2011a]. De cima para baixo: componentes avaliados, características e subcaracterísticas.*
+*Figura 1. Modelo de qualidade adaptado ao Anki Desktop e ao AnkiWeb, a partir da ISO/IEC 25010:2023 [ISO/IEC 2023a]. De cima para baixo: componentes avaliados, características e subcaracterísticas.*
 
 ### 4.5. Seleção e Priorização das Características
 
-A ênfase de cada característica foi definida pela combinação do impacto para o estudante (quanto uma falha atrapalha o uso) com a viabilidade de medição com os recursos e o prazo da equipe (Tabela 3). A escolha de Usabilidade foi acordada com a requisitante, e as cinco características não escolhidas ficam fora do escopo por acordo com ela.
+A ênfase de cada característica foi definida pela combinação do impacto para o estudante (quanto uma falha atrapalha o uso) com a viabilidade de medição com os recursos e o prazo da equipe (Tabela 3). A escolha de Capacidade de interação foi acordada com a requisitante, e as seis características não escolhidas ficam fora do escopo por acordo com ela.
 
 *Tabela 3. Priorização das características avaliadas*
 
 | Característica | Impacto para o estudante | Viabilidade de medição | Ênfase |
 |---|---|---|---:|
-| Usabilidade | Alto: todo estudante usa a interface sem treinamento | Média: exige testes com participantes | 5 |
+| Capacidade de interação | Alto: todo estudante usa a interface sem treinamento | Média: exige testes com participantes | 5 |
 | Eficiência de desempenho | Médio: notebooks variados e coleções que crescem | Alta: medições instrumentadas | 3 |
-| Portabilidade | Médio: estudantes usam sistemas diferentes e trocam de computador | Alta: instalação e migração controladas | 3 |
+| Flexibilidade | Médio: estudantes usam sistemas diferentes e trocam de computador | Alta: instalação e migração controladas | 3 |
 
 ### 4.6. Escopo, Profundidade e Objetos da Avaliação
 
-**Objetos e abrangência.** Instalação e desinstalação, interface do usuário e execução do Anki Desktop 26.09.3, e criação de conta, login e sincronização no AnkiWeb; três características da ISO/IEC 25010:2011, nas plataformas Windows, macOS e Ubuntu.
+**Objetos e abrangência.** Instalação e desinstalação, interface do usuário e execução do Anki Desktop 26.09.3, e criação de conta, login e sincronização no AnkiWeb; três características da ISO/IEC 25010:2023 (Capacidade de interação, Eficiência de desempenho e Flexibilidade), nas plataformas Windows, macOS e Ubuntu. As subcaracterísticas avaliadas são as da Figura 1: reconhecibilidade da adequação, facilidade de aprendizado e operabilidade; comportamento no tempo, utilização de recursos e capacidade; adaptabilidade, instalabilidade e substituibilidade.
 
 **Profundidade.** Avaliação externa, do ponto de vista do estudante, baseada no comportamento observável, por meio de testes com usuários, medições instrumentadas e inspeção da interface. O código-fonte do Anki Desktop serve apenas como apoio; o AnkiWeb, de código fechado, é avaliado só pelo comportamento. Não se trata de certificação nem de laudo de conformidade.
 
 **Relacionamento e restrições.** Avaliação independente, com a documentação oficial como referência; prazo até 18/11/2026, seis avaliadores, sem custo, apenas computadores da equipe e participantes com consentimento registrado.
 
-**Fora do escopo.** AnkiDroid e AnkiMobile (produtos e bases de código separados); o algoritmo de agendamento (exigiria acompanhar usuários por semanas); as demais funções do AnkiWeb; e as cinco características não escolhidas, por acordo com a requisitante.
+**Fora do escopo.** AnkiDroid e AnkiMobile (produtos e bases de código separados); o algoritmo de agendamento (exigiria acompanhar usuários por semanas); as demais funções do AnkiWeb; as demais subcaracterísticas das três características escolhidas que não aparecem na Figura 1; e as seis características não escolhidas, por acordo com a requisitante.
 
 ### 4.7. Relação com os Objetivos de Desenvolvimento Sustentável
 
-A avaliação se relaciona ao ODS 4, Educação de Qualidade. Na **meta 4.3** (acesso igualitário à educação superior de qualidade, a preços acessíveis), o Anki Desktop é gratuito e apoia o estudo autônomo. Na **meta 4.4** (jovens e adultos com habilidades relevantes), o indicador 4.4.1, sobre habilidades em tecnologias da informação e comunicação, relaciona-se à facilidade de aprendizado avaliada em Usabilidade. Na **meta 4.5** (eliminar disparidades e garantir acesso a pessoas em situação de vulnerabilidade), relaciona-se à Portabilidade e aos aspectos de inclusão da interface. Pontos de melhoria que reduzem barreiras de uso ampliam o alcance de uma ferramenta gratuita de estudo.
+A avaliação se relaciona ao ODS 4, Educação de Qualidade. Na **meta 4.3** (acesso igualitário à educação superior de qualidade, a preços acessíveis), o Anki Desktop é gratuito e apoia o estudo autônomo. Na **meta 4.4** (jovens e adultos com habilidades relevantes), o indicador 4.4.1, sobre habilidades em tecnologias da informação e comunicação, relaciona-se à facilidade de aprendizado avaliada em Capacidade de interação. Na **meta 4.5** (eliminar disparidades e garantir acesso a pessoas em situação de vulnerabilidade), relaciona-se à Flexibilidade e aos aspectos de inclusão da interface. Pontos de melhoria que reduzem barreiras de uso ampliam o alcance de uma ferramenta gratuita de estudo.
 
 ## 5. Fase 2 — Especificar a Avaliação
 
 Esta seção especifica a avaliação por meio do GQM [Basili et al. 1994]. Para cada característica priorizada na Fase 1, apresentam-se o objetivo de medição, as questões e hipóteses, os fatores de variação, as métricas e os níveis de pontuação com os critérios de julgamento. Os níveis seguem quatro faixas comuns às três características: *insatisfatório*, *mínimo*, *alvo* e *excelente*. A Seção 5.4 reúne a hierarquia GQM completa, e a Seção 5.5 explicita a ligação entre as Fases 1 e 2.
 
-### 5.1. Usabilidade
+### 5.1. Capacidade de interação (antiga Usabilidade)
 
-A equipe selecionou três subcaracterísticas: **reconhecibilidade da adequação**, porque o Anki usa conceitos próprios (nota, tipo de nota, card e baralho) e o estudante precisa perceber quais funções atendem ao que quer fazer; **facilidade de aprendizado**, porque a Fase 1 definiu o uso sem treinamento nem suporte; e **operabilidade**, porque quem já usa o Anki repete as mesmas tarefas diariamente. Os testes envolvem dois grupos: iniciantes, que respondem principalmente às questões de reconhecibilidade e aprendizado, e usuários frequentes, que respondem à de operabilidade e servem de comparação.
+A equipe selecionou três subcaracterísticas: **reconhecibilidade da adequação**, porque o Anki usa conceitos próprios (nota, tipo de nota, card e baralho) e o estudante precisa perceber quais funções atendem ao que quer fazer; **facilidade de aprendizado**, porque a Fase 1 definiu o uso sem treinamento nem suporte; e **operabilidade**, porque quem já usa o Anki repete as mesmas tarefas diariamente. Os testes envolvem dois grupos definidos por triagem: iniciantes (Grupo A), que respondem principalmente a Q1 e Q2, e usuários frequentes (Grupo B), que respondem a Q3 e servem de comparação em H3.
 
 #### 5.1.1. Objetivo de Medição
 
-O objetivo segue o template do GQM [Basili et al. 1994], com o ponto de vista definido na Fase 1 (Seção 4.1).
+O objetivo G1 segue o template do GQM [Basili et al. 1994], com as decisões comuns da equipe (ISO/IEC 25010:2023, GQM, faixas insatisfatório/mínimo/alvo/excelente e ponto de vista do estudante da Fase 1).
 
-| Template GQM | Usabilidade |
+| Template GQM | Capacidade de interação |
 |---|---|
 | **Analisar** | o Anki Desktop 26.09.3 e o fluxo de criação de conta, login e sincronização do AnkiWeb |
 | **para o propósito de** | entender, identificando pontos de melhoria |
@@ -183,55 +183,63 @@ O objetivo segue o template do GQM [Basili et al. 1994], com o ponto de vista de
 | **do ponto de vista do** | estudante, usuário final (iniciante e usuário frequente) |
 | **no contexto de** | uso individual em computador pessoal, sem treinamento formal |
 
-#### 5.1.2. Questões e Hipóteses
+#### 5.1.2. Grupos de participantes e triagem
 
-*Tabela 4. Questões e hipóteses de Usabilidade*
+**Grupo A — Usuários iniciantes.** Participantes que nunca utilizaram o Anki antes do estudo. Não devem ter experiência prática anterior com as tarefas avaliadas no Anki Desktop ou no AnkiWeb. O uso de outros aplicativos de flashcards é registrado separadamente, pois pode influenciar a aprendizagem.
+
+**Grupo B — Usuários frequentes.** Participantes que utilizaram o Anki regularmente durante as últimas quatro semanas, preferencialmente em pelo menos três dias por semana, e que já realizaram as tarefas centrais avaliadas: criar baralhos e cartões, revisar cartões e sincronizar com o AnkiWeb.
+
+Antes da entrevista ou do preenchimento do formulário de avaliação, a pessoa responde ao formulário de triagem: (1) já utilizou o Anki (nunca / experimentou uma ou duas vezes / já utilizou regularmente); (2) nos últimos 7 dias, em quantos dias utilizou (nenhum / 1–2 / 3–4 / 5–7); (3) há quanto tempo utiliza regularmente (nunca / menos de 4 semanas / 4 semanas a 3 meses / mais de 3 meses); (4)–(6) já criou baralhos e cartões, já revisou e já sincronizou Desktop–AnkiWeb (sim/não); (7) já utilizou outros aplicativos de flashcards (sim/não); (8) familiaridade geral com informática (baixa/média/alta). A classificação no Grupo A ou B segue essas respostas.
+
+#### 5.1.3. Questões e Hipóteses
+
+*Tabela 4. Questões e hipóteses de Capacidade de interação*
 
 | Questão | Hipótese |
 |---|---|
-| **Q1** (Reconhecibilidade da adequação): um estudante que nunca usou o Anki consegue identificar, pela interface, quais funções usar para criar seus cards e estudar? | **H1:** a maioria dos iniciantes identifica as funções principais (criar baralho, adicionar cards e estudar), mas confunde conceitos próprios do Anki, como nota, tipo de nota e card. |
-| **Q2** (Facilidade de aprendizado): um estudante iniciante consegue aprender, sem ajuda, a criar uma conta no AnkiWeb, criar um baralho, adicionar cards, revisá-los e sincronizar a coleção? | **H2:** os iniciantes concluem sem ajuda as tarefas de criar baralho, adicionar cards e revisar, mas precisam de mais tempo ou de ajuda na criação de conta e na primeira sincronização, que exigem alternar entre o site e o aplicativo. |
-| **Q3** (Operabilidade): as tarefas do estudo diário podem ser executadas com pouco esforço por quem já usa o Anki? | **H3:** usuários frequentes revisam e adicionam cards rapidamente e com poucas ações; a maior diferença entre iniciantes e frequentes aparece nas tarefas de conta e sincronização. |
+| **Q1** (Reconhecibilidade da adequação): um estudante que nunca usou o Anki consegue identificar, pela interface, quais funções usar para criar seus cards e estudar? | **H1:** no Grupo A, \(T_{rf}\) e \(T_{ip}\) das funções principais (criar baralho, adicionar cards e estudar) ficam em *alvo* ou *excelente*; nota, tipo de nota e card ficam em *mínimo* ou *insatisfatório*. |
+| **Q2** (Facilidade de aprendizado): um estudante iniciante consegue aprender, sem ajuda, a criar uma conta no AnkiWeb, criar um baralho, adicionar cards, revisá-los e sincronizar a coleção? | **H2:** no Grupo A, \(T_{pp}\) e \(T_{aprend}\) em baralho, cards e revisão ficam em *alvo* ou *excelente*; conta e primeira sincronização ficam em *mínimo* ou *insatisfatório*. |
+| **Q3** (Operabilidade): as tarefas do estudo diário podem ser executadas com pouco esforço por quem já usa o Anki? | **H3:** no Grupo B, \(T_{ct}\), \(T_{exec}\) e \(N_{ações}\) em revisar e adicionar cards ficam em *alvo* ou *excelente*; a diferença \(\lvert\Delta\rvert\) entre Grupos A e B (médias de \(T_{ct}\), \(T_{exec}\) e \(N_{ações}\)) é maior em conta e sincronização do que em revisar e adicionar cards. |
 
-#### 5.1.3. Fatores de Variação
+#### 5.1.4. Fatores de Variação
 
-Três fatores, registrados por questionário de perfil aplicado antes dos testes, podem influenciar os resultados: **familiaridade com informática** (ordinal: baixa, média ou alta), que pode aumentar o tempo nas tarefas de conta e sincronização; **experiência prévia com aplicativos de flashcards** (nominal), que pode facilitar o reconhecimento das funções (Q1); e **sistema operacional** (nominal), que pode alterar o tempo e o número de ações (Q2 e Q3).
+Três fatores, obtidos na triagem e no perfil, podem influenciar os resultados: **familiaridade com informática** (ordinal: baixa, média ou alta) afeta H2 e H3 via tempos e ajudas em conta e sincronização; **experiência prévia com aplicativos de flashcards** (nominal) afeta H1 (reconhecimento de funções); e **sistema operacional** (nominal) afeta H2 e H3 via \(T_{exec}\) e \(N_{ações}\).
 
-#### 5.1.4. Métricas
+#### 5.1.5. Métricas
 
-A Tabela 5 resume as fichas das métricas (Plano de Medição, Aula 08). Todas são de escala de razão e coletadas em sessões observadas com consentimento registrado, nas tarefas da Fase 1 (criar baralho, adicionar cards, revisar, criar conta no AnkiWeb, login e sincronizar).
+A Tabela 5 resume as métricas (Plano de Medição, Aula 08). Todas são de escala de razão e coletadas em sessões observadas com consentimento registrado, nas tarefas da Fase 1 (criar baralho, adicionar cards, revisar, criar conta no AnkiWeb, login e sincronizar).
 
-*Tabela 5. Métricas de Usabilidade: cálculo, fonte e coleta, interpretação e faixa*
+*Tabela 5. Métricas de Capacidade de interação: definição, cálculo, coleta e faixa*
 
-| Métrica | Q | Cálculo | Fonte e procedimento de coleta | Interpretação e faixa |
+| Métrica | Q | Definição / cálculo | Fonte e procedimento de coleta | Faixa |
 |---|---|---|---|---|
-| Taxa de reconhecimento de funções | Q1 | Participantes que reconhecem a função ÷ participantes × 100%, por tarefa | Avaliador descreve a tarefa sem jargão do Anki; participante indica a função; acerto registrado antes de qualquer ajuda (formulário de observação) | Maior é melhor; 0 a 100% |
-| Taxa de identificação de propósito | Q1 | Respostas corretas ÷ (itens × participantes) × 100% | Participante explica o propósito de uma função ou tela; resposta classificada por gabarito alinhado ao manual | Maior é melhor; 0 a 100% |
-| Tempo de aprendizagem | Q2 | Média do tempo total dos iniciantes no roteiro completo | Cronômetro do início da primeira tarefa à conclusão da última (ou abandono); ajudas registradas à parte | Menor é melhor; acima de 0 min |
-| Taxa de sucesso após aprendizagem inicial | Q2 | Tarefas corretas ÷ tarefas propostas × 100%, marcando "sem ajuda" e "com ajuda" | Checklist de sucesso por tarefa, verificando o estado do produto ao final de cada tarefa | Maior é melhor; 0 a 100% |
-| Redução do tempo de execução | Q2 | (t1 − t2) ÷ t1 × 100% | Mesma tarefa repetida na sessão, sem nova instrução; registro pareado (t1, t2) | Maior é melhor; pode ser negativa |
-| Taxa de conclusão de tarefas | Q3 | Tarefas concluídas ÷ tarefas propostas × 100%, por grupo | Roteiro de operabilidade; conclusão, abandono ou falha marcados no formulário | Maior é melhor; 0 a 100% |
-| Tempo de execução da tarefa | Q3 | Média dos tempos por tarefa e por grupo (também mediana) | Cronômetro do recebimento da tarefa até o estado de sucesso; sistema operacional registrado | Menor é melhor; acima de 0 s |
-| Número médio de ações | Q3 | Média de cliques, atalhos e entradas por tarefa | Contagem pelo avaliador, incluindo ações de correção de erro | Menor é melhor; inteiro maior ou igual a 0 |
+| Taxa de reconhecimento de funções (\(T_{rf}\)) | Q1 | % de iniciantes que indicam a função correta; \(N_{\mathrm{reconh.}}/N_{\mathrm{part.}} \times 100\%\) | Avaliador descreve a tarefa sem jargão; acerto antes de qualquer ajuda | 0–100% |
+| Taxa de identificação de propósito (\(T_{ip}\)) | Q1 | % de respostas corretas sobre o propósito; \(N_{\mathrm{ident.}}/(N_{\mathrm{itens}} \cdot N_{\mathrm{part.}}) \times 100\%\) | Explicação do participante classificada por gabarito alinhado ao manual | 0–100% |
+| Tempo de aprendizagem (\(T_{\mathrm{aprend}}\)) | Q2 | Média do tempo total do Grupo A no roteiro completo | Cronômetro do início da 1ª tarefa à conclusão da última (ou abandono) | > 0 min |
+| Taxa de sucesso na primeira passagem (\(T_{pp}\)) | Q2 | % de tarefas corretas na 1ª execução do roteiro; \(N_{\mathrm{corretas}}/N_{\mathrm{propostas}} \times 100\%\) | Checklist por tarefa (“sem ajuda” / “com ajuda”) ao verificar o estado do produto | 0–100% |
+| Redução do tempo de execução (\(R_t\)) | Q2 | \((t_1 - t_2)/t_1 \times 100\%\) | Mesma tarefa repetida na sessão, sem nova instrução | pode ser < 0 |
+| Taxa de conclusão de tarefas (\(T_{ct}\)) | Q3 | % concluídas por grupo; \(N_{\mathrm{concluídas}}/N_{\mathrm{propostas}} \times 100\%\) | Roteiro de operabilidade; conclusão, abandono ou falha | 0–100% |
+| Tempo de execução da tarefa (\(T_{\mathrm{exec}}\)) | Q3 | Média do tempo da pessoa do recebimento da tarefa até o sucesso (também mediana), por tarefa e grupo | Cronômetro de tarefa humana (não tempo de resposta do sistema); SO registrado | > 0 min |
+| Número médio de ações (\(N_{\mathrm{ações}}\)) | Q3 | Média de cliques, atalhos e entradas por tarefa | Contagem pelo avaliador, incluindo correção de erro | inteiro ≥ 0 |
 
-#### 5.1.5. Níveis de Pontuação e Critérios de Julgamento
+#### 5.1.6. Níveis de Pontuação e Critérios de Julgamento
 
-Os níveis da Tabela 6 foram fixados antes da coleta. Os limites do tempo de execução da tarefa seguem os limiares de Hoxmeier e DiCesare [Hoxmeier e DiCesare 2000], usados em avaliações ISO/IEC 25010 [Sukmandari e Sukardiyono 2017; Jayanto e Jati 2017]; os demais foram definidos por acordo da equipe, por falta de dados históricos do Anki [Lund 2001]. O caminho mínimo de cada tarefa, usado no número médio de ações, será fixado no plano de avaliação (Fase 3).
+Os níveis da Tabela 6 foram fixados antes da coleta. Os limites de \(T_{\mathrm{exec}}\) medem o tempo da pessoa para concluir a tarefa e foram definidos por acordo da equipe (os limiares de 3, 9 e 12 s de Hoxmeier e DiCesare [Hoxmeier e DiCesare 2000] aplicam-se ao tempo de resposta do sistema na Eficiência de desempenho, não a estas tarefas). Os demais limites também foram definidos por acordo da equipe, por falta de dados históricos do Anki. O caminho mínimo de cada tarefa, usado em \(N_{\mathrm{ações}}\), será fixado no plano de avaliação (Fase 3).
 
-*Tabela 6. Níveis de pontuação das métricas de Usabilidade*
+*Tabela 6. Níveis de pontuação das métricas de Capacidade de interação*
 
 | Métrica | Insatisfatório | Mínimo | Alvo | Excelente |
 |---|---|---|---|---|
-| Reconhecimento de funções (Q1) | abaixo de 60% | 60% a 75% | 75% a 90% | 90% ou mais |
-| Identificação de propósito (Q1) | abaixo de 55% | 55% a 70% | 70% a 85% | 85% ou mais |
-| Tempo de aprendizagem (Q2) | acima de 40 min ou abandono | 25 a 40 min | 15 a 25 min | menos de 15 min |
-| Sucesso após aprendizagem inicial (Q2) | abaixo de 60% ou intervenção recorrente | 60% a 75% | 75% a 90% sem ajuda, ou 90% ou mais com uma ajuda | 90% ou mais sem ajuda |
-| Redução do tempo de execução (Q2) | abaixo de 5% ou negativa | 5% a 20% | 20% a 40% | 40% ou mais |
-| Conclusão de tarefas, frequentes (Q3) | abaixo de 80% ou abandono | 80% a 90%, ou 100% com uma ajuda | 90% ou mais sem ajuda | 100% sem ajuda |
-| Tempo de execução da tarefa (Q3) | acima de 12 s ou falha | 9 a 12 s | 3 a 9 s | menos de 3 s |
-| Número médio de ações (Q3) | mais de 3 vezes o caminho mínimo | até 3 vezes | até 2 vezes | até 1,5 vez |
+| \(T_{rf}\) (Q1) | abaixo de 60% | 60% a 75% | 75% a 90% | 90% ou mais |
+| \(T_{ip}\) (Q1) | abaixo de 55% | 55% a 70% | 70% a 85% | 85% ou mais |
+| \(T_{\mathrm{aprend}}\) (Q2) | acima de 40 min ou abandono | 25 a 40 min | 15 a 25 min | menos de 15 min |
+| \(T_{pp}\) (Q2) | abaixo de 60% ou intervenção recorrente | 60% a 75% | 75% a 90% sem ajuda, ou 90% ou mais com uma ajuda | 90% ou mais sem ajuda |
+| \(R_t\) (Q2) | abaixo de 5% ou negativa | 5% a 20% | 20% a 40% | 40% ou mais |
+| \(T_{ct}\), frequentes (Q3) | abaixo de 80% ou abandono | 80% a 90%, ou 100% com uma ajuda | 90% ou mais sem ajuda | 100% sem ajuda |
+| \(T_{\mathrm{exec}}\) (Q3) | acima de 10 min ou falha | 5 a 10 min | 2 a 5 min | menos de 2 min |
+| \(N_{\mathrm{ações}}\) (Q3) | mais de 3 vezes o caminho mínimo | até 3 vezes | até 2 vezes | até 1,5 vez |
 
-**Regra de julgamento.** O julgamento procede de baixo para cima [Basili et al. 1994]: cada métrica é classificada em uma faixa, as faixas são agregadas por questão e as questões respondem ao objetivo. Uma questão é atendida quando suas métricas essenciais (reconhecimento e identificação de propósito em Q1; sucesso após aprendizagem e tempo de aprendizagem em Q2; conclusão e tempo de execução em Q3) estão no alvo ou acima; havendo divergência, prevalece a faixa mais baixa, e a redução do tempo e o número de ações servem de evidência de apoio. As hipóteses são sustentadas quando nota, tipo de nota e card (H1) ou conta e sincronização (H2 e H3) ficam abaixo das demais funções. Os fatores de variação não alteram os limites, mas são reportados na interpretação. As faixas mínimo e insatisfatório tornam-se recomendações priorizadas, e a mais relevante alimenta a ação de melhoria da Entrega 2.
+**Regra de julgamento.** O julgamento procede de baixo para cima [Basili et al. 1994]: cada métrica é classificada em uma faixa, as faixas são agregadas por questão e as questões respondem ao G1. Uma questão é atendida quando suas métricas essenciais (\(T_{rf}\) e \(T_{ip}\) em Q1; \(T_{pp}\) e \(T_{\mathrm{aprend}}\) em Q2; \(T_{ct}\) e \(T_{\mathrm{exec}}\) em Q3) estão no alvo ou acima; havendo divergência, prevalece a faixa mais baixa, e \(R_t\) e \(N_{\mathrm{ações}}\) servem de evidência de apoio. H1–H3 são julgadas pelos valores esperados da Tabela 4. Os fatores de variação não alteram os limites, mas são reportados na interpretação. As faixas mínimo e insatisfatório tornam-se recomendações priorizadas, e a mais relevante alimenta a ação de melhoria da Entrega 2.
 
 ### 5.2. Eficiência de Desempenho
 
@@ -295,13 +303,13 @@ Os níveis da Tabela 9 baseiam-se nos limiares de tempo de resposta de Hoxmeier 
 | Capacidade com 100 mil cards (Q3) | acima de 12 s, degradação acima de 60% ou falha no SQLite | 9 a 12 s; degradação de 35% a 60% | 3 a 9 s; degradação de 15% a 35% | menos de 3 s; degradação abaixo de 15% |
 | Threads (Q4) | *Main Thread* com 80% de CPU ou mais, ou congelamento | *Main Thread* até 60%; 10 a 50 trocas involuntárias/s; travamento até 1 s | *Main Thread* de 15% a 35%, sem atraso perceptível | *Main Thread* abaixo de 15%; menos de 10 trocas involuntárias/s; sem congelamento |
 
-### 5.3. Portabilidade
+### 5.3. Flexibilidade (antiga Portabilidade)
 
 #### 5.3.1. Objetivo de Medição
 
 O objetivo segue o template do GQM [Basili et al. 1994], com o ponto de vista definido na Fase 1.
 
-| Template GQM | Portabilidade |
+| Template GQM | Flexibilidade |
 |---|---|
 | **Analisar** | o Anki Desktop 26.09.3 (instalação, adaptação e substituição de dados) |
 | **para o propósito de** | entender, identificando pontos de melhoria |
@@ -311,7 +319,7 @@ O objetivo segue o template do GQM [Basili et al. 1994], com o ponto de vista de
 
 #### 5.3.2. Questões e Hipóteses
 
-*Tabela 10. Questões e hipóteses de Portabilidade*
+*Tabela 10. Questões e hipóteses de Flexibilidade*
 
 | Questão | Hipótese |
 |---|---|
@@ -327,7 +335,7 @@ São registrados: o **sistema operacional** (Windows, macOS ou Ubuntu), com maio
 
 As métricas estão na Tabela 11. A integração com o sistema operacional usa um checklist de 10 critérios derivado de Milichiewicz e Badurowicz [Milichiewicz e Badurowicz 2025] (bandeja do sistema, atalhos globais, associação de arquivos `.apkg`, diálogos nativos e tema escuro), de escala ordinal; as demais métricas são de escala de razão.
 
-*Tabela 11. Métricas de Portabilidade: faixas e meios de coleta*
+*Tabela 11. Métricas de Flexibilidade: faixas e meios de coleta*
 
 | Métrica | Faixa | Meio de coleta |
 |---|---|---|
@@ -348,7 +356,7 @@ As métricas estão na Tabela 11. A integração com o sistema operacional usa u
 
 Os níveis da Tabela 12 foram definidos por acordo da equipe, com base nas metas de aceitação do projeto.
 
-*Tabela 12. Níveis de pontuação de Portabilidade*
+*Tabela 12. Níveis de pontuação de Flexibilidade*
 
 | Subcaracterística | Insatisfatório | Mínimo | Alvo | Excelente |
 |---|---|---|---|---|
@@ -362,15 +370,15 @@ A Figura 2 apresenta a hierarquia GQM da avaliação: os três objetivos no nív
 
 ![Hierarquia GQM da avaliação](assets/diagrama-gqm.png)
 
-*Figura 2. Hierarquia GQM da avaliação: objetivos, questões e métricas de Usabilidade, Eficiência de desempenho e Portabilidade.*
+*Figura 2. Hierarquia GQM da avaliação: objetivos, questões e métricas de Capacidade de interação, Eficiência de desempenho e Flexibilidade.*
 
 ### 5.5. Coerência entre as Fases 1 e 2
 
-A Fase 1 delimitou o escopo, sob o ponto de vista do estudante, em quatro componentes: a interface do Anki Desktop, sua execução em Windows, macOS e Ubuntu, a instalação e o fluxo de conta e sincronização do AnkiWeb. A Fase 2 mantém nos três objetivos esse ponto de vista e a priorização da Fase 1 (Usabilidade com ênfase 5, as demais com 3): as questões de **Usabilidade** avaliam a interação com a interface e com o fluxo de conta e sincronização; as métricas de **Eficiência de desempenho** medem a execução e a fluidez do estudo; e as de **Portabilidade** cobrem a instalação e a migração entre as três plataformas.
+A Fase 1 delimitou o escopo, sob o ponto de vista do estudante, em quatro componentes: a interface do Anki Desktop, sua execução em Windows, macOS e Ubuntu, a instalação e o fluxo de conta e sincronização do AnkiWeb. A Fase 2 mantém nos três objetivos esse ponto de vista e a priorização da Fase 1 (Capacidade de interação com ênfase 5, as demais com 3): as questões de **Capacidade de interação** avaliam a interação com a interface e com o fluxo de conta e sincronização; as métricas de **Eficiência de desempenho** medem a execução e a fluidez do estudo; e as de **Flexibilidade** cobrem a instalação e a migração entre as três plataformas.
 
 ## 6. Considerações Finais e Próximos Passos
 
-Este artigo apresentou as Fases 1 e 2 da avaliação do Anki Desktop e do AnkiWeb: os requisitos da avaliação, sob o ponto de vista do estudante, e a especificação por meio do GQM, com métricas, níveis de pontuação e critérios de julgamento para Usabilidade, Eficiência de desempenho e Portabilidade, além da gestão do projeto com o PSM. Após a revisão do Ponto de Controle 1, as Fases 1 e 2 serão consolidadas na Entrega 1 (26/10/2026); o plano de avaliação (Fase 3) será apresentado no Ponto de Controle 2 (04/11/2026); e a execução, o julgamento e a ação de melhoria, na Entrega 2 (18/11/2026).
+Este artigo apresentou as Fases 1 e 2 da avaliação do Anki Desktop e do AnkiWeb: os requisitos da avaliação, sob o ponto de vista do estudante, e a especificação por meio do GQM, com métricas, níveis de pontuação e critérios de julgamento para Capacidade de interação, Eficiência de desempenho e Flexibilidade, além da gestão do projeto com o PSM. Após a revisão do Ponto de Controle 1, as Fases 1 e 2 serão consolidadas na Entrega 1 (26/10/2026); o plano de avaliação (Fase 3) será apresentado no Ponto de Controle 2 (04/11/2026); e a execução, o julgamento e a ação de melhoria, na Entrega 2 (18/11/2026).
 
 ## Referências
 
@@ -380,9 +388,9 @@ Galin, D. (2018). *Software Quality: Concepts and Practice*. John Wiley & Sons, 
 
 Hoxmeier, J. A. e DiCesare, C. (2000). System response time and user satisfaction: An experimental study of browser-based applications. In *Proceedings of AMCIS 2000*, p. 1–6.
 
-ISO/IEC (2011a). *ISO/IEC 25010: Systems and software engineering — Systems and software Quality Requirements and Evaluation (SQuaRE) — System and software quality models*. International Organization for Standardization, Geneva.
+ISO/IEC (2023a). *ISO/IEC 25010:2023: Systems and software engineering — Systems and software Quality Requirements and Evaluation (SQuaRE) — Product quality model*. International Organization for Standardization, Geneva.
 
-ISO/IEC (2011b). *ISO/IEC 25040: Systems and software engineering — Systems and software Quality Requirements and Evaluation (SQuaRE) — Evaluation process*. International Organization for Standardization, Geneva.
+ISO/IEC (2023b). *ISO/IEC 25040:2023: Systems and software engineering — Systems and software Quality Requirements and Evaluation (SQuaRE) — Evaluation process*. International Organization for Standardization, Geneva.
 
 Jayanto, R. D. e Jati, H. (2017). Evaluasi kualitas aplikasi mobile kamus istilah jaringan pada platform android dengan standar ISO/IEC 25010. *Elinvo (Electronics, Informatics, and Vocational Education)*, 2(2):178–183.
 
@@ -406,10 +414,10 @@ Sukmandari, D. G. e Sukardiyono, T. (2017). Analisis aplikasi jadwal perkuliahan
 
 | Integrante | Dupla | Atividades realizadas | Esforço (%) |
 |---|---|---|---:|
-| Bryan Smith Rodrigues Cavalcante | C | Reuniões; tabela GQM de Portabilidade, fatores de variação e detalhamento das métricas | 10,3 |
-| Dante Fernandes Scarpati | C | Reuniões; diagramas do modelo de qualidade e do GQM; métricas de Portabilidade; slides | 12,6 |
+| Bryan Smith Rodrigues Cavalcante | C | Reuniões; tabela GQM de Flexibilidade, fatores de variação e detalhamento das métricas | 10,3 |
+| Dante Fernandes Scarpati | C | Reuniões; diagramas do modelo de qualidade e do GQM; métricas de Flexibilidade; slides | 12,6 |
 | Davi Severiano Freitas | A | Reuniões, atas e organização do trabalho; Fase 1; slides 1 a 5; revisão do artigo; PSM Recursos (corte 25/10) | 30,0 |
 | Karolina Vieira Barbosa | B | Reuniões; estrutura e atualizações da GitPage; estudo de Desempenho dos Processos; ajustes no Overleaf | 18,4 |
 | Mateus de Siqueira Silva | B | Layout e textos iniciais do artigo; estudo de Desempenho dos Processos; busca de artigos de referência | 11,9 |
-| Pedro Henrique Freire Rodrigues | A | Reuniões; termo de consentimento; métricas e níveis de Usabilidade; slides 9 e 10; rastreamento PSM | 16,9 |
+| Pedro Henrique Freire Rodrigues | A | Reuniões; termo de consentimento; métricas e níveis de Capacidade de interação; slides 9 e 10; rastreamento PSM | 16,9 |
 | **Total** | | | **100** |
