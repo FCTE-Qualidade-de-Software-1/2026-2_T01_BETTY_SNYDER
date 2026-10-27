@@ -1,11 +1,12 @@
 site_name: BETTY SNYDER
-copyright: "Equipe Betty Snyder · FGA0315 Qualidade de Software 1 · Versão E1 (Fases 1 e 2) · Atualizado em 20/10/2026"
+copyright: "Equipe Betty Snyder · FGA0315 Qualidade de Software 1 · Versão E1 (Fases 1 e 2) · Atualizado em 26/10/2026"
 site_url: https://FCTE-Qualidade-de-Software-1.github.io/2026-2_T01_BETTY_SNYDER/
 nav:
   - Início: index.md
   - Fase 1: fase1.md
   - Fase 2: fase2.md
   - Artigo: artigo.md
+  - Gestão (PSM): gestao-psm.md
   - Atas:
       - Reunião 01 — Ata: atas/reuniao-01-ata.md
       - Reunião 01 — Decisões: atas/reuniao-01-decisoes.md
