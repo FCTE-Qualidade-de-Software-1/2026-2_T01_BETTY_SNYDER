@@ -9,7 +9,7 @@ data_corte,tarefa_id,tarefa,responsavel,prazo,status,concluida_no_prazo,evidenci
 2026-10-11,R01-B-PSM,Estudar Desempenho dos Processos e propor medida,Dupla B,2026-10-12,concluida,sim,Karolina 10/10 e Mateus 10/10: estudo Desempenho dos processos,Mensagem pós-reunião 01
 2026-10-11,R01-B-JUST,Justificativa de Eficiência de desempenho no Overleaf,Dupla B,2026-10-11,concluida,sim,Mateus 10/10 textos iniciais; ata 02: Dupla B concluiu,Mensagem pós-reunião 01
 2026-10-11,R01-B-JOIN,Juntar partes da Fase 1 no Overleaf para a reunião,Dupla B,2026-10-12,concluida,sim,Ata 02: artigo e estrutura prontos (Dupla B),Mensagem pós-reunião 01
-2026-10-11,R01-C-REPO,Criar repositório issues e milestones PC1/E1,Dupla C,2026-10-07,parcial,nao,Repositorio existe; API GitHub 0 issues em 25/10/2026; milestones vazias,Mensagem pós-reunião 01
+2026-10-11,R01-C-REPO,Criar repositório issues e milestones PC1/E1,Dupla C,2026-10-07,parcial,nao,Em 25/10/2026: 46 issues + milestones PC1/F1/F2/E2 + labels do padrão; Project V2 pendente (escopo OAuth project),Mensagem pós-reunião 01
 2026-10-11,R01-C-LAB,Criar labels pastas e registrar Anki 26.09.3,Dupla C,2026-10-07,concluida,sim,Estrutura do repositório referida na ata 02,Mensagem pós-reunião 01
 2026-10-11,R01-C-DOD,Propor critério de pronto das issues,Dupla C,2026-10-12,concluida,nao,Sem registro na planilha; fluxo de issues abandonado na E1,Mensagem pós-reunião 01
 2026-10-11,R01-C-PSM,Estudar Calendário e Progresso e propor medida,Dupla C,2026-10-12,concluida,nao,Ata 02: Dante ainda não concluiu; Bryan ausente,Mensagem pós-reunião 01

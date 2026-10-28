@@ -1,5 +1,47 @@
-data_corte,Tp,Tc,ICP_percentual,criterio_limite_percentual,interpretacao,decisao,fonte_lista
-2026-10-11,16,9,56.3,70,"Ciclo pos-reuniao 01 (textos Overleaf ate 11/10; reuniao 12/10). R01-C-REPO fora do prazo: repositorio ok mas 0 issues no GitHub. Dupla B no prazo; atrasos A e C.",Redistribuir atrasos,calendario-progresso.csv; planilha; reuniao-02-ata.md
-2026-10-18,14,3,21.4,70,"Plano Fase 2 ate 18/10. No prazo: Fase 1 artigo; Apendice A; slides/ensaio. Sem reuniao 18/10.",Redistribuir atrasos,calendario-progresso.csv; Plano Fase 2
-2026-10-19,1,1,100.0,70,PC1 no prazo,Manter plano de correcoes pos-PC1,calendario-progresso.csv
-2026-10-25,15,6,40.0,70,"Pendencias E1 ate 25/10. No prazo: B1 IEEE; A1 ISO 2023; A2 GQM Capacidade de interacao; A3 Recursos; A4 rastreamento; A5 Apendice/GitPage. Sem issues no GitHub.",Redistribuir as 9 tarefas restantes,calendario-progresso.csv; Pendencias E1
+data_corte,tarefa_id,tarefa,responsavel,prazo,status,concluida_no_prazo,evidencia_planilha_ou_ata,fonte_planejamento
+2026-10-11,R01-A-ATA,Subir ata da reunião 01 no repositório,Dupla A,2026-10-12,concluida,sim,Davi 09/10: Registro de ata 1 decisões e atribuir atividades,Mensagem pós-reunião 01 (prazo reunião 12/10)
+2026-10-11,R01-A-PLAN,Criar planilha de horas e modelo de ata,Dupla A,2026-10-12,concluida,sim,Planilha em uso desde 07/10; Davi 09/10,Mensagem pós-reunião 01
+2026-10-11,R01-A-TERM,Rascunhar termo de consentimento e anonimização,Dupla A,2026-10-12,concluida,nao,Pedro 17/10 e 18/10; ata 02: Dupla A não concluiu até 12/10,Mensagem pós-reunião 01
+2026-10-11,R01-A-PSM,Estudar Recursos e Custos e propor medida,Dupla A,2026-10-12,concluida,nao,Ata 02: Dupla A não concluiu; sem registro de estudo até 12/10,Mensagem pós-reunião 01
+2026-10-11,R01-A-OL,Justificativa de Usabilidade no Overleaf (Fase 1),Dupla A,2026-10-11,concluida,nao,Ata 02: não concluída; Davi 14/10 Finalizar fase 1,Mensagem pós-reunião 01 (texto até 11/10)
+2026-10-11,R01-B-OL,Esqueleto do artigo no Overleaf com template,Dupla B,2026-10-11,concluida,sim,Mateus 10/10: Criação de layout e textos iniciais; ata 02: Dupla B concluiu,Mensagem pós-reunião 01
+2026-10-11,R01-B-GP,Estrutura inicial da GitPage,Dupla B,2026-10-11,concluida,sim,Karolina 08/10: Montar a estrutura inicial da GitPage; ata 02: concluída,Mensagem pós-reunião 01
+2026-10-11,R01-B-PSM,Estudar Desempenho dos Processos e propor medida,Dupla B,2026-10-12,concluida,sim,Karolina 10/10 e Mateus 10/10: estudo Desempenho dos processos,Mensagem pós-reunião 01
+2026-10-11,R01-B-JUST,Justificativa de Eficiência de desempenho no Overleaf,Dupla B,2026-10-11,concluida,sim,Mateus 10/10 textos iniciais; ata 02: Dupla B concluiu,Mensagem pós-reunião 01
+2026-10-11,R01-B-JOIN,Juntar partes da Fase 1 no Overleaf para a reunião,Dupla B,2026-10-12,concluida,sim,Ata 02: artigo e estrutura prontos (Dupla B),Mensagem pós-reunião 01
+2026-10-11,R01-C-REPO,Criar repositório issues e milestones PC1/E1,Dupla C,2026-10-07,parcial,nao,Em 25/10/2026: 46 issues + milestones PC1/F1/F2/E2 + labels do padrão; Project V2 pendente (escopo OAuth project),Mensagem pós-reunião 01
+2026-10-11,R01-C-LAB,Criar labels pastas e registrar Anki 26.09.3,Dupla C,2026-10-07,concluida,sim,Estrutura do repositório referida na ata 02,Mensagem pós-reunião 01
+2026-10-11,R01-C-DOD,Propor critério de pronto das issues,Dupla C,2026-10-12,concluida,nao,Sem registro na planilha; fluxo de issues abandonado na E1,Mensagem pós-reunião 01
+2026-10-11,R01-C-PSM,Estudar Calendário e Progresso e propor medida,Dupla C,2026-10-12,concluida,nao,Ata 02: Dante ainda não concluiu; Bryan ausente,Mensagem pós-reunião 01
+2026-10-11,R01-C-OL,Justificativa de Portabilidade no Overleaf (Fase 1),Dupla C,2026-10-11,concluida,nao,Ata 02: Dupla C não concluiu até 12/10,Mensagem pós-reunião 01
+2026-10-11,R01-ALL-HORAS,Registrar horas na planilha desde 07/10,Todos,2026-10-12,concluida,sim,Registros a partir de 07/10 na planilha (completos na ata 02/encaminhamento 15/10),Mensagem pós-reunião 01
+2026-10-18,P2-14-GQM,GQM até hipóteses e proposta de medida PSM,Cada dupla,2026-10-14,concluida,nao,Usabilidade adiantada; Bryan 17/10 GQM Portabilidade; Eficiência ajustada depois; ata 03 ainda pedia medidas PSM,Plano Fase 2 / mensagem do plano
+2026-10-18,P2-15-REUN,Reunião revisão cruzada GQMs e 1ª medição PSM,Todos,2026-10-15,concluida,nao,Reunião 03 em 14/10 (Fase 1); sem ata de medição PSM em 15/10,Plano Fase 2
+2026-10-18,P2-15-SLD,Arquivo de slides compartilhado (16 slides),Dupla C,2026-10-15,concluida,nao,Sem registro na planilha em 15/10; slides trabalhados em 18-19/10,Plano Fase 2
+2026-10-18,P2-16-MET,Fichas de métricas níveis e critérios no artigo,Cada dupla,2026-10-16,concluida,nao,Pedro 18/10: tópicos 5.1.4 e 5.1.5; Bryan 17/10 métricas; Dante 18/10,Plano Fase 2
+2026-10-18,P2-16-F1,Fase 1 no artigo (seções 4.x) e organização 3.2,Dupla A,2026-10-16,concluida,sim,Davi 14/10 Finalizar fase 1; PDF Tarefas Dupla A: Fase 1 no artigo,Plano Fase 2
+2026-10-18,P2-16-DIAG,Diagrama do modelo de qualidade (4.4),Dupla C,2026-10-16,concluida,nao,Dante 18/10: Diagramas de modelo de qualidade e de GQM,Plano Fase 2
+2026-10-18,P2-16-FUND,Seções 2 e 3.1 (fundamentação e processo),Dupla B,2026-10-16,concluida,nao,Karolina 18/10 ajuste Overleaf; Pendências E1 ainda pedem 2.2/2.3,Plano Fase 2 / mensagem a Dupla B
+2026-10-18,P2-17-GQMFIG,Diagrama GQM consolidado (5.4),Dupla A,2026-10-17,concluida,nao,Dante 18/10 (execução); lista Dupla A previa 18/10,Plano Fase 2 / mensagem plano
+2026-10-18,P2-17-COER,Coerência Fases 1-2 (5.5) e declaração de IA (3.4),Dupla C,2026-10-17,concluida,nao,Mensagem a Dupla C; Pendências E1 C4 ainda abertas,Plano Fase 2 / mensagem a Dupla C
+2026-10-18,P2-17-ART,Artigo praticamente fechado e GitPage Fase 1-2,Dupla B,2026-10-17,concluida,nao,Karolina 18/10 Overleaf e GitPage (após o prazo de 17/10),Plano Fase 2
+2026-10-18,P2-17-LIST,Lista de tarefas com status (Calendário e Progresso),Dupla C,2026-10-17,concluida,nao,Sem CSV até 25/10; Pendências C2,Plano Fase 2
+2026-10-18,P2-18-PSM,2ª medição PSM até 14h e registro na seção 3.3,Cada dupla,2026-10-18,concluida,nao,CSV Recursos 18/10 ok; Pendências: não houve reunião 18/10; Calendário sem medição,Plano Fase 2 / mensagem plano
+2026-10-18,P2-18-AP,Tabela de contribuição (Apêndice A),Dupla A,2026-10-18,concluida,sim,Valores no artigo; horas consolidadas na planilha,Plano Fase 2
+2026-10-18,P2-18-SLDF,Slides finais e ensaio cronometrado,Todos,2026-10-18,concluida,sim,Davi/Pedro/Dante 18/10 slides; Davi 19/10 refinar; PC1 em 19/10,Plano Fase 2
+2026-10-19,P2-19-PC1,Apresentação no Ponto de Controle 1,Todos,2026-10-19,concluida,sim,PC1 realizado em 19/10,Plano Fase 2
+2026-10-25,E1-COMUM,Decisões do grupo (ISO 2023; GQM; faixas; frase Fase 3),Equipe,2026-10-22,pendente,nao,,Pendencias_Entrega1_Betty_Snyder_v4.pdf
+2026-10-25,E1-A1,ISO 2023 na Fundamentação e na Fase 1,Dupla A,2026-10-25,concluida,sim,Texto ISO 2023 em main-ieee artigo e fase1 em 25/10/2026,Pendencias_Entrega1_Betty_Snyder_v4.pdf
+2026-10-25,E1-A2,GQM de Capacidade de interação (seção 5.1),Dupla A,2026-10-24,concluida,sim,Secao 5.1 atualizada com G1 H1-H3 T_pp T_exec e triagem em 25/10/2026,Pendencias_Entrega1_Betty_Snyder_v4.pdf
+2026-10-25,E1-A3,PSM de Recursos e Custos (corte 25/10 e CSV),Dupla A,2026-10-25,concluida,sim,"Execucao Dupla A em 25/10/2026: CSV recursos, rastreamento PSM e Apendice/GitPage",Pendencias_Entrega1_Betty_Snyder_v4.pdf
+2026-10-25,E1-A4,Rastreamento do PSM (seção 3.2),Dupla A,2026-10-25,concluida,sim,"Execucao Dupla A em 25/10/2026: CSV recursos, rastreamento PSM e Apendice/GitPage",Pendencias_Entrega1_Betty_Snyder_v4.pdf
+2026-10-25,E1-A5,Apêndice A e GitPage,Dupla A,2026-10-25,concluida,sim,"Execucao Dupla A em 25/10/2026: CSV recursos, rastreamento PSM e Apendice/GitPage",Pendencias_Entrega1_Betty_Snyder_v4.pdf
+2026-10-25,E1-B1,Formato do artigo no padrão IEEE no Overleaf,Dupla B,2026-10-22,concluida,sim,Confirmação da equipe em 25/10/2026,Pendencias_Entrega1_Betty_Snyder_v4.pdf
+2026-10-25,E1-B2,GQM de Eficiência de desempenho (seção 5.2),Dupla B,2026-10-24,pendente,nao,Mensagem de ajustes a Karolina/Mateus,Pendencias_Entrega1_Betty_Snyder_v4.pdf
+2026-10-25,E1-B3,PSM de Desempenho dos Processos (Revisão 2 e CSV),Dupla B,2026-10-25,pendente,nao,,Pendencias_Entrega1_Betty_Snyder_v4.pdf
+2026-10-25,E1-B4,Textos gerais (introdução; 2.2; 2.3; resumo; conclusão),Dupla B,2026-10-24,pendente,nao,Mensagem de ajustes (seções 2.2 e 2.3),Pendencias_Entrega1_Betty_Snyder_v4.pdf
+2026-10-25,E1-B5,GitPage espelhada e rodapé atualizado,Dupla B,2026-10-25,pendente,nao,,Pendencias_Entrega1_Betty_Snyder_v4.pdf
+2026-10-25,E1-C1,GQM de Flexibilidade (seção 5.3),Dupla C,2026-10-24,pendente,nao,Mensagem de ajustes a Bryan/Dante,Pendencias_Entrega1_Betty_Snyder_v4.pdf
+2026-10-25,E1-C2,PSM de Calendário e Progresso (lista e CSV),Dupla C,2026-10-25,parcial,nao,CSV calendario atualizado pela Dupla A com fontes; consolidacao formal permanece Dupla C,Pendencias_Entrega1_Betty_Snyder_v4.pdf
+2026-10-25,E1-C3,Diagramas (Figuras 1 e 2),Dupla C,2026-10-24,pendente,nao,,Pendencias_Entrega1_Betty_Snyder_v4.pdf
+2026-10-25,E1-C4,Textos (seção 5.5 e declaração de IA),Dupla C,2026-10-24,pendente,nao,Mensagem de ajustes a Bryan/Dante,Pendencias_Entrega1_Betty_Snyder_v4.pdf
