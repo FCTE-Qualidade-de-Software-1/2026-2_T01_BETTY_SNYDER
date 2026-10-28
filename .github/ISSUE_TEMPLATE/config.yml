@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: "Documentação metodológica"
+    url: "https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER"
+    about: "Consulte o plano de medição, o artigo e os CSV em gestao-psm/."

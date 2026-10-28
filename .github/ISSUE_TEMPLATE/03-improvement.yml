@@ -1,0 +1,67 @@
+name: "03 - Recomendação de Melhoria"
+description: "Registrar e priorizar uma melhoria identificada na avaliação."
+title: "[IMPROVE] "
+labels:
+  - "type:improvement"
+body:
+  - type: input
+    id: improvement_id
+    attributes:
+      label: "ID da recomendação"
+      placeholder: "IMP-001"
+    validations:
+      required: true
+
+  - type: input
+    id: source
+    attributes:
+      label: "Issue ou relatório de origem"
+      placeholder: "#123 ou results/quality-report.md"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: characteristic
+    attributes:
+      label: "Característica de qualidade"
+      options:
+        - "Capacidade de Interação"
+        - "Eficiência de Desempenho"
+        - "Flexibilidade"
+    validations:
+      required: true
+
+  - type: textarea
+    id: evidence
+    attributes:
+      label: "Problema observado e evidências"
+      description: "Descreva o resultado, o critério e a evidência."
+    validations:
+      required: true
+
+  - type: textarea
+    id: recommendation
+    attributes:
+      label: "Recomendação"
+      description: "Indique a melhoria sugerida e o resultado esperado."
+    validations:
+      required: true
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: "Prioridade"
+      options:
+        - "Alta"
+        - "Média"
+        - "Baixa"
+    validations:
+      required: true
+
+  - type: textarea
+    id: validation
+    attributes:
+      label: "Como validar a melhoria"
+      description: "Defina evidências ou testes que permitam verificar a recomendação."
+    validations:
+      required: true

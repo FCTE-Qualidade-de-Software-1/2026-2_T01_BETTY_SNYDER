@@ -1,0 +1,144 @@
+name: "02 - Registro de Medição"
+description: "Documentar uma observação ou resultado de métrica."
+title: "[MEAS] "
+labels:
+  - "type:measurement"
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Identifique a métrica no dicionário oficial. Registre a unidade,
+        o ambiente, o procedimento e a evidência. Não invente valores
+        para dados ausentes.
+
+  - type: input
+    id: measurement_id
+    attributes:
+      label: "ID do registro"
+      placeholder: "OBS-001"
+    validations:
+      required: true
+
+  - type: input
+    id: parent_activity
+    attributes:
+      label: "Issue da atividade de origem"
+      placeholder: "#123"
+    validations:
+      required: true
+
+  - type: input
+    id: metric_id
+    attributes:
+      label: "ID da métrica"
+      placeholder: "M-INT-01"
+    validations:
+      required: true
+
+  - type: input
+    id: question_id
+    attributes:
+      label: "Questão de medição"
+      placeholder: "Q1, Q2, Q3 ou Q4"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: quality_attribute
+    attributes:
+      label: "Característica de qualidade"
+      options:
+        - "Capacidade de Interação"
+        - "Eficiência de Desempenho"
+        - "Flexibilidade"
+    validations:
+      required: true
+
+  - type: input
+    id: execution_date
+    attributes:
+      label: "Data e hora da coleta"
+      placeholder: "2026-10-27 14:30"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: platform
+    attributes:
+      label: "Ambiente"
+      options:
+        - "Anki Desktop - Windows"
+        - "Anki Desktop - macOS"
+        - "Anki Desktop - Ubuntu"
+        - "AnkiWeb"
+        - "Desktop e Web"
+    validations:
+      required: true
+
+  - type: input
+    id: version
+    attributes:
+      label: "Versão do produto"
+      placeholder: "26.09.3 ou versão do AnkiWeb registrada"
+    validations:
+      required: true
+
+  - type: input
+    id: scenario
+    attributes:
+      label: "Cenário ou execução"
+      placeholder: "RUN-001 / coleção de 10 mil cards"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: result_status
+    attributes:
+      label: "Situação do dado"
+      options:
+        - "Coletado e pendente de validação"
+        - "Validado"
+        - "Inválido"
+        - "Ausente"
+    validations:
+      required: true
+
+  - type: input
+    id: observed_value
+    attributes:
+      label: "Valor observado"
+      placeholder: "Ex.: 8.42"
+    validations:
+      required: false
+
+  - type: input
+    id: unit
+    attributes:
+      label: "Unidade de medida"
+      placeholder: "s, ms, MB, %, cards/min"
+    validations:
+      required: true
+
+  - type: textarea
+    id: procedure
+    attributes:
+      label: "Procedimento e condições de coleta"
+      description: "Informe parâmetros, instrumentos e condições relevantes."
+    validations:
+      required: true
+
+  - type: textarea
+    id: evidence
+    attributes:
+      label: "Evidência bruta"
+      description: "Informe o arquivo, caminho ou link para os dados originais."
+    validations:
+      required: true
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: "Observações e limitações"
+      description: "Registre falhas, interferências, desvios e justificativas."
+    validations:
+      required: false

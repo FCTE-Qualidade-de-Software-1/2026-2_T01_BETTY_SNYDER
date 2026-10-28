@@ -1,0 +1,140 @@
+﻿name: "01 - Atividade de Avaliação"
+description: "Planejar e acompanhar uma atividade do estudo PSM/CID."
+title: "[TASK] "
+labels:
+  - "type:planning"
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Registre uma atividade verificável. Para resultados de uma
+        métrica específica, utilize também o formulário de medição.
+
+  - type: input
+    id: activity_id
+    attributes:
+      label: "ID da atividade"
+      placeholder: "ACT-001"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: psm_category
+    attributes:
+      label: "Categoria de informação PSM/CID"
+      options:
+        - "Desempenho dos Processos"
+        - "Recursos e Custos"
+        - "Calendário e Progresso"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: quality_attribute
+    attributes:
+      label: "Característica de qualidade"
+      options:
+        - "Capacidade de Interação"
+        - "Eficiência de Desempenho"
+        - "Flexibilidade"
+        - "Transversal ao estudo"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: activity_type
+    attributes:
+      label: "Tipo de atividade"
+      options:
+        - "Planejamento"
+        - "Preparação do ambiente"
+        - "Execução de teste"
+        - "Coleta de dados"
+        - "Validação de dados"
+        - "Análise"
+        - "Documentação"
+        - "Revisão"
+        - "Melhoria"
+    validations:
+      required: true
+
+  - type: textarea
+    id: objective
+    attributes:
+      label: "Objetivo e justificativa"
+      description: "Explique o resultado que a atividade deve produzir."
+    validations:
+      required: true
+
+  - type: textarea
+    id: procedure
+    attributes:
+      label: "Procedimento e tarefas"
+      description: "Liste as etapas executáveis."
+      placeholder: |
+        - [ ] Preparar o ambiente
+        - [ ] Executar o procedimento
+        - [ ] Registrar evidências
+        - [ ] Validar os dados
+    validations:
+      required: true
+
+  - type: input
+    id: deliverable
+    attributes:
+      label: "Entregável esperado"
+      placeholder: "docs/protocol.md ou data/raw/..."
+    validations:
+      required: true
+
+  - type: input
+    id: metric_ids
+    attributes:
+      label: "IDs das métricas relacionadas"
+      placeholder: "M-INT-01, M-PERF-01"
+    validations:
+      required: false
+
+  - type: input
+    id: planned_effort
+    attributes:
+      label: "Esforço planejado (horas)"
+      placeholder: "4"
+    validations:
+      required: true
+
+  - type: input
+    id: planned_start
+    attributes:
+      label: "Início planejado (AAAA-MM-DD)"
+      placeholder: "2026-10-26"
+    validations:
+      required: true
+
+  - type: input
+    id: planned_end
+    attributes:
+      label: "Conclusão planejada (AAAA-MM-DD)"
+      placeholder: "2026-10-28"
+    validations:
+      required: true
+
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: "Critérios de conclusão"
+      placeholder: |
+        - [ ] Procedimento concluído
+        - [ ] Entregável produzido
+        - [ ] Evidências vinculadas
+        - [ ] Resultado revisado
+    validations:
+      required: true
+
+  - type: textarea
+    id: dependencies
+    attributes:
+      label: "Dependências, riscos e referências"
+      description: "Informe IDs de Issues, documentos e restrições."
+    validations:
+      required: false
