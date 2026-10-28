@@ -70,6 +70,14 @@ Dessa forma, pretende-se identificar os pontos positivos e as possíveis limita�
     [:octicons-arrow-right-24: Reunião 02](atas/reuniao-02-ata.md)
     [:octicons-arrow-right-24: Reunião 03](atas/reuniao-03-ata.md)
 
+-   :material-refresh:{ .lg .middle } **Retrospectiva E1**
+
+    ---
+
+    Análise da Entrega 1 e ações para a próxima etapa.
+
+    [:octicons-arrow-right-24: Abrir](retrospectiva-e1.md)
+
 </div>
 
 ## Equipe
