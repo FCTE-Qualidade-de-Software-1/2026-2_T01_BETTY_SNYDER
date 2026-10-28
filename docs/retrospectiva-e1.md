@@ -48,11 +48,17 @@ Obs.: Uma entrega concluída também pode envolver sobrecarga, retrabalho ou con
 
 Definam ações para cada tópico priorizado. A ação deve mudar uma prática da equipe e permitir acompanhamento durante a próxima etapa.
 
-| Código | Ação — O que faremos | Quem acompanhará | Métrica |
-| --- | --- | --- | --- |
-| C2 | Reuniões periódicas para planejamento e acompanhamento das tarefas. | Davi, Mateus | Participação em reuniões de cada membro |
-| C2 | Reporte periódico do status e pendências de cada atividade entre pessoas da mesma dupla e entre duplas, via mensagens. | Dante, Davi, Karolina | Frequência das mensagens de cada membro |
-| C4 | Após o planejamento semanal, organizar as tarefas em issues para satisfazer a categoria Calendário e Progresso do PSM. | Bryan, Pedro | Frequência de revisões do GitHub Projects com atualização do planejamento e status das atividades |
+| Código | Ação — O que faremos | Quem acompanhará |
+| --- | --- | --- |
+| C2 | Reuniões periódicas para planejamento e acompanhamento das tarefas. | Davi, Mateus |
+| C2 | Reporte periódico do status e pendências de cada atividade entre pessoas da mesma dupla e entre duplas, via mensagens. | Dante, Davi, Karolina |
+| C4 | Após o planejamento semanal, organizar as tarefas em issues para satisfazer a categoria Calendário e Progresso do PSM. | Bryan, Pedro |
+
+| Ação | Antes | Agora (PSM) |
+| --- | --- | --- |
+| C2 — Reuniões periódicas | Participação em reuniões | Custo e Esforço — Participação % (horas do integrante ÷ horas totais); limiar < 10% |
+| C2 — Reporte de status/pendências | Frequência das mensagens | Calendário e Progresso — Conformidade/ICP (no prazo ÷ com prazo); limiar < 70% |
+| C4 — Issues no GitHub | Frequência de revisões do Projects | Calendário e Progresso — Conformidade/ICP; fonte issues/CSV em `gestao-psm/` |
 
 Usem as métricas definidas pela equipe para Calendário e Progresso, Desempenho do Processo ou Custo e Esforço, conforme a relação com a ação. Se nenhuma se aplicar, expliquem como verificarão a execução. Nas próximas semanas, faremos acompanhamento dos projetos a cada aula.
 
