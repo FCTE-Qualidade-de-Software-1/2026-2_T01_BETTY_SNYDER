@@ -210,30 +210,24 @@ def build():
         )
     )
     story.append(Spacer(1, 8))
-    story.append(Paragraph("2.2 Preencher o formulário 01 (atividade)", st["h2"]))
+    story.append(Paragraph("2.2 Depois de criar a Issue", st["h2"]))
     story.append(
-        bullets(
-            [
-                "<b>ID da atividade</b> único (ex.: E2-A1, ACT-012).",
-                "<b>Categoria PSM</b> no formulário orienta a label psm:* correspondente.",
-                "<b>Tipo de atividade</b> e característica de qualidade (ou Transversal).",
-                "<b>Objetivo</b>, procedimento com checklist e entregável esperado.",
-                "<b>Esforço planejado (h)</b>, início e conclusão planejados (AAAA-MM-DD).",
-                "Critérios de conclusão claros e verificáveis.",
-            ],
-            st,
+        Paragraph(
+            "Não há formulário intermediário: use diretamente a estrutura da Issue "
+            "(título, corpo, labels e bloco <b>Campos do Project (PSM)</b>) e "
+            "espelhe os valores no quadro.",
+            st["body"],
         )
     )
-    story.append(Paragraph("2.3 Depois de criar a Issue", st["h2"]))
     story.append(
         bullets(
             [
                 "Associar à <b>milestone</b> correta (F1, F2 ou E2).",
                 "Incluir no Project e definir <b>Status = Todo</b> (ou In Progress se já começou).",
-                "Copiar para o Project: Planned Effort, Planned Start/End, Priority, Activity Type, Platform.",
+                "Preencher no Project os campos já documentados na Issue: Planned Effort, Planned Start/End, Priority, Activity Type, Platform.",
                 "Calcular <b>Estimated Cost (BRL) = esforço planejado × 35</b>.",
                 "Atribuir responsável (assignee) e manter labels coerentes.",
-                "Garantir que o bloco <b>Campos do Project (PSM)</b> no corpo esteja preenchido.",
+                "Manter o bloco <b>Campos do Project (PSM)</b> no corpo alinhado ao quadro.",
             ],
             st,
         )
