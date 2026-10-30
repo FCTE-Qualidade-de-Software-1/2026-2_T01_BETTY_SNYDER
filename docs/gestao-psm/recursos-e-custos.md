@@ -6,7 +6,19 @@
 
 Esta página especifica o *measurement construct* da categoria Recursos e custos, conforme o modelo de informação do PSM (RAMOS, 2026) e o mapeamento estrutural da equipe, com apoio das medidas candidatas do *Continuous Iterative Development Measurement Framework* (JONES et al., 2021a; JONES et al., 2021b).
 
-O objeto de medição é o **esforço** dos integrantes no projeto final da disciplina. Na Entrega 1 não houve orçamento financeiro formal; o “custo” é representado por horas. Os campos *Planned/Actual Effort (h)* e *Estimated/Actual Cost (BRL)* do Project GitHub estão disponíveis para os cortes seguintes; a série histórica da Entrega 1 permanece nos CSV de `gestao-psm/`.
+O objeto de medição é o **esforço** dos integrantes no projeto final da disciplina e o respectivo **custo**, obtido automaticamente pela convenção da equipe:
+
+\[
+C = H \times 35
+\]
+
+em que:
+
+- \(C\): custo em reais (R$);
+- \(H\): esforço em horas (\(H_p\) para custo estimado; \(H_r\) para custo real);
+- \(35\): taxa horária convencional fixada em R$ 35,00 por hora.
+
+Assim, *Estimated Cost (BRL)* \(= H_p \times 35\) e *Actual Cost (BRL)* \(= H_r \times 35\). Os campos *Planned/Actual Effort (h)* e *Estimated/Actual Cost (BRL)* do Project GitHub devem ser preenchidos de forma consistente com essa regra; a série histórica da Entrega 1 permanece nos CSV de `gestao-psm/` (horas), podendo-se derivar o custo a posteriori pela mesma taxa.
 
 ## Necessidade 1: Custo e cronograma estimados por funcionalidade ou capacidade
 
@@ -119,7 +131,7 @@ em que:
 
 | Medida do mapeamento | Situação | Encaminhamento |
 |---|---|---|
-| Estimativa versus custo monetário | CSV da E1 sem coluna de custo; campos BRL disponíveis no Project | Definir convenção de custo e registrar no Project |
+| Estimativa versus custo monetário | Convenção: R$ 35,00/h; \(C_p = H_p \times 35\), \(C_r = H_r \times 35\); CSV da E1 só com horas | Registrar \(C_p\) e \(C_r\) nos campos BRL do Project a cada corte |
 | Estimativa versus cronograma real | Tratada em Calendário e progresso (ICP) | Cruzar esforço e prazo por `tarefa_id` / issue |
 | Valor agregado (*Earned Value*) | Sem baseline PV, EV e AC por entrega | Atribuir peso aos itens do marco e calcular EV no corte |
 

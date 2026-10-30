@@ -108,11 +108,9 @@ mutation {
 }
 
 Add-SelectField $project.id "Priority" @("High","Medium","Low")
-Add-SelectField $project.id "PSM Category" @("Process Performance","Resources & Costs","Schedule & Progress")
 Add-SelectField $project.id "Quality Attribute" @("Interaction Capability","Performance Efficiency","Flexibility","Cross-cutting")
 Add-SelectField $project.id "Activity Type" @("Planning","Execution","Measurement","Analysis","Documentation","Improvement")
 Add-SelectField $project.id "Platform" @("Desktop Windows","Desktop macOS","Desktop Ubuntu","AnkiWeb","Cross-platform")
-Add-SelectField $project.id "Measurement Status" @("Not Started","Collected","Validated","Analyzed")
 Add-SimpleField $project.id "Planned Effort (h)" "NUMBER"
 Add-SimpleField $project.id "Actual Effort (h)" "NUMBER"
 Add-SimpleField $project.id "Estimated Cost (BRL)" "NUMBER"
@@ -121,7 +119,6 @@ Add-SimpleField $project.id "Planned Start" "DATE"
 Add-SimpleField $project.id "Planned End" "DATE"
 Add-SimpleField $project.id "Actual Completion" "DATE"
 Add-SimpleField $project.id "Progress (%)" "NUMBER"
-Add-SimpleField $project.id "Metric ID" "TEXT"
 Add-SimpleField $project.id "Evidence" "TEXT"
 
 # Vincular todas as issues do repositório

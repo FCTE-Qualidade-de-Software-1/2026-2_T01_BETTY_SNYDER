@@ -10,7 +10,7 @@ No modelo de informação do PSM (RAMOS, 2026), Project, milestones, labels e is
 **Tipo:** GitHub Projects V2, vinculado ao repositório.  
 **Script de provisionamento:** `scripts/setup-github-project.ps1`.
 
-O Project está constituído e concentra o acompanhamento das atividades do projeto. As issues do repositório foram vinculadas ao quadro. O Status nativo do Projects V2 é utilizado com os estados de fluxo **A Fazer** (*Todo*), **Em Andamento** (*In Progress*) e **Concluído** (*Done*), alinhados ao mapeamento CID. As datas e os campos numéricos de esforço e custo permitem derivar medidas básicas e derivadas de Calendário e progresso e de Recursos e custos.
+O Project está constituído e concentra o acompanhamento das atividades do projeto. As issues do repositório foram vinculadas ao quadro. O Status nativo do Projects V2 é utilizado com os estados de fluxo **A Fazer** (*Todo*), **Em Andamento** (*In Progress*) e **Concluído** (*Done*), alinhados ao mapeamento CID. As datas e os campos numéricos de esforço e custo permitem derivar as medidas das três categorias PSM a partir dos atributos gerais e específicos das tarefas, sem campo dedicado de categoria PSM.
 
 ### Campos personalizados (padrão §4.1)
 
@@ -18,17 +18,14 @@ O Project está constituído e concentra o acompanhamento das atividades do proj
 |---|---|
 | Status | Estados de fluxo (A Fazer, Em Andamento, Concluído) |
 | Priority | Priorização gerencial do item |
-| PSM Category | Recursos e custos; Calendário e progresso; Desempenho dos processos |
 | Quality Attribute | Atributo GQM do produto (quando a issue for de medição do Anki) |
 | Activity Type | Tipo de atividade do projeto |
 | Platform | Ambiente de execução (medições de produto) |
-| Planned / Actual Effort (h) | Medidas básicas de esforço (Recursos e custos) |
-| Estimated / Actual Cost (BRL) | Extensão financeira do esforço |
+| Planned / Actual Effort (h) | Medidas básicas de esforço (Recursos e custos): \(H_p\) e \(H_r\) |
+| Estimated / Actual Cost (BRL) | Custo derivado automaticamente: \(C = H \times 35\) (R$ 35,00 por hora) |
 | Planned Start / End | Compromisso de calendário |
 | Actual Completion | Conclusão real (base para ICP e *cycle time*) |
 | Progress (%) | Proxy de progresso da unidade de trabalho |
-| Metric ID | Identificador da métrica (PSM ou GQM) |
-| Measurement Status | Situação do dado coletado |
 | Evidence | Evidência bruta ou caminho no repositório |
 
 A série histórica da Entrega 1 permanece nos CSV em `gestao-psm/`. A partir da constituição do Project, os cortes seguintes de calendário e de esforço podem ser obtidos também a partir dos campos e do histórico de Status das issues vinculadas.
