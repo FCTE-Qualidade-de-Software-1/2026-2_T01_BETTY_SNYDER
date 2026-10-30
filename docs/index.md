@@ -56,7 +56,7 @@ Dessa forma, pretende-se identificar os pontos positivos e as possíveis limita�
 
     ---
 
-    Rastreamento das medições de Recursos e Custos, Desempenho dos Processos e Calendário e Progresso.
+    Modelo de informação PSM: necessidades, conceitos mensuráveis, medidas e lacunas de coleta.
 
     [:octicons-arrow-right-24: Abrir](gestao-psm.md)
 

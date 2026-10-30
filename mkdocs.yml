@@ -1,12 +1,17 @@
 site_name: BETTY SNYDER
-copyright: "Equipe Betty Snyder · FGA0315 Qualidade de Software 1 · Versão E1 (Fases 1 e 2) · Atualizado em 26/10/2026"
+copyright: "Equipe Betty Snyder · FGA0315 Qualidade de Software 1 · Versão E1 (Fases 1 e 2) · Atualizado em 30/10/2026"
 site_url: https://FCTE-Qualidade-de-Software-1.github.io/2026-2_T01_BETTY_SNYDER/
 nav:
   - Início: index.md
   - Fase 1: fase1.md
   - Fase 2: fase2.md
   - Artigo: artigo.md
-  - Gestão (PSM): gestao-psm.md
+  - Gestão (PSM):
+      - Visão geral: gestao-psm.md
+      - 1. Recursos e custos: gestao-psm/recursos-e-custos.md
+      - 2. Calendário e progresso: gestao-psm/calendario-e-progresso.md
+      - 3. Desempenho dos processos: gestao-psm/desempenho-dos-processos.md
+      - Procedimentos e lacunas: gestao-psm/procedimentos-e-lacunas.md
   - Organização GitHub: github-organizacao.md
   - Retrospectiva E1: retrospectiva-e1.md
   - Atas:
@@ -48,6 +53,11 @@ markdown_extensions:
   - attr_list
   - md_in_html
   - admonition
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
   - pymdownx.emoji:
       emoji_index: !!python/name:material.extensions.emoji.twemoji
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
