@@ -1,155 +1,179 @@
 # 3. Desempenho dos processos
 
 **Categoria de informação:** Desempenho dos processos  
-**Conceito mensurável (mapeamento):** Eficácia do processo  
+**Conceito mensurável:** Eficácia do processo  
 **Responsável na Entrega 1:** Dupla B  
 
-O mapeamento estrutural associa esta categoria à necessidade de conhecer o status da iteração ou do marco, o trabalho restante comprometido e as tendências de execução em relação ao plano, com medidas de **Trabalho Planejado**, **Trabalho Concluído** e **Trabalho em Aberto** (JONES et al., 2021a). Na Entrega 1, a equipe operacionalizou a eficácia do processo de elaboração do artigo por meio da **densidade de defeitos em revisão** e da **taxa de correção**, alinháveis às especificações de detecção e resolução de defeitos do CID (JONES et al., 2021b) e ao modelo de indicadores do PSM (RAMOS, 2026), decisão registrada no Plano da Fase 2. Esta página documenta ambos os eixos: o construto efetivamente aplicado e o construto do mapeamento ainda incompleto.
+Esta página especifica o *measurement construct* da categoria Desempenho dos processos, conforme o modelo de informação do PSM (RAMOS, 2026) e o mapeamento estrutural da equipe (JONES et al., 2021a).
 
-## Necessidade — Status da iteração, trabalho restante e tendência plano × execução
+O mapeamento associa a categoria à necessidade de conhecer o status do marco, o trabalho restante comprometido e as tendências de execução em relação ao plano, com as medidas **Trabalho Planejado**, **Trabalho Concluído** e **Trabalho em Aberto**. Na Entrega 1, a equipe operacionalizou a eficácia do processo documental por meio da **densidade de defeitos em revisão** e da **taxa de correção**, alinháveis às especificações de detecção e resolução de defeitos do CID (JONES et al., 2021b). Os dois eixos são complementares: um trata da qualidade do artefato produzido; o outro, da capacidade de cumprir o plano de escopo.
+
+## Necessidade de informação
 
 **Necessidade de informação.** Qual é o status da iteração, do lançamento ou da capacidade? Todo o trabalho restante assumido como compromisso será concluído conforme o planejado? Quais funcionalidades correm risco de atraso? Quais são as tendências de execução em relação ao plano?
 
-### Relação entre o mapeamento e a decisão da Entrega 1
+## Eixo A: Eficácia do processo de revisão documental (aplicado na Entrega 1)
 
-```mermaid
-flowchart TB
-  need["Necessidade: status e tendência plano x execução"]
-  subgraph map ["Construto do mapeamento"]
-    tp["MB: Trabalho Planejado"]
-    tc["MB: Trabalho Concluído"]
-    ta["MD: Trabalho em Aberto = Planejado - Concluído"]
-  end
-  subgraph e1 ["Construto aplicado na E1"]
-    def["MB: defeitos confirmados na revisão"]
-    sec["MB: seções revisadas"]
-    dens["MD: densidade D = defeitos / seções"]
-    corr["MD: taxa de correção"]
-  end
-  need --> map
-  need --> e1
-```
-
-*Figura 1. Dois desdobramentos da mesma necessidade: progresso quantitativo do trabalho (mapeamento) e eficácia do processo de revisão documental (E1).*
-
-A densidade de defeitos informa a **qualidade do processo de produção do artefato** (eficácia em evitar ou remover defeitos antes da entrega). O Trabalho em Aberto informa a **capacidade de cumprir o plano de escopo**. Ambos apoiam a necessidade, porém com atributos distintos; a equipe deve tratá-los como complementares, não como substitutos.
-
----
-
-## Eixo A — Construto aplicado na Entrega 1 (defeitos de revisão)
-
-### Definição operacional adotada
+### Definição operacional
 
 | Elemento | Definição da equipe |
 |---|---|
-| Defeito | Informação incorreta ou sem fonte; divergência com decisão da equipe; item exigido pela rubrica que está ausente. Conta apenas defeito **confirmado** pela equipe (inclusive apontamentos com apoio de IA). |
-| Fonte | Revisões do artigo registradas em ata / planilha de contagem; CSV `gestao-psm/desempenho-processos.csv`. |
+| Defeito | Informação incorreta ou sem fonte; divergência com decisão da equipe; item exigido pela rubrica que está ausente. Conta apenas o defeito **confirmado** pela equipe (inclusive apontamentos com apoio de IA). |
+| Fonte | Revisões do artigo; CSV `gestao-psm/desempenho-processos.csv`. |
 
-### Construto
+### Instância do modelo de informação
+
+A Figura 1 particulariza o modelo genérico da Aula 09 para o construto de defeitos aplicado na Entrega 1. Os rótulos dos nós correspondem à instanciação; a topologia é a do Modelo de Informação do PSM (RAMOS, 2026).
 
 ```mermaid
-flowchart TB
-  needA["Necessidade: eficácia do processo de revisão"]
-  def["MB1: quantidade de defeitos confirmados"]
-  sec["MB2: quantidade de seções revisadas"]
-  corrN["MB3: defeitos corrigidos"]
-  dens["MD1: densidade D = defeitos / seções"]
-  taxa["MD2: taxa de correção = corrigidos / defeitos"]
-  ind["Indicador: D e taxa de correção"]
-  crit["Critério: nova revisão com dados reais se D elevado"]
-  needA --> def
-  needA --> sec
-  needA --> corrN
-  def --> dens
-  sec --> dens
-  def --> taxa
-  corrN --> taxa
-  dens --> ind
-  taxa --> ind
-  crit --> ind
+flowchart BT
+  need["Necessidades de Informação: eficacia da revisao documental"]
+  info["Informacao: decisao sobre nova revisao"]
+  ind["Indicador: densidade D e taxa de correcao"]
+  analise["Modelo de Analise: comparar D e correcao aos criterios"]
+  crit["Criterios: D elevado motiva Revisao 2 com dados reais"]
+  md1["Medida Derivada: densidade D"]
+  md2["Medida Derivada: taxa de correcao"]
+  func["Funcao de Medicao: razoes entre contagens"]
+  mb1["Medida Basica: defeitos confirmados"]
+  mb2["Medida Basica: secoes revisadas"]
+  met1["Metodo de medicao: contar defeitos confirmados"]
+  met2["Metodo de Medicao: contar secoes revisadas"]
+  attr1["Atributo: defeito confirmado"]
+  attr2["Atributo: secao revisada"]
+  ent["Entidades: revisao do artigo e secoes"]
+  ent --> attr1
+  ent --> attr2
+  attr1 --> met1
+  attr2 --> met2
+  met1 --> mb1
+  met2 --> mb2
+  mb1 --> func
+  mb2 --> func
+  func --> md1
+  func --> md2
+  md1 --> analise
+  md2 --> analise
+  crit --> analise
+  analise --> ind
+  ind --> info
+  info --> need
 ```
 
-*Figura 2. Construto PSM aplicado — densidade de defeitos e taxa de correção.*
+*Figura 1. Instância do Modelo de Informação do PSM para densidade de defeitos e taxa de correção (estrutura conforme RAMOS, 2026).*
 
-### Medidas básicas
-
-#### Defeitos confirmados e seções revisadas
-
-| Elemento | Descrição |
-|---|---|
-| Coleta aplicada | Contagem na Revisão 1 (indicador publicado na visão geral: \(D_1 = 1{,}44\); correção 61,5%). Revisão 2 persistida em [`gestao-psm/desempenho-processos.csv`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/blob/main/gestao-psm/desempenho-processos.csv) com campos `identificador`, `revisão`, `seção`, `tipo`, `descrição`, `quem apontou`, `confirmado`, `corrigido`. |
-| Cálculo aplicado | Densidade \(D = N_{\text{defeitos}} / N_{\text{seções}}\); taxa de correção = corrigidos / confirmados. |
-| Análise aplicada | Rev. 1 → decisão de realizar Revisão 2 com dados reais. Rev. 2 lista 11 itens (tipos: erro de conteúdo, informação ausente, inconsistência entre seções), majoritariamente marcados como confirmados e corrigidos no CSV. |
-| Insuficiências | A Revisão 1 não possui CSV versionado equivalente ao da Rev. 2 (apenas o resumo na GitPage). O arquivo `docs/gestao-psm/defeitos.csv` está **vazio** (somente cabeçalho), não servindo como fonte. Não há série contínua de densidade por corte semanal alinhada a 11/10, 18/10 e 25/10. |
-
-#### Taxa de correção
-
-| Elemento | Descrição |
-|---|---|
-| Status | **Aplicada** (Rev. 1 com valor publicado; Rev. 2 verificável no CSV via `corrigido`). |
-| Análise | Indica eficácia do ciclo encontrar–corrigir antes da entrega. |
-| Insuficiências | Ausência de critério numérico estável publicado (além da decisão qualitativa de nova revisão). |
-
----
-
-## Eixo B — Construto do mapeamento (trabalho planejado, concluído e em aberto)
+Para a taxa de correção, a terceira medida básica (defeitos corrigidos) entra na função de medição juntamente com os defeitos confirmados, produzindo a segunda medida derivada do mesmo construto.
 
 ### Medidas
 
-#### Trabalho Planejado (medida básica)
+\[
+D = \frac{N_{\text{defeitos}}}{N_{\text{seções}}}
+\]
+
+em que:
+
+- \(D\): densidade de defeitos na revisão;
+- \(N_{\text{defeitos}}\): quantidade de defeitos confirmados pela equipe;
+- \(N_{\text{seções}}\): quantidade de seções (ou unidades) revisadas.
+
+\[
+\text{Taxa de correção} = \frac{N_{\text{corrigidos}}}{N_{\text{confirmados}}}
+\]
+
+em que:
+
+- \(N_{\text{corrigidos}}\): quantidade de defeitos confirmados já corrigidos;
+- \(N_{\text{confirmados}}\): quantidade de defeitos confirmados na revisão.
 
 | Elemento | Descrição |
 |---|---|
-| Definição | Quantidade inteira de trabalho assumido no plano (story points, funcionalidades, capacidades ou, no projeto, tarefas/itens do marco). |
-| Status | **Parcial.** |
-| Situação | O conjunto de tarefas por corte em `calendario-progresso.csv` e os milestones F1/F2/E2 fornecem o planejado, porém a série não está publicada como indicador próprio desta categoria (foi absorvida pelo ICP em Calendário e progresso). |
-| Procedimento mínimo viável | Em cada corte, registrar \(W_p\) = número (ou peso) de itens do compromisso do marco vigente. |
+| Coleta | Revisão 1: \(D_1 = 1{,}44\); correção 61,5% (resumo na visão geral). Revisão 2: [`gestao-psm/desempenho-processos.csv`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/blob/main/gestao-psm/desempenho-processos.csv), com campos `identificador`, `revisão`, `seção`, `tipo`, `descrição`, `quem apontou`, `confirmado`, `corrigido`. |
+| Análise | Rev. 1 motivou a Revisão 2 com dados reais. A Rev. 2 registrou 11 apontamentos, majoritariamente confirmados e corrigidos. |
+| Limitação | A Revisão 1 não possui CSV versionado equivalente; `docs/gestao-psm/defeitos.csv` contém apenas o cabeçalho. |
 
-#### Trabalho Concluído (medida básica)
+### Indicadores e decisões
 
-| Elemento | Descrição |
-|---|---|
-| Definição | Quantidade inteira de trabalho efetivamente concluído no mesmo recorte. |
-| Status | **Parcial.** |
-| Situação | Derivável de `status = concluida` no CSV / issues fechadas; não há painel PSM dedicado nem histórico de tendência planejado × concluído nesta categoria. |
-| Procedimento mínimo viável | Registrar \(W_c\) no mesmo corte e na mesma unidade de \(W_p\). |
+| Corte / revisão | Indicador | Decisão |
+|---|---|---|
+| Revisão 1 | \(D_1 = 1{,}44\); correção 61,5% | Conduzir Revisão 2 com dados reais |
+| Revisão 2 | 11 apontamentos; correções em `corrigido` | Consolidar correções no artigo e na GitPage |
 
-#### Trabalho em Aberto (medida derivada)
+## Eixo B: Trabalho planejado, concluído e em aberto (mapeamento)
+
+### Instância do modelo de informação
+
+A Figura 2 aplica a mesma topologia do modelo da Aula 09 às medidas de trabalho planejado, concluído e em aberto previstas no mapeamento.
+
+```mermaid
+flowchart BT
+  need["Necessidades de Informacao: status do marco e tendencia plano x execucao"]
+  info["Informacao: projecao de conclusao do marco"]
+  ind["Indicador: trabalho em aberto e tendencia"]
+  analise["Modelo de Analise: Wa versus vazao e tempo restante"]
+  crit["Criterios: Wa compativel com capacidade restante do marco"]
+  md1["Medida Derivada: trabalho em aberto Wa"]
+  md2["Medida Derivada: razao Wa sobre tempo restante"]
+  func["Funcao de Medicao: diferenca e razao"]
+  mb1["Medida Basica: trabalho planejado Wp"]
+  mb2["Medida Basica: trabalho concluido Wc"]
+  met1["Metodo de medicao: contar itens comprometidos do marco"]
+  met2["Metodo de Medicao: contar itens concluidos"]
+  attr1["Atributo: compromisso de escopo"]
+  attr2["Atributo: conclusao de item"]
+  ent["Entidades: marco, corte e itens de trabalho"]
+  ent --> attr1
+  ent --> attr2
+  attr1 --> met1
+  attr2 --> met2
+  met1 --> mb1
+  met2 --> mb2
+  mb1 --> func
+  mb2 --> func
+  func --> md1
+  func --> md2
+  md1 --> analise
+  md2 --> analise
+  crit --> analise
+  analise --> ind
+  ind --> info
+  info --> need
+```
+
+*Figura 2. Instância do Modelo de Informação do PSM para trabalho planejado, concluído e em aberto (estrutura conforme RAMOS, 2026).*
+
+### Medidas
+
+| Medida | Definição | Situação |
+|---|---|---|
+| Trabalho Planejado \(W_p\) | Quantidade (ou peso) de trabalho comprometido no marco ou corte | Parcial: derivável do CSV de calendário e dos milestones |
+| Trabalho Concluído \(W_c\) | Quantidade concluída na mesma unidade | Parcial: `status = concluida` / issues fechadas |
+| Trabalho em Aberto \(W_a\) | \(W_a = W_p - W_c\) | Sem série formal publicada nesta categoria |
 
 \[
 W_a = W_p - W_c
 \]
 
-| Elemento | Descrição |
-|---|---|
-| Status | **Insuficiente como série formal.** |
-| Situação | O valor pontual de pendências é conhecido qualitativamente (ex.: nove itens restantes no corte 25/10 no calendário), mas não há indicador nomeado \(W_a\), gráfico de tendência nem critério de decisão específico sob Desempenho dos processos, embora a medida derivada conste do mapeamento e do *framework* CID (JONES et al., 2021a). |
-| Análise pretendida | Tendência de \(W_a\) ao longo dos cortes; risco de não concluir o marco se a vazão observada for inferior a \(W_a / \text{tempo restante}\) — análise de desempenho no sentido de Ramos (2026). |
-| Procedimento mínimo viável | Publicar, junto ao ICP, a trinca \(W_p\), \(W_c\), \(W_a\) por corte e a projeção de conclusão do marco. |
+em que:
 
-### Sobreposição com Calendário e progresso
+- \(W_a\): trabalho em aberto (restante comprometido e ainda não concluído);
+- \(W_p\): trabalho planejado (comprometido no marco ou corte);
+- \(W_c\): trabalho concluído na mesma unidade e no mesmo recorte.
 
-Trabalho Planejado/Concluído/Aberto e Work Items Committed/Completed compartilham a mesma entidade (item de trabalho). A distinção recomendada na documentação da equipe é:
+A análise pretendida confronta a tendência de \(W_a\) com a vazão e o tempo restante do marco. O procedimento mínimo consiste em publicar, em cada corte, a trinca \(W_p\), \(W_c\), \(W_a\) e a projeção de conclusão.
 
-- **Calendário e progresso:** ênfase em prazo, conformidade (ICP) e fluxo (estados, vazão, WIP).
-- **Desempenho dos processos:** ênfase em eficácia — se o processo produz o trabalho planejado com qualidade (defeitos) e se a tendência \(W_a\) é compatível com o plano.
+### Distinção em relação a Calendário e progresso
 
-Evita-se, assim, duplicar o mesmo indicador em duas categorias sem interpretação distinta.
+As entidades (itens de trabalho) são compartilhadas. A interpretação difere:
 
-## Indicadores e decisões já registrados
-
-| Corte / revisão | Indicador | Decisão |
-|---|---|---|
-| Revisão 1 | \(D_1 = 1{,}44\); correção 61,5% | Conduzir Revisão 2 com dados reais |
-| Revisão 2 | 11 apontamentos no CSV; correções registradas em `corrigido` | Consolidar correções no artigo / GitPage |
+- **Calendário e progresso:** prazo, conformidade (ICP) e fluxo (estados, vazão, WIP).
+- **Desempenho dos processos:** eficácia do processo (defeitos; tendência de \(W_a\) frente ao plano).
 
 ## Fontes no repositório
 
 | Artefato | Papel |
 |---|---|
 | `gestao-psm/desempenho-processos.csv` | Defeitos da Revisão 2 |
-| `docs/gestao-psm/defeitos.csv` | Cabeçalho sem dados (lacuna) |
-| `gestao-psm/calendario-progresso.csv` | Proxy para \(W_p\) / \(W_c\) |
+| `gestao-psm/calendario-progresso.csv` | Proxy para \(W_p\) e \(W_c\) |
 | Plano da Fase 2 (pasta `PSM/` do projeto acadêmico) | Definição de defeito e escolha da medida |
 
 ## Referências
@@ -158,6 +182,6 @@ JONES, Cheryl L. et al. (ed.). **Practical software and systems measurement cont
 
 JONES, Cheryl L. et al. (ed.). **Practical software and systems measurement continuous iterative development measurement framework**: part 2: measurement specifications and enterprise measures. Version 2.1. [S. l.]: Practical Software & Systems Measurement; National Defense Industrial Association; International Council on Systems Engineering, 15 abr. 2021b. Product No. PSM-2021-03-001; INCOSE-TP-2020-001-06.
 
-RAMOS, Cristiane Soares. **Medição prática de software e sistemas**: PSM – Practical Software and System Measurement. Notas de aula. Brasília: Faculdade do Gama, Universidade de Brasília, 2026. Material didático da disciplina Qualidade de Software 1 (FGA0315).
+RAMOS, Cristiane Soares. **Medição prática de software e sistemas**: PSM: Practical Software and System Measurement. Notas de aula. Brasília: Faculdade do Gama, Universidade de Brasília, 2026. Material didático da disciplina Qualidade de Software 1 (FGA0315).
 
 Voltar à [visão geral do PSM](../gestao-psm.md).
