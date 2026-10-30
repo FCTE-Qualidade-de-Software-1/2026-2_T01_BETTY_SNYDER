@@ -6,13 +6,13 @@ nav:
   - Fase 1: fase1.md
   - Fase 2: fase2.md
   - Artigo: artigo.md
-  - Gestão (PSM):
+  - Gestão PSM:
       - Visão geral: gestao-psm.md
       - 1. Recursos e custos: gestao-psm/recursos-e-custos.md
       - 2. Calendário e progresso: gestao-psm/calendario-e-progresso.md
       - 3. Desempenho dos processos: gestao-psm/desempenho-dos-processos.md
       - Procedimentos e lacunas: gestao-psm/procedimentos-e-lacunas.md
-  - Organização GitHub: github-organizacao.md
+      - Organização no GitHub: gestao-psm/github-organizacao.md
   - Retrospectiva E1: retrospectiva-e1.md
   - Atas:
       - Reunião 01 — Ata: atas/reuniao-01-ata.md
