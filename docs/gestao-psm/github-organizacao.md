@@ -83,6 +83,16 @@ Arquivos em `.github/ISSUE_TEMPLATE/`:
 | `03-improvement.yml` | Ações de melhoria |
 | `config.yml` | Configuração dos templates |
 
+## Guia da equipe (PDF)
+
+Passo a passo de abertura e fechamento de Issues e relação com as categorias PSM:
+
+- [padrao-abertura-fechamento-issues-psm.pdf](padrao-abertura-fechamento-issues-psm.pdf)
+- Script de sincronização do bloco de campos no corpo das Issues: `scripts/sync-issue-fields.py`
+- Mapeamento gerado: [mapeamento-campos-issues.csv](mapeamento-campos-issues.csv)
+
+Os campos nativos do GitHub Projects V2 devem espelhar o bloco **Campos do Project (PSM)** inserido no corpo de cada Issue. A atualização automática desses campos via API exige token com escopo `project` / `read:project`.
+
 ## Links
 
 - Issues: https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/issues
