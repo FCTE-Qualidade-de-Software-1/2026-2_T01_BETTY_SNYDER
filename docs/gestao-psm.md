@@ -9,34 +9,44 @@ Após o Ponto de Controle 1, o rastreamento PSM deixou de figurar no artigo cien
 
 ## Modelo de informação
 
-O modelo de informação do PSM organiza o caminho desde a necessidade de decisão até o indicador interpretável (RAMOS, 2026). A Figura 1 resume essa hierarquia: atributos de entidades relevantes são quantificados por métodos de medição (medidas básicas); funções de medição combinam essas medidas em derivadas; o indicador confronta o resultado com critérios de decisão e alimenta a interpretação na linguagem do requisitante.
+O modelo de informação do PSM organiza o caminho desde a necessidade de decisão até o indicador interpretável (RAMOS, 2026). A Figura 1 reproduz o diagrama da Aula 09: entidades e atributos relevantes são quantificados por métodos de medição (medidas básicas); a função de medição combina medidas em derivadas; o modelo de análise, com critérios de decisão, produz o indicador que gera a informação para atender às necessidades.
 
 ```mermaid
-flowchart TB
-  need[NecessidadeDeInformacao]
-  cat[CategoriaDeInformacao]
-  concept[ConceitoMensuravel]
-  entity[EntidadesEAtributos]
-  base1[MedidaBasica]
-  base2[MedidaBasica]
-  derived[MedidaDerivada]
-  indicator[Indicador]
-  criteria[CriteriosDeDecisao]
-  interpret[InterpretacaoEDecisao]
-  need --> cat
-  cat --> concept
-  concept --> entity
-  entity --> base1
-  entity --> base2
-  base1 --> derived
-  base2 --> derived
-  derived --> indicator
-  criteria --> indicator
-  indicator --> interpret
-  interpret --> need
+flowchart BT
+  need["Necessidades de Informação"]
+  info["Informação"]
+  ind["Indicador"]
+  analise["Modelo de Análise"]
+  crit["Critérios"]
+  md1["Medida Derivada"]
+  md2["Medida Derivada"]
+  func["Função de Medição"]
+  mb1["Medida Básica"]
+  mb2["Medida Básica"]
+  met1["Método de medição"]
+  met2["Método de Medição"]
+  attr1["Atributo"]
+  attr2["Atributo"]
+  ent["Entidades"]
+  ent --> attr1
+  ent --> attr2
+  attr1 --> met1
+  attr2 --> met2
+  met1 --> mb1
+  met2 --> mb2
+  mb1 --> func
+  mb2 --> func
+  func --> md1
+  func --> md2
+  md1 --> analise
+  md2 --> analise
+  crit --> analise
+  analise --> ind
+  ind --> info
+  info --> need
 ```
 
-*Figura 1. Modelo de informação do PSM: da necessidade de informação ao indicador e à decisão. Adaptado de Ramos (2026).*
+*Figura 1. Modelo de Informação do PSM (RAMOS, 2026).*
 
 No processo de medição, a Parte 1 do *Continuous Iterative Development Measurement Framework* orienta **o que medir** — necessidades, categorias, conceitos e medidas candidatas (JONES et al., 2021a). A Parte 2 orienta **como medir**: procedimentos de coleta, cálculo e análise, construção de indicadores e apoio à decisão (JONES et al., 2021b). Os tipos de análise previstos pelo PSM — estimativa, viabilidade e desempenho (*performance*) — são empregados nesta equipe sobretudo na forma de **análise de desempenho** nos cortes semanais (RAMOS, 2026).
 
@@ -52,19 +62,19 @@ A equipe adotou três das sete categorias de informação do PSM (RAMOS, 2026), 
 | Calendário e progresso | Progresso da unidade de trabalho | Entrega conforme compromisso; fluxo, vazão e filas | [Calendário e progresso](gestao-psm/calendario-e-progresso.md) |
 | Desempenho dos processos | Eficácia do processo | Status da iteração; trabalho restante; tendências plano × execução | [Desempenho dos processos](gestao-psm/desempenho-dos-processos.md) |
 
-A síntese do status de coleta, cálculo e análise de cada métrica — o que já está operacional e o que permanece insuficiente — encontra-se em [Procedimentos e lacunas](gestao-psm/procedimentos-e-lacunas.md).
+A síntese do status de coleta, cálculo e análise de cada métrica — o que já está operacional e o que permanece insuficiente — encontra-se em [Procedimentos e lacunas](gestao-psm/procedimentos-e-lacunas.md). A configuração de Project, milestones, labels e issues como suporte à medição está em [Organização no GitHub](gestao-psm/github-organizacao.md).
 
 ```mermaid
 flowchart LR
-  subgraph cats [CategoriasAdotadas]
-    RC[RecursosECustos]
-    CP[CalendarioEProgresso]
-    DP[DesempenhoDosProcessos]
+  subgraph cats ["Categorias adotadas"]
+    RC["Recursos e custos"]
+    CP["Calendário e progresso"]
+    DP["Desempenho dos processos"]
   end
-  subgraph concepts [ConceitosMensuraveis]
-    DF[DesempenhoFinanceiro]
-    PUT[ProgressoUnidadeTrabalho]
-    EP[EficaciaDoProcesso]
+  subgraph concepts ["Conceitos mensuráveis"]
+    DF["Desempenho financeiro"]
+    PUT["Progresso da unidade de trabalho"]
+    EP["Eficácia do processo"]
   end
   RC --> DF
   CP --> PUT
@@ -77,7 +87,7 @@ flowchart LR
 
 Em cada categoria há um coletor (persistência em CSV na pasta `gestao-psm/`) e a interpretação do indicador com decisão gerencial. Os cortes documentados são 11/10/2026, 18/10/2026 e 25/10/2026. Não houve reunião formal de medição em 18/10 nem em 21/10.
 
-Na Entrega 1, a decisão metodológica foi **não utilizar issues do GitHub como fonte primária** de medição, por prazo insuficiente para adotar o fluxo completo. As fontes foram a planilha de horas, as atas e os documentos de planejamento e pendências. Após o Ponto de Controle 1, a equipe passou a organizar tarefas em issues e milestones; o Project (Projects V2) com campos PSM/CID permanece pendente de autorização OAuth, conforme [Organização no GitHub](github-organizacao.md). Essa transição afeta sobretudo a categoria Calendário e progresso e é analisada nas páginas específicas.
+Na Entrega 1, a decisão metodológica foi **não utilizar issues do GitHub como fonte primária** de medição, por prazo insuficiente para adotar o fluxo completo. As fontes foram a planilha de horas, as atas e os documentos de planejamento e pendências. Após o Ponto de Controle 1, a equipe passou a organizar tarefas em issues e milestones; o Project (Projects V2) com campos PSM/CID permanece pendente de autorização OAuth, conforme [Organização no GitHub](gestao-psm/github-organizacao.md). Essa transição afeta sobretudo a categoria Calendário e progresso e é analisada nas páginas específicas.
 
 ## Série histórica de medições
 

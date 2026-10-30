@@ -45,21 +45,21 @@ Conforme Ramos (2026), a escolha e a manutenção de medidas devem considerar, e
 
 ```mermaid
 flowchart TB
-  subgraph ok [Aplicadas]
-    A1[DesvioEParticipacao]
-    A2[ICP]
-    A3[DensidadeECorrecao]
+  subgraph ok ["Aplicadas"]
+    A1["Desvio e participação"]
+    A2["ICP"]
+    A3["Densidade e correção"]
   end
-  subgraph mid [Parciais]
-    B1[WorkItemsEPercentual]
-    B2[WpWcProxy]
-    B3[EsforcoVsPrazo]
+  subgraph mid ["Parciais"]
+    B1["Work items e percentual"]
+    B2["Wp e Wc proxy"]
+    B3["Esforço vs prazo"]
   end
-  subgraph gap [Insuficientes]
-    C1[ValorAgregadoECusto]
-    C2[FluxoCycleThroughputWIP]
-    C3[TrabalhoEmAbertoFormal]
-    C4[PrecisaoPorFuncionalidade]
+  subgraph gap ["Insuficientes"]
+    C1["Valor agregado e custo"]
+    C2["Fluxo, cycle time, throughput e WIP"]
+    C3["Trabalho em aberto formal"]
+    C4["Precisão por funcionalidade"]
   end
 ```
 

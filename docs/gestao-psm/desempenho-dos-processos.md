@@ -14,17 +14,17 @@ O mapeamento estrutural associa esta categoria à necessidade de conhecer o stat
 
 ```mermaid
 flowchart TB
-  need["Necessidade: status e tendencia plano x execucao"]
-  subgraph map [ConstrutoDoMapeamento]
+  need["Necessidade: status e tendência plano x execução"]
+  subgraph map ["Construto do mapeamento"]
     tp["MB: Trabalho Planejado"]
-    tc["MB: Trabalho Concluido"]
-    ta["MD: Trabalho em Aberto = Planejado - Concluido"]
+    tc["MB: Trabalho Concluído"]
+    ta["MD: Trabalho em Aberto = Planejado - Concluído"]
   end
-  subgraph e1 [ConstrutoAplicadoNaE1]
-    def["MB: defeitos confirmados na revisao"]
-    sec["MB: secoes revisadas"]
-    dens["MD: densidade D = defeitos / secoes"]
-    corr["MD: taxa de correcao"]
+  subgraph e1 ["Construto aplicado na E1"]
+    def["MB: defeitos confirmados na revisão"]
+    sec["MB: seções revisadas"]
+    dens["MD: densidade D = defeitos / seções"]
+    corr["MD: taxa de correção"]
   end
   need --> map
   need --> e1
@@ -49,14 +49,14 @@ A densidade de defeitos informa a **qualidade do processo de produção do artef
 
 ```mermaid
 flowchart TB
-  needA["Necessidade: eficacia do processo de revisao"]
+  needA["Necessidade: eficácia do processo de revisão"]
   def["MB1: quantidade de defeitos confirmados"]
-  sec["MB2: quantidade de secoes revisadas"]
+  sec["MB2: quantidade de seções revisadas"]
   corrN["MB3: defeitos corrigidos"]
-  dens["MD1: densidade D = defeitos / secoes"]
-  taxa["MD2: taxa de correcao = corrigidos / defeitos"]
-  ind["Indicador: D e taxa de correcao"]
-  crit["Criterio: nova revisao com dados reais se D elevado"]
+  dens["MD1: densidade D = defeitos / seções"]
+  taxa["MD2: taxa de correção = corrigidos / defeitos"]
+  ind["Indicador: D e taxa de correção"]
+  crit["Critério: nova revisão com dados reais se D elevado"]
   needA --> def
   needA --> sec
   needA --> corrN

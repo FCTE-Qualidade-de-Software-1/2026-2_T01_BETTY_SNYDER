@@ -20,12 +20,12 @@ A Figura 1 apresenta o construto aplicado (e as extensões ainda não operaciona
 flowchart TB
   need["Necessidade: custo e cronograma estimados"]
   entity["Entidade: integrante / tarefa"]
-  hp["MB1: horas_planejadas"]
-  hr["MB2: horas_reais"]
-  desvio["MD1: desvio_percentual"]
-  part["MD2: participacao_percentual"]
-  ind["Indicador: desvio da equipe e participacao minima"]
-  crit["Criterios: subutilizacao; sobrecarga +30%; part. menor que 10%"]
+  hp["MB1: horas planejadas"]
+  hr["MB2: horas reais"]
+  desvio["MD1: desvio percentual"]
+  part["MD2: participação percentual"]
+  ind["Indicador: desvio da equipe e participação mínima"]
+  crit["Critérios: subutilização; sobrecarga +30%; part. menor que 10%"]
   need --> entity
   entity --> hp
   entity --> hr
@@ -83,7 +83,7 @@ flowchart TB
 | Elemento | Descrição |
 |---|---|
 | Status | **Insuficiente.** |
-| Situação no repositório | Os CSV de recursos não possuem colunas de custo monetário. A [organização GitHub](../github-organizacao.md) prevê campos *Estimated/Actual Cost (BRL)* no Project V2, ainda não criado. |
+| Situação no repositório | Os CSV de recursos não possuem colunas de custo monetário. A [organização GitHub](github-organizacao.md) prevê campos *Estimated/Actual Cost (BRL)* no Project V2, ainda não criado. |
 | Procedimento mínimo viável | Definir taxa horária convencional (ou custo unitário acadêmico) e derivar custo estimado/real a partir de \(H_p\) e \(H_r\), ou ativar os campos de custo no Project quando a autorização OAuth estiver disponível. |
 
 #### Estimativa versus cronograma real
@@ -118,12 +118,12 @@ flowchart TB
 
 ```mermaid
 flowchart TB
-  need2["Necessidade: precisao das estimativas"]
+  need2["Necessidade: precisão das estimativas"]
   comp["MB: trabalho comprometido por funcionalidade"]
-  done["MB: trabalho concluido por funcionalidade"]
-  ratio["MD: Comprometido vs Concluido"]
-  prec["MD: Precisao da estimativa"]
-  ind2["Indicador: vies sistematico de estimativa"]
+  done["MB: trabalho concluído por funcionalidade"]
+  ratio["MD: Comprometido vs Concluído"]
+  prec["MD: Precisão da estimativa"]
+  ind2["Indicador: viés sistemático de estimativa"]
   need2 --> comp
   need2 --> done
   comp --> ratio

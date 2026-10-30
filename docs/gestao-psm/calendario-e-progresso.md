@@ -17,13 +17,13 @@ flowchart TB
   need["Necessidade: entrega conforme compromisso"]
   entity["Entidade: tarefa / issue com prazo"]
   tp["MB1: tarefas com prazo no corte Tp"]
-  tc["MB2: tarefas concluidas no prazo Tc"]
+  tc["MB2: tarefas concluídas no prazo Tc"]
   wi_c["MB3: work items comprometidos"]
-  wi_d["MB4: work items concluidos"]
+  wi_d["MB4: work items concluídos"]
   icp["MD1: ICP = Tc / Tp"]
-  pct["MD2: percentual work items concluidos"]
+  pct["MD2: percentual de work items concluídos"]
   ind["Indicador: conformidade e risco de atraso"]
-  crit["Criterio: ICP menor que 70% redistribuir"]
+  crit["Critério: ICP menor que 70% redistribuir"]
   need --> entity
   entity --> tp
   entity --> tc
@@ -59,7 +59,7 @@ flowchart TB
 |---|---|
 | Definição (mapeamento) | Contagem inteira de itens comprometidos e concluídos por iteração (ex.: stories) e por release (ex.: features/capacidades), conforme as medidas base do CID (JONES et al., 2021a) e a especificação *Committed vs Completed* (JONES et al., 2021b). |
 | Status | **Parcial.** |
-| Situação no repositório | Os cortes agrupam tarefas por `data_corte` (aproximação de “iteração” semanal). Milestones `PC1`, `F1`, `F2` e `E2` aproximam “releases”/marcos ([organização GitHub](../github-organizacao.md)). O `status` (`concluida`, `parcial`, `pendente`) permite contar concluídos, mas não há campos distintos *committed each iteration* versus *committed each release* nem story points. |
+| Situação no repositório | Os cortes agrupam tarefas por `data_corte` (aproximação de “iteração” semanal). Milestones `PC1`, `F1`, `F2` e `E2` aproximam “releases”/marcos ([organização GitHub](github-organizacao.md)). O `status` (`concluida`, `parcial`, `pendente`) permite contar concluídos, mas não há campos distintos *committed each iteration* versus *committed each release* nem story points. |
 | Procedimento mínimo viável | Em cada planejamento semanal, marcar explicitamente o conjunto comprometido do corte; ao fechar o marco, contar concluídos por milestone; opcionalmente introduzir pontos ou pesos. |
 
 ### Medidas derivadas
@@ -108,9 +108,9 @@ flowchart TB
 
 ```mermaid
 flowchart LR
-  todo[AFazer_ToDo]
-  wip[EmAndamento_InProgress]
-  done[Concluido_Done]
+  todo["A Fazer / To Do"]
+  wip["Em Andamento / In Progress"]
+  done["Concluído / Done"]
   todo --> wip --> done
 ```
 
@@ -148,7 +148,7 @@ Enquanto esses procedimentos não existirem, a equipe responde à necessidade de
 |---|---|
 | `gestao-psm/calendario-progresso.csv` | Fonte canônica dos cortes ICP |
 | Issues e milestones do repositório | Materialização pós-PC1 das tarefas |
-| [Organização GitHub](../github-organizacao.md) | Estado do Project, labels e vínculos CSV → issues |
+| [Organização GitHub](github-organizacao.md) | Estado do Project, labels e vínculos CSV → issues |
 | [Retrospectiva E1](../retrospectiva-e1.md) | Limiar ICP &lt; 70%; ação C4 (issues) |
 
 ## Referências
