@@ -27,21 +27,21 @@ A Figura 1 particulariza o modelo genérico da Aula 09 para o construto de defei
 
 ```mermaid
 flowchart BT
-  need["Necessidades de Informação: eficacia da revisao documental"]
-  info["Informacao: decisao sobre nova revisao"]
-  ind["Indicador: densidade D e taxa de correcao"]
-  analise["Modelo de Analise: comparar D e correcao aos criterios"]
-  crit["Criterios: D elevado motiva Revisao 2 com dados reais"]
+  need["Necessidades de Informação: eficácia da revisão documental"]
+  info["Informação: decisão sobre nova revisão"]
+  ind["Indicador: densidade D e taxa de correção"]
+  analise["Modelo de Análise: comparar D e correção aos critérios"]
+  crit["Critérios: D elevado motiva Revisão 2 com dados reais"]
   md1["Medida Derivada: densidade D"]
-  md2["Medida Derivada: taxa de correcao"]
-  func["Funcao de Medicao: razoes entre contagens"]
-  mb1["Medida Basica: defeitos confirmados"]
-  mb2["Medida Basica: secoes revisadas"]
-  met1["Metodo de medicao: contar defeitos confirmados"]
-  met2["Metodo de Medicao: contar secoes revisadas"]
+  md2["Medida Derivada: taxa de correção"]
+  func["Função de Medição: razões entre contagens"]
+  mb1["Medida Básica: defeitos confirmados"]
+  mb2["Medida Básica: seções revisadas"]
+  met1["Método de medição: contar defeitos confirmados"]
+  met2["Método de Medição: contar seções revisadas"]
   attr1["Atributo: defeito confirmado"]
-  attr2["Atributo: secao revisada"]
-  ent["Entidades: revisao do artigo e secoes"]
+  attr2["Atributo: seção revisada"]
+  ent["Entidades: revisão do artigo e seções"]
   ent --> attr1
   ent --> attr2
   attr1 --> met1
@@ -106,20 +106,20 @@ A Figura 2 aplica a mesma topologia do modelo da Aula 09 às medidas de trabalho
 
 ```mermaid
 flowchart BT
-  need["Necessidades de Informacao: status do marco e tendencia plano x execucao"]
-  info["Informacao: projecao de conclusao do marco"]
-  ind["Indicador: trabalho em aberto e tendencia"]
-  analise["Modelo de Analise: Wa versus vazao e tempo restante"]
-  crit["Criterios: Wa compativel com capacidade restante do marco"]
+  need["Necessidades de Informação: status do marco e tendência plano x execução"]
+  info["Informação: projeção de conclusão do marco"]
+  ind["Indicador: trabalho em aberto e tendência"]
+  analise["Modelo de Análise: Wa versus vazão e tempo restante"]
+  crit["Critérios: Wa compatível com capacidade restante do marco"]
   md1["Medida Derivada: trabalho em aberto Wa"]
-  md2["Medida Derivada: razao Wa sobre tempo restante"]
-  func["Funcao de Medicao: diferenca e razao"]
-  mb1["Medida Basica: trabalho planejado Wp"]
-  mb2["Medida Basica: trabalho concluido Wc"]
-  met1["Metodo de medicao: contar itens comprometidos do marco"]
-  met2["Metodo de Medicao: contar itens concluidos"]
+  md2["Medida Derivada: razão Wa sobre tempo restante"]
+  func["Função de Medição: diferença e razão"]
+  mb1["Medida Básica: trabalho planejado Wp"]
+  mb2["Medida Básica: trabalho concluído Wc"]
+  met1["Método de medição: contar itens comprometidos do marco"]
+  met2["Método de Medição: contar itens concluídos"]
   attr1["Atributo: compromisso de escopo"]
-  attr2["Atributo: conclusao de item"]
+  attr2["Atributo: conclusão de item"]
   ent["Entidades: marco, corte e itens de trabalho"]
   ent --> attr1
   ent --> attr2
