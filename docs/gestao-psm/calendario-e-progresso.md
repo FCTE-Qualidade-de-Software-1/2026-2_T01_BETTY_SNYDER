@@ -6,7 +6,7 @@
 
 Esta página especifica o *measurement construct* da categoria Calendário e progresso, conforme o modelo de informação do PSM (RAMOS, 2026), o mapeamento estrutural da equipe e as especificações CID de *Committed vs Completed*, fluxo cumulativo, *Cycle Time* / *Lead Time* e vazão (JONES et al., 2021a; JONES et al., 2021b).
 
-Na Entrega 1, a medida operacional central foi o **Índice de Conformidade de Prazos (ICP)**. Após o Ponto de Controle 1, as tarefas do CSV foram materializadas em 46 issues e vinculadas ao Project `Anki Quality Assessment: PSM/CID`, com Status de fluxo (A Fazer, Em Andamento, Concluído) e campos de data, o que habilita a coleta sistemática das medidas de fluxo nos cortes seguintes.
+Na Entrega 1, a medida operacional central foi o **Índice de Conformidade de Prazos (ICP)**. Após o Ponto de Controle 1, as tarefas do CSV foram materializadas em 46 issues. Na conferência de 03/11/2026, o Project `BETTY SNYDER` (#40) continha 4 itens; o provisionamento para inclusão das Issues restantes está descrito em [Organização no GitHub](github-organizacao.md). Data fim planejada e Data fim real sustentam o ICP; as transições de Status registram início e conclusão reais para medidas de fluxo como *Cycle Time* e *Throughput*.
 
 ## Necessidade 1: Entrega conforme o compromisso e risco de atraso
 

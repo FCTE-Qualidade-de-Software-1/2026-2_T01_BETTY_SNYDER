@@ -104,7 +104,7 @@ Cortes documentados: **11/10/2026**, **18/10/2026** e **25/10/2026**. Não houve
 - documento de pendências da Entrega 1;
 - contagens de revisão do artigo (defeitos confirmados e correções).
 
-**Transição após o Ponto de Controle 1.** As tarefas do calendário foram materializadas em 46 issues e em milestones (`PC1`, `F1`, `F2`, `E2`). O Project (Projects V2) `Anki Quality Assessment: PSM/CID` foi constituído com campos PSM/CID e com as issues do repositório vinculadas, conforme [Organização no GitHub](gestao-psm/github-organizacao.md). Essa infraestrutura amplia a rastreabilidade de Calendário e progresso: o Status do Project (A Fazer, Em Andamento, Concluído) e as datas Planned/Actual passam a sustentar a coleta de *Cycle Time*, *Throughput* e WIP, em complemento ao ICP obtido do CSV.
+**Transição após o Ponto de Controle 1.** As tarefas do calendário foram materializadas em 46 issues e em milestones (`PC1`, `F1`, `F2`, `E2`). O Project (Projects V2) `BETTY SNYDER` (#40) tem o repositório como padrão e, na conferência de 03/11/2026, continha 4 itens. O provisionamento das Issues restantes está descrito em [Organização no GitHub](gestao-psm/github-organizacao.md). Com as tarefas vinculadas e os campos preenchidos, as datas planejadas e reais apoiam o ICP; o histórico das transições de Status fornece as datas de início real e conclusão para *Cycle Time*, *Throughput* e WIP.
 
 Nenhum valor de indicador deve ser estimado ou inventado: cada medida aponta para arquivo, data de corte e evidência.
 

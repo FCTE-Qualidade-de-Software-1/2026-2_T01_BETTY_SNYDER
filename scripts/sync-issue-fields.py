@@ -1,13 +1,7 @@
-"""
-Sincroniza labels e bloco de metadados Project/PSM no corpo das issues,
-a partir do que já está documentado em cada issue e em gestao-psm/calendario-progresso.csv.
-
-Campos do GitHub Projects V2 exigem escopo read:project/project (não disponível
-neste token). Este script atualiza o que a API com escopo repo permite:
-corpo da issue + labels.
-"""
+"""Sincroniza labels, bloco dos sete campos PSM no corpo das Issues e CSV de mapeamento."""
 from __future__ import annotations
 
+import argparse
 import csv
 import json
 import re
@@ -20,10 +14,8 @@ ROOT = Path(__file__).resolve().parents[1]
 OWNER = "FCTE-Qualidade-de-Software-1"
 REPO = "2026-2_T01_BETTY_SNYDER"
 CSV_PATH = ROOT / "gestao-psm" / "calendario-progresso.csv"
-COST_PER_HOUR = 35.0
 MARKER_START = "<!-- PSM-PROJECT-FIELDS:START -->"
 MARKER_END = "<!-- PSM-PROJECT-FIELDS:END -->"
-DRY_RUN = False
 
 
 def get_token() -> str:
@@ -87,10 +79,29 @@ def list_issues(token: str):
 
 def dig(body: str, *keys: str) -> str:
     body = body or ""
-    for k in keys:
-        m = re.search(rf"\*\*{re.escape(k)}\*\*:\s*`?([^`\n]+)`?", body, re.I)
-        if m:
-            return m.group(1).strip()
+    for key in keys:
+        escaped = re.escape(key)
+        patterns = (
+            rf"^\s*(?:-\s*)?\*\*{escaped}\*\*\s*:\s*(.*?)\s*$",
+            rf"^\s*(?:-\s*)?\*\*{escaped}:\*\*\s*(.*?)\s*$",
+            rf"^\s*{escaped}\s*:\s*(.*?)\s*$",
+        )
+        for pattern in patterns:
+            match = re.search(pattern, body, re.I | re.M)
+            if match:
+                value = match.group(1).strip().strip("`")
+                if value:
+                    return value
+
+        heading = re.search(
+            rf"^\s*###\s+{escaped}\s*\r?\n((?:(?!^\s*###\s).*(?:\r?\n|$))*)",
+            body,
+            re.I | re.M,
+        )
+        if heading:
+            value = heading.group(1).strip()
+            if value:
+                return value.splitlines()[0].strip().strip("`")
     return ""
 
 
@@ -134,10 +145,6 @@ def project_status(csv_status: str, gh_state: str) -> str:
     if st == "parcial":
         return "In Progress"
     return "Todo"
-
-
-def progress_pct(status: str) -> str:
-    return {"Done": "100", "In Progress": "50"}.get(status, "0")
 
 
 def psm_label_from_id(aid: str, title: str) -> str:
@@ -198,33 +205,28 @@ def strip_old_block(body: str) -> str:
     return body.rstrip()
 
 
+def display_value(value: str) -> str:
+    return value.strip() if value and value.strip() else "Não informado"
+
+
 def build_block(meta: dict) -> str:
     lines = [
         MARKER_START,
         "## Campos do Project (PSM)",
         "",
-        "Preencha estes valores no quadro **Anki Quality Assessment: PSM/CID**.",
-        "Custo estimado: C = H x 35 (R$ 35,00/h).",
+        "Project: **BETTY SNYDER** (organization project #40).",
         "",
         f"- **Status:** `{meta['Status']}`",
-        f"- **Priority:** `{meta['Priority']}`",
-        f"- **Quality Attribute:** `{meta['Quality Attribute']}`",
-        f"- **Activity Type:** `{meta['Activity Type']}`",
-        f"- **Platform:** `{meta['Platform']}`",
-        f"- **Planned Effort (h):** `{meta['Planned Effort (h)']}`",
-        f"- **Actual Effort (h):** `{meta['Actual Effort (h)']}`",
-        f"- **Estimated Cost (BRL):** `{meta['Estimated Cost (BRL)']}`",
-        f"- **Actual Cost (BRL):** `{meta['Actual Cost (BRL)']}`",
-        f"- **Planned Start:** `{meta['Planned Start']}`",
-        f"- **Planned End:** `{meta['Planned End']}`",
-        f"- **Actual Completion:** `{meta['Actual Completion']}`",
-        f"- **Progress (%):** `{meta['Progress (%)']}`",
-        f"- **Evidence:** {meta['Evidence']}",
+        f"- **Esforço planejado (horas):** `{meta['Esforço planejado (horas)']}`",
+        f"- **Esforço real (horas):** `{meta['Esforço real (horas)']}`",
+        f"- **Data início planejada:** `{meta['Data início planejada']}`",
+        f"- **Data fim planejada:** `{meta['Data fim planejada']}`",
+        f"- **Data fim real:** `{meta['Data fim real']}`",
+        f"- **Progresso (%):** `{meta['Progresso (%)']}`",
+        f"- **Evidência (link):** {meta['Evidência (link)']}",
         "",
-        "### Relação com as categorias PSM",
-        "- **Calendário e progresso:** Status, Planned/Actual dates, Progress (%), labels `status:*`.",
-        "- **Recursos e custos:** Planned/Actual Effort (h) e Cost (BRL) com R$ 35,00/h.",
-        "- **Desempenho dos processos:** Activity Type + evidências de fluxo (cycle time / throughput).",
+        "Custos derivados: planejado = esforço planejado × R$ 35,00/h; "
+        "real = esforço real × R$ 35,00/h. Não são campos do Project.",
         MARKER_END,
     ]
     return "\n".join(lines)
@@ -255,6 +257,13 @@ def desired_labels(existing: list[str], meta_labels: dict) -> list[str]:
 
 
 def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument(
+        "--dry-run",
+        action="store_true",
+        help="mostra o que seria atualizado sem alterar Issues",
+    )
+    args = parser.parse_args()
     token = get_token()
     csv_rows = load_csv()
     issues = list_issues(token)
@@ -264,17 +273,26 @@ def main():
     for issue in sorted(issues, key=lambda x: x["number"]):
         num = issue["number"]
         body = issue.get("body") or ""
+        source_body = strip_old_block(body)
         title = issue.get("title") or ""
         state = issue["state"]
         existing = [l["name"] for l in issue.get("labels", [])]
         aid = infer_activity_id(issue, body)
         crow = csv_rows.get(aid, {})
 
-        prazo = dig(body, "Prazo planejado") or crow.get("prazo", "")
-        corte = dig(body, "Corte de medição (calendário)") or crow.get("data_corte", "")
+        planned_start = dig(
+            source_body, "Data início planejada", "Início planejado"
+        )
+        planned_end = (
+            dig(source_body, "Data fim planejada", "Conclusão planejada", "Prazo planejado")
+            or crow.get("prazo", "")
+        )
+        actual_end = dig(
+            source_body, "Data fim real", "Data de conclusão real", "Conclusão real"
+        )
         csv_status = crow.get("status", "")
         if not csv_status:
-            m = re.search(r"\*\*Status em[^:]*:\*\*\s*\*\*([^*]+)\*\*", body)
+            m = re.search(r"\*\*Status em[^:]*:\*\*\s*\*\*([^*]+)\*\*", source_body)
             txt = (m.group(1).strip().lower() if m else "")
             if "parcial" in txt:
                 csv_status = "parcial"
@@ -282,9 +300,7 @@ def main():
                 csv_status = "pendente"
             elif state == "closed":
                 csv_status = "concluida"
-        evidencia = crow.get("evidencia_planilha_ou_ata") or dig(body, "Evidência", "Evidence")
-        if not evidencia and state == "closed":
-            evidencia = "Ver comentários, commits e entregáveis vinculados à issue"
+        evidence = dig(source_body, "Evidência (link)", "Evidence (link)")
 
         proj = project_status(csv_status, state)
         status_lbl = map_status_label(
@@ -298,37 +314,27 @@ def main():
         pri_lbl = priority_label(existing)
         env_lbl = env_label(existing)
 
-        planned_effort = dig(body, "Esforço planejado (horas)", "Esforço planejado (h)")
-        actual_effort = dig(body, "Esforço real (horas)", "Esforço real (h)")
-        # esforço por issue não está no CSV de calendário; deixa em branco se ausente
-        est_cost = (
-            f"{float(planned_effort.replace(',', '.')) * COST_PER_HOUR:.2f}"
-            if planned_effort
-            else ""
+        planned_effort = dig(
+            source_body, "Esforço planejado (horas)", "Esforço planejado (h)"
         )
-        act_cost = (
-            f"{float(actual_effort.replace(',', '.')) * COST_PER_HOUR:.2f}"
-            if actual_effort
-            else ""
+        actual_effort = dig(
+            source_body, "Esforço real (horas)", "Esforço real (h)"
         )
+        progress = dig(source_body, "Progresso (%)", "Progress (%)")
+        if not progress and proj == "Done":
+            progress = "100"
+        elif not progress and proj == "Todo":
+            progress = "0"
 
         meta = {
             "Status": proj,
-            "Priority": {"priority:high": "P0", "priority:medium": "P1", "priority:low": "P2"}.get(
-                pri_lbl, "P1"
-            ),
-            "Quality Attribute": "Transversal ao estudo",
-            "Activity Type": type_lbl.replace("type:", "").replace("-", " ").title(),
-            "Platform": "Docs / Geral",
-            "Planned Effort (h)": planned_effort or "(registrar na abertura)",
-            "Actual Effort (h)": actual_effort or ("(registrar no fechamento)" if proj != "Done" else "(registrar)"),
-            "Estimated Cost (BRL)": est_cost or "(H_p × 35)",
-            "Actual Cost (BRL)": act_cost or "(H_r × 35)",
-            "Planned Start": corte or "(AAAA-MM-DD)",
-            "Planned End": prazo or "(AAAA-MM-DD)",
-            "Actual Completion": prazo if proj == "Done" else "",
-            "Progress (%)": progress_pct(proj),
-            "Evidence": evidencia or "(caminho ou link)",
+            "Esforço planejado (horas)": display_value(planned_effort),
+            "Esforço real (horas)": display_value(actual_effort),
+            "Data início planejada": display_value(planned_start),
+            "Data fim planejada": display_value(planned_end),
+            "Data fim real": display_value(actual_end),
+            "Progresso (%)": display_value(progress),
+            "Evidência (link)": display_value(evidence),
         }
 
         new_labels = desired_labels(
@@ -353,8 +359,13 @@ def main():
                 "Status": meta["Status"],
                 "status_label": status_lbl,
                 "psm_label": psm_lbl,
-                "Planned End": meta["Planned End"],
-                "Progress (%)": meta["Progress (%)"],
+                "Esforço planejado (horas)": meta["Esforço planejado (horas)"],
+                "Esforço real (horas)": meta["Esforço real (horas)"],
+                "Data início planejada": meta["Data início planejada"],
+                "Data fim planejada": meta["Data fim planejada"],
+                "Data fim real": meta["Data fim real"],
+                "Progresso (%)": meta["Progresso (%)"],
+                "Evidência (link)": meta["Evidência (link)"],
                 "labels": ",".join(new_labels),
             }
         )
@@ -366,7 +377,7 @@ def main():
             continue
 
         print(f"#{num} atualizando body={body_changed} labels={labels_changed}")
-        if DRY_RUN:
+        if args.dry_run:
             continue
         payload = {}
         if body_changed:
@@ -383,7 +394,7 @@ def main():
         w.writeheader()
         w.writerows(mapping_rows)
 
-    print(f"Atualizadas: {updated}/{len(issues)}")
+    print(f"Atualizadas: {updated}/{len(issues)}{' (dry-run)' if args.dry_run else ''}")
     print(f"CSV: {out_csv}")
 
 

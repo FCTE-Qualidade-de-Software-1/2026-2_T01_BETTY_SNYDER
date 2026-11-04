@@ -1,4 +1,5 @@
 """Gera PDF didático alinhado à estrutura atual do repositório Betty Snyder."""
+from datetime import date
 from pathlib import Path
 
 from reportlab.lib.colors import HexColor
@@ -173,7 +174,8 @@ def build():
     story.append(Paragraph("Padrão de abertura e fechamento de Issues", st["title"]))
     story.append(
         Paragraph(
-            "Equipe Betty Snyder · repositório 2026-2_T01_BETTY_SNYDER · PSM/CID · 30/10/2026",
+            f"Equipe Betty Snyder · repositório 2026-2_T01_BETTY_SNYDER · "
+            f"PSM/CID · {date.today().strftime('%d/%m/%Y')}",
             st["sub"],
         )
     )
@@ -181,7 +183,7 @@ def build():
         Paragraph(
             "Guia objetivo alinhado à estrutura <b>atual</b> do repositório: pastas, "
             "templates em <b>.github/ISSUE_TEMPLATE/</b>, corpo das Issues, labels, "
-            "milestones, Project <b>Anki Quality Assessment: PSM/CID</b> e páginas "
+            "milestones, Project <b>BETTY SNYDER (#40)</b> e páginas "
             "MkDocs em <b>docs/gestao-psm/</b>.",
             st["body"],
         )
@@ -228,7 +230,7 @@ def build():
                 ["Template 01 - Atividade de Avaliação", "Tarefa do projeto (fonte PSM)"],
                 ["Template 02 - Registro de Medição", "Observação GQM do Anki (produto)"],
                 ["Template 03 - Recomendação de Melhoria", "Ação de melhoria"],
-                ["Project Anki Quality Assessment: PSM/CID", "Campos numéricos e Status de fluxo"],
+                ["Project BETTY SNYDER (#40)", "Sete campos padrão e Status de fluxo"],
                 ["Labels psm:* / type:* / status:*", "Filtro e corte de conformidade"],
             ],
             [7.8 * cm, 8.9 * cm],
@@ -240,8 +242,9 @@ def build():
     story.append(Paragraph("3. Estrutura da Issue (usar diretamente)", st["h1"]))
     story.append(
         Paragraph(
-            "As Issues do repositório seguem este corpo. Não há formulário paralelo: "
-            "preencha e mantenha esta estrutura; espelhe o bloco final no Project.",
+            "Use o formulário 01 para registrar os sete campos no corpo da Issue. "
+            "O sincronizador mantém o bloco e as labels; atualize manualmente os "
+            "campos correspondentes no quadro do Project.",
             st["body"],
         )
     )
@@ -250,24 +253,27 @@ def build():
             "## Identificação\n"
             "- **ID da atividade:** `E2-A1`\n"
             "- **Responsável:** Dupla A\n"
-            "- **Prazo planejado:** AAAA-MM-DD\n"
-            "- **Corte de medição (calendário):** AAAA-MM-DD\n"
+            "- **Data início planejada:** AAAA-MM-DD\n"
+            "- **Data fim planejada:** AAAA-MM-DD\n"
             "- **Fonte de planejamento:** ...\n"
             "## Objetivo\n"
             "...\n"
             "## Situação atualizada (corte ...)\n"
             "- **Campo `status` (CSV):** `pendente|parcial|concluida`\n"
             "- **Concluída no prazo:** `sim|nao`\n"
-            "- **Evidência:** ...\n"
+            "- **Evidência (link):** ...\n"
             "## Critérios de conclusão\n"
             "- [ ] ...\n"
             "## Observações PSM/CID\n"
             "...\n"
             "## Campos do Project (PSM)\n"
-            "- **Status:** `Todo|In Progress|Done`\n"
-            "- **Priority / Quality Attribute / Activity Type / Platform**\n"
-            "- **Planned|Actual Effort (h)** e **Estimated|Actual Cost (BRL)**\n"
-            "- **Planned Start|End**, **Actual Completion**, **Progress (%)**, **Evidence**",
+            "- **Esforço planejado (horas):** ...\n"
+            "- **Esforço real (horas):** ...\n"
+            "- **Data início planejada:** AAAA-MM-DD\n"
+            "- **Data fim planejada:** AAAA-MM-DD\n"
+            "- **Data fim real:** AAAA-MM-DD\n"
+            "- **Progresso (%):** ...\n"
+            "- **Evidência (link):** ...",
             st["code"],
         )
     )
@@ -304,8 +310,10 @@ def build():
                 "<b>E2 | Relatório e Recomendações de Melhoria</b> (PC1 já closed).",
                 "Incluir no Project e definir Status: <b>Todo</b> (A Fazer) ou "
                 "<b>In Progress</b> (Em Andamento).",
-                "Preencher no Project os mesmos campos do bloco <b>Campos do Project (PSM)</b>.",
-                "Custo: <b>Estimated Cost (BRL) = Planned Effort (h) × 35</b>.",
+                "Preencher no Project #40 os sete campos descritos abaixo; Status é um campo nativo.",
+                "O sincronizador atualiza o bloco da Issue, labels e CSV de mapeamento; "
+                "não altera valores de campos do Project via API.",
+                "Derivar custos fora do Project: esforço planejado/real × R$ 35,00/h.",
                 "Assignee + labels coerentes com o padrão do repositório.",
             ],
             st,
@@ -317,16 +325,13 @@ def build():
             [
                 ["Campo", "Tipo / valores"],
                 ["Status", "Todo · In Progress · Done"],
-                ["Priority", "High · Medium · Low"],
-                ["Quality Attribute", "Interaction Capability · Performance Efficiency · Flexibility · Cross-cutting"],
-                ["Activity Type", "Planning · Execution · Measurement · Analysis · Documentation · Improvement"],
-                ["Platform", "Desktop Windows · Desktop macOS · Desktop Ubuntu · AnkiWeb · Cross-platform"],
-                ["Planned / Actual Effort (h)", "número (Hp / Hr)"],
-                ["Estimated / Actual Cost (BRL)", "número (H × 35)"],
-                ["Planned Start / Planned End", "data"],
-                ["Actual Completion", "data"],
-                ["Progress (%)", "número"],
-                ["Evidence", "texto (caminho ou link no repositório)"],
+                ["Esforço planejado (horas)", "número (Hp)"],
+                ["Esforço real (horas)", "número (Hr)"],
+                ["Data início planejada", "data"],
+                ["Data fim planejada", "data"],
+                ["Data fim real", "data real; não copiar o prazo planejado"],
+                ["Progresso (%)", "número observado de 0 a 100"],
+                ["Evidência (link)", "texto (URL ou link para evidência)"],
             ],
             [5.5 * cm, 11.2 * cm],
             st,
@@ -334,8 +339,9 @@ def build():
     )
     story.append(
         Paragraph(
-            "Não existe campo “Categoria PSM” no Project: a categoria é a pergunta "
-            "respondida pelo conjunto de atributos (ver seção 7).",
+            "O Project não possui campos separados de custo ou categoria PSM. Os custos "
+            "são derivados do esforço; a categoria PSM corresponde à necessidade de "
+            "informação respondida.",
             st["body"],
         )
     )
@@ -346,9 +352,9 @@ def build():
         bullets(
             [
                 "Status do Project → <b>In Progress</b> no primeiro dia de trabalho real.",
-                "Atualizar Progress (%) e comentários com evidências parciais.",
+                "Atualizar Progresso (%) com o valor observado e registrar evidências parciais.",
                 "Atualizar a seção <b>Situação atualizada</b> no corpo da Issue.",
-                "Não apagar Planned End se houver atraso: registre o desvio em comentário.",
+                "Não alterar Data fim planejada se houver atraso: registre o desvio em comentário.",
             ],
             st,
         )
@@ -359,11 +365,11 @@ def build():
     story.append(
         bullets(
             [
-                "Marcar critérios de conclusão e preencher <b>Evidence</b>.",
-                "Actual Effort (h) = horas reais; Actual Cost (BRL) = Hr × 35.",
-                "Actual Completion = data real; Progress (%) = 100; Status = <b>Done</b>.",
+                "Marcar critérios de conclusão e preencher <b>Evidência (link)</b>.",
+                "Preencher Esforço real (horas) com horas registradas; custo real = Hr × R$ 35,00/h.",
+                "Preencher Data fim real com a data efetiva; Progresso (%) = 100; Status = <b>Done</b>.",
                 "Label de prazo: <b>status:on-time</b> ou <b>status:late</b> "
-                "(compare Actual Completion com Planned End / Prazo planejado).",
+                "(compare Data fim real com Data fim planejada).",
                 "Atualizar Situação atualizada: status CSV <b>concluida</b> e "
                 "Concluída no prazo sim/nao.",
                 "Só então fechar a Issue (state closed) no GitHub.",
@@ -397,9 +403,9 @@ def build():
         table(
             [
                 ["Campo / evidência na Issue", "Medição"],
-                ["Prazo planejado · Planned End · Actual Completion", "Base do ICP (no prazo ou atrasado)"],
+                ["Data fim planejada · Data fim real", "Base do ICP (no prazo ou atrasado)"],
                 ["Status Todo → In Progress → Done", "Fluxo, WIP, cycle time"],
-                ["Progress (%)", "Proxy de avanço da unidade de trabalho"],
+                ["Progresso (%)", "Avanço observado da unidade de trabalho"],
                 ["Labels status:on-time|late|partial|pending", "Corte de conformidade"],
                 ["Milestone F1 / F2 / E2", "Work items comprometidos vs concluídos"],
                 ["CSV gestao-psm/calendario-progresso.csv", "Série histórica E1"],
@@ -413,7 +419,8 @@ def build():
     story.append(
         Paragraph(
             "Página: <b>docs/gestao-psm/recursos-e-custos.md</b>. "
-            "Convenção: <b>C = H × 35</b> (R$ 35,00/h). Hp = Planned Effort; Hr = Actual Effort.",
+            "Convenção: <b>C = H × 35</b> (R$ 35,00/h). Hp = esforço planejado; "
+            "Hr = esforço real. Custo é derivado, não um campo do Project.",
             st["body"],
         )
     )
@@ -421,10 +428,10 @@ def build():
         table(
             [
                 ["Campo / evidência na Issue", "Medição"],
-                ["Planned Effort (h) = Hp", "Esforço planejado"],
-                ["Actual Effort (h) = Hr", "Esforço real"],
-                ["Estimated Cost (BRL) = Hp × 35", "Custo estimado"],
-                ["Actual Cost (BRL) = Hr × 35", "Custo real"],
+                ["Esforço planejado (horas) = Hp", "Esforço planejado"],
+                ["Esforço real (horas) = Hr", "Esforço real"],
+                ["Hp × R$ 35,00/h", "Custo planejado derivado"],
+                ["Hr × R$ 35,00/h", "Custo real derivado"],
                 ["CSV gestao-psm/recursos-custos.csv (+ planilha de horas)", "Série E1 por integrante/dupla"],
             ],
             [8.2 * cm, 8.5 * cm],
@@ -446,9 +453,9 @@ def build():
             [
                 ["Campo / evidência na Issue", "Medição"],
                 ["Datas + Status de fluxo", "Tendência de execução e cycle time"],
-                ["Activity Type", "Perfil do trabalho no processo"],
+                ["Tipo de atividade descrito na Issue", "Perfil do trabalho no processo"],
                 ["Template 03 / type:improvement", "Ações de correção / retrabalho"],
-                ["Evidence + revisões documentadas", "Apoio a D e taxa de correção"],
+                ["Evidência (link) + revisões documentadas", "Apoio a D e taxa de correção"],
                 ["Contagem open vs closed por milestone", "Trabalho em aberto vs concluído"],
             ],
             [8.2 * cm, 8.5 * cm],
@@ -462,13 +469,12 @@ def build():
             [
                 ["Campo", "Calendário", "Recursos", "Desempenho"],
                 ["Status (fluxo)", "Sim", "Nao", "Sim"],
-                ["Planned/Actual dates", "Sim", "Nao", "Sim"],
-                ["Progress (%)", "Sim", "Nao", "Apoio"],
+                ["Datas planejadas / real", "Sim", "Nao", "Sim"],
+                ["Progresso (%)", "Sim", "Nao", "Apoio"],
                 ["Labels status:*", "Sim", "Nao", "Apoio"],
-                ["Planned/Actual Effort", "Nao", "Sim", "Apoio"],
-                ["Estimated/Actual Cost", "Nao", "Sim", "Nao"],
-                ["Activity Type", "Nao", "Nao", "Sim"],
-                ["Evidence", "Apoio", "Apoio", "Apoio"],
+                ["Esforço planejado / real", "Nao", "Sim", "Apoio"],
+                ["Tipo de atividade na Issue", "Nao", "Nao", "Sim"],
+                ["Evidência (link)", "Apoio", "Apoio", "Apoio"],
             ],
             [5.0 * cm, 3.9 * cm, 3.9 * cm, 3.9 * cm],
             st,
@@ -520,17 +526,18 @@ def build():
             "<b>Abertura:</b> título <b>[TASK] E2-B1 - Protocolo de sync AnkiWeb</b>; "
             "template 01; milestone F2; labels "
             "psm:schedule-progress, type:execution, environment:web, priority:medium, "
-            "status:pending; Planned Effort 3 h → Estimated Cost 105; "
-            "Platform AnkiWeb; Status Todo; bloco Campos do Project preenchido.",
+            "status:pending; Esforço planejado 3 h; "
+            "Data início planejada e Data fim planejada registradas; Status Todo; "
+            "campos padrão do Project preenchidos.",
             st["body"],
         )
     )
     story.append(
         Paragraph(
-            "<b>Fechamento:</b> Actual Effort 4 h → Actual Cost 140; "
-            "Actual Completion um dia após Planned End → status:late; "
-            "Evidence apontando arquivo em gestao-psm/ ou docs/; "
-            "Progress 100; Status Done; Situação atualizada = concluida; fechar Issue.",
+            "<b>Fechamento:</b> Esforço real 4 h (custo derivado R$ 140,00); "
+            "Data fim real um dia após Data fim planejada → status:late; "
+            "Evidência (link) preenchida; Progresso 100; Status Done; "
+            "Situação atualizada = concluida; fechar Issue.",
             st["body"],
         )
     )
@@ -553,7 +560,8 @@ def build():
 
     story.append(
         Paragraph(
-            "Betty Snyder · FGA0315 Qualidade de Software 1 · UnB/FGA · PDF gerado a partir da estrutura do repositório em 30/10/2026",
+            f"Betty Snyder · FGA0315 Qualidade de Software 1 · UnB/FGA · "
+            f"PDF gerado a partir da estrutura do repositório em {date.today().strftime('%d/%m/%Y')}",
             st["small"],
         )
     )

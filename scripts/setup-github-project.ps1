@@ -1,144 +1,176 @@
 #Requires -Version 5.1
 <#
 .SYNOPSIS
-  Cria o GitHub Project V2 "Anki Quality Assessment — PSM/CID" e vincula Issues do repositório.
+  Verifica e completa a configuração do GitHub Project V2 BETTY SNYDER (#40).
 .NOTES
   Requer gh autenticado com escopos: project, read:project, repo.
   Uso: .\scripts\setup-github-project.ps1
 #>
 $ErrorActionPreference = "Stop"
 $gh = Get-Command gh -ErrorAction SilentlyContinue
-if (-not $gh) {
-  $fallback = "C:\Users\pedro.rodrigues\AppData\Local\Temp\gh-cli\bin\gh.exe"
-  if (Test-Path $fallback) { $ghExe = $fallback } else { throw "Instale o GitHub CLI (gh)." }
-} else { $ghExe = $gh.Source }
-
-function Invoke-GQL([string]$Query, [hashtable]$Variables = $null) {
-  $body = @{ query = $Query }
-  if ($Variables) { $body.variables = $Variables }
-  $tmp = Join-Path $env:TEMP ("gql-" + [guid]::NewGuid().ToString() + ".json")
-  [System.IO.File]::WriteAllText($tmp, ($body | ConvertTo-Json -Depth 8 -Compress))
-  $out = & $ghExe api graphql --input $tmp
-  if ($LASTEXITCODE -ne 0) { throw "GraphQL falhou: $out" }
-  return ($out | ConvertFrom-Json)
-}
-
-Write-Host "Verificando escopos..."
-& $ghExe auth status
+if (-not $gh) { throw "Instale e autentique o GitHub CLI (gh)." }
+$ghExe = $gh.Source
 
 $owner = "FCTE-Qualidade-de-Software-1"
 $repoName = "2026-2_T01_BETTY_SNYDER"
-$title = "Anki Quality Assessment — PSM/CID"
+$projectNumber = 40
+$projectTitle = "BETTY SNYDER"
 
-$repoQ = @'
-query($o:String!,$n:String!){
-  repository(owner:$o,name:$n){ id }
-  viewer { id }
-}
-'@
-$ids = Invoke-GQL $repoQ @{ o = $owner; n = $repoName }
-$ownerId = $ids.data.viewer.id
-$repoId = $ids.data.repository.id
-Write-Host "ownerId=$ownerId repoId=$repoId"
-
-$createQ = @'
-mutation($ownerId:ID!,$title:String!,$repoId:ID!){
-  createProjectV2(input:{ownerId:$ownerId,title:$title,repositoryId:$repoId}){
-    projectV2 { id title number url }
+function Invoke-GQL([string]$Query, [hashtable]$Variables = @{}) {
+  $body = @{ query = $Query; variables = $Variables }
+  $tmp = Join-Path $env:TEMP ("gql-" + [guid]::NewGuid().ToString() + ".json")
+  try {
+    [System.IO.File]::WriteAllText(
+      $tmp,
+      ($body | ConvertTo-Json -Depth 8 -Compress),
+      (New-Object System.Text.UTF8Encoding($false))
+    )
+    $out = & $ghExe api graphql --input $tmp
+    if ($LASTEXITCODE -ne 0) { throw "GraphQL falhou: $out" }
+    $response = $out | ConvertFrom-Json
+    if ($response.errors) {
+      throw "GraphQL retornou erro: $(($response.errors | ForEach-Object { $_.message }) -join '; ')"
+    }
+    return $response.data
+  } finally {
+    if (Test-Path $tmp) { Remove-Item -LiteralPath $tmp }
   }
 }
-'@
-try {
-  $created = Invoke-GQL $createQ @{ ownerId = $ownerId; title = $title; repoId = $repoId }
-  $project = $created.data.createProjectV2.projectV2
-} catch {
-  Write-Host "createProjectV2 com repositoryId falhou; tentando só owner+title..."
-  $createQ2 = @'
-mutation($ownerId:ID!,$title:String!){
-  createProjectV2(input:{ownerId:$ownerId,title:$title}){
-    projectV2 { id title number url }
+
+Write-Host "Verificando autenticação e escopos..."
+$authStatus = & $ghExe auth status 2>&1
+if ($LASTEXITCODE -ne 0) { throw "Autentique o GitHub CLI com gh auth login." }
+$authText = $authStatus -join "`n"
+foreach ($scope in @("'project'", "'read:project'", "'repo'")) {
+  if ($authText -notmatch [regex]::Escape($scope)) {
+    throw "O token precisa do escopo $scope. Execute: gh auth refresh -h github.com -s project,read:project,repo"
   }
 }
+Write-Host $authStatus
+
+$projectQuery = @'
+query($owner:String!,$number:Int!,$repoOwner:String!,$repoName:String!){
+  organization(login:$owner){
+    projectV2(number:$number){
+      id title number url
+      repositories(first:100){nodes{nameWithOwner}}
+      items(first:100){
+        nodes{id content{... on Issue{id}}}
+        pageInfo{hasNextPage}
+      }
+      fields(first:100){
+        nodes{
+          ... on ProjectV2FieldCommon{id name dataType}
+        }
+      }
+    }
+  }
+  repository(owner:$repoOwner,name:$repoName){id}
+}
 '@
-  $created = Invoke-GQL $createQ2 @{ ownerId = $ownerId; title = $title }
-  $project = $created.data.createProjectV2.projectV2
-  $linkQ = @'
+$data = Invoke-GQL $projectQuery @{
+  owner = $owner
+  number = $projectNumber
+  repoOwner = $owner
+  repoName = $repoName
+}
+$project = $data.organization.projectV2
+$repository = $data.repository
+if (-not $project) { throw "Project da organização #$projectNumber não foi encontrado." }
+if ($project.items.pageInfo.hasNextPage) {
+  throw "O Project tem mais de 100 itens; a paginação do inventário precisa ser expandida antes de provisionar."
+}
+if ($project.title -cne $projectTitle) {
+  throw "O Project #$projectNumber tem nome '$($project.title)', esperado '$projectTitle'. Nada foi alterado."
+}
+if (-not $repository) { throw "Repositório $owner/$repoName não foi encontrado." }
+
+Write-Host "Project confirmado: $($project.url)"
+
+$isLinked = @($project.repositories.nodes | Where-Object {
+  $_.nameWithOwner -eq "$owner/$repoName"
+}).Count -gt 0
+if (-not $isLinked) {
+  $linkQuery = @'
 mutation($projectId:ID!,$repositoryId:ID!){
   linkProjectV2ToRepository(input:{projectId:$projectId,repositoryId:$repositoryId}){
-    repository { name }
+    repository{nameWithOwner}
   }
 }
 '@
-  Invoke-GQL $linkQ @{ projectId = $project.id; repositoryId = $repoId } | Out-Null
+  Invoke-GQL $linkQuery @{ projectId = $project.id; repositoryId = $repository.id } | Out-Null
+  Write-Host "Repositório vinculado: $owner/$repoName"
+} else {
+  Write-Host "Repositório já vinculado: $owner/$repoName"
 }
 
-Write-Host "Project: $($project.url)"
-
-# Campos single-select / number / date / text conforme padrão §4.1
-function Add-SelectField($projectId, $name, [string[]]$options) {
-  $opts = ($options | ForEach-Object { "{ name: `"$_`" }" }) -join ", "
-  $q = @"
-mutation {
-  createProjectV2Field(input: {
-    projectId: `"$projectId`"
-    dataType: SINGLE_SELECT
-    name: `"$name`"
-    singleSelectOptions: [$opts]
-  }) {
-    projectV2Field { ... on ProjectV2SingleSelectField { id name } }
+$requiredFields = @(
+  @{ Name = "Esforço planejado (horas)"; DataType = "NUMBER" },
+  @{ Name = "Esforço real (horas)"; DataType = "NUMBER" },
+  @{ Name = "Data início planejada"; DataType = "DATE" },
+  @{ Name = "Data fim planejada"; DataType = "DATE" },
+  @{ Name = "Data fim real"; DataType = "DATE" },
+  @{ Name = "Progresso (%)"; DataType = "NUMBER" },
+  @{ Name = "Evidência (link)"; DataType = "TEXT" }
+)
+$createFieldQuery = @'
+mutation($projectId:ID!,$name:String!,$dataType:ProjectV2CustomFieldType!){
+  createProjectV2Field(input:{projectId:$projectId,name:$name,dataType:$dataType}){
+    projectV2Field{
+      ... on ProjectV2FieldCommon{id name dataType}
+    }
   }
 }
-"@
-  try { Invoke-GQL $q | Out-Null; Write-Host "campo $name" } catch { Write-Host "aviso campo $name : $_" }
-}
+'@
 
-function Add-SimpleField($projectId, $name, $dataType) {
-  $q = @"
-mutation {
-  createProjectV2Field(input: {
-    projectId: `"$projectId`"
-    dataType: $dataType
-    name: `"$name`"
-  }) {
-    projectV2Field { ... on ProjectV2FieldCommon { id name } }
+foreach ($required in $requiredFields) {
+  $existing = @($project.fields.nodes | Where-Object { $_.name -ceq $required.Name })
+  if ($existing.Count -gt 1) {
+    throw "Há mais de um campo '$($required.Name)' no Project #$projectNumber."
   }
-}
-"@
-  try { Invoke-GQL $q | Out-Null; Write-Host "campo $name ($dataType)" } catch { Write-Host "aviso campo $name : $_" }
+  if ($existing.Count -eq 1) {
+    if ($existing[0].dataType -cne $required.DataType) {
+      throw "O campo '$($required.Name)' tem tipo '$($existing[0].dataType)', esperado '$($required.DataType)'."
+    }
+    Write-Host "Campo OK: $($required.Name) ($($required.DataType))"
+    continue
+  }
+
+  $created = Invoke-GQL $createFieldQuery @{
+    projectId = $project.id
+    name = $required.Name
+    dataType = $required.DataType
+  }
+  $field = $created.createProjectV2Field.projectV2Field
+  if (-not $field) { throw "A API não confirmou a criação do campo '$($required.Name)'." }
+  Write-Host "Campo criado: $($field.name) ($($field.dataType))"
 }
 
-Add-SelectField $project.id "Priority" @("High","Medium","Low")
-Add-SelectField $project.id "Quality Attribute" @("Interaction Capability","Performance Efficiency","Flexibility","Cross-cutting")
-Add-SelectField $project.id "Activity Type" @("Planning","Execution","Measurement","Analysis","Documentation","Improvement")
-Add-SelectField $project.id "Platform" @("Desktop Windows","Desktop macOS","Desktop Ubuntu","AnkiWeb","Cross-platform")
-Add-SimpleField $project.id "Planned Effort (h)" "NUMBER"
-Add-SimpleField $project.id "Actual Effort (h)" "NUMBER"
-Add-SimpleField $project.id "Estimated Cost (BRL)" "NUMBER"
-Add-SimpleField $project.id "Actual Cost (BRL)" "NUMBER"
-Add-SimpleField $project.id "Planned Start" "DATE"
-Add-SimpleField $project.id "Planned End" "DATE"
-Add-SimpleField $project.id "Actual Completion" "DATE"
-Add-SimpleField $project.id "Progress (%)" "NUMBER"
-Add-SimpleField $project.id "Evidence" "TEXT"
+$issues = & $ghExe api --paginate "repos/$owner/$repoName/issues?state=all&per_page=100" --jq '.[] | select(.pull_request == null) | .node_id'
+if ($LASTEXITCODE -ne 0) { throw "Não foi possível listar as Issues de $owner/$repoName." }
 
-# Vincular todas as issues do repositório
-$issues = & $ghExe api "repos/$owner/$repoName/issues?state=all&per_page=100" --jq ".[].node_id"
-foreach ($nodeId in $issues) {
-  if (-not $nodeId) { continue }
-  $addQ = @'
+$addQuery = @'
 mutation($projectId:ID!,$contentId:ID!){
   addProjectV2ItemById(input:{projectId:$projectId,contentId:$contentId}){
-    item { id }
+    item{id}
   }
 }
 '@
-  try {
-    Invoke-GQL $addQ @{ projectId = $project.id; contentId = $nodeId } | Out-Null
-    Write-Host "item $nodeId"
-  } catch {
-    Write-Host "aviso item $nodeId : $_"
-  }
+$linkedIssueIds = @{}
+foreach ($item in $project.items.nodes) {
+  if ($item.content.id) { $linkedIssueIds[$item.content.id] = $true }
 }
 
-Write-Host "Concluído. Abra: $($project.url)"
-Write-Host "Configure as Views (Board, Table PSM, Medições, Cronograma) na UI do Project."
+$added = 0
+$checked = 0
+foreach ($nodeId in $issues) {
+  if (-not $nodeId) { continue }
+  $checked++
+  if ($linkedIssueIds.ContainsKey($nodeId)) { continue }
+  Invoke-GQL $addQuery @{ projectId = $project.id; contentId = $nodeId } | Out-Null
+  $linkedIssueIds[$nodeId] = $true
+  $added++
+}
+
+Write-Host "Concluído: $added Issues adicionadas; $checked verificadas no Project #$projectNumber."
+Write-Host "Views configuráveis na interface do Project: Kanban e Tabela PSM."

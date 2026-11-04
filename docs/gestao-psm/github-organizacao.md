@@ -1,34 +1,35 @@
 # Organização no GitHub (PSM / CID)
 
-Esta página documenta a infraestrutura do repositório `2026-2_T01_BETTY_SNYDER` empregada na coleta e no rastreamento das medidas PSM/CID. O padrão de referência é o documento `padrao_documentacao_github.md` (pasta do projeto acadêmico), adaptado ao contexto da equipe Betty Snyder. Atualização: **30/10/2026**.
+Esta página documenta a infraestrutura do repositório `2026-2_T01_BETTY_SNYDER` empregada na coleta e no rastreamento das medidas PSM/CID. O padrão de referência é o documento `padrao_documentacao_github.md` (pasta do projeto acadêmico), adaptado ao contexto da equipe Betty Snyder. Atualização: **03/11/2026**.
 
 No modelo de informação do PSM (RAMOS, 2026), Project, milestones, labels e issues correspondem a **entidades** e aos respectivos **atributos** sobre os quais se aplicam métodos de medição (contagens, esforço, prazo e estado de fluxo). A Parte 1 do *framework* CID orienta a seleção do que medir (JONES et al., 2021a); a Parte 2 especifica os procedimentos de coleta, cálculo e análise (JONES et al., 2021b). O detalhamento por categoria consta em [Recursos e custos](recursos-e-custos.md), [Calendário e progresso](calendario-e-progresso.md) e [Desempenho dos processos](desempenho-dos-processos.md).
 
 ## Project
 
-**Nome:** `Anki Quality Assessment: PSM/CID`  
-**Tipo:** GitHub Projects V2, vinculado ao repositório.  
-**Script de provisionamento:** `scripts/setup-github-project.ps1`.
+- **Nome:** `BETTY SNYDER`
+- **Tipo:** GitHub Projects V2 da organização, com o repositório padrão `FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER`.
+- **URL:** https://github.com/orgs/FCTE-Qualidade-de-Software-1/projects/40
+- **Script de provisionamento:** `scripts/setup-github-project.ps1` (completa o Project #40 existente; não cria outro).
 
-O Project está constituído e concentra o acompanhamento das atividades do projeto. As issues do repositório foram vinculadas ao quadro. O Status nativo do Projects V2 é utilizado com os estados de fluxo **A Fazer** (*Todo*), **Em Andamento** (*In Progress*) e **Concluído** (*Done*), alinhados ao mapeamento CID. As datas e os campos numéricos de esforço e custo permitem derivar as medidas das três categorias PSM a partir dos atributos gerais e específicos das tarefas, sem campo dedicado de categoria PSM.
+O nome, o repositório padrão e os sete campos foram conferidos nas configurações do Project e pela API GraphQL em **03/11/2026**. O campo nativo Status usa os estados **A Fazer** (*Todo*), **Em Andamento** (*In Progress*) e **Concluído** (*Done*), alinhados ao mapeamento CID. Na mesma conferência, o Project continha **4 itens**, enquanto o repositório tinha 46 Issues; o script de provisionamento verifica campos, vínculo e inclui Issues ainda ausentes. Para executar mutações, autentique `gh` com os escopos `project`, `read:project` e `repo`. Os custos são derivados do esforço, sem campo dedicado de categoria PSM ou de custo.
 
-### Campos personalizados (padrão §4.1)
+### Campos padrão do Project
 
-| Campo | Uso PSM / CID |
-|---|---|
-| Status | Estados de fluxo (A Fazer, Em Andamento, Concluído) |
-| Priority | Priorização gerencial do item |
-| Quality Attribute | Atributo GQM do produto (quando a issue for de medição do Anki) |
-| Activity Type | Tipo de atividade do projeto |
-| Platform | Ambiente de execução (medições de produto) |
-| Planned / Actual Effort (h) | Medidas básicas de esforço (Recursos e custos): \(H_p\) e \(H_r\) |
-| Estimated / Actual Cost (BRL) | Custo derivado automaticamente: \(C = H \times 35\) (R$ 35,00 por hora) |
-| Planned Start / End | Compromisso de calendário |
-| Actual Completion | Conclusão real (base para ICP e *cycle time*) |
-| Progress (%) | Proxy de progresso da unidade de trabalho |
-| Evidence | Evidência bruta ou caminho no repositório |
+Os sete campos personalizados do Project #40 e seus tipos:
 
-A série histórica da Entrega 1 permanece nos CSV em `gestao-psm/`. A partir da constituição do Project, os cortes seguintes de calendário e de esforço podem ser obtidos também a partir dos campos e do histórico de Status das issues vinculadas.
+| Campo | Tipo | Uso PSM / CID |
+|---|---|---|
+| Esforço planejado (horas) | Número | Esforço de referência da atividade (\(H_p\)) |
+| Esforço real (horas) | Número | Esforço realizado (\(H_r\)) |
+| Data início planejada | Data | Início previsto para a atividade |
+| Data fim planejada | Data | Prazo previsto; referência para o ICP |
+| Data fim real | Data | Data de conclusão efetiva; base para o ICP |
+| Progresso (%) | Número | Acompanhamento do avanço da atividade |
+| Evidência (link) | Texto | Rastreabilidade para entregáveis e registros |
+
+O campo nativo **Status** acompanha o fluxo e não faz parte desses sete campos personalizados. O *Cycle Time* deve ser obtido do histórico de transições de Status (início real até conclusão), não calculado com Data início planejada. Os custos são derivados dos esforços pela taxa definida em [Recursos e custos](recursos-e-custos.md); não são campos do Project.
+
+A série histórica da Entrega 1 permanece nos CSV em `gestao-psm/`. Nos cortes seguintes, medidas de calendário e esforço podem ser obtidas dos campos nativos depois de preenchidos; medidas de fluxo usam o histórico de Status das Issues já incluídas no quadro.
 
 ## Milestones
 
@@ -51,7 +52,7 @@ Labels legadas (Usabilidade/Portabilidade etc.) permanecem no repositório; nova
 
 ## Issues (corte 25/10)
 
-Foram criadas **46 Issues** a partir de `gestao-psm/calendario-progresso.csv`, milestone **F1**, com status no corpo e nas labels. Na Entrega 1 as issues **não** foram fonte primária de medição; após o Ponto de Controle 1 passaram a materializar o compromisso de trabalho e foram vinculadas ao Project.
+Foram criadas **46 Issues** a partir de `gestao-psm/calendario-progresso.csv`, milestone **F1**, com status no corpo e nas labels. Na Entrega 1 as issues **não** foram fonte primária de medição. Na conferência de 03/11/2026, 4 das 46 Issues constavam como itens do Project #40; execute `gh auth refresh -h github.com -s project,read:project,repo` e depois `scripts/setup-github-project.ps1` para incluir as demais.
 
 ### Abertas (pendente ou parcial)
 
@@ -91,7 +92,7 @@ Passo a passo de abertura e fechamento de Issues e relação com as categorias P
 - Script de sincronização do bloco de campos no corpo das Issues: `scripts/sync-issue-fields.py`
 - Mapeamento gerado: [mapeamento-campos-issues.csv](mapeamento-campos-issues.csv)
 
-Os campos nativos do GitHub Projects V2 devem espelhar o bloco **Campos do Project (PSM)** inserido no corpo de cada Issue. A atualização automática desses campos via API exige token com escopo `project` / `read:project`.
+O formulário 01 coleta os sete valores no corpo da Issue. `scripts/sync-issue-fields.py` atualiza o bloco espelhado no corpo, as labels e o CSV de mapeamento; ele **não** altera os campos nativos do Project. Após sincronizar, confira/atualize os valores correspondentes no quadro. Para executar o provisionamento, o GitHub CLI precisa dos escopos de escrita `project`, `read:project` e `repo`.
 
 ## Links
 

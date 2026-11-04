@@ -18,7 +18,7 @@ em que:
 - \(H\): esforço em horas (\(H_p\) para custo estimado; \(H_r\) para custo real);
 - \(35\): taxa horária convencional fixada em R$ 35,00 por hora.
 
-Assim, *Estimated Cost (BRL)* \(= H_p \times 35\) e *Actual Cost (BRL)* \(= H_r \times 35\). Os campos *Planned/Actual Effort (h)* e *Estimated/Actual Cost (BRL)* do Project GitHub devem ser preenchidos de forma consistente com essa regra; a série histórica da Entrega 1 permanece nos CSV de `gestao-psm/` (horas), podendo-se derivar o custo a posteriori pela mesma taxa.
+Assim, custo planejado \(= H_p \times 35\) e custo real \(= H_r \times 35\). No Project GitHub `BETTY SNYDER`, os campos padrão **Esforço planejado (horas)** e **Esforço real (horas)** registram os valores de esforço; os custos são derivados a posteriori pela mesma taxa, não sendo campos padrão do Project. A série histórica da Entrega 1 permanece nos CSV de `gestao-psm/` (horas).
 
 ## Necessidade 1: Custo e cronograma estimados por funcionalidade ou capacidade
 

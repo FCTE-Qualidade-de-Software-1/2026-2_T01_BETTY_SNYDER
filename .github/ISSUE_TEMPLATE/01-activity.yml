@@ -104,9 +104,19 @@ body:
       required: true
 
   - type: input
+    id: actual_effort
+    attributes:
+      label: "Esforço real (horas)"
+      description: "Preencha ao concluir ou atualizar a atividade."
+      placeholder: "4"
+    validations:
+      required: false
+
+  - type: input
     id: planned_start
     attributes:
-      label: "Início planejado (AAAA-MM-DD)"
+      label: "Data início planejada"
+      description: "Use o formato AAAA-MM-DD."
       placeholder: "2026-10-26"
     validations:
       required: true
@@ -114,10 +124,38 @@ body:
   - type: input
     id: planned_end
     attributes:
-      label: "Conclusão planejada (AAAA-MM-DD)"
+      label: "Data fim planejada"
+      description: "Use o formato AAAA-MM-DD."
       placeholder: "2026-10-28"
     validations:
       required: true
+
+  - type: input
+    id: actual_end
+    attributes:
+      label: "Data fim real"
+      description: "Preencha quando a atividade for concluída (AAAA-MM-DD)."
+      placeholder: "2026-10-28"
+    validations:
+      required: false
+
+  - type: input
+    id: progress
+    attributes:
+      label: "Progresso (%)"
+      description: "Informe o percentual observado, de 0 a 100."
+      placeholder: "0"
+    validations:
+      required: false
+
+  - type: input
+    id: evidence_link
+    attributes:
+      label: "Evidência (link)"
+      description: "Link para o entregável, registro ou evidência da atividade."
+      placeholder: "https://github.com/..."
+    validations:
+      required: false
 
   - type: textarea
     id: acceptance
