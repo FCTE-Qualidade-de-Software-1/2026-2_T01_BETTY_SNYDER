@@ -104,7 +104,7 @@ Cortes documentados: **11/10/2026**, **18/10/2026** e **25/10/2026**. Não houve
 - documento de pendências da Entrega 1;
 - contagens de revisão do artigo (defeitos confirmados e correções).
 
-**Transição após o Ponto de Controle 1.** As tarefas do calendário foram materializadas em 46 issues e em milestones (`PC1`, `F1`, `F2`, `E2`). O Project (Projects V2) `BETTY SNYDER` (#40) tem o repositório como padrão e, na conferência de 03/11/2026, continha 4 itens. O provisionamento das Issues restantes está descrito em [Organização no GitHub](gestao-psm/github-organizacao.md). Com as tarefas vinculadas e os campos preenchidos, as datas planejadas e reais apoiam o ICP; o histórico das transições de Status fornece as datas de início real e conclusão para *Cycle Time*, *Throughput* e WIP.
+**Transição após o Ponto de Controle 1.** As tarefas do calendário foram materializadas em 46 issues e em milestones (`PC1`, `F1`, `F2`, `E2`). O Project (Projects V2) `BETTY SNYDER` (#40) tem o repositório como padrão; em 04/11/2026, as 46 Issues estavam vinculadas. O provisionamento está descrito em [Organização no GitHub](gestao-psm/github-organizacao.md). Com as tarefas vinculadas e os campos preenchidos, as datas planejadas e reais apoiam o ICP; o histórico das transições de Status fornece as datas de início real e conclusão para *Cycle Time*, *Throughput* e WIP.
 
 Nenhum valor de indicador deve ser estimado ou inventado: cada medida aponta para arquivo, data de corte e evidência.
 
@@ -141,10 +141,15 @@ em que \(T_c\) é o número de tarefas concluídas no prazo e \(T_p\) é o núme
 | Recursos e custos | 11/10 | Desvio −42,0%; participação mínima 2,8% | Redistribuir (participação); julgamento retrospectivo | [`2026-10-11_recursos-custos.csv`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/blob/main/gestao-psm/2026-10-11_recursos-custos.csv) |
 | Recursos e custos | 18/10 | Desvio −20,0%; participação mínima 11,0% | Manter carga; acompanhar desvios individuais | [`2026-10-18_recursos-custos.csv`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/blob/main/gestao-psm/2026-10-18_recursos-custos.csv) |
 | Recursos e custos | 25/10 | Desvio −46,0%; participação mínima 10,3% | Sem sobrecarga da equipe (+30%); acompanhar subutilização | [`2026-10-25_recursos-custos.csv`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/blob/main/gestao-psm/2026-10-25_recursos-custos.csv) |
+| Recursos e custos | 26/10 | Desvio −30,6%; participação mínima 10,04% | Acompanhar; esforço real acumulado abaixo do planejado | [`2026-10-26_recursos-custos.xlsx`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/blob/main/gestao-psm/2026-10-26_recursos-custos.xlsx) |
 | Desempenho dos processos | Rev. 1 | \(D_1 = 1{,}44\); correção 61,5% | Revisão 2 com dados reais | Contagem da Revisão 1 |
-| Calendário e progresso | 11/10 | ICP 56,3% (\(T_p = 16\), \(T_c = 9\)) | Redistribuir | [`calendario-progresso.csv`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/blob/main/gestao-psm/calendario-progresso.csv) |
-| Calendário e progresso | 18/10 | ICP 21,4% | Redistribuir | idem |
-| Calendário e progresso | 25/10 | ICP 40,0% (\(T_c = 6\): B1, A1–A5) | Redistribuir 9 restantes | idem |
+| Desempenho dos processos | Rev. 2 | Correção 100% (10 defeitos confirmados e corrigidos) | Consolidar correções no artigo e na GitPage | [`desempenho-processos.csv`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/blob/main/gestao-psm/desempenho-processos.csv) |
+| Calendário e progresso | 11/10 | ICP 56,3% (9/16) | Redistribuir | [`calendario-progresso.csv`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/blob/main/gestao-psm/calendario-progresso.csv) |
+| Calendário e progresso | 18/10 | ICP 21,4% (3/14) | Redistribuir | idem |
+| Calendário e progresso | 19/10 (PC1) | ICP 100% (1/1) | Apresentação realizada; amostra de um item | idem |
+| Calendário e progresso | 25/10 | ICP 40,0% (6/15) | Redistribuir 9 restantes | idem |
+
+Gráficos por categoria: [esforço acumulado](gestao-psm/recursos-e-custos.md#grafico-esforco-acumulado), [desvio e participação](gestao-psm/recursos-e-custos.md#grafico-desvio-participacao), [ICP](gestao-psm/calendario-e-progresso.md#grafico-icp), [taxa de correção](gestao-psm/desempenho-dos-processos.md#grafico-taxa-correcao) e [densidade de defeitos](gestao-psm/desempenho-dos-processos.md#grafico-densidade).
 
 Os dados brutos permanecem na pasta [`gestao-psm/`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/tree/main/gestao-psm). A [Retrospectiva E1](retrospectiva-e1.md) vincula ações corretivas a limiares explícitos: participação inferior a 10% e ICP inferior a 70%.
 

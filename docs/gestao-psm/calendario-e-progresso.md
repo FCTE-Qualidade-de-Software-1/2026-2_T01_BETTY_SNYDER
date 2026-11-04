@@ -6,7 +6,7 @@
 
 Esta página especifica o *measurement construct* da categoria Calendário e progresso, conforme o modelo de informação do PSM (RAMOS, 2026), o mapeamento estrutural da equipe e as especificações CID de *Committed vs Completed*, fluxo cumulativo, *Cycle Time* / *Lead Time* e vazão (JONES et al., 2021a; JONES et al., 2021b).
 
-Na Entrega 1, a medida operacional central foi o **Índice de Conformidade de Prazos (ICP)**. Após o Ponto de Controle 1, as tarefas do CSV foram materializadas em 46 issues. Na conferência de 03/11/2026, o Project `BETTY SNYDER` (#40) continha 4 itens; o provisionamento para inclusão das Issues restantes está descrito em [Organização no GitHub](github-organizacao.md). Data fim planejada e Data fim real sustentam o ICP; as transições de Status registram início e conclusão reais para medidas de fluxo como *Cycle Time* e *Throughput*.
+Na Entrega 1, a medida operacional central foi o **Índice de Conformidade de Prazos (ICP)**. Após o Ponto de Controle 1, as tarefas do CSV foram materializadas em 46 issues. Em 04/11/2026, as 46 Issues estavam vinculadas ao Project `BETTY SNYDER` (#40), conforme o provisionamento descrito em [Organização no GitHub](github-organizacao.md). Data fim planejada e Data fim real sustentam o ICP; as transições de Status registram início e conclusão reais para medidas de fluxo como *Cycle Time* e *Throughput*.
 
 ## Necessidade 1: Entrega conforme o compromisso e risco de atraso
 
@@ -93,7 +93,7 @@ em que:
 | Elemento | Descrição |
 |---|---|
 | Status | Aplicada. |
-| Resultados | 11/10: 56,3% (\(T_p = 16\), \(T_c = 9\)); 18/10: 21,4%; 25/10: 40,0% (\(T_c = 6\)). |
+| Resultados | 11/10: 56,3% (\(T_c/T_p = 9/16\)); 18/10: 21,4% (\(3/14\)); 19/10 (PC1): 100% (\(1/1\)); 25/10: 40,0% (\(6/15\)). |
 | Critério | ICP inferior a 70% associado às ações C2 e C4 da Retrospectiva E1. |
 
 #### Percentual de work items concluídos
@@ -116,9 +116,61 @@ em que:
 
 | Corte | Indicador | Decisão |
 |---|---|---|
-| 11/10 | ICP 56,3% | Redistribuir |
-| 18/10 | ICP 21,4% | Redistribuir |
-| 25/10 | ICP 40,0% | Redistribuir 9 restantes |
+| 11/10 | ICP 56,3% (9/16) | Redistribuir |
+| 18/10 | ICP 21,4% (3/14) | Redistribuir |
+| 19/10 (PC1) | ICP 100% (1/1) | Apresentação realizada; amostra de um item |
+| 25/10 | ICP 40,0% (6/15) | Redistribuir 9 restantes |
+
+### Gráfico: conformidade de prazos por recorte { #grafico-icp }
+
+<figure class="psm-chart">
+<svg viewBox="0 0 760 380" role="img" aria-labelledby="calendario-chart-title calendario-chart-desc">
+  <title id="calendario-chart-title">Índice de Conformidade de Prazos por recorte</title>
+  <desc id="calendario-chart-desc">Gráfico de linha do ICP: 56,3 por cento em 11 de outubro (9 de 16), 21,4 por cento em 18 de outubro (3 de 14), 100 por cento no Ponto de Controle 1 em 19 de outubro (1 de 1) e 40 por cento em 25 de outubro (6 de 15). A linha tracejada indica o critério de 70 por cento.</desc>
+  <g class="chart-grid">
+    <line x1="90" y1="295" x2="710" y2="295" />
+    <line x1="90" y1="238.75" x2="710" y2="238.75" />
+    <line x1="90" y1="182.5" x2="710" y2="182.5" />
+    <line x1="90" y1="126.25" x2="710" y2="126.25" />
+    <line x1="90" y1="70" x2="710" y2="70" />
+  </g>
+  <g class="chart-axis">
+    <line x1="90" y1="70" x2="90" y2="295" />
+    <line x1="90" y1="295" x2="710" y2="295" />
+  </g>
+  <line class="threshold" x1="90" y1="137.5" x2="710" y2="137.5" />
+  <g text-anchor="end">
+    <text x="80" y="299">0%</text>
+    <text x="80" y="243">25%</text>
+    <text x="80" y="187">50%</text>
+    <text x="80" y="131">75%</text>
+    <text x="80" y="74">100%</text>
+  </g>
+  <text x="19" y="195" transform="rotate(-90 19 195)">ICP</text>
+  <path class="line-icp" d="M 155 168.3 L 320 246.85 L 485 70 L 650 205" />
+  <g>
+    <circle class="point-icp" cx="155" cy="168.3" r="6" />
+    <circle class="point-icp" cx="320" cy="246.85" r="6" />
+    <circle class="point-icp" cx="485" cy="70" r="6" />
+    <circle class="point-icp" cx="650" cy="205" r="6" />
+  </g>
+  <g class="chart-value" text-anchor="middle">
+    <text x="155" y="151">56,3% (9/16)</text>
+    <text x="320" y="229">21,4% (3/14)</text>
+    <text x="485" y="51">100% (1/1)</text>
+    <text x="650" y="187">40% (6/15)</text>
+  </g>
+  <g text-anchor="middle">
+    <text x="155" y="321">11/10</text>
+    <text x="320" y="321">18/10</text>
+    <text x="485" y="321">19/10 · PC1</text>
+    <text x="650" y="321">25/10</text>
+  </g>
+  <line class="threshold" x1="430" y1="357" x2="470" y2="357" />
+  <text x="480" y="362">Critério: 70%</text>
+</svg>
+<figcaption>Valores calculados por recorte a partir de <code>gestao-psm/calendario-progresso.csv</code>. Cada fração mostra tarefas concluídas no prazo / tarefas com prazo no recorte. O resultado de 19/10 corresponde a um único item do PC1 e não deve ser comparado sem considerar o tamanho da amostra.</figcaption>
+</figure>
 
 ## Necessidade 2: Fluxo, vazão e filas
 

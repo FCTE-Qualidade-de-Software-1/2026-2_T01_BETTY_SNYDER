@@ -75,7 +75,7 @@ flowchart BT
 |---|---|
 | Definição | Esforço estimado do integrante ou da equipe no intervalo acumulado até o corte, em horas. |
 | Escala | Razão (número real ≥ 0). |
-| Coleta | Extração da planilha de horas e do planejamento; persistência no campo `horas_planejadas` dos arquivos `gestao-psm/2026-10-11_recursos-custos.csv`, `2026-10-18_recursos-custos.csv`, `2026-10-25_recursos-custos.csv` e `recursos-custos.csv`. |
+| Coleta | Extração da planilha de horas e do planejamento; persistência no campo `horas_planejadas` dos arquivos `gestao-psm/2026-10-11_recursos-custos.csv`, `2026-10-18_recursos-custos.csv`, `2026-10-25_recursos-custos.csv` e `recursos-custos.csv`. O arquivo `2026-10-26_recursos-custos.xlsx` registra o corte mais recente. |
 | Cálculo | Valor por integrante; a linha `Equipe` corresponde à soma do acumulado. |
 | Análise | Base do desvio e do julgamento de subutilização ou sobrecarga. |
 | Limitação observada | O vínculo explícito entre hora planejada e funcionalidade ou capacidade individual ainda não está sistematizado nos CSV (agregação por integrante/dupla). |
@@ -106,9 +106,9 @@ em que:
 
 | Elemento | Descrição |
 |---|---|
-| Status | Aplicada nos cortes de 11/10, 18/10 e 25/10. |
-| Coleta e cálculo | Campo `desvio_percentual` nos CSV. No corte de 25/10, para a equipe: \(H_p = 78{,}10\), \(H_r = 42{,}17\), desvio −46,0%. |
-| Análise | Cortes 11/10 (−42,0%), 18/10 (−20,0%) e 25/10 (−46,0%). Interpretação de desempenho: esforço realizado inferior ao planejado; decisão de acompanhar subutilização e evitar sobrecarga pontual (+30%). |
+| Status | Aplicada nos cortes de 11/10, 18/10, 25/10 e 26/10. |
+| Coleta e cálculo | Campo `desvio_percentual` nos CSV até 25/10. No corte de 26/10, a planilha registra \(H_p = 90{,}766\) h e \(H_r = 63{,}0366\) h (desvio −30,6%). |
+| Análise | Cortes 11/10 (−42,0%), 18/10 (−20,0%), 25/10 (−46,0%) e 26/10 (−30,6%). O esforço real acumulado permaneceu abaixo do planejado; acompanhar a subutilização e evitar sobrecarga pontual (+30%). |
 
 #### Participação percentual
 
@@ -142,6 +142,133 @@ em que:
 | 11/10 | Desvio −42,0%; participação mínima 2,8% | Redistribuir (participação); julgamento retrospectivo |
 | 18/10 | Desvio −20,0%; participação mínima 11,0% | Manter carga; acompanhar desvios individuais |
 | 25/10 | Desvio −46,0%; participação mínima 10,3% | Sem sobrecarga da equipe (+30%); acompanhar subutilização |
+| 26/10 | Desvio −30,6%; participação mínima 10,04% | Acompanhar; esforço real acumulado abaixo do planejado |
+
+### Gráfico: esforço acumulado por recorte { #grafico-esforco-acumulado }
+
+<figure class="psm-chart">
+<svg viewBox="0 0 800 400" role="img" aria-labelledby="recursos-chart-title recursos-chart-desc">
+  <title id="recursos-chart-title">Esforço planejado e real acumulado por recorte</title>
+  <desc id="recursos-chart-desc">Gráfico de barras comparando horas planejadas e reais em 11, 18 e 25 de outubro, e 26 de outubro. Os totais são, respectivamente, 20,67 e 11,98; 49,37 e 39,50; 78,10 e 42,17; 90,77 e 63,04 horas.</desc>
+  <g class="chart-grid">
+    <line x1="90" y1="300" x2="760" y2="300" />
+    <line x1="90" y1="258" x2="760" y2="258" />
+    <line x1="90" y1="216" x2="760" y2="216" />
+    <line x1="90" y1="174" x2="760" y2="174" />
+    <line x1="90" y1="132" x2="760" y2="132" />
+    <line x1="90" y1="90" x2="760" y2="90" />
+  </g>
+  <g class="chart-axis">
+    <line x1="90" y1="90" x2="90" y2="300" />
+    <line x1="90" y1="300" x2="760" y2="300" />
+  </g>
+  <g text-anchor="end">
+    <text x="80" y="304">0</text>
+    <text x="80" y="262">20</text>
+    <text x="80" y="220">40</text>
+    <text x="80" y="178">60</text>
+    <text x="80" y="136">80</text>
+    <text x="80" y="94">100</text>
+  </g>
+  <text x="18" y="195" transform="rotate(-90 18 195)">Horas acumuladas</text>
+  <g>
+    <rect class="bar-planned" x="110" y="256.59" width="40" height="43.41" rx="3" />
+    <rect class="bar-actual" x="160" y="274.84" width="40" height="25.16" rx="3" />
+    <text class="chart-value" x="130" y="249" text-anchor="middle">20,67</text>
+    <text class="chart-value" x="180" y="267" text-anchor="middle">11,98</text>
+
+    <rect class="bar-planned" x="280" y="196.32" width="40" height="103.68" rx="3" />
+    <rect class="bar-actual" x="330" y="217.05" width="40" height="82.95" rx="3" />
+    <text class="chart-value" x="300" y="189" text-anchor="middle">49,37</text>
+    <text class="chart-value" x="350" y="210" text-anchor="middle">39,50</text>
+
+    <rect class="bar-planned" x="450" y="135.99" width="40" height="164.01" rx="3" />
+    <rect class="bar-actual" x="500" y="211.44" width="40" height="88.56" rx="3" />
+    <text class="chart-value" x="470" y="128" text-anchor="middle">78,10</text>
+    <text class="chart-value" x="520" y="204" text-anchor="middle">42,17</text>
+
+    <rect class="bar-planned" x="620" y="109.39" width="40" height="190.61" rx="3" />
+    <rect class="bar-actual" x="670" y="167.62" width="40" height="132.38" rx="3" />
+    <text class="chart-value" x="640" y="102" text-anchor="middle">90,77</text>
+    <text class="chart-value" x="690" y="160" text-anchor="middle">63,04</text>
+  </g>
+  <g text-anchor="middle">
+    <text x="155" y="326">11/10</text>
+    <text x="325" y="326">18/10</text>
+    <text x="495" y="326">25/10</text>
+    <text x="665" y="326">26/10</text>
+  </g>
+  <g>
+    <rect class="bar-planned" x="260" y="355" width="14" height="14" rx="2" />
+    <text x="280" y="367">Planejado</text>
+    <rect class="bar-actual" x="405" y="355" width="14" height="14" rx="2" />
+    <text x="425" y="367">Real</text>
+  </g>
+</svg>
+<figcaption>Esforço acumulado da equipe em cada corte. Os valores de 11/10, 18/10 e 25/10 vêm dos CSV; 26/10 vem da planilha de horas. Fontes: <code>gestao-psm/*_recursos-custos.csv</code> e <code>gestao-psm/2026-10-26_recursos-custos.xlsx</code>.</figcaption>
+</figure>
+
+<figure id="grafico-desvio-participacao" class="psm-chart">
+<svg viewBox="0 0 800 400" role="img" aria-labelledby="recursos-indicadores-title recursos-indicadores-desc">
+  <title id="recursos-indicadores-title">Desvio do esforço e participação mínima por recorte</title>
+  <desc id="recursos-indicadores-desc">O desvio percentual foi menos 42,0%, menos 20,0%, menos 46,0% e menos 30,6% nos recortes de 11, 18, 25 e 26 de outubro. A participação mínima foi 2,8%, 11,0%, 10,3% e 10,04%, respectivamente.</desc>
+  <g class="chart-grid">
+    <line x1="90" y1="90" x2="760" y2="90" />
+    <line x1="90" y1="150" x2="760" y2="150" />
+    <line x1="90" y1="210" x2="760" y2="210" />
+    <line x1="90" y1="270" x2="760" y2="270" />
+    <line x1="90" y1="300" x2="760" y2="300" />
+  </g>
+  <g class="chart-axis">
+    <line x1="90" y1="90" x2="90" y2="300" />
+    <line x1="90" y1="150" x2="760" y2="150" />
+    <line x1="90" y1="300" x2="760" y2="300" />
+  </g>
+  <g text-anchor="end">
+    <text x="80" y="94">20%</text>
+    <text x="80" y="154">0%</text>
+    <text x="80" y="214">−20%</text>
+    <text x="80" y="274">−40%</text>
+    <text x="80" y="304">−50%</text>
+  </g>
+  <text x="18" y="205" transform="rotate(-90 18 205)">Percentual</text>
+  <path class="line-deviation" d="M 155 276 L 325 210 L 495 288 L 665 241.8" />
+  <path class="line-participation" d="M 155 141.6 L 325 117 L 495 119.1 L 665 119.88" />
+  <g>
+    <circle class="point-deviation" cx="155" cy="276" r="6" />
+    <circle class="point-deviation" cx="325" cy="210" r="6" />
+    <circle class="point-deviation" cx="495" cy="288" r="6" />
+    <circle class="point-deviation" cx="665" cy="241.8" r="6" />
+    <circle class="point-participation" cx="155" cy="141.6" r="6" />
+    <circle class="point-participation" cx="325" cy="117" r="6" />
+    <circle class="point-participation" cx="495" cy="119.1" r="6" />
+    <circle class="point-participation" cx="665" cy="119.88" r="6" />
+  </g>
+  <g class="chart-value" text-anchor="middle">
+    <text x="155" y="263">−42,0%</text>
+    <text x="325" y="197">−20,0%</text>
+    <text x="495" y="282">−46,0%</text>
+    <text x="665" y="255">−30,6%</text>
+    <text x="155" y="129">2,8%</text>
+    <text x="325" y="105">11,0%</text>
+    <text x="495" y="107">10,3%</text>
+    <text x="665" y="108">10,04%</text>
+  </g>
+  <g text-anchor="middle">
+    <text x="155" y="326">11/10</text>
+    <text x="325" y="326">18/10</text>
+    <text x="495" y="326">25/10</text>
+    <text x="665" y="326">26/10</text>
+  </g>
+  <g>
+    <line class="line-deviation" x1="225" y1="363" x2="255" y2="363" />
+    <text x="263" y="368">Desvio</text>
+    <line class="line-participation" x1="395" y1="363" x2="425" y2="363" />
+    <text x="433" y="368">Participação mínima</text>
+  </g>
+</svg>
+<figcaption>As duas séries estão em percentual: o desvio compara esforço real e planejado; a participação mínima é a menor parcela individual do esforço real da equipe. No corte de 26/10, os valores foram calculados do resumo da planilha <code>2026-10-26_recursos-custos.xlsx</code>.</figcaption>
+</figure>
 
 ## Necessidade 2: Precisão e viabilidade das estimativas em nível de funcionalidade
 

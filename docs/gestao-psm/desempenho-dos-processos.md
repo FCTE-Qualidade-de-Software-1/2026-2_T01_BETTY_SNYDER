@@ -88,7 +88,7 @@ em que:
 | Elemento | Descrição |
 |---|---|
 | Coleta | Revisão 1: \(D_1 = 1{,}44\); correção 61,5% (resumo na visão geral). Revisão 2: [`gestao-psm/desempenho-processos.csv`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/blob/main/gestao-psm/desempenho-processos.csv), com campos `identificador`, `revisão`, `seção`, `tipo`, `descrição`, `quem apontou`, `confirmado`, `corrigido`. |
-| Análise | Rev. 1 motivou a Revisão 2 com dados reais. A Rev. 2 registrou 11 apontamentos, majoritariamente confirmados e corrigidos. |
+| Análise | Rev. 1 motivou a Revisão 2 com dados reais. A Rev. 2 registrou 10 apontamentos; os 10 foram confirmados e corrigidos. |
 | Limitação | A Revisão 1 não possui CSV versionado equivalente; `docs/gestao-psm/defeitos.csv` contém apenas o cabeçalho. |
 
 ### Indicadores e decisões
@@ -96,7 +96,84 @@ em que:
 | Corte / revisão | Indicador | Decisão |
 |---|---|---|
 | Revisão 1 | \(D_1 = 1{,}44\); correção 61,5% | Conduzir Revisão 2 com dados reais |
-| Revisão 2 | 11 apontamentos; correções em `corrigido` | Consolidar correções no artigo e na GitPage |
+| Revisão 2 | 10 apontamentos; 10 confirmados e 10 corrigidos | Consolidar correções no artigo e na GitPage |
+
+### Gráfico: taxa de correção por revisão { #grafico-taxa-correcao }
+
+<figure class="psm-chart">
+<svg viewBox="0 0 760 380" role="img" aria-labelledby="processos-chart-title processos-chart-desc">
+  <title id="processos-chart-title">Taxa de correção dos defeitos confirmados por revisão</title>
+  <desc id="processos-chart-desc">A taxa de correção foi de 61,5 por cento na Revisão 1 e de 100 por cento na Revisão 2, na qual 10 de 10 apontamentos foram confirmados e corrigidos.</desc>
+  <g class="chart-grid">
+    <line x1="100" y1="295" x2="700" y2="295" />
+    <line x1="100" y1="238.75" x2="700" y2="238.75" />
+    <line x1="100" y1="182.5" x2="700" y2="182.5" />
+    <line x1="100" y1="126.25" x2="700" y2="126.25" />
+    <line x1="100" y1="70" x2="700" y2="70" />
+  </g>
+  <g class="chart-axis">
+    <line x1="100" y1="70" x2="100" y2="295" />
+    <line x1="100" y1="295" x2="700" y2="295" />
+  </g>
+  <g text-anchor="end">
+    <text x="90" y="299">0%</text>
+    <text x="90" y="243">25%</text>
+    <text x="90" y="187">50%</text>
+    <text x="90" y="131">75%</text>
+    <text x="90" y="74">100%</text>
+  </g>
+  <text x="23" y="195" transform="rotate(-90 23 195)">Taxa de correção</text>
+  <rect class="bar-rate" x="230" y="156.63" width="100" height="138.37" rx="4" />
+  <rect class="bar-rate" x="500" y="70" width="100" height="225" rx="4" />
+  <g class="chart-value" text-anchor="middle">
+    <text x="280" y="148">61,5%</text>
+    <text x="550" y="61">100% (10/10)</text>
+  </g>
+  <g text-anchor="middle">
+    <text x="280" y="321">Revisão 1</text>
+    <text x="550" y="321">Revisão 2</text>
+  </g>
+</svg>
+<figcaption>A Revisão 1 é o valor consolidado no resumo histórico; a Revisão 2 é calculada do CSV, com 10 defeitos confirmados e 10 corrigidos. A densidade da Revisão 2 não é comparada porque a quantidade total de seções revisadas não foi registrada.</figcaption>
+</figure>
+
+### Gráfico: densidade de defeitos { #grafico-densidade }
+
+<figure class="psm-chart">
+<svg viewBox="0 0 760 380" role="img" aria-labelledby="densidade-chart-title densidade-chart-desc">
+  <title id="densidade-chart-title">Densidade de defeitos por revisão</title>
+  <desc id="densidade-chart-desc">A densidade registrada para a Revisão 1 foi 1,44 defeito por seção. A densidade da Revisão 2 não está disponível, pois não foi registrada a quantidade total de seções revisadas.</desc>
+  <g class="chart-grid">
+    <line x1="100" y1="295" x2="700" y2="295" />
+    <line x1="100" y1="238.75" x2="700" y2="238.75" />
+    <line x1="100" y1="182.5" x2="700" y2="182.5" />
+    <line x1="100" y1="126.25" x2="700" y2="126.25" />
+    <line x1="100" y1="70" x2="700" y2="70" />
+  </g>
+  <g class="chart-axis">
+    <line x1="100" y1="70" x2="100" y2="295" />
+    <line x1="100" y1="295" x2="700" y2="295" />
+  </g>
+  <g text-anchor="end">
+    <text x="90" y="299">0</text>
+    <text x="90" y="243">0,5</text>
+    <text x="90" y="187">1,0</text>
+    <text x="90" y="131">1,5</text>
+    <text x="90" y="74">2,0</text>
+  </g>
+  <text x="23" y="195" transform="rotate(-90 23 195)">Defeitos por seção</text>
+  <rect class="bar-rate" x="230" y="133" width="100" height="162" rx="4" />
+  <g class="chart-value" text-anchor="middle">
+    <text x="280" y="124">1,44</text>
+    <text x="550" y="160">N/D</text>
+  </g>
+  <g text-anchor="middle">
+    <text x="280" y="321">Revisão 1</text>
+    <text x="550" y="321">Revisão 2</text>
+  </g>
+</svg>
+<figcaption>A densidade \(D_1 = 1{,}44\) está documentada para a Revisão 1. Para a Revisão 2, o CSV registra os apontamentos, mas não o total de seções efetivamente revisadas; por isso, o indicador não pode ser calculado sem inventar o denominador.</figcaption>
+</figure>
 
 ## Eixo B: Trabalho planejado, concluído e em aberto (mapeamento)
 

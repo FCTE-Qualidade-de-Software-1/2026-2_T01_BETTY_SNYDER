@@ -72,6 +72,98 @@
   margin: 0.3rem 0;
 }
 
+.psm-chart {
+  margin: 1.5rem auto;
+  max-width: 800px;
+}
+
+.psm-chart svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.psm-chart text {
+  fill: var(--md-typeset-color, var(--md-default-fg-color));
+  font-family: var(--md-text-font-family, Arial, sans-serif);
+  font-size: 13px;
+}
+
+.psm-chart .chart-grid {
+  stroke: currentColor;
+  stroke-opacity: 0.18;
+}
+
+.psm-chart .chart-axis {
+  stroke: currentColor;
+  stroke-opacity: 0.55;
+}
+
+.psm-chart .chart-value {
+  font-weight: 700;
+}
+
+.psm-chart .bar-planned {
+  fill: #3b82c4;
+}
+
+.psm-chart .bar-actual {
+  fill: #e6953b;
+}
+
+.psm-chart .line-icp {
+  fill: none;
+  stroke: #2a7de1;
+  stroke-width: 3;
+}
+
+.psm-chart .line-deviation {
+  fill: none;
+  stroke: #cf3c3c;
+  stroke-width: 3;
+}
+
+.psm-chart .line-participation {
+  fill: none;
+  stroke: #e6953b;
+  stroke-width: 3;
+}
+
+.psm-chart .point-icp {
+  fill: #2a7de1;
+  stroke: var(--md-default-bg-color);
+  stroke-width: 2;
+}
+
+.psm-chart .point-deviation {
+  fill: #cf3c3c;
+  stroke: var(--md-default-bg-color);
+  stroke-width: 2;
+}
+
+.psm-chart .point-participation {
+  fill: #e6953b;
+  stroke: var(--md-default-bg-color);
+  stroke-width: 2;
+}
+
+.psm-chart .threshold {
+  stroke: #cf3c3c;
+  stroke-dasharray: 7 5;
+  stroke-width: 2;
+}
+
+.psm-chart .bar-rate {
+  fill: #3b82c4;
+}
+
+.psm-chart figcaption {
+  margin-top: 0.5rem;
+  color: var(--md-default-fg-color--light, var(--md-default-fg-color));
+  font-size: 0.8rem;
+}
+
+
 /* ---------- Equipe ---------- */
 .team {
   display: grid;
@@ -109,4 +201,3 @@
 .md-typeset .grid.cards > ul > li {
   border-radius: 12px;
 }
-

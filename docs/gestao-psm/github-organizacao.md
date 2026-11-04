@@ -11,7 +11,7 @@ No modelo de informação do PSM (RAMOS, 2026), Project, milestones, labels e is
 - **URL:** https://github.com/orgs/FCTE-Qualidade-de-Software-1/projects/40
 - **Script de provisionamento:** `scripts/setup-github-project.ps1` (completa o Project #40 existente; não cria outro).
 
-O nome, o repositório padrão e os sete campos foram conferidos nas configurações do Project e pela API GraphQL em **03/11/2026**. O campo nativo Status usa os estados **A Fazer** (*Todo*), **Em Andamento** (*In Progress*) e **Concluído** (*Done*), alinhados ao mapeamento CID. Na mesma conferência, o Project continha **4 itens**, enquanto o repositório tinha 46 Issues; o script de provisionamento verifica campos, vínculo e inclui Issues ainda ausentes. Para executar mutações, autentique `gh` com os escopos `project` e `repo`. Os custos são derivados do esforço, sem campo dedicado de categoria PSM ou de custo.
+O nome, o repositório padrão e os sete campos foram conferidos nas configurações do Project e pela API GraphQL em **03/11/2026**. O campo nativo Status usa os estados **A Fazer** (*Todo*), **Em Andamento** (*In Progress*) e **Concluído** (*Done*), alinhados ao mapeamento CID. Na conferência inicial, o Project continha **4 itens** e o repositório tinha 46 Issues. Em **04/11/2026**, o provisionamento adicionou os 42 itens restantes e verificou as **46 Issues** no Project #40. Para executar mutações, autentique `gh` com os escopos `project` e `repo`. Os custos são derivados do esforço, sem campo dedicado de categoria PSM ou de custo.
 
 ### Campos padrão do Project
 
@@ -52,7 +52,7 @@ Labels legadas (Usabilidade/Portabilidade etc.) permanecem no repositório; nova
 
 ## Issues (corte 25/10)
 
-Foram criadas **46 Issues** a partir de `gestao-psm/calendario-progresso.csv`, milestone **F1**, com status no corpo e nas labels. Na Entrega 1 as issues **não** foram fonte primária de medição. Na conferência de 03/11/2026, 4 das 46 Issues constavam como itens do Project #40; execute `gh auth refresh -h github.com -s project,repo` e depois `scripts/setup-github-project.ps1` para incluir as demais.
+Foram criadas **46 Issues** a partir de `gestao-psm/calendario-progresso.csv`, milestone **F1**, com status no corpo e nas labels. Na Entrega 1 as issues **não** foram fonte primária de medição. Após o provisionamento de 04/11/2026, as **46 Issues** constam como itens do Project #40.
 
 ### Abertas (pendente ou parcial)
 
