@@ -5,20 +5,22 @@ window.MathJax = {
     processEscapes: true,
     processEnvironments: true
   },
-  startup: {
-    typeset: false
-  },
   options: {
     ignoreHtmlClass: ".*|",
     processHtmlClass: "arithmatex"
   }
 };
 
+let typesetting = Promise.resolve();
+
 document$.subscribe(() => {
-  MathJax.startup.promise
+  typesetting = typesetting
+    .then(() => MathJax.startup.promise)
     .then(() => {
-      MathJax.typesetClear();
-      return MathJax.typesetPromise();
+      const formulas = Array.from(document.querySelectorAll(".arithmatex"))
+        .filter((formula) => !formula.querySelector("mjx-container"));
+      if (formulas.length === 0) return;
+      return MathJax.typesetPromise(formulas);
     })
     .catch((error) => {
       console.error("Falha ao renderizar fórmulas matemáticas.", error);
