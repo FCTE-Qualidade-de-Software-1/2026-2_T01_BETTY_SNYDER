@@ -3,7 +3,7 @@
 .SYNOPSIS
   Verifica e completa a configuração do GitHub Project V2 BETTY SNYDER (#40).
 .NOTES
-  Requer gh autenticado com escopos: project, read:project, repo.
+  Requer gh autenticado com escopos: project, repo.
   Uso: .\scripts\setup-github-project.ps1
 #>
 $ErrorActionPreference = "Stop"
@@ -41,9 +41,9 @@ Write-Host "Verificando autenticação e escopos..."
 $authStatus = & $ghExe auth status 2>&1
 if ($LASTEXITCODE -ne 0) { throw "Autentique o GitHub CLI com gh auth login." }
 $authText = $authStatus -join "`n"
-foreach ($scope in @("'project'", "'read:project'", "'repo'")) {
+foreach ($scope in @("'project'", "'repo'")) {
   if ($authText -notmatch [regex]::Escape($scope)) {
-    throw "O token precisa do escopo $scope. Execute: gh auth refresh -h github.com -s project,read:project,repo"
+    throw "O token precisa do escopo $scope. Execute: gh auth refresh -h github.com -s project,repo"
   }
 }
 Write-Host $authStatus
