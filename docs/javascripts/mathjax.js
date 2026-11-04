@@ -5,6 +5,9 @@ window.MathJax = {
     processEscapes: true,
     processEnvironments: true
   },
+  startup: {
+    typeset: false
+  },
   options: {
     ignoreHtmlClass: ".*|",
     processHtmlClass: "arithmatex"
@@ -12,5 +15,12 @@ window.MathJax = {
 };
 
 document$.subscribe(() => {
-  MathJax.typesetPromise();
+  MathJax.startup.promise
+    .then(() => {
+      MathJax.typesetClear();
+      return MathJax.typesetPromise();
+    })
+    .catch((error) => {
+      console.error("Falha ao renderizar fórmulas matemáticas.", error);
+    });
 });
