@@ -12,6 +12,8 @@ nav:
       - 2. Calendário e progresso: gestao-psm/calendario-e-progresso.md
       - 3. Desempenho dos processos: gestao-psm/desempenho-dos-processos.md
       - Organização no GitHub: gestao-psm/github-organizacao.md
+  - Protocolos:
+      - Ambiente: avaliacao/protocolos/ambiente.md
   - Retrospectiva E1: retrospectiva-e1.md
   - Atas:
       - Reunião 01 — Ata: atas/reuniao-01-ata.md
