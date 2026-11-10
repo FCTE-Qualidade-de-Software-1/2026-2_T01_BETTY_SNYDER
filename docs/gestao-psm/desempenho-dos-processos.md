@@ -89,7 +89,7 @@ em que:
 |---|---|
 | Coleta | Revisão 1: \(D_1 = 1{,}44\); correção 61,5% (resumo na visão geral). Revisão 2: [`gestao-psm/desempenho-processos.csv`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/blob/main/gestao-psm/desempenho-processos.csv), com campos `identificador`, `revisão`, `seção`, `tipo`, `descrição`, `quem apontou`, `confirmado`, `corrigido`. |
 | Análise | Rev. 1 motivou a Revisão 2 com dados reais. A Rev. 2 registrou 10 apontamentos; os 10 foram confirmados e corrigidos. |
-| Limitação | A Revisão 1 não possui CSV versionado equivalente; `docs/gestao-psm/defeitos.csv` contém apenas o cabeçalho. |
+| Limitação | A Revisão 1 não possui registro de defeitos por item; só os totais consolidados acima. Os defeitos ficam em um único arquivo, `gestao-psm/desempenho-processos.csv`, e as próximas revisões entram nele com o número da revisão na coluna `revisão`. |
 
 ### Indicadores e decisões
 
