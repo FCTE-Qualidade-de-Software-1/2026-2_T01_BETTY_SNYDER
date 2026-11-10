@@ -15,6 +15,7 @@ nav:
   - Protocolos:
       - Ambiente: avaliacao/protocolos/ambiente.md
       - Desempenho: avaliacao/protocolos/desempenho.md
+      - "Flexibilidade: checklist de integração": avaliacao/protocolos/flexibilidade-checklist.md
   - Retrospectiva E1: retrospectiva-e1.md
   - Atas:
       - Reunião 01 — Ata: atas/reuniao-01-ata.md
