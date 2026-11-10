@@ -148,6 +148,7 @@ em que \(T_c\) é o número de tarefas concluídas no prazo e \(T_p\) é o núme
 | Calendário e progresso | 18/10 | ICP 21,4% (3/14) | Redistribuir | idem |
 | Calendário e progresso | 19/10 (PC1) | ICP 100% (1/1) | Apresentação realizada; amostra de um item | idem |
 | Calendário e progresso | 25/10 | ICP 40,0% (6/15) | Redistribuir 9 restantes | idem |
+| Calendário e progresso | 08/11 | ICP 0% (0/14); *throughput* 0; WIP 1 | Replanejamento da Reunião 04 (07/11); proposta de redistribuição da Dupla C | [`2026-11-08_calendario-progresso.csv`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/blob/main/gestao-psm/2026-11-08_calendario-progresso.csv) |
 
 Gráficos por categoria: [esforço acumulado](gestao-psm/recursos-e-custos.md#grafico-esforco-acumulado), [desvio e participação](gestao-psm/recursos-e-custos.md#grafico-desvio-participacao), [ICP](gestao-psm/calendario-e-progresso.md#grafico-icp), [taxa de correção](gestao-psm/desempenho-dos-processos.md#grafico-taxa-correcao) e [densidade de defeitos](gestao-psm/desempenho-dos-processos.md#grafico-densidade).
 

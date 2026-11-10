@@ -120,6 +120,33 @@ em que:
 | 18/10 | ICP 21,4% (3/14) | Redistribuir |
 | 19/10 (PC1) | ICP 100% (1/1) | Apresentação realizada; amostra de um item |
 | 25/10 | ICP 40,0% (6/15) | Redistribuir 9 restantes |
+| 08/11 (E2) | ICP 0% (0/14); *throughput* 0 por semana; WIP 1 | Ver [Corte de 08/11](#corte-0811) |
+
+### Corte de 08/11 (E2) { #corte-0811 }
+
+Primeiro corte da E2 (issue E2-P2). Fonte: Project `BETTY SNYDER` (#40), com os prazos do campo Data fim planejada, e a situação de cada issue no GitHub. Arquivo: [`gestao-psm/2026-11-08_calendario-progresso.csv`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/blob/main/gestao-psm/2026-11-08_calendario-progresso.csv).
+
+| Medida | Valor | Como foi obtida |
+|---|---|---|
+| \(T_p\) | 14 | Issues da E2 com prazo de 05/11 a 08/11 (E2-00 a E2-40, milestone F3) |
+| \(T_c\) | 0 | Nenhuma dessas issues estava fechada em 08/11 |
+| ICP | 0% | \(T_c / T_p\) |
+| *Throughput* | 0 issue por semana | Issues da E2 fechadas entre 02/11 e 08/11 |
+| WIP | 1 (E2-02) | Issues em "Em andamento" no Project; contagem feita em 09/11 à noite, porque o Project não guarda o histórico de status. Valor aproximado para 08/11 |
+| Esforço planejado em atraso | 55,5 h | Soma do esforço planejado das 14 issues |
+
+**Interpretação.** O marco F3 (plano de avaliação, 08/11) previa concluir 14 issues na semana, e nenhuma foi fechada até o prazo. O ICP de 0% aciona o critério de 70%. A vazão observada (0) está muito abaixo da vazão do marco (14 issues), e o WIP baixo (1) mostra que o atraso não vem de trabalho acumulado em andamento, e sim de tarefas que não foram iniciadas ou não foram registradas no Project. Parte do trabalho pode ter sido feita sem atualização das issues, o que o próximo corte deve verificar.
+
+**Issues em risco no próximo corte (15/11).** A coleta depende da preparação atrasada: E2-70 (instalações, prazo 11/11) depende da E2-30; E2-71 (checklist e migrações, 12/11) depende da E2-31 e da E2-32; E2-60 (medições de desempenho, 12/11) depende das E2-20 a E2-22; E2-50 e E2-51 (sessões, 13/11) dependem das E2-10 a E2-12; e E2-72 (consolidação de Flexibilidade, 13/11) depende das E2-70 e E2-71.
+
+**Decisão de gestão registrada.** Na Reunião 04 (07/11), a equipe transferiu as tarefas atrasadas para 09/11 à noite e marcou os pilotos para 10/11. No cálculo, os prazos originais são mantidos, para que o indicador continue mostrando o atraso em relação ao planejado.
+
+**Proposta de redistribuição (Dupla C).**
+
+1. Priorizar as issues que bloqueiam a coleta: E2-03 (estrutura de dados), E2-20 (coleção padrão, usada também na migração) e E2-11 (recrutamento).
+2. A Dupla C apoia o recrutamento e a observação das sessões da Dupla A, como o planejamento da E2 já prevê.
+3. Se a coleta não couber até 13/11, levar à Reunião 05 (12/11) a decisão de cortes de escopo, conforme a seção de riscos do planejamento.
+4. Cada responsável move a issue para "Em andamento" ao começar, para que o WIP do próximo corte seja medido no dia.
 
 ### Gráfico: conformidade de prazos por recorte { #grafico-icp }
 

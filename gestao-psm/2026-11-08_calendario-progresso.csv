@@ -1,0 +1,15 @@
+data_corte,issue,tarefa_id,tarefa,responsavel,prazo,situacao_no_corte,concluida_no_prazo,status_project_09_11,esforco_planejado_h,data_fim_real
+2026-11-08,#48,E2-00,"Organização da E2: fechar issues da E1, conferir release E1 e unificar CSV de defeitos","Bryan, Dante, Davi",2026-11-05,aberta,nao,Pendente,2,
+2026-11-08,#49,E2-01,Ajustes de coerência da Fase 2 antes do plano de avaliação,"Bryan, Davi, Pedro, Mateus",2026-11-06,aberta,nao,Pendente,3,
+2026-11-08,#50,E2-02,Inventário das máquinas e do ambiente de avaliação,Karolina,2026-11-05,aberta,nao,Em andamento,1.5,2026-11-09
+2026-11-08,#51,E2-03,"Estrutura de dados, convenções de nomes e política de gravações",Pedro,2026-11-06,aberta,nao,Pendente,2,
+2026-11-08,#52,E2-10,"[Interação] Protocolo do teste com usuários (roteiro, regras e fichas)","Davi, Pedro",2026-11-06,aberta,nao,Pendente,6,
+2026-11-08,#53,E2-11,"[Interação] Recrutamento, triagem e agenda das sessões (meta: 2 iniciantes e 3 frequentes)","Davi, Pedro",2026-11-08,aberta,nao,Pendente,3,
+2026-11-08,#54,E2-12,[Interação] Sessão piloto e ajuste do protocolo,"Davi, Pedro",2026-11-07,aberta,nao,Pendente,2,
+2026-11-08,#55,E2-20,"[Eficiência] Massa de dados sintética (10k, 50k, 100k) e coleção padrão",Mateus,2026-11-06,aberta,nao,Pendente,4,
+2026-11-08,#56,E2-21,"[Eficiência] Instrumentação: add-on de carimbos de tempo, coletor psutil e pidstat","Karolina, Mateus",2026-11-07,aberta,nao,Pendente,8,
+2026-11-08,#57,E2-22,"[Eficiência] Protocolo de medição (cenários, repetições, controle) e piloto","Karolina, Mateus",2026-11-07,aberta,nao,Pendente,4,
+2026-11-08,#58,E2-30,[Flexibilidade] Protocolo de instalação e desinstalação nos três SO,Bryan,2026-11-06,aberta,nao,Pendente,3,
+2026-11-08,#59,E2-31,[Flexibilidade] Procedimento de teste dos 10 critérios do checklist de integração,Dante,2026-11-06,aberta,nao,Pendente,3,
+2026-11-08,#60,E2-32,[Flexibilidade] Cenários de migração e script de verificação de integridade,"Bryan, Dante",2026-11-07,aberta,nao,Pendente,4,
+2026-11-08,#61,E2-40,Plano de avaliação (Fase 3) no artigo e na GitPage,"Bryan, Dante, Davi, Karolina, Pedro, Mateus",2026-11-08,aberta,nao,Pendente,10,
