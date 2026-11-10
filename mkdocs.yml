@@ -14,6 +14,7 @@ nav:
       - Organização no GitHub: gestao-psm/github-organizacao.md
   - Protocolos:
       - Ambiente: avaliacao/protocolos/ambiente.md
+      - Desempenho: avaliacao/protocolos/desempenho.md
   - Retrospectiva E1: retrospectiva-e1.md
   - Atas:
       - Reunião 01 — Ata: atas/reuniao-01-ata.md
