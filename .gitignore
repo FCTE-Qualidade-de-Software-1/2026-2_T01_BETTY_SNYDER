@@ -2,3 +2,16 @@
 site/
 __pycache__/
 .DS_Store
+
+# Identificação de participantes e mídia de sessão (TCLE: pasta privada)
+**/participantes*
+**/codigo-pessoa*
+**/codigo_pessoa*
+**/mapeamento-participantes*
+*.mp4
+*.mkv
+*.avi
+*.mov
+*.webm
+*.m4a
+*.wav
