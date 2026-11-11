@@ -1,6 +1,6 @@
 # Organização no GitHub (PSM / CID)
 
-Esta página documenta a infraestrutura do repositório `2026-2_T01_BETTY_SNYDER` empregada na coleta e no rastreamento das medidas PSM/CID. O padrão de referência é o documento `padrao_documentacao_github.md` (pasta do projeto acadêmico), adaptado ao contexto da equipe Betty Snyder. Atualização: **03/11/2026**.
+Esta página documenta a infraestrutura do repositório `2026-2_T01_BETTY_SNYDER` empregada na coleta e no rastreamento das medidas PSM/CID. O padrão de referência é o documento `padrao_documentacao_github.md` (pasta do projeto acadêmico), adaptado ao contexto da equipe Betty Snyder. Atualização: **04/11/2026**.
 
 No modelo de informação do PSM (RAMOS, 2026), Project, milestones, labels e issues correspondem a **entidades** e aos respectivos **atributos** sobre os quais se aplicam métodos de medição (contagens, esforço, prazo e estado de fluxo). A Parte 1 do *framework* CID orienta a seleção do que medir (JONES et al., 2021a); a Parte 2 especifica os procedimentos de coleta, cálculo e análise (JONES et al., 2021b). O detalhamento por categoria consta em [Recursos e custos](recursos-e-custos.md), [Calendário e progresso](calendario-e-progresso.md) e [Desempenho dos processos](desempenho-dos-processos.md).
 
@@ -11,7 +11,7 @@ No modelo de informação do PSM (RAMOS, 2026), Project, milestones, labels e is
 - **URL:** https://github.com/orgs/FCTE-Qualidade-de-Software-1/projects/40
 - **Script de provisionamento:** `scripts/setup-github-project.ps1` (completa o Project #40 existente; não cria outro).
 
-O nome, o repositório padrão e os sete campos foram conferidos nas configurações do Project e pela API GraphQL em **03/11/2026**. O campo nativo Status usa os estados **A Fazer** (*Todo*), **Em Andamento** (*In Progress*) e **Concluído** (*Done*), alinhados ao mapeamento CID. Na conferência inicial, o Project continha **4 itens** e o repositório tinha 46 Issues. Em **04/11/2026**, o provisionamento adicionou os 42 itens restantes e verificou as **46 Issues** no Project #40. Para executar mutações, autentique `gh` com os escopos `project` e `repo`. Os custos são derivados do esforço, sem campo dedicado de categoria PSM ou de custo.
+O nome, o repositório padrão e os sete campos foram conferidos nas configurações do Project e pela API GraphQL em **03/11/2026**. O campo nativo Status usa as opções **Pendente**, **Em andamento** e **Concluído**, alinhadas ao mapeamento CID. Na conferência inicial, o Project continha **4 itens**; em **04/11/2026**, foram vinculadas as 46 Issues da Entrega 1 e criadas mais 34 para a Entrega 2. O Project #40 contém atualmente **80 Issues**. Para executar mutações, autentique `gh` com os escopos `project` e `repo`. Os custos são derivados do esforço, sem campo dedicado de categoria PSM ou de custo.
 
 ### Campos padrão do Project
 
@@ -27,26 +27,28 @@ Os sete campos personalizados do Project #40 e seus tipos:
 | Progresso (%) | Número | Acompanhamento do avanço da atividade |
 | Evidência (link) | Texto | Rastreabilidade para entregáveis e registros |
 
-O campo nativo **Status** acompanha o fluxo e não faz parte desses sete campos personalizados. O *Cycle Time* deve ser obtido do histórico de transições de Status (início real até conclusão), não calculado com Data início planejada. Os custos são derivados dos esforços pela taxa definida em [Recursos e custos](recursos-e-custos.md); não são campos do Project.
+O campo nativo **Status** acompanha o fluxo e não faz parte desses sete campos personalizados. O *Cycle Time* deve ser obtido do histórico de transições de Status (início real até conclusão), não calculado com Data início planejada. Os estados **Pendente**, **Em andamento** e **Concluído** complementam as labels para *Cycle Time*, *Throughput* e WIP. Os custos são derivados dos esforços pela taxa definida em [Recursos e custos](recursos-e-custos.md); não são campos do Project.
 
-A série histórica da Entrega 1 permanece nos CSV em `gestao-psm/`. Nos cortes seguintes, medidas de calendário e esforço podem ser obtidas dos campos nativos depois de preenchidos; medidas de fluxo usam o histórico de Status das Issues já incluídas no quadro.
+A série histórica da Entrega 1 permanece nos CSV em `gestao-psm/`. Nas Issues da Entrega 2, esforço planejado e datas de início/fim planejadas foram preenchidos a partir do plano; progresso inicial é 0%. Esforço real, data fim real e evidência permanecem vazios até haver registro verificável. Medidas de fluxo usam o histórico de Status das Issues já incluídas no quadro.
 
 ## Milestones
 
 Os milestones aproximam os marcos (*releases*) do mapeamento CID para contagem de *work items* comprometidos e concluídos.
 
-| # | Título | Due | Estado em 25/10 |
+| # | Título | Due | Estado atual |
 |---|---|---|---|
 | 1 | PC1 | 19/10/2026 | **closed** (apresentação realizada) |
 | 2 | F1 \| Plano de Medição e Preparação | 26/10/2026 | open: Issues da Entrega 1 / Fases 1–2 |
-| 3 | F2 \| Execução e Análise das Medições | 11/11/2026 | open: coleta futura |
-| 4 | E2 \| Relatório e Recomendações de Melhoria | 18/11/2026 | open: entrega final |
+| 3 | F2 \| Execução e Análise das Medições | 14/11/2026 | open: execução e análise |
+| 4 | E2 \| Relatório e Recomendações de Melhoria | 22/11/2026 | open: entrega final |
+| 5 | F3 \| Plano de Avaliação (Fase 3) | 08/11/2026 | open: planejamento da avaliação |
+| 6 | PC2 \| Julgamento, Melhoria e Artigo (16/11) | 16/11/2026 | open: julgamento e apresentação |
 
 ## Labels
 
-Labels do padrão (`psm:*`, `quality:*`, `type:*`, `environment:*`, `priority:*`) mais `status:on-time`, `status:late`, `status:partial`, `status:pending` para o corte de 25/10.
+Labels do padrão (`psm:*`, `quality:*`, `type:*`, `environment:*`, `priority:*`) mais `status:on-time`, `status:late`, `status:partial`, `status:pending`, `fase:3`, `fase:4` e `entrega:e2`.
 
-As labels `status:*` alimentam a análise de conformidade de prazos (ICP) em [Calendário e progresso](calendario-e-progresso.md). Os estados de fluxo To Do / In Progress / Done no Project complementam essas labels para *Cycle Time*, *Throughput* e WIP.
+As labels `status:*` alimentam a análise de conformidade de prazos (ICP) em [Calendário e progresso](calendario-e-progresso.md).
 
 Labels legadas (Usabilidade/Portabilidade etc.) permanecem no repositório; novas Issues usam o vocabulário ISO 25010:2023 do padrão.
 
@@ -54,7 +56,7 @@ Labels legadas (Usabilidade/Portabilidade etc.) permanecem no repositório; nova
 
 Foram criadas **46 Issues** a partir de `gestao-psm/calendario-progresso.csv`, milestone **F1**, com status no corpo e nas labels. Na Entrega 1 as issues **não** foram fonte primária de medição. Após o provisionamento de 04/11/2026, as **46 Issues** constam como itens do Project #40.
 
-### Abertas (pendente ou parcial)
+### Pendentes ou parciais no calendário
 
 | Issue | ID | Status 25/10 |
 |---|---|---|
@@ -69,9 +71,22 @@ Foram criadas **46 Issues** a partir de `gestao-psm/calendario-progresso.csv`, m
 | #45 | E1-C3 | pendente |
 | #46 | E1-C4 | pendente |
 
-### Concluídas (closed)
+### Concluídas no calendário
 
-As demais 36 Issues do calendário (R01-*, P2-*, E1-A1…A5, E1-B1) estão **closed**, com label `status:on-time` ou `status:late` conforme `concluida_no_prazo` no CSV.
+As demais 36 atividades do calendário (R01-*, P2-*, E1-A1…A5, E1-B1) estão concluídas segundo o CSV, com label `status:on-time` ou `status:late` conforme `concluida_no_prazo`.
+
+### Entrega 2 (04/11)
+
+Foram criadas **34 Issues**, todas incluídas no Project #40 e atribuídas conforme o plano `issues-e2.md`:
+
+| Milestone | Issues | Due |
+|---|---:|---|
+| F3 \| Plano de Avaliação (Fase 3) | 14 | 08/11/2026 |
+| F2 \| Execução e Análise das Medições | 8 | 14/11/2026 |
+| PC2 \| Julgamento, Melhoria e Artigo | 4 | 16/11/2026 |
+| E2 \| Relatório e Recomendações de Melhoria | 8 | 22/11/2026 |
+
+O esforço planejado e as datas de início e fim planejadas foram copiados do plano. As 34 Issues iniciam como **Pendente**, com **0%** de progresso; esforço real, data fim real e evidência permanecem sem valor até serem observados. O [mapeamento de campos](mapeamento-campos-issues.csv) registra os valores atuais das 80 Issues.
 
 ## Templates de Issue
 
