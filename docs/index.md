@@ -52,6 +52,22 @@ Dessa forma, pretende-se identificar os pontos positivos e as possíveis limita�
 
     [:octicons-arrow-right-24: Abrir](fase2.md)
 
+-   :material-database-outline:{ .lg .middle } **Dados**
+
+    ---
+
+    Árvore `avaliacao/`, padrão de nomes, códigos de participante e rastreabilidade bruto → métrica.
+
+    [:octicons-arrow-right-24: Abrir](dados.md)
+
+-   :material-clipboard-check-outline:{ .lg .middle } **Protocolos**
+
+    ---
+
+    Entrevista com participante, testes de desempenho e testes de flexibilidade.
+
+    [:octicons-arrow-right-24: Abrir](avaliacao/protocolos/index.md)
+
 -   :material-chart-line:{ .lg .middle } **Gestão do projeto (PSM)**
 
     ---
@@ -69,6 +85,7 @@ Dessa forma, pretende-se identificar os pontos positivos e as possíveis limita�
     [:octicons-arrow-right-24: Reunião 01](atas/reuniao-01-ata.md)
     [:octicons-arrow-right-24: Reunião 02](atas/reuniao-02-ata.md)
     [:octicons-arrow-right-24: Reunião 03](atas/reuniao-03-ata.md)
+    [:octicons-arrow-right-24: Reunião 04](atas/reuniao-04-ata.md)
 
 -   :material-refresh:{ .lg .middle } **Retrospectiva E1**
 

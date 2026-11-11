@@ -1,8 +1,10 @@
-# Ambiente de Avaliação
+# Ambiente de avaliação
+
+Página de apoio aos [protocolos](index.md): hardware e software das máquinas usadas na avaliação do Anki Desktop (Windows, macOS e Ubuntu).
 
 ## 1. Objetivo
 
-Este documento apresenta as configurações de hardware e software das máquinas utilizadas na avaliação do Anki Desktop, considerando os sistemas operacionais Windows, macOS e Ubuntu.
+Registrar as configurações que condicionam os testes de desempenho e de flexibilidade e as sessões de entrevista.
 
 ## 2. Configuração das máquinas
 
