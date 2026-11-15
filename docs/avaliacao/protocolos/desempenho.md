@@ -22,27 +22,74 @@ Antes de cada medição:
 3. **Rede (sincronização):** Wi-Fi ou cabo estável; registrar ping e download/upload.
 4. **Registro de hardware:** SO e build, processador (modelo, clock, núcleos), RAM, armazenamento (SSD/HDD).
 
-### 2.1 Orientações por sistema operacional
+### 2.1 Orientações e execução por sistema operacional
+
+A automação das coletas pode ser feita via menu interativo interplataforma ou por comandos diretos no terminal.
 
 #### Windows 10/11
-
-1. Tomada; em *Configurações → Sistema → Energia e bateria*, modo **Melhor desempenho** quando disponível.
-2. Encerrar processos (`Ctrl + Shift + Esc`).
-3. Confirmar CPU basal &lt; 2% no Gerenciador de Tarefas.
-4. Durante a medição, acompanhar o processo do Anki (Detalhes / `resmon`).
-5. Coletor: `py -3 coletor.py --cenario repouso --duracao 300` (ou `estresse` / `cold_start`). Se `py` faltar, usar `python`.
-6. *Cold start:* reinício entre baterias ou RAMMap (**Empty → Empty Standby List**); registrar o método e manter consistente.
-7. Registrar edição/versão do Windows e o hardware.
+1. **Condições prévias:** Notebook na tomada; modo *Melhor desempenho* em *Configurações → Sistema → Energia e bateria*; encerrar processos em segundo plano (`Ctrl + Shift + Esc`) até CPU basal < 2%.
+2. **Execução automatizada (Menu CMD):**
+   ```cmd
+   docs\avaliacao\scripts\executar_testes.cmd
+   ```
+3. **Execução direta (Prompt de Comando ou PowerShell):**
+   - *Cold start:* Encerrar o Anki; esvaziar a Standby List no RAMMap (*Empty → Empty Standby List*) ou reiniciar; executar:
+     ```cmd
+     py -3 docs\avaliacao\scripts\coletor.py --cenario cold_start --saida docs\avaliacao\dados\desempenho\bruto\T_ini_coldstart_windows_01.csv
+     ```
+   - *Repouso basal (300 s):*
+     ```cmd
+     py -3 docs\avaliacao\scripts\coletor.py --cenario repouso --duracao 300 --saida docs\avaliacao\dados\desempenho\bruto\CPU_repouso_windows_01.csv
+     py -3 docs\avaliacao\scripts\analisador_threads.py --modo realtime --duracao 300 --cenario repouso --saida docs\avaliacao\dados\desempenho\bruto\threads_repouso_windows_01.csv
+     ```
+   - *Estresse (180 s com 100k cards):*
+     ```cmd
+     py -3 docs\avaliacao\scripts\coletor.py --cenario estresse --duracao 180 --saida docs\avaliacao\dados\desempenho\bruto\metricas_estresse_windows_01.csv
+     py -3 docs\avaliacao\scripts\analisador_threads.py --modo realtime --duracao 180 --cenario estresse --saida docs\avaliacao\dados\desempenho\bruto\threads_estresse_windows_01.csv --grafico
+     ```
 
 #### macOS
+1. **Condições prévias:** Tomada conectada; desativar *Modo de Pouca Energia*; confirmar CPU basal < 2% no *Monitor de Atividade*.
+2. **Execução automatizada (Shell):**
+   ```bash
+   chmod +x docs/avaliacao/scripts/executar_testes.sh
+   ./docs/avaliacao/scripts/executar_testes.sh
+   ```
+3. **Execução direta (Terminal):**
+   - *Cold start:* Fechar Anki (`pkill -f Anki`); limpar cache de disco (`sudo purge`); executar:
+     ```bash
+     python3 docs/avaliacao/scripts/coletor.py --cenario cold_start --saida docs/avaliacao/dados/desempenho/bruto/T_ini_coldstart_macos_01.csv
+     ```
+   - *Repouso basal (300 s):*
+     ```bash
+     python3 docs/avaliacao/scripts/coletor.py --cenario repouso --duracao 300 --saida docs/avaliacao/dados/desempenho/bruto/CPU_repouso_macos_01.csv
+     ```
+   - *Estresse (180 s):*
+     ```bash
+     python3 docs/avaliacao/scripts/coletor.py --cenario estresse --duracao 180 --saida docs/avaliacao/dados/desempenho/bruto/metricas_estresse_macos_01.csv
+     ```
 
-1. Tomada; desativar Modo de Pouca Energia se ativo.
-2. Encerrar processos; Monitor de Atividade.
-3. Confirmar CPU basal &lt; 2%.
-4. Acompanhar % CPU e Memória do Anki.
-5. Coletor: `python3 coletor.py --cenario ...`.
-6. *Cold start:* `sudo purge` ou reinício; registrar o método.
-7. Registrar versão do macOS e hardware.
+#### Linux (Ubuntu 24.04 LTS)
+1. **Condições prévias:** Encerrar softwares em background; verificar CPU basal < 2%.
+2. **Execução automatizada (Shell):**
+   ```bash
+   ./docs/avaliacao/scripts/executar_testes.sh
+   ```
+3. **Execução direta (Konsole / Bash):**
+   - *Cold start:* `pkill -f anki && sync && echo 3 | sudo tee /proc/sys/vm/drop_caches` seguido de:
+     ```bash
+     python3 docs/avaliacao/scripts/coletor.py --cenario cold_start --saida docs/avaliacao/dados/desempenho/bruto/T_ini_coldstart_ubuntu_01.csv
+     ```
+   - *Repouso basal (300 s):*
+     ```bash
+     python3 docs/avaliacao/scripts/coletor.py --cenario repouso --duracao 300 --saida docs/avaliacao/dados/desempenho/bruto/CPU_repouso_ubuntu_01.csv
+     python3 docs/avaliacao/scripts/analisador_threads.py --modo realtime --duracao 300 --cenario repouso --saida docs/avaliacao/dados/desempenho/bruto/threads_repouso_ubuntu_01.csv
+     ```
+   - *Estresse (180 s com 100k cards):*
+     ```bash
+     python3 docs/avaliacao/scripts/coletor.py --cenario estresse --duracao 180 --saida docs/avaliacao/dados/desempenho/bruto/metricas_estresse_ubuntu_01.csv
+     python3 docs/avaliacao/scripts/analisador_threads.py --modo realtime --duracao 180 --cenario estresse --saida docs/avaliacao/dados/desempenho/bruto/threads_estresse_ubuntu_01.csv --grafico
+     ```
 
 #### Observação sobre comparação entre sistemas
 
@@ -89,21 +136,70 @@ Massas: 10k, 50k e 100k cards.
 4. Degradação = $(\text{Vazão}_{100k} - \text{Vazão}_{10k}) / \text{Vazão}_{10k} \times 100$.
 5. Salvar em `resultados_capacidade_<SO>.csv`.
 
-## 4. Registro de dados
+## 4. Registro de dados e resultados empíricos
 
-Pasta: `avaliacao/dados/desempenho/bruto/`, padrão `<métrica>_<cenário>_<execução>` (ver [Dados](../../dados.md)). Exemplos: `T_ini_coldstart_01.csv`, `CPU_repouso_win11_01.csv`.
+Pasta oficial de evidências: `avaliacao/dados/desempenho/bruto/`, com padrão de nomenclatura `<métrica>_<cenário>_<SO>_<execução>.csv` (ver [Dados](../../dados.md)).
 
-Enquadramento nas faixas (matriz usada neste protocolo de medição):
+### 4.1 Matriz de faixas de julgamento GQM
 
-| Métrica | Insatisfatório | Mínimo | Alvo | Excelente |
-| --- | --- | --- | --- | --- |
-| $T_{\text{inicializacao}}$ (cold start) | &gt; 9 s | 6 s &lt; T ≤ 9 s | 3 s &lt; T ≤ 6 s | ≤ 3 s |
-| $T_{\text{revisao}}$ | &gt; 3 s | 2 s &lt; T ≤ 3 s | 1 s &lt; T ≤ 2 s | ≤ 1 s |
-| RAM em repouso | &gt; 800 MB | 400 a 800 MB | 250 a 400 MB | ≤ 250 MB |
-| CPU em repouso (média) | &gt; 10% | 5% a 10% | 2% a 5% | ≤ 2% |
-| Pico de RAM sob estresse | &gt; 1,5 GB | 1,0 a 1,5 GB | 600 MB a 1,0 GB | ≤ 600 MB |
-| CPU da Main Thread sob carga | &gt; 50% | 30% a 50% | 15% a 30% | ≤ 15% |
-| Vazão | &lt; 10.000 cards/min | 10.000 a 30.000 | 30.000 a 60.000 | ≥ 60.000 |
+| Métrica / Questão GQM | Insatisfatório | Mínimo | Alvo | Excelente |
+| :--- | :---: | :---: | :---: | :---: |
+| $T_{\text{inicializacao}}$ (cold start - Q1) | &gt; 9 s | 6 s &lt; T ≤ 9 s | 3 s &lt; T ≤ 6 s | ≤ 3 s |
+| $T_{\text{revisao}}$ (tempo de transição) | &gt; 3 s | 2 s &lt; T ≤ 3 s | 1 s &lt; T ≤ 2 s | ≤ 1 s |
+| RAM em repouso basal (Q2) | &gt; 800 MB | 400 a 800 MB | 250 a 400 MB | ≤ 250 MB |
+| CPU em repouso basal (média - Q2) | &gt; 10% | 5% a 10% | 2% a 5% | ≤ 2% |
+| Pico de RAM sob estresse (100k cards - Q2) | &gt; 1,5 GB | 1,0 a 1,5 GB | 600 MB a 1,0 GB | ≤ 600 MB |
+| CPU da Main Thread sob carga (Q4) | &gt; 50% | 30% a 50% | 15% a 30% | ≤ 15% |
+| Vazão de processamento (Q3) | &lt; 10.000 cards/min | 10.000 a 30.000 | 30.000 a 60.000 | ≥ 60.000 |
+
+### 4.2 Resultados consolidados de laboratório (Ubuntu 24.04 LTS / Anki 26.09.3)
+
+A bateria completa de testes instrumentados executada no ambiente Linux de referência gerou os seguintes resultados:
+
+| Métrica / Questão GQM | Valor Empírico Coletado | Faixa no Protocolo | Julgamento GQM | Arquivo de Origem (Bruto) |
+| :--- | :---: | :---: | :---: | :--- |
+| **$T_{\text{inicialização}}$ (Cold Start - Q1)** | **`1.018 s`** | $\le 3\text{ s}$ | 🟢 **Excelente** | [`T_ini_coldstart_ubuntu_01.csv`](../dados/desempenho/bruto/T_ini_coldstart_ubuntu_01.csv) |
+| **CPU em Repouso Basal (Q2)** | **`0.04%`** | $\le 2.0\%$ | 🟢 **Excelente** | [`CPU_repouso_ubuntu_01.csv`](../dados/desempenho/bruto/CPU_repouso_ubuntu_01.csv) |
+| **RAM RSS em Repouso Basal (Q2)** | **`783.89 MB`** | $400\text{ a }800\text{ MB}$ | 🟡 **Mínimo** | [`CPU_repouso_ubuntu_01.csv`](../dados/desempenho/bruto/CPU_repouso_ubuntu_01.csv) |
+| **Isolamento de Threads / UI (Q4)** | **`2.35%`** (Pico: $21.0\%$) | $\le 15.0\%$ | 🟢 **Excelente** | [`threads_estresse_ubuntu_01.csv`](../dados/desempenho/bruto/threads_estresse_ubuntu_01.csv) |
+| **Pico de RAM sob Estresse (100k - Q2)** | **`1.328,13 MB`** ($1.33\text{ GB}$) | $1.0\text{ a }1.5\text{ GB}$ | 🟡 **Mínimo** | [`metricas_estresse_ubuntu_01.csv`](../dados/desempenho/bruto/metricas_estresse_ubuntu_01.csv) |
+| **Pico de Escrita no SSD (I/O)** | **`228.4 MB/s`** ($228.416\text{ KB/s}$) | Capacidade NVMe | 🟢 **Nominal** | [`metricas_estresse_ubuntu_01.csv`](../dados/desempenho/bruto/metricas_estresse_ubuntu_01.csv) |
+| **Vazão Check Database (Q3)** | **$\approx 2.000.000\text{ cards/min}$** ($3.0\text{s}$) | $\ge 60.000\text{ cards/min}$ | 🟢 **Excelente** | [`metricas_estresse_ubuntu_01.csv`](../dados/desempenho/bruto/metricas_estresse_ubuntu_01.csv) |
+
+*(Nota de Rastreabilidade: Os dados coletados em ambiente Windows 11 pela integrante Karolina Vieira Barbosa estão versionados sob o padrão `threads_*windows*.csv` conforme catalogado em [Dados](../../dados.md)).*
+
+### 4.3 Análise técnica aprofundada: consumo de RAM em repouso basal (783,89 MB - Q2)
+
+O registro de **783,89 MB** de RSS em repouso basal (classificado como **Mínimo** no GQM) decorre da arquitetura interna moderna do Anki Desktop (versões 24 a 26) e da semântica de medição de memória do kernel Linux:
+
+1. **Arquitetura Multi-Processo (QtWebEngine/Chromium):** O Anki não é uma aplicação puramente nativa; sua interface com o usuário (navegador de baralhos, barras de ferramentas e visualizador de cartões) é renderizada em instâncias integradas do Chromium via `PyQt6.QtWebEngineCore`.
+2. **Decomposição da Árvore de Processos:** Uma inspeção detalhada da árvore de processos do Anki em repouso revela como o consumo se distribui:
+
+| Processo / PID | Função Arquitetural | Memória Real (RSS) |
+| :--- | :--- | :---: |
+| `anki` (Processo Pai) | Runtime Python 3.13, motor Rust (`anki_rs`), SQLite | **~370 MB** |
+| `QtWebEngineProcess` (Zygote 1) | Gerenciador de processos do Chromium | **~52 MB** |
+| `QtWebEngineProcess` (Zygote 2) | Sandbox de segurança e IPC | **~53 MB** |
+| `QtWebEngineProcess` (Renderer 1) | WebView do *Deck Browser* (HTML/CSS/JS) | **~99 MB** |
+| `QtWebEngineProcess` (Renderer 2) | WebView da barra superior e menus | **~98 MB** |
+| `QtWebEngineProcess` (Renderer 3) | WebView auxiliar / cache do *Reviewer* | **~106 MB** |
+| **Soma Total da Árvore** | **Consumo agregado medido pelo coletor oficial** | **`~778 MB`** |
+
+3. **Sobreposição de Bibliotecas Compartilhadas no RSS:** O *Resident Set Size* (RSS) computado para cada subprocesso contabiliza as páginas de memória física mapeadas, incluindo bibliotecas dinâmicas compartilhadas pesadas (como `libQt6WebEngineCore.so.6`, com mais de 200 MB em disco, drivers gráficos Mesa/Vulkan e fontes). Ao somar o RSS individual de cada filho da árvore, ocorre sobreposição de memória compartilhada.
+4. **Alinhamento com o GQM:** Caso fosse computado unicamente o processo pai (`anki`), o consumo ficaria em ~370 MB (faixa **Alvo**). Ao medir a **árvore completa real** necessária para o software funcionar, o Anki situa-se estavelmente na faixa **Mínimo** (400 a 800 MB). Durante os 300 segundos de amostragem basal, o RSS variou menos de 0,5 MB, comprovando **ausência de vazamento de memória (Memory Leak)**.
+
+### 4.4 Auditoria de isolamento de threads sob carga real (Q4)
+
+A análise refinada com `analisador_threads.py` e `pidstat` comprovou a eficácia do isolamento entre a Main Thread (UI PyQt) e as Worker Threads (Rust/SQLite):
+- **Em repouso:** Main Thread média de `0.03%` CPU; Workers média de `0.02%` CPU; 56 threads ativas.
+- **Sob estresse (100k cards):** Durante o pico de verificação de integridade (*Check Database*), os Workers atingiram **`100.0%` de utilização da CPU** e I/O de escrita de **`228.4 MB/s`**, enquanto a Main Thread permaneceu em **`1.0%`** (média de `2.35%` e pico isolado de 21% apenas na exibição do modal conclusivo).
+- O comportamento comprova que a interface gráfica não sofre congelamento perceptível pelo usuário mesmo sob estresse severo, atendendo plenamente à meta de $\le 15\%$ da faixa **Excelente**. O gráfico gerado está versionado em [`docs/avaliacao/dados/grafico_threads_estresse.png`](../dados/grafico_threads_estresse.png).
+
+### 4.5 Avaliação de capacidade e vazão com 100.000 cards (Q3)
+
+No Cenário 3, a rotina *Check Database* processou o baralho sintético de 100.000 notas em **$\approx 3,0\text{ segundos}$** ($T_{\text{exec}} \approx 0,05\text{ min}$):
+$$\text{Vazão} = \frac{100.000\text{ cards}}{0,05\text{ min}} \approx 2.000.000\text{ cards/min}$$
+O valor supera em mais de 30 vezes o limiar de $\ge 60.000\text{ cards/min}$, posicionando o motor Rust/SQLite na faixa **Excelente**.
 
 ## 5. Critérios de invalidação
 

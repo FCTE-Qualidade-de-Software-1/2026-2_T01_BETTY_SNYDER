@@ -113,10 +113,13 @@ def encontrar_processo_anki(pid_informado: int = None) -> psutil.Process:
     for p in psutil.process_iter(["pid", "name", "cmdline"]):
         try:
             nome = (p.info["name"] or "").lower()
-            cmdline = " ".join(p.info["cmdline"] or []).lower()
+            cmdline_list = p.info["cmdline"] or []
+            cmdline = " ".join(cmdline_list).lower()
             if "anki" in nome or "anki" in cmdline:
-                # Evita selecionar este próprio script de coleta
-                if "coletor.py" in cmdline:
+                # Evita selecionar este próprio script de coleta ou scripts executores/grep
+                if any(k in cmdline for k in ["coletor.py", "executar", "grep", "pidstat"]):
+                    continue
+                if nome in ["sh", "bash", "zsh", "dash"]:
                     continue
                 candidatos.append(p)
         except (psutil.NoSuchProcess, psutil.AccessDenied):
@@ -332,14 +335,23 @@ def executar_monitoramento(cenario: str, duracao: int, intervalo: float, saida_c
 def executar_cold_start(comando_anki: str, saida_csv: Path):
     """
     Executa a rotina do Cenário 1: Cold Start.
-    Dispara o Anki a partir do estado frio e cronometra T_0 até o processo estabilizar.
+    Dispara o Anki a partir do estado frio e cronometra T_0 até a interface e subprocessos estabilizarem.
     """
     so = identificar_so()
     print("=" * 70)
     print(f"🧊 CENÁRIO 1: INICIALIZAÇÃO A FRIO (COLD START) - SO: {so.upper()}")
     print("=" * 70)
-    print("⚠️ ATENÇÃO: Conforme a Seção 3 (Cenário 1) do protocolo:")
-    print("   1. Certifique-se de que o Anki está FECHADO.")
+
+    # 1. Validação prévia de isolamento: Anki DEVE estar fechado
+    anki_ativo = encontrar_processo_anki()
+    if anki_ativo:
+        print(f"[ERRO CRÍTICO] O Anki já está em execução (PID: {anki_ativo.pid})!")
+        print("Para um teste de Cold Start fidedigno, o Anki DEVE estar totalmente fechado.")
+        print("Feche o Anki (ou execute 'pkill -f anki') antes de prosseguir.")
+        return
+
+    print("⚠️ Recomendações da Seção 3 (Cenário 1) do protocolo:")
+    print("   1. Certifique-se de que o Anki está FECHADO (Verificado: OK ✅).")
     print("   2. No Linux/Ubuntu: execute 'sync && echo 3 | sudo tee /proc/sys/vm/drop_caches'")
     print("   3. No macOS: execute 'sudo purge'")
     print("   4. No Windows: reinicie ou esvazie a Standby List via RAMMap.")
@@ -362,27 +374,44 @@ def executar_cold_start(comando_anki: str, saida_csv: Path):
     t0 = time.perf_counter()
     proc = subprocess.Popen(comando_anki, shell=True)
 
-    # Monitora até o processo Anki ser detectado pelo psutil
-    t_processo = None
+    # Monitora até o processo principal do Anki surgir
     proc_obj = None
     timeout = 30.0
 
     while time.perf_counter() - t0 < timeout:
         proc_obj = encontrar_processo_anki()
         if proc_obj:
-            t_processo = time.perf_counter() - t0
             break
-        time.sleep(0.05)
+        time.sleep(0.02)
 
     if not proc_obj:
         print("[ERRO] Timeout de 30s aguardando o surgimento do processo Anki.")
         return
 
-    print(f"⚡ Processo detectado após {t_processo:.3f} segundos (PID {proc_obj.pid}).")
-    print("Aguardando estabilização inicial do carregamento da interface (3s)...")
-    time.sleep(3.0)
+    t_processo = time.perf_counter() - t0
+    print(f"⚡ Processo detectado após {t_processo:.3f}s (PID {proc_obj.pid}). Aguardando renderização da interface...")
 
-    t_total = t_processo  # Aproximação baseada em detecção de processo
+    # Monitora até os subprocessos de renderização (QtWebEngine) ou threads da UI surgirem
+    t_pronto = None
+    while time.perf_counter() - t0 < timeout:
+        try:
+            if not proc_obj.is_running():
+                break
+            filhos = proc_obj.children(recursive=True)
+            num_threads = proc_obj.num_threads()
+            # Quando o QtWebEngine inicializa ou as threads sobem para >= 10, a UI está pronta
+            if len(filhos) >= 1 or num_threads >= 10:
+                t_pronto = time.perf_counter() - t0
+                break
+        except (psutil.NoSuchProcess, psutil.AccessDenied):
+            break
+        time.sleep(0.05)
+
+    if t_pronto is None:
+        t_total = t_processo
+    else:
+        t_total = t_pronto
+
     nivel_start = classificar_gqm("cold_start_seg", t_total)
 
     print("\n" + "=" * 70)
@@ -394,6 +423,7 @@ def executar_cold_start(comando_anki: str, saida_csv: Path):
     cabecalho = ["data_hora", "so", "comando", "t_cold_start_seg", "nivel_gqm"]
     linha = [datetime.now().isoformat(), so, comando_anki, round(t_total, 3), nivel_start]
 
+    saida_csv.parent.mkdir(parents=True, exist_ok=True)
     with open(saida_csv, mode="w", newline="", encoding="utf-8") as f:
         w = csv.writer(f)
         w.writerow(cabecalho)

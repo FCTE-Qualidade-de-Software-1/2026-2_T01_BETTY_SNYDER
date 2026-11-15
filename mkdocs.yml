@@ -19,6 +19,7 @@ nav:
       - Pré-entrevista com participante: avaliacao/protocolos/pre-entrevista-participante.md
       - Entrevista com participante: avaliacao/protocolos/entrevista.md
       - Eficiência de desempenho: avaliacao/protocolos/desempenho.md
+      - Ferramentas e scripts: avaliacao/scripts/README.md
       - Flexibilidade:
           - Instalação e desinstalação: avaliacao/protocolos/flexibilidade-instalacao.md
           - Checklist de integração: avaliacao/protocolos/flexibilidade-checklist.md
