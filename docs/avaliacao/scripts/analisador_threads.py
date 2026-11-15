@@ -77,6 +77,39 @@ def identificar_so() -> str:
     return {"Linux": "ubuntu", "Windows": "windows", "Darwin": "macos"}.get(SISTEMA, "desconhecido")
 
 
+def obter_usuario() -> str:
+    """Retorna o nome do usuário do sistema operacional de forma portável e sanitizada."""
+    try:
+        import getpass
+        user = getpass.getuser()
+    except Exception:
+        user = os.environ.get("USER") or os.environ.get("USERNAME") or "usuario"
+    user_sanitizado = re.sub(r"[^a-zA-Z0-9_-]", "", user.lower())
+    return user_sanitizado or "usuario"
+
+
+def obter_tipo_maquina() -> dict:
+    """
+    Retorna o tipo de máquina, arquitetura de hardware e SO.
+    Exemplo: {
+        'so': 'ubuntu',
+        'arch': 'x86_64',
+        'node': 'think',
+        'rotulo': 'ubuntu_x86_64'
+    }
+    """
+    so = identificar_so()
+    arch = platform.machine().lower() or "arch"
+    node = re.sub(r"[^a-zA-Z0-9_-]", "", platform.node().lower()) or "host"
+    return {
+        "so": so,
+        "arch": arch,
+        "node": node,
+        "rotulo": f"{so}_{arch}",
+        "identificador_completo": f"{so}_{arch}_{node}",
+    }
+
+
 def classificar_gqm_q4(cpu_main_pct: float) -> str:
     """Enquadra o uso da Main Thread nas faixas oficiais do GQM."""
     for nivel, (lim_inf, lim_sup) in GQM_Q4_THRESHOLDS.items():
@@ -85,12 +118,14 @@ def classificar_gqm_q4(cpu_main_pct: float) -> str:
     return "N/D"
 
 
-def obter_caminho_saida_padrao(cenario: str) -> Path:
-    """Caminho padrão em docs/avaliacao/dados/, com o SO real no nome."""
+def obter_caminho_saida_padrao(cenario: str, usuario: str = None, maquina: str = None) -> Path:
+    """Caminho padrão em docs/avaliacao/dados/, incluindo SO, arquitetura, usuário e timestamp."""
     base_dir = Path(__file__).resolve().parent.parent / "dados"
     base_dir.mkdir(parents=True, exist_ok=True)
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-    return base_dir / f"threads_{cenario}_{identificar_so()}_{timestamp}.csv"
+    usr = usuario or obter_usuario()
+    maq = maquina or obter_tipo_maquina()["rotulo"]
+    return base_dir / f"threads_{cenario}_{maq}_{usr}_{timestamp}.csv"
 
 
 # =============================================================================
@@ -236,11 +271,22 @@ class ColetorThreads:
 # =============================================================================
 # Modo 1: Monitoramento em tempo real
 # =============================================================================
-def executar_modo_realtime(pid: int, duracao: int, intervalo: float, saida_csv: Path, cenario: str):
+def executar_modo_realtime(
+    pid: int,
+    duracao: int,
+    intervalo: float,
+    saida_csv: Path,
+    cenario: str,
+    usuario: str = None,
+    maquina: str = None,
+):
+    usr = usuario or obter_usuario()
+    maq = maquina or obter_tipo_maquina()["rotulo"]
+
     print("=" * 72)
     print("🔬 ANÁLISE DE THREADS EM TEMPO REAL (QUESTÃO Q4 - ISO/IEC 25010)")
-    print(f"📌 PID Alvo: {pid} | SO: {identificar_so().upper()} | "
-          f"Duração: {duracao}s | Amostragem: {intervalo}s")
+    print(f"📌 PID Alvo: {pid} | SO/Máquina: {maq.upper()} | Operador: {usr}")
+    print(f"⏱️ Duração:  {duracao}s | Amostragem: {intervalo}s | Cenário: {cenario}")
     print("=" * 72)
 
     if psutil is None:
@@ -267,7 +313,7 @@ def executar_modo_realtime(pid: int, duracao: int, intervalo: float, saida_csv: 
     cabecalho = [
         "segundo", "timestamp_iso", "cpu_main_thread_pct", "cpu_workers_total_pct",
         "cpu_processo_total_pct", "qtd_threads_ativas", "nome_main_thread",
-        "classificacao_gqm_q4",
+        "classificacao_gqm_q4", "usuario", "tipo_maquina",
     ]
     amostras = []
     t_inicio = time.monotonic()
@@ -295,6 +341,7 @@ def executar_modo_realtime(pid: int, duracao: int, intervalo: float, saida_csv: 
                 writer.writerow([
                     segundo, datetime.now().isoformat(), round(cpu_main, 2),
                     round(cpu_workers, 2), round(cpu_total, 2), qtd, nome_main, nivel,
+                    usr, maq,
                 ])
                 f_out.flush()
                 amostras.append({"cpu_main": cpu_main, "cpu_workers": cpu_workers, "cpu_total": cpu_total})
@@ -319,10 +366,20 @@ def executar_modo_realtime(pid: int, duracao: int, intervalo: float, saida_csv: 
 # =============================================================================
 # Modo 2: Parser de dump gerado pelo `pidstat -t` (dump só existe no Linux)
 # =============================================================================
-def executar_modo_parse(caminho_arquivo: Path, saida_csv: Path):
+def executar_modo_parse(
+    caminho_arquivo: Path,
+    saida_csv: Path,
+    usuario: str = None,
+    maquina: str = None,
+):
+    usr = usuario or obter_usuario()
+    maq = maquina or obter_tipo_maquina()["rotulo"]
+
     print("=" * 72)
     print("📄 PROCESSAMENTO DE LOG PIDSTAT (QUESTÃO Q4 - ISO/IEC 25010)")
-    print(f"📁 Arquivo de entrada: {caminho_arquivo}")
+    print(f"📁 Arquivo de entrada:   {caminho_arquivo}")
+    print(f"💻 SO / Tipo de Máquina: {maq.upper()}")
+    print(f"👤 Usuário / Operador:    {usr}")
     print("=" * 72)
 
     if not caminho_arquivo.exists():
@@ -362,6 +419,7 @@ def executar_modo_parse(caminho_arquivo: Path, saida_csv: Path):
         writer.writerow([
             "timestamp", "cpu_main_thread_pct", "cpu_workers_total_pct",
             "cpu_processo_total_pct", "qtd_threads", "classificacao_gqm_q4",
+            "usuario", "tipo_maquina",
         ])
         for hora, dados in amostras_por_segundo.items():
             cpu_main, cpu_workers = dados["main"], dados["workers"]
@@ -369,6 +427,7 @@ def executar_modo_parse(caminho_arquivo: Path, saida_csv: Path):
             writer.writerow([
                 hora, round(cpu_main, 2), round(cpu_workers, 2), round(cpu_total, 2),
                 len(dados["tids"]), classificar_gqm_q4(cpu_main),
+                usr, maq,
             ])
             amostras.append({"cpu_main": cpu_main, "cpu_workers": cpu_workers, "cpu_total": cpu_total})
 
@@ -414,14 +473,20 @@ def imprimir_resumo_q4(amostras: list, saida_csv: Path):
 # =============================================================================
 # Gráfico para o PC2 (tarefa da Karolina Vieira Barbosa - Dupla B)
 # =============================================================================
-def gerar_grafico_threads(caminho_csv: Path, saida_png: Path = None, cenario: str = "estresse"):
+def gerar_grafico_threads(
+    caminho_csv: Path,
+    saida_png: Path = None,
+    cenario: str = "estresse",
+    usuario: str = None,
+    maquina: str = None,
+):
     """
     Lê o CSV gerado e plota (300 DPI):
       - Eixo X: segundo (ou índice da amostra, se o CSV vier do modo parse)
       - Eixo Y: cpu_main_thread_pct e cpu_workers_total_pct
       - Linha vermelha tracejada em 15% (teto da faixa 'Excelente' da Q4)
       - Título, legenda e anotação do enquadramento GQM conquistado
-    Salva por padrão em docs/avaliacao/dados/grafico_threads_<cenario>.png
+      - Identificação do operador e máquina para evitar colisões
     """
     try:
         import matplotlib
@@ -431,16 +496,27 @@ def gerar_grafico_threads(caminho_csv: Path, saida_png: Path = None, cenario: st
         print("[AVISO] matplotlib não instalado. Instale com: pip install matplotlib")
         return
 
+    caminho_csv = Path(caminho_csv)
     xs, cpu_main, cpu_workers = [], [], []
+    usr_csv = None
+    maq_csv = None
+
     with open(caminho_csv, "r", encoding="utf-8", newline="") as f:
         for i, row in enumerate(csv.DictReader(f)):
             xs.append(int(row["segundo"]) if row.get("segundo") not in (None, "") else i)
             cpu_main.append(float(row["cpu_main_thread_pct"]))
             cpu_workers.append(float(row["cpu_workers_total_pct"]))
+            if not usr_csv and row.get("usuario"):
+                usr_csv = row["usuario"]
+            if not maq_csv and row.get("tipo_maquina"):
+                maq_csv = row["tipo_maquina"]
 
     if not xs:
         print("[AVISO] CSV sem amostras; gráfico não gerado.")
         return
+
+    final_usuario = usuario or usr_csv or obter_usuario()
+    final_maquina = maquina or maq_csv or obter_tipo_maquina()["rotulo"]
 
     media_main = sum(cpu_main) / len(cpu_main)
     pico_main = max(cpu_main)
@@ -453,8 +529,11 @@ def gerar_grafico_threads(caminho_csv: Path, saida_png: Path = None, cenario: st
     ax.axhline(y=15.0, color="#ef4444", linestyle="--", linewidth=1.5,
                label="Teto GQM Excelente (15%)")
 
-    ax.set_title(f"Isolamento de Threads no Anki - cenário {cenario} "
-                 f"(Questão Q4 - ISO/IEC 25010)")
+    ax.set_title(
+        f"Isolamento de Threads no Anki - Cenário {cenario.capitalize()}\n"
+        f"Máquina: {final_maquina.upper()} | Operador: {final_usuario} (Questão Q4 - ISO/IEC 25010)",
+        fontsize=11
+    )
     ax.set_xlabel("Tempo de execução (s)")
     ax.set_ylabel("Uso de CPU (% de um núcleo)")
     ax.set_ylim(bottom=0)
@@ -462,15 +541,24 @@ def gerar_grafico_threads(caminho_csv: Path, saida_png: Path = None, cenario: st
     ax.legend(loc="upper right")
 
     ax.annotate(
-        f"Enquadramento: {nivel.upper()}\nMédia Main: {media_main:.1f}% | Pico: {pico_main:.1f}%",
+        f"Enquadramento: {nivel.upper()}\n"
+        f"Média Main: {media_main:.1f}% | Pico: {pico_main:.1f}%\n"
+        f"Máquina: {final_maquina} | Usuário: {final_usuario}",
         xy=(0.02, 0.95), xycoords="axes fraction", va="top",
         bbox=dict(boxstyle="round,pad=0.4", fc="white", ec="#2563eb", alpha=0.9),
+        fontsize=9
     )
 
     if saida_png is None:
         base = Path(__file__).resolve().parent.parent / "dados"
         base.mkdir(parents=True, exist_ok=True)
-        saida_png = base / f"grafico_threads_{cenario}.png"
+        stem = caminho_csv.stem
+        if stem.startswith("threads_"):
+            nome_png = f"grafico_{stem}.png"
+        else:
+            nome_png = f"grafico_threads_{cenario}_{final_maquina}_{final_usuario}.png"
+        saida_png = base / nome_png
+
     saida_png = Path(saida_png)
     saida_png.parent.mkdir(parents=True, exist_ok=True)
 
@@ -495,17 +583,28 @@ def main():
     parser.add_argument("--arquivo", type=str, default=None,
                         help="Arquivo txt do pidstat para o modo 'parse'.")
     parser.add_argument("--saida", type=str, default=None, help="Caminho do CSV de saída.")
+    parser.add_argument("--usuario", type=str, default=None,
+                        help="Nome do operador/usuário (padrão: detectado automaticamente).")
+    parser.add_argument("--maquina", type=str, default=None,
+                        help="Tipo de máquina/arquitetura (padrão: detectado automaticamente).")
     parser.add_argument("--grafico", action="store_true", default=False,
                         help="Gera o PNG (300 DPI) com as curvas das threads para o PC2.")
     args = parser.parse_args()
 
-    saida_csv = Path(args.saida) if args.saida else obter_caminho_saida_padrao(args.cenario)
+    saida_csv = Path(args.saida) if args.saida else obter_caminho_saida_padrao(
+        args.cenario, usuario=args.usuario, maquina=args.maquina
+    )
 
     if args.modo == "parse":
         if not args.arquivo:
             print("[ERRO] No modo 'parse', informe --arquivo <caminho.txt>")
             sys.exit(1)
-        executar_modo_parse(Path(args.arquivo), saida_csv)
+        executar_modo_parse(
+            Path(args.arquivo),
+            saida_csv,
+            usuario=args.usuario,
+            maquina=args.maquina,
+        )
     else:
         if psutil is None:
             print("[ERRO CRÍTICO] psutil não está instalado. Execute: pip install psutil")
@@ -515,10 +614,23 @@ def main():
             print("[ERRO] Processo do Anki não localizado em execução.")
             print("Abra o Anki antes de rodar o modo realtime ou informe --pid <NUM>.")
             sys.exit(1)
-        executar_modo_realtime(pid, args.duracao, args.intervalo, saida_csv, args.cenario)
+        executar_modo_realtime(
+            pid,
+            args.duracao,
+            args.intervalo,
+            saida_csv,
+            args.cenario,
+            usuario=args.usuario,
+            maquina=args.maquina,
+        )
 
     if args.grafico:
-        gerar_grafico_threads(saida_csv, cenario=args.cenario)
+        gerar_grafico_threads(
+            saida_csv,
+            cenario=args.cenario,
+            usuario=args.usuario,
+            maquina=args.maquina,
+        )
 
 
 if __name__ == "__main__":

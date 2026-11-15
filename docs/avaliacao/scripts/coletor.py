@@ -31,6 +31,7 @@ Requisitos:
 
 import sys
 import os
+import re
 import time
 import argparse
 import platform
@@ -91,12 +92,39 @@ def identificar_so() -> str:
     return "desconhecido"
 
 
-def obter_caminho_saida_padrao(cenario: str, so: str) -> Path:
-    """Calcula o caminho padrão para gravação dos resultados."""
+def obter_usuario() -> str:
+    """Retorna o nome do usuário do sistema operacional de forma portável e sanitizada."""
+    try:
+        import getpass
+        user = getpass.getuser()
+    except Exception:
+        user = os.environ.get("USER") or os.environ.get("USERNAME") or "usuario"
+    user_sanitizado = re.sub(r"[^a-zA-Z0-9_-]", "", user.lower())
+    return user_sanitizado or "usuario"
+
+
+def obter_tipo_maquina() -> dict:
+    """Retorna o tipo de máquina, arquitetura de hardware e SO."""
+    so = identificar_so()
+    arch = platform.machine().lower() or "arch"
+    node = re.sub(r"[^a-zA-Z0-9_-]", "", platform.node().lower()) or "host"
+    return {
+        "so": so,
+        "arch": arch,
+        "node": node,
+        "rotulo": f"{so}_{arch}",
+        "identificador_completo": f"{so}_{arch}_{node}",
+    }
+
+
+def obter_caminho_saida_padrao(cenario: str, so: str = None, usuario: str = None, maquina: str = None) -> Path:
+    """Calcula o caminho padrão para gravação dos resultados incluindo SO, máquina e usuário."""
     base_dir = Path(__file__).resolve().parent.parent / "dados"
     base_dir.mkdir(parents=True, exist_ok=True)
     timestamp_str = datetime.now().strftime("%Y%m%d_%H%M%S")
-    return base_dir / f"metricas_{cenario}_{so}_{timestamp_str}.csv"
+    usr = usuario or obter_usuario()
+    maq = maquina or obter_tipo_maquina()["rotulo"]
+    return base_dir / f"metricas_{cenario}_{maq}_{usr}_{timestamp_str}.csv"
 
 
 def encontrar_processo_anki(pid_informado: int = None) -> psutil.Process:
@@ -472,6 +500,18 @@ def main():
         default=None,
         help="Comando de disparo do Anki para o cenário cold_start (Padrão: 'anki').",
     )
+    parser.add_argument(
+        "--usuario",
+        type=str,
+        default=None,
+        help="Nome do operador/usuário (Padrão: detectado automaticamente).",
+    )
+    parser.add_argument(
+        "--maquina",
+        type=str,
+        default=None,
+        help="Tipo de máquina/arquitetura (Padrão: detectado automaticamente).",
+    )
 
     args = parser.parse_args()
     so = identificar_so()
@@ -487,7 +527,13 @@ def main():
     else:
         duracao = args.duracao
 
-    saida_csv = Path(args.saida) if args.saida else obter_caminho_saida_padrao(args.cenario, so)
+    saida_csv = (
+        Path(args.saida)
+        if args.saida
+        else obter_caminho_saida_padrao(
+            args.cenario, so=so, usuario=args.usuario, maquina=args.maquina
+        )
+    )
 
     if args.cenario in ["repouso", "estresse"]:
         executar_monitoramento(
