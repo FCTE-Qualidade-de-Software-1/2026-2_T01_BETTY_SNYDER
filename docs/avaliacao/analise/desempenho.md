@@ -88,28 +88,95 @@ A vazão do *Check Database* sobre os 100.000 cards revelou o poder de processam
 
 ---
 
-## 4. Galeria de Evidências Visuais (Gráficos de Threads)
+## 4. Confronto Metodológico: Planejamento (Fase 2) vs. Resultados Empíricos (Fase 3)
+
+No paradigma **GQM (Goal-Question-Metric)** da engenharia de software, uma hipótese não tem como objetivo exclusivo a sua mera validação. Quando hipóteses são **superadas** ou **refutadas**, revelam-se os achados de engenharia mais valiosos da avaliação de qualidade de produto (ISO/IEC 25010).
+
+Abaixo, confrontam-se as quatro hipóteses estipuladas no planejamento oficial da Fase 2 ([Fase 2](../../fase2.md#questoes-e-hipoteses_1)) com os dados físicos coletados na Fase 3:
+
+### 4.1 Hipótese H1 (Comportamento no Tempo — Q1)
+* **Expectativa da Fase 2:** O tempo de inicialização (*cold start*) e o tempo para iniciar a revisão situam-se na faixa *Excelente* ($t < 3\text{ s}$).
+* **Resultado Empírico:**
+  - **Ubuntu (Time-to-Interactive):** `1.018 s`
+  - **Windows (Process Creation):** `0.152 s`
+  - **macOS (Process Creation):** `0.021 s`
+* **Veredito:** 🟢 **Plenamente Confirmada (Excelente).**  
+  Em todas as plataformas e critérios de medição, a inicialização a frio ocorre em menos de 1,5 segundo, demonstrando excelente prontidão de uso sem bloqueios do sistema operacional.
+
+### 4.2 Hipótese H2 (Utilização de Recursos — Q2)
+* **Expectativa da Fase 2:**
+  - *Repouso basal:* CPU média entre $2\%$ e $5\%$ e RAM entre $150$ e $250\text{ MB}$ (*Alvo*).
+  - *Estresse operacional:* Pico de CPU entre $40\%$ e $70\%$ e RAM estabilizada entre $350$ e $500\text{ MB}$ (*Alvo*).
+* **Resultado Empírico:**
+  - **CPU em Repouso:** Médias de `0.04%` (Ubuntu), `0.00%` (Windows) e `0.10%` (macOS).  
+    ➡️ **Superou a hipótese positivamente (Excelente):** o aplicativo em repouso consome praticamente zero processamento, superando a faixa Alvo prevista.
+  - **RAM em Repouso:** `783.89 MB` (Ubuntu) e `950.77 MB` (macOS).  
+    ➡️ **Refutada negativamente (Mínimo):** O modelo mental da equipe na Fase 1/2 baseava-se em aplicações desktop simples ou versões legadas do Anki. O Anki 26+ instancia um navegador Chromium completo (`QtWebEngineProcess`) com renderizadores isolados em multiprocesso, demandando entre 780 e 950 MB de memória física.
+  - **Pico sob Estresse (100k cards):** CPU atingiu `100.6%` (Ubuntu) e `100.8%` (macOS), saturando integralmente 1 núcleo de processamento em Rust; e a RAM estabilizou-se em `1.33 GB` (Ubuntu) e `1.51 GB` (macOS), triplicando o teto esperado de 500 MB.
+* **Veredito:** 🟡 **Refutada Empiricamente (Achado Crítico de Arquitetura).**  
+  A hipótese subdimensionou a pegada de memória do ecossistema Qt6/Chromium e o custo de indexação em memória de 100.000 cartões. Trata-se do achado técnico mais importante para alimentar as ações de melhoria da Entrega 2.
+
+### 4.3 Hipótese H3 (Capacidade e Vazão — Q3)
+* **Expectativa da Fase 2:** Com 100 mil cards, o tempo total é inferior a $9\text{ s}$ e a vazão é superior a $15.000\text{ cards/min}$ na verificação do banco de dados SQLite.
+* **Resultado Empírico:**
+  - **Tempo de Execução:** `~3.0 s` no Ubuntu (Intel Core i7) e `~2.0 s` no macOS (Apple Silicon M4), amplamente inferiores ao teto de 9 segundos.
+  - **Vazão Real:** $\approx \mathbf{2.000.000\text{ cards/min}}$ (Ubuntu) e $\approx \mathbf{3.000.000\text{ cards/min}}$ (macOS).
+* **Veredito:** 🟢 **Amplamente Confirmada e Superada em mais de 100 vezes (Excelente).**  
+  A reescrita do backend do Anki em Rust (`anki_rs`) integrada ao SQLite em discos SSD NVMe modernos entregou uma vazão mais de 100 vezes superior à expectativa da equipe.
+
+### 4.4 Hipótese H4 (Comportamento Concorrente e Threads — Q4)
+* **Expectativa da Fase 2:** As *Worker Threads* absorvem a sobrecarga de I/O, limitando o consumo de CPU da *Main Thread* entre $15\%$ e $35\%$ (*Alvo*), sem congelamento da interface gráfica.
+
+#### Evolução do Escopo da H4 entre o Planejamento e a Execução:
+* **No Planejamento (Fase 2):** A questão Q4 havia sido restrita unicamente ao Ubuntu Linux, assumindo que limitações de ferramentas de baixo nível (`pidstat -t`) impediriam a instrumentação por thread no Windows e no macOS.
+* **Na Execução Real (Fase 3):** A equipe desenvolveu extensões portáveis no [`analisador_threads.py`](../scripts/analisador_threads.py), auditando threads com sucesso nos **três sistemas operacionais**.
+
+#### O Contraste de Threads entre os Sistemas:
+
+| Ambiente / SO | Carga nas Worker Threads | Carga na Main Thread (UI) | Enquadramento GQM | Comportamento da Interface |
+| :--- | :---: | :---: | :---: | :--- |
+| **Linux (Ubuntu - Mateus)** | **`100.0%`** (Pico de I/O) | **`1.0%`** (Média: **`2.35%`**) | 🟢 **Excelente** ($\le 15\%$) | **Fluida:** Zero travamento ou engasgo |
+| **macOS (Apple M4 - Davi)** | **`100.6%`** (Pico de I/O) | **`1.3%`** (Média: **`8.30%`**) | 🟢 **Excelente** ($\le 15\%$) | **Fluida:** Zero travamento ou engasgo |
+| **Windows 11 (PC - Karolina)** | **`0.0% a 3.1%`** | **`98.44%`** (Thread #0) | 🔴 **Insatisfatório** ($> 50\%$) | 🟡 **Contenção / Inversão de TID** |
+
+#### Diagnóstico Técnico do Desvio do Windows 11:
+1. **Particularidade de Enumeração da API do Windows NT:** No Linux, o identificador da Main Thread é garantido deterministicamente pelo kernel como sendo `TID == PID`. No Windows NT, a chamada `proc.threads()` via `psutil` devolve uma lista de threads sem garantia de ordem cronológica ou semântica. Como o script atribuiu a thread de índice `[0]` como principal, a saturação de 98% corresponde muito provavelmente a uma Worker Thread de banco de dados que figurou na primeira posição da lista do Windows.
+2. **Contenção Síncrona da GUI no Windows:** Caso a thread monitorada tenha sido de fato a de interface, o resultado evidencia que a compilação do Anki para Windows (PyQt6 + Python GIL) retém temporariamente o tratamento de eventos na Main Thread durante o carregamento do painel *Browse*, ao contrário da separação assíncrona pura observada nos sistemas Unix (Linux e macOS).
+
+### 4.5 Resumo do Atendimento às Hipóteses
+
+| Hipótese GQM | Status Empírico | Enquadramento | Papel na Avaliação de Qualidade |
+| :---: | :---: | :---: | :--- |
+| **H1** (Cold Start) | **Confirmada** | 🟢 Excelente | Atesta a prontidão imediata do software para o estudante. |
+| **H2** (CPU em Repouso) | **Superada** | 🟢 Excelente | Confirma ausência de desperdício energético em ociosidade. |
+| **H2** (RAM em Repouso/Estresse) | **Refutada** | 🟡 Mínimo | **Ponto focal de melhoria:** a pegada de memória do Chromium em coleções massivas. |
+| **H3** (Capacidade e Vazão) | **Superada (100x)** | 🟢 Excelente | Comprova a robustez da engenharia em Rust do backend. |
+| **H4** (Isolamento de Threads) | **Confirmada (Unix) / Desvio (Win)** | 🟢 Excelente / 🔴 Insat. | Evidencia a excelência do isolamento em Linux/macOS e a necessidade de atenção no Windows. |
+
+---
+
+## 5. Galeria de Evidências Visuais (Gráficos de Threads)
 
 Todos os gráficos a seguir foram gerados automaticamente pelo [`analisador_threads.py`](../scripts/analisador_threads.py) a partir das coletas em tempo real dos três integrantes:
 
-### 4.1 Ambiente Ubuntu 24.04 LTS (Mateus de Siqueira)
+### 5.1 Ambiente Ubuntu 24.04 LTS (Mateus de Siqueira)
 | Cenário 2A: Repouso Basal | Cenário 2B: Estresse Máximo (100k) |
 | :---: | :---: |
 | ![Threads em Repouso - Ubuntu](../dados/grafico_threads_repouso_ubuntu.png) | ![Threads sob Estresse - Ubuntu](../dados/grafico_threads_estresse_ubuntu.png) |
 
-### 4.2 Ambiente macOS Sequoia — Apple Silicon M4 (Davi Severiano)
+### 5.2 Ambiente macOS Sequoia — Apple Silicon M4 (Davi Severiano)
 | Cenário 2A: Repouso Basal | Cenário 2B: Estresse Máximo (100k) |
 | :---: | :---: |
 | ![Threads em Repouso - macOS](../dados/grafico_threads_repouso_macos.png) | ![Threads sob Estresse - macOS](../dados/grafico_threads_estresse_macos.png) |
 
-### 4.3 Ambiente Windows 11 (Karolina Vieira)
+### 5.3 Ambiente Windows 11 (Karolina Vieira)
 | Cenário 2A: Repouso Basal | Cenário 2B: Estresse Máximo (100k) |
 | :---: | :---: |
 | ![Threads em Repouso - Windows](../dados/grafico_threads_repouso_windows_v2.png) | ![Threads sob Estresse - Windows](../dados/grafico_threads_estresse_windows_v2.png) |
 
 ---
 
-## 5. Rastreabilidade dos Dados Brutos
+## 6. Rastreabilidade dos Dados Brutos
 
 Todos os arquivos CSV brutos que embasam esta análise estão versionados no repositório oficial na pasta `avaliacao/dados/desempenho/bruto/` (catalogados em [Dados](../../dados.md)):
 
