@@ -103,6 +103,20 @@ Abaixo, confrontam-se as quatro hipóteses estipuladas no planejamento oficial d
 * **Veredito:** 🟢 **Plenamente Confirmada (Excelente).**  
   Em todas as plataformas e critérios de medição, a inicialização a frio ocorre em menos de 1,5 segundo, demonstrando excelente prontidão de uso sem bloqueios do sistema operacional.
 
+#### Nota Metodológica: O Desacoplamento da Sincronização Web ($T_{\text{sinc}}$) em Laboratório
+
+Na formulação original de H1 na Fase 2, mencionava-se o tempo de sincronização com o AnkiWeb ($T_{\text{sinc}}$). Durante o planejamento executivo da Fase 3, a equipe tomou a decisão deliberada de desacoplar o $T_{\text{sinc}}$ dos ensaios automatizados de estresse de laboratório da Dupla B.
+
+> **O Paralelo do Carro com a Carretinha:**  
+> Avaliar a eficiência computacional de um software desktop local tentando medir a velocidade de sincronização de 100.000 cartões pela internet pública equivale a testar a potência máxima e a aceleração de um carro esportivo (o motor nativo em Rust e SQLite do Anki Desktop) atrelando a ele uma carretinha pesada sobre uma estrada de terra esburacada (a internet residencial, o *jitter*, o ping intercontinental até os servidores do AnkiWeb no Japão/EUA e as políticas de *rate limit*). O teste deixaria de medir a potência intrínseca do motor do carro para registrar unicamente o atrito da carretinha e as imperfeições da pista externa.
+
+Essa decisão apoia-se em três pilares metodológicos e éticos:
+1. **Risco de Bloqueio nos Servidores do AnkiWeb:** A massa sintética de estresse possui 100.000 cartões (63 MB a 100 MB). Submeter essa carga aos servidores gratuitos do AnkiWeb violaria os termos de serviço (*Rate Limit / Fair Use Policy*), gerando risco real de bloqueio por IP ou suspensão das contas de teste da equipe.
+2. **Latência Externa Alheia ao Software (Ruído de Rede):** O tempo de sincronização depende prioritariamente da banda larga da residência do aluno e da rota externa até os servidores do AnkiWeb (EUA/Japão), e não da qualidade intrínseca do código local do Anki Desktop. A ISO/IEC 25010 recomenda expressamente isolar fatores externos nos testes instrumentados de produto.
+3. **Divisão de Responsabilidades no Projeto:** O protocolo de laboratório da Dupla B focou no tripé puramente de computação local: *Cold Start* (Q1), Repouso vs. Estresse (Q2), Capacidade de 100k no disco (Q3) e Isolamento de Threads no SO (Q4). A sincronização com o AnkiWeb foi canalizada para os instrumentos adequados:
+   - **Capacidade de Interação (Dupla A):** Avaliada nas sessões assistidas com participantes reais (Tarefas A5 e B4 da [Entrevista](../protocolos/entrevista.md) e item Likert `LIK-PERF-03`).
+   - **Flexibilidade e Substituibilidade (Frente de Migração):** Avaliada no Cenário M2 de migração entre plataformas ([Protocolo de Migração](../protocolos/flexibilidade-migracao.md)), aferindo a preservação de 100% dos dados transferidos via nuvem.
+
 ### 4.2 Hipótese H2 (Utilização de Recursos — Q2)
 * **Expectativa da Fase 2:**
   - *Repouso basal:* CPU média entre $2\%$ e $5\%$ e RAM entre $150$ e $250\text{ MB}$ (*Alvo*).
