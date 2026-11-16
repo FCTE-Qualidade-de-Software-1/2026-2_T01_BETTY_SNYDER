@@ -64,6 +64,15 @@ A tabela a seguir consolida as medições instrumentadas coletadas pelos três i
 * Ambos os sistemas situam-se na faixa **Mínimo** do GQM ($1,0\text{ a }1,5\text{ GB}$). Esse teto representa o custo de carregar em memória os índices da árvore B do SQLite para 100 mil registros simultâneos junto aos buffers de tela do Chromium.
 * **I/O de Disco (SSD NVMe):** No Ubuntu, o coletor registrou picos de escrita de **`228.4 MB/s`** durante a checagem do banco de dados, evidenciando o uso intensivo do arquivo de Journal/WAL do SQLite no SSD.
 
+> [!NOTE]
+> **Contextualização de Domínio: O "Cenário Estudante de Medicina" e o Limite Extremo do Anki**  
+> Na literatura de repetição espaçada e na comunidade global de usuários, uma coleção de **100.000 cartões** representa o **limite prático extremo (*stress test* absoluto)** do Anki Desktop:
+> 1. **O Perfil Real de 100k Cards:** Na prática acadêmica mundial, praticamente o único perfil de estudante capaz de acumular e revisar um volume dessa magnitude é o **estudante de Medicina** (especialmente na preparação para as provas de residência médica no Brasil ou para o USMLE Step 1 e Step 2 nos EUA, utilizando baralhos massivos como o *AnKing*, que agregam entre 35.000 e 80.000 notas ao longo de 6 anos de graduação). Um estudante universitário típico (Engenharia de Software, Direito, Idiomas ou Concursos) raramente ultrapassa 2.000 a 10.000 cartões ativos durante toda a sua formação.
+> 2. **O Limite Prático do Software:** Embora a arquitetura do banco SQLite teoricamente suporte terabytes em disco, a documentação oficial do Anki e a comunidade de mantenedores apontam a faixa de **100.000 a 150.000 cartões como a fronteira máxima viável** para manter a sincronização funcional no AnkiWeb sem estourar o limite de memória dos processos de renderização do Chromium (`QtWebEngineProcess`).
+> 3. **Eficiência de Núcleo Único:** O teste comprovou que o pico de ~100% de CPU ocorreu em **apenas 1 núcleo lógico** (uma única thread do SQLite/Rust), utilizando meros **12,5% da CPU total** no Core i7 (1 de 8 núcleos lógicos) e **10% da CPU total** no Apple M4 (1 de 10 núcleos). Os demais 7 a 9 núcleos permaneceram totalmente livres para as outras tarefas do sistema operacional.
+> 
+> O fato de o Anki completar a checagem dessa massa extrema em escassos **2 a 3 segundos**, consumindo apenas 1 núcleo e mantendo a interface gráfica viva a **1% de CPU**, atesta que o software entrega estabilidade excepcional mesmo no limite mais severo a que é submetido no mundo real.
+
 ---
 
 ### 3.4 Q4: Isolamento de Threads e Responsividade da Interface (UI)
