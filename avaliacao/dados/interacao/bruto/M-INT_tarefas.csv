@@ -1,1 +1,20 @@
 participante,grupo,rodada,tarefa,inicio,fim,duracao_s,sucesso,n_ajudas,nivel_max_ajuda,abandono,sistema_operacional,observacoes
+PA01,A,1,A1,,,224.39,S,0,,N,Windows 11,3min44seg39; Etapa 2 aprendizagem
+PA01,A,1,A2,,,20.71,S,0,,N,Windows 11,20seg71
+PA01,A,1,A3,,,171.95,N,0,,N,Windows 11,2min51seg95; sucesso nao marcado na ficha
+PA01,A,1,A4,,,50.00,S,0,,N,Windows 11,50seg
+PA01,A,1,A5,,,40.00,S,0,,N,Windows 11,40seg
+PA01,A,2,A2p,,,23.72,S,0,,N,Windows 11,23seg72; Etapa 3 A2'
+PA01,A,2,A3p,,,150.88,S,0,,N,Windows 11,2min30seg88; A3'
+PA01,A,2,A4p,,,33.31,S,0,,N,Windows 11,33seg31; A4'
+PA01,A,2,A5p,,,7.97,S,0,,N,Windows 11,7seg97; A5'
+PB01,B,4,B1,,,64.82,S,0,,N,macOS,1min04seg82; tempos registrados na secao Etapa 2 da ficha; Grupo B nao executa Etapas 2-3; contabilizado como Etapa 4
+PB01,B,4,B2,,,44.44,S,0,,N,macOS,44s44
+PB01,B,4,B3,,,12.45,S,0,,N,macOS,12s45
+PB01,B,4,B4,,,20.93,S,0,,N,macOS,20s93
+PB01,B,4,B5,,,39.31,S,0,,N,macOS,39s31
+PB02,B,4,B1,,,65.00,S,0,,N,Windows 10,1min05s; tempos registrados na secao Etapa 3 da ficha; Grupo B nao executa Etapas 2-3; contabilizado como Etapa 4
+PB02,B,4,B2,,,33.00,S,0,,N,Windows 10,33s
+PB02,B,4,B3,,,15.00,S,0,,N,Windows 10,15s
+PB02,B,4,B4,,,25.00,S,0,,N,Windows 10,25s
+PB02,B,4,B5,,,19.00,S,0,,N,Windows 10,19s

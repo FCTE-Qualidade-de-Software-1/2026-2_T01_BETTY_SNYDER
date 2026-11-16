@@ -1,1 +1,19 @@
-participante,item,resposta,correta
+participante,grupo,item,resposta,correta,observacoes
+PA01,A,R1,"Baralhos",N,apontou menu Baralhos em vez do botao Criar baralho; Grupo A
+PA01,A,R2,"Adicionar",S,
+PA01,A,R3,"Painel",N,
+PA01,A,R4,"Estatisticas",N,
+PA01,A,R5,"Definir o nivel de estudo",N,
+PA01,A,R6,"Cartao e o conteudo a ser estudado; nota avalia o desempenho",N,
+PB01,B,R1,"Criar baralho parte inferior central",S,
+PB01,B,R2,"Adicionar preencher frente e verso",S,
+PB01,B,R3,"Baralho de destino e Estudar",S,
+PB01,B,R4,"E o cartao",N,confundiu nota com cartao
+PB01,B,R5,"Tipo do card",S,parcialmente alinhado a referencia
+PB01,B,R6,"Nao percebi diferenca",N,
+PB02,B,R1,"Criar Baralho apos Adicionar e Baralhos",S,acertou apos tres tentativas
+PB02,B,R2,"Clicaria em Adicionar",S,
+PB02,B,R3,"Abriria meu cartao (clicou no baralho)",S,confundiu o termo cartao
+PB02,B,R4,"Conjunto da frente e o verso",S,
+PB02,B,R5,"Tipo da nota criada",S,
+PB02,B,R6,"Apenas a questao visual; a informacao e a mesma",N,ficha marca a revisar; contabilizado como N

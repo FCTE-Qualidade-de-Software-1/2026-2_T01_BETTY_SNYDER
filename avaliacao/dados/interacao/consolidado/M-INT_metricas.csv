@@ -1,0 +1,24 @@
+participante,grupo,metrica,valor,unidade,faixa,fonte
+PA01,A,Trf,16.67,%,insatisfatorio,M-INT-01; 1 de 6 itens
+PA01,A,Taprend,456.05,s,excelente,ficha Etapa 2 total 7min36seg05
+PA01,A,Tsa,100.0,%,excelente,Etapa 3; 4 de 4 sem ajuda
+PA01,A,Tct_rodada1,80.0,%,minimo,4 de 5 com sucesso marcado; A3 sem S
+PA01,A,Tct_rodada2,100.0,%,excelente,4 de 4
+PA01,A,Texec_mediana_rodada1,50.0,s,excelente,mediana 224.39 20.71 171.95 50 40
+PB01,B,Trf,66.67,%,minimo,M-INT-01; 4 de 6
+PB01,B,Taprend,,s,nao_aplicavel,Grupo B nao executa Etapas 2-3
+PB01,B,Tsa,,%,nao_aplicavel,Grupo B nao executa Etapas 2-3
+PB01,B,Tct_etapa4,100.0,%,excelente,5 de 5; tempos da secao Etapa 2 remapeados para Etapa 4
+PB01,B,Texec_mediana_etapa4,39.31,s,excelente,mediana 64.82 44.44 12.45 20.93 39.31
+PB02,B,Trf,83.33,%,alvo,M-INT-01; 5 de 6 com R6=N
+PB02,B,Taprend,,s,nao_aplicavel,Grupo B nao executa Etapas 2-3
+PB02,B,Tsa,,%,nao_aplicavel,Grupo B nao executa Etapas 2-3
+PB02,B,Tct_etapa4,100.0,%,excelente,5 de 5; tempos da secao Etapa 3 remapeados para Etapa 4
+PB02,B,Texec_mediana_etapa4,25.0,s,excelente,mediana 65 33 15 25 19
+AGG,A,Trf_grupo,16.67,%,insatisfatorio,somente PA01
+AGG,A,Taprend_mediana,456.05,s,excelente,somente PA01
+AGG,A,Tsa_mediana,100.0,%,excelente,somente PA01
+AGG,B,Trf_grupo,75.00,%,alvo,media PB01 66.67 e PB02 83.33
+AGG,B,Tct_grupo,100.0,%,excelente,PB01 e PB02
+AGG,B,Texec_mediana_grupo,32.155,s,excelente,media das medianas PB01 e PB02
+AGG,ALL,julgamento,indicativo,,limitacao,n=3; 1 iniciante; Q3 com remapeamento documental Etapa 2/3 da ficha para Etapa 4 em frequentes

@@ -1,4 +1,4 @@
-# Dados consolidados — Capacidade de interação (G1)
+# Dados consolidados : Capacidade de interação (Capacidade de interação)
 
 Agregados por métrica/questão (medianas, taxas, faixas GQM). Cada arquivo consolidado deve citar, em coluna `fonte` ou neste README, os caminhos em `../bruto/`.
 

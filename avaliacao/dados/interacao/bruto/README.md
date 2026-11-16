@@ -1,12 +1,13 @@
-# Dados brutos — Capacidade de interação (G1)
+# Dados brutos: Capacidade de interação
 
-Observações das sessões com participantes (Dupla A), alinhadas ao instrumento único.
+| Arquivo / pasta | Conteúdo |
+| --- | --- |
+| `M-INT_tarefas.csv` | Tarefas cronometradas (Grupo A: Etapas 2 e 3; Grupo B: Etapa 4) |
+| `M-INT-01_reconhecimento.csv` | Itens R1 a R6 |
+| `gravacoes.csv` | Índice das gravações e atas |
+| `gravacoes/*.mp4` | Gravações versionadas (Git LFS) |
+| `Entrevistas/PA01_2026-11-14.md` | Ficha PA01 (Grupo A) |
+| `Entrevistas/PB01_2026-11-13.md` | Ficha PB01 (Grupo B) |
+| `Entrevistas/PB02_2026-11-13.md` | Ficha PB02 (Grupo B) |
 
-| Arquivo | Conteúdo | Métricas |
-| --- | --- | --- |
-| `M-INT_tarefas.csv` | Uma linha por tarefa (Etapas 2–4) | Taprend, Tsa, Tct, Texec (M-INT-02 a M-INT-05) |
-| `M-INT-01_reconhecimento.csv` | Uma linha por item R1–R6 (Etapa 1) | Trf (M-INT-01) |
-| `gravacoes.csv` | Índice das gravações (mídia fora do repo) | Evidência / auditoria |
-| `ficha_<código>_<data>.pdf` | Ficha de observação preenchida | Evidência |
-
-Colunas dos CSV-esqueleto nesta pasta seguem o Anexo F do protocolo de interação.
+O Grupo B não executa Etapas 2 e 3. Tempos de PB02 na seção Etapa 3 da ficha (e de PB01 na seção Etapa 2) entram como Etapa 4 na consolidação.
