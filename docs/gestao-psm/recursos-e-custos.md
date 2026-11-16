@@ -6,15 +6,11 @@
 
 Esta página especifica o *measurement construct* da categoria Recursos e custos, conforme o modelo de informação do PSM (RAMOS, 2026) e o mapeamento estrutural da equipe, com apoio das medidas candidatas do *Continuous Iterative Development Measurement Framework* (JONES et al., 2021a; JONES et al., 2021b).
 
-O objeto de medição é o **esforço** dos integrantes no projeto final da disciplina e o respectivo **custo**, obtido automaticamente pela convenção da equipe:
-
-\[
+O objeto de medição é o **esforço** dos integrantes no projeto final da disciplina e o respectivo **custo**, obtido automaticamente pela convenção da equipe: \[
 C = H \times 35
 \]
 
-em que:
-
-- \(C\): custo em reais (R$);
+em que: - \(C\): custo em reais (R$);
 - \(H\): esforço em horas (\(H_p\) para custo estimado; \(H_r\) para custo real);
 - \(35\): taxa horária convencional fixada em R$ 35,00 por hora.
 
@@ -99,9 +95,7 @@ flowchart BT
 \text{Desvio percentual} = \frac{H_r - H_p}{H_p} \times 100
 \]
 
-em que:
-
-- \(H_r\): esforço real do integrante ou da equipe, em horas, acumulado até a data do corte;
+em que: - \(H_r\): esforço real do integrante ou da equipe, em horas, acumulado até a data do corte;
 - \(H_p\): esforço planejado correspondente, em horas.
 
 | Elemento | Descrição |
@@ -116,9 +110,7 @@ em que:
 \text{Participação percentual} = \frac{H_r^{\text{integrante}}}{H_r^{\text{equipe}}} \times 100
 \]
 
-em que:
-
-- \(H_r^{\text{integrante}}\): esforço real do integrante, em horas, no intervalo do corte;
+em que: - \(H_r^{\text{integrante}}\): esforço real do integrante, em horas, no intervalo do corte;
 - \(H_r^{\text{equipe}}\): esforço real total da equipe no mesmo intervalo.
 
 | Elemento | Descrição |

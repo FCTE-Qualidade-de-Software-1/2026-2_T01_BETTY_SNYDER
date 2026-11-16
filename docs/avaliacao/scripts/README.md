@@ -1,6 +1,6 @@
 # Scripts de Avaliação de Desempenho (ISO/IEC 25010)
 
-Este diretório contém o ferramental automatizado desenvolvido pela **Dupla B (Karolina Vieira Barbosa e Mateus de Siqueira Silva)** para a coleta e análise de Eficiência de Desempenho (G2) do **Anki Desktop 26.09.3**, em conformidade com o método **GQM (Goal-Question-Metric)** e o modelo **PSM (Practical Software Measurement)** da disciplina Qualidade de Software 1 (FCTE/UnB).
+Este diretório contém o ferramental automatizado desenvolvido pela **Dupla B (Karolina Vieira Barbosa e Mateus de Siqueira Silva)** para a coleta e análise de Eficiência de Desempenho (Eficiência de desempenho) do **Anki Desktop 26.09.3**, em conformidade com o método **GQM (Goal-Question-Metric)** e o modelo **PSM (Practical Software Measurement)** da disciplina Qualidade de Software 1 (FCTE/UnB).
 
 ---
 

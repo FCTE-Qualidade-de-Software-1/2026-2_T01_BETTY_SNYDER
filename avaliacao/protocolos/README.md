@@ -17,10 +17,10 @@ O arquivo `Protocolo_Avaliacao_Participante.docx`, se presente nesta pasta, é c
 | Visão geral | [index.md](../../docs/avaliacao/protocolos/index.md) |
 | Ambiente | [ambiente.md](../../docs/avaliacao/protocolos/ambiente.md) |
 | Pré-entrevista | [pre-entrevista-participante.md](../../docs/avaliacao/protocolos/pre-entrevista-participante.md) |
-| Entrevista (G1 e evidência de G2) | [entrevista.md](../../docs/avaliacao/protocolos/entrevista.md) |
-| Desempenho instrumentado (G2) | [desempenho.md](../../docs/avaliacao/protocolos/desempenho.md) |
-| Flexibilidade: instalação (G3) | [flexibilidade-instalacao.md](../../docs/avaliacao/protocolos/flexibilidade-instalacao.md) |
-| Flexibilidade: checklist (G3) | [flexibilidade-checklist.md](../../docs/avaliacao/protocolos/flexibilidade-checklist.md) |
-| Flexibilidade: migração (G3) | [flexibilidade-migracao.md](../../docs/avaliacao/protocolos/flexibilidade-migracao.md) |
+| Entrevista (Capacidade de interação e evidência de Eficiência de desempenho) | [entrevista.md](../../docs/avaliacao/protocolos/entrevista.md) |
+| Desempenho instrumentado (Eficiência de desempenho) | [desempenho.md](../../docs/avaliacao/protocolos/desempenho.md) |
+| Flexibilidade: instalação (Flexibilidade) | [flexibilidade-instalacao.md](../../docs/avaliacao/protocolos/flexibilidade-instalacao.md) |
+| Flexibilidade: checklist (Flexibilidade) | [flexibilidade-checklist.md](../../docs/avaliacao/protocolos/flexibilidade-checklist.md) |
+| Flexibilidade: migração (Flexibilidade) | [flexibilidade-migracao.md](../../docs/avaliacao/protocolos/flexibilidade-migracao.md) |
 
 Dados e rastreabilidade: [docs/dados.md](../../docs/dados.md).

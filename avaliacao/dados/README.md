@@ -6,9 +6,9 @@ Dados do **produto Anki** (não confundir com `gestao-psm/`, que mede o andament
 
 | Pasta | Característica ISO 25010:2023 | Objetivo GQM |
 | --- | --- | --- |
-| `interacao/` | Capacidade de interação | G1 |
-| `desempenho/` | Eficiência de desempenho | G2 |
-| `flexibilidade/` | Flexibilidade | G3 |
+| `interacao/` | Capacidade de interação | Capacidade de interação |
+| `desempenho/` | Eficiência de desempenho | Eficiência de desempenho |
+| `flexibilidade/` | Flexibilidade | Flexibilidade |
 
 Em cada uma: `bruto/` (observações e execuções) e `consolidado/` (agregados que apontam para o bruto).
 
@@ -35,8 +35,8 @@ Exceção documentada: `gravacoes.csv` é o **índice** das gravações (mídia 
 
 | Código | Grupo | Critério (triagem) |
 | --- | --- | --- |
-| PA01, PA02 | A — iniciantes | Nunca utilizou o Anki |
-| PB01, PB02, PB03 | B — frequentes | Uso regular ≥ 4 semanas, ≥ 3 dias/semana recentes; já criou, revisou e sincronizou |
+| PA01, PA02 | A : iniciantes | Nunca utilizou o Anki |
+| PB01, PB02, PB03 | B : frequentes | Uso regular ≥ 4 semanas, ≥ 3 dias/semana recentes; já criou, revisou e sincronizou |
 
 A tabela que liga código a nome/e-mail fica **fora deste repositório**. Nos CSVs e fichas públicas use apenas o código.
 

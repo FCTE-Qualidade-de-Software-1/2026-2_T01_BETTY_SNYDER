@@ -11,9 +11,9 @@ avaliacao/
   protocolos/     Instrumento unificado de sessão
   scripts/        Coletores e consolidados (quando existirem)
   dados/
-    interacao/      {bruto, consolidado}   — Capacidade de interação (G1)
-    desempenho/     {bruto, consolidado}   — Eficiência de desempenho (G2)
-    flexibilidade/  {bruto, consolidado}   — Flexibilidade (G3)
+    interacao/      {bruto, consolidado}  : Capacidade de interação (Capacidade de interação)
+    desempenho/     {bruto, consolidado}  : Eficiência de desempenho (Eficiência de desempenho)
+    flexibilidade/  {bruto, consolidado}  : Flexibilidade (Flexibilidade)
   analise/        Julgamentos GQM e evidências derivadas
 ```
 
@@ -24,21 +24,21 @@ avaliacao/
 | Dados | [`avaliacao/dados/`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/tree/main/avaliacao/dados) |
 | Análise | [`avaliacao/analise/`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/tree/main/avaliacao/analise) |
 
-Protocolos (entrevista, desempenho e flexibilidade): [Protocolos](avaliacao/protocolos/index.md). Pré-entrevista com participante: [Pré-entrevista com participante](avaliacao/protocolos/pre-entrevista-participante.md). Métricas e faixas: [Fase 2](fase2.md).
+Protocolos de avaliação (entrevista, desempenho e flexibilidade): [Fase 3](fase3.md). Pré-entrevista com participante: [Pré-entrevista com participante](avaliacao/protocolos/pre-entrevista-participante.md). Métricas e faixas: [Fase 2](fase2.md).
 
 ## Fluxo de rastreabilidade
 
 ```mermaid
 flowchart LR
-  protocolo[protocolos]
-  bruto[dados_caracteristica_bruto]
-  consol[dados_caracteristica_consolidado]
-  analiseNode[analise]
-  gqm[Fase2_GQM]
+  protocolo["Protocolos"]
+  bruto["Dados brutos da característica"]
+  consol["Dados consolidados da característica"]
+  analiseNode["Análise"]
+  gqm["Fase 2 (GQM)"]
   protocolo --> bruto
-  bruto -->|"metric_cenario_exec"| consol
+  bruto -->|"métrica, cenário e execução"| consol
   consol --> analiseNode
-  gqm -->|"codigo da metrica"| bruto
+  gqm -->|"código da métrica"| bruto
 ```
 
 Cada métrica da Fase 2 tem caminho de origem em `dados/<caracteristica>/bruto/`. Arquivos em `consolidado/` e em `analise/` citam essas fontes.
@@ -59,22 +59,22 @@ Exceção: `gravacoes.csv` é o índice das gravações e não segue o trio.
 
 ## Rastreabilidade métrica → arquivo
 
-| Objetivo | Métrica | Bruto (previsto) | Consolidado |
+| Objetivo | Métrica | Bruto | Consolidado / análise |
 | --- | --- | --- | --- |
-| G1 | Trf (M-INT-01) | `dados/interacao/bruto/M-INT-01_reconhecimento.csv` | `dados/interacao/consolidado/` |
-| G1 | Taprend, Tsa, Tct, Texec | `dados/interacao/bruto/M-INT_tarefas.csv` | `dados/interacao/consolidado/` |
-| G1 | Evidência de sessão | `dados/interacao/bruto/ficha_<código>_<data>.pdf` e índice `gravacoes.csv` | — |
-| G2 | T_ini, T_rev, T_sinc, CPU, RAM, … | `dados/desempenho/bruto/<métrica>_<cenário>_<execução>.*` | `dados/desempenho/consolidado/` |
-| G3 | T_inst, T_inst_t, N_int, P_int, T_pd, T_sub | `dados/flexibilidade/bruto/<métrica>_<cenário>_<execução>.*` | `dados/flexibilidade/consolidado/` |
+| Capacidade de interação | Trf (M-INT-01) | [`M-INT-01_reconhecimento.csv`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/blob/main/avaliacao/dados/interacao/bruto/M-INT-01_reconhecimento.csv) | [`M-INT_metricas.csv`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/blob/main/avaliacao/dados/interacao/consolidado/M-INT_metricas.csv); [análise](avaliacao/analise/interacao.md) |
+| Capacidade de interação | Taprend, Tsa, Tct, Texec | [`M-INT_tarefas.csv`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/blob/main/avaliacao/dados/interacao/bruto/M-INT_tarefas.csv) | idem |
+| Capacidade de interação | Evidência de sessão | [`Entrevistas/PA01_…`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/tree/main/avaliacao/dados/interacao/bruto/Entrevistas), [`gravacoes.csv`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/blob/main/avaliacao/dados/interacao/bruto/gravacoes.csv) | - |
+| Eficiência de desempenho | T_ini, T_rev, T_sinc, CPU, RAM, … | `dados/desempenho/bruto/<métrica>_<cenário>_<execução>.*` | `dados/desempenho/consolidado/`; [análise](avaliacao/analise/desempenho.md) |
+| Flexibilidade | T_inst, T_inst_t, N_int, P_int, T_pd, T_sub | `dados/flexibilidade/bruto/<métrica>_<cenário>_<execução>.*` | `dados/flexibilidade/consolidado/` (lacunas PC2) |
 
-Os CSV-esqueleto de interação já estão versionados em [`dados/interacao/bruto/`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/tree/main/avaliacao/dados/interacao/bruto) (somente cabeçalhos até a coleta).
+Fluxo Capacidade de interação realizado: fichas anonimizadas → CSV bruto → `consolidado/M-INT_metricas.csv` → [análise de interação](avaliacao/analise/interacao.md) → [Fase 4](fase4.md).
 
 ## Participantes e anonimização
 
 | Código | Grupo |
 | --- | --- |
-| PA01, PA02 | A — iniciantes |
-| PB01, PB02, PB03 | B — usuários frequentes |
+| PA01, PA02 | A: iniciantes |
+| PB01, PB02, PB03 | B: usuários frequentes |
 
 - No repositório e nesta GitPage aparecem **apenas códigos**.
 - A tabela código → pessoa permanece **fora do repositório** (pasta privada da equipe).
@@ -84,4 +84,4 @@ Os CSV-esqueleto de interação já estão versionados em [`dados/interacao/brut
 
 O Termo de Consentimento Livre e Esclarecido estabelece que os registros ficam em **diretório privado**, com acesso restrito à professora e à equipe, até 14/12/2026, com anonimização antes da apresentação dos resultados.
 
-**Decisão:** arquivos de tela e áudio das sessões **não** entram no repositório público. No Git fica somente o índice `avaliacao/dados/interacao/bruto/gravacoes.csv`, com colunas `participante,grupo,data,formato,arquivo_gravacao,observacoes`, onde `arquivo_gravacao` aponta para o caminho na pasta restrita.
+**Decisão (Entrega 2):** as gravações das três sessões de Capacidade de interação estão versionadas em [`avaliacao/dados/interacao/bruto/gravacoes/`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/tree/main/avaliacao/dados/interacao/bruto/gravacoes) (Git LFS), com índice em [`gravacoes.csv`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/blob/main/avaliacao/dados/interacao/bruto/gravacoes.csv) e atas objetivas em [Ata PA01](avaliacao/atas/sessao-PA01_2026-11-14.md), [Ata PB01](avaliacao/atas/sessao-PB01_2026-11-13.md) e [Ata PB02](avaliacao/atas/sessao-PB02_2026-11-13.md). A tabela código → pessoa permanece fora do repositório.

@@ -1,4 +1,4 @@
-# Fase 1 — Estabelecer os requisitos de avaliação
+# Fase 1: Estabelecer os requisitos de avaliação
 
 Esta página reproduz a Seção III do [artigo da Entrega 1](artigo.md), entregue em 26/10/2026.
 

@@ -2,7 +2,7 @@
 
 ## 1. Definições
 
-Esta página padroniza a verificação dos dez critérios de integração do Anki Desktop 26.09.3 com o sistema operacional, sob responsabilidade de Dante Fernandes Scarpati (Dupla C). A métrica é M-FLEX-04 (P<sub>int</sub>), associada à questão G3-Q2 (adaptabilidade). As faixas de julgamento e a hipótese G3-H2 estão na [Fase 2](../../fase2.md).
+Esta página padroniza a verificação dos dez critérios de integração do Anki Desktop 26.09.3 com o sistema operacional, sob responsabilidade de Dante Fernandes Scarpati (Dupla C). A métrica é M-FLEX-04 (P<sub>int</sub>), associada à questão Flexibilidade-Q2 (adaptabilidade). As faixas de julgamento e a hipótese Flexibilidade-H2 estão na [Fase 2](../../fase2.md).
 
 P<sub>int</sub> é a soma dos critérios atendidos (cada critério vale 0 ou 1). Em operação, o avaliador pontua e registra capturas; o conferente revisa as evidências sem refazer o teste.
 
@@ -71,4 +71,4 @@ Piloto (10/11): se C1, C2, C6 ou C8 forem inexistentes em todos os SOs, a equipe
 
 ## 6. Relação com o instrumento e com os dados
 
-Os campos de adaptabilidade constam na Parte C do [Pré-entrevista com participante](pre-entrevista-participante.md). Os demais testes de G3 estão em [Instalação](flexibilidade-instalacao.md) e [Migração](flexibilidade-migracao.md). A visão das três frentes está em [Protocolos](index.md).
+Os campos de adaptabilidade constam na Parte C do [Pré-entrevista com participante](pre-entrevista-participante.md). Os demais testes de Flexibilidade estão em [Instalação](flexibilidade-instalacao.md) e [Migração](flexibilidade-migracao.md). A visão das três frentes está em [Fase 3](../../fase3.md).

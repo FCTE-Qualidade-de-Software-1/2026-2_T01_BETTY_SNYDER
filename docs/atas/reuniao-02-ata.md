@@ -1,4 +1,4 @@
-# Ata da Reunião 02 — Equipe Betty Snyder (FGA0315)
+# Ata da Reunião 02 : Equipe Betty Snyder (FGA0315)
 
 12 de outubro de 2026 · Redator: Davi Severiano Freitas
 

@@ -85,15 +85,13 @@ flowchart BT
 \mathrm{ICP} = \frac{T_c}{T_p} \times 100
 \]
 
-em que:
-
-- \(T_c\): número de tarefas concluídas no prazo até a data do corte;
+em que: - \(T_c\): número de tarefas concluídas no prazo até a data do corte;
 - \(T_p\): número de tarefas com prazo definido até a data do corte.
 
 | Elemento | Descrição |
 |---|---|
 | Status | Aplicada. |
-| Resultados | 11/10: 56,3% (\(T_c/T_p = 9/16\)); 18/10: 21,4% (\(3/14\)); 19/10 (PC1): 100% (\(1/1\)); 25/10: 40,0% (\(6/15\)). |
+| Resultados | 11/10-56,3% (\(T_c/T_p = 9/16\)); 18/10-21,4% (\(3/14\)); 19/10 (PC1): 100% (\(1/1\)); 25/10-40,0% (\(6/15\)). |
 | Critério | ICP inferior a 70% associado às ações C2 e C4 da Retrospectiva E1. |
 
 #### Percentual de work items concluídos
@@ -102,9 +100,7 @@ em que:
 \text{Percentual concluído} = \frac{\sum \text{itens concluídos}}{\sum \text{itens comprometidos}} \times 100
 \]
 
-em que:
-
-- \(\sum \text{itens concluídos}\): quantidade de *work items* concluídos no recorte;
+em que: - \(\sum \text{itens concluídos}\): quantidade de *work items* concluídos no recorte;
 - \(\sum \text{itens comprometidos}\): quantidade de *work items* assumidos como compromisso no mesmo recorte.
 
 | Elemento | Descrição |

@@ -70,9 +70,7 @@ Para a taxa de correção, a terceira medida básica (defeitos corrigidos) entra
 D = \frac{N_{\text{defeitos}}}{N_{\text{seções}}}
 \]
 
-em que:
-
-- \(D\): densidade de defeitos na revisão;
+em que: - \(D\): densidade de defeitos na revisão;
 - \(N_{\text{defeitos}}\): quantidade de defeitos confirmados pela equipe;
 - \(N_{\text{seções}}\): quantidade de seções (ou unidades) revisadas.
 
@@ -80,9 +78,7 @@ em que:
 \text{Taxa de correção} = \frac{N_{\text{corrigidos}}}{N_{\text{confirmados}}}
 \]
 
-em que:
-
-- \(N_{\text{corrigidos}}\): quantidade de defeitos confirmados já corrigidos;
+em que: - \(N_{\text{corrigidos}}\): quantidade de defeitos confirmados já corrigidos;
 - \(N_{\text{confirmados}}\): quantidade de defeitos confirmados na revisão.
 
 | Elemento | Descrição |
@@ -230,9 +226,7 @@ flowchart BT
 W_a = W_p - W_c
 \]
 
-em que:
-
-- \(W_a\): trabalho em aberto (restante comprometido e ainda não concluído);
+em que: - \(W_a\): trabalho em aberto (restante comprometido e ainda não concluído);
 - \(W_p\): trabalho planejado (comprometido no marco ou corte);
 - \(W_c\): trabalho concluído na mesma unidade e no mesmo recorte.
 

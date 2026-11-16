@@ -1,4 +1,4 @@
-# Dados brutos — Flexibilidade (G3)
+# Dados brutos : Flexibilidade (Flexibilidade)
 
 Observações de instalabilidade, adaptabilidade e substituibilidade (Dupla C), quando o protocolo operacional da Parte C estiver definido.
 

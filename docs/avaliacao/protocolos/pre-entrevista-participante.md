@@ -2,7 +2,7 @@
 
 Formulário preenchível por sessão (triagem, termo de consentimento e roteiro completo). A Dupla A conduz todas as entrevistas com participantes voluntários. Uma cópia por pessoa (códigos PA01, PA02, PB01 a PB03).
 
-Produto avaliado: Anki Desktop 26.09.3 e fluxo de conta, login e sincronização do AnkiWeb. Norma de referência: ISO/IEC 25010:2023. Características cobertas no instrumento: Capacidade de interação (G1), evidência de Eficiência de desempenho percebida (G2) e campos estruturados de Flexibilidade (G3).
+Produto avaliado: Anki Desktop 26.09.3 e fluxo de conta, login e sincronização do AnkiWeb. Norma de referência: ISO/IEC 25010:2023. Características cobertas no instrumento: Capacidade de interação (Capacidade de interação), evidência de Eficiência de desempenho percebida (Eficiência de desempenho) e campos estruturados de Flexibilidade (Flexibilidade).
 
 Documentação operacional: [Entrevista](entrevista.md). Organização dos dados: [Dados](../../dados.md).
 
@@ -91,7 +91,7 @@ O facilitador lê:
 
 Consentimento verbal para iniciar: (   ) Sim     (   ) Não / interromper
 
-## 6. Parte A. Capacidade de interação (G1)
+## 6. Parte A. Capacidade de interação (Capacidade de interação)
 
 Grupo A: Etapas 1 a 3 e 5. Grupo B: Etapas 4 e 5. Durante as tarefas, o observador também preenche o checklist da Parte B.
 
@@ -185,7 +185,7 @@ Anotar com as palavras do participante.
 | 7 | Q3 Operabilidade | (Grupo B) No seu uso diário, alguma tarefa toma mais tempo ou cliques do que você gostaria? |  |
 | 8 | Melhoria | Se pudesse mudar uma única coisa no Anki para facilitar o uso, o que seria? |  |
 
-## 7. Parte B. Eficiência de desempenho percebida (evidência G2)
+## 7. Parte B. Eficiência de desempenho percebida (evidência Eficiência de desempenho)
 
 Aplicar durante e após as tarefas da Parte A, sem repetir o roteiro. Conteúdo elaborado pela Dupla B e aplicado pela Dupla A.
 
@@ -224,9 +224,9 @@ Aplicar durante e após as tarefas da Parte A, sem repetir o roteiro. Conteúdo 
 | Unidade onde o Anki está instalado | ( ) SSD  ( ) HDD / disco rígido  ( ) Não sei informar |
 | Tamanho aproximado da coleção de cards | ( ) Menos de 1.000  ( ) 1.000 a 10.000  ( ) Mais de 10.000 |
 
-## 8. Parte C. Flexibilidade (G3)
+## 8. Parte C. Flexibilidade (Flexibilidade)
 
-Seção estruturada a ser preenchida pela Dupla C antes da aplicação. Cabeçalhos alinhados ao objetivo G3 da Fase 2.
+Seção estruturada a ser preenchida pela Dupla C antes da aplicação. Cabeçalhos alinhados ao objetivo de Flexibilidade da Fase 2.
 
 ### 8.1 Fatores de variação
 

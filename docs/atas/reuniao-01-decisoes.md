@@ -1,6 +1,6 @@
-# Decisões da Reunião 01 — Avaliação de Qualidade do Anki
+# Decisões da Reunião 01 : Avaliação de Qualidade do Anki
 
-**Disciplina:** FGA0315 Qualidade de Software 1 — Profa. Cristiane Ramos
+**Disciplina:** FGA0315 Qualidade de Software 1 : Profa. Cristiane Ramos
 **Equipe:** Betty Snyder (turma T01)
 **Data da reunião:** 7 de outubro de 2026, das 10h41 às 11h01, online
 **Redator:** Davi Severiano Freitas
@@ -55,7 +55,7 @@ A frente de apoio cuida da estrutura. O conteúdo do artigo, da GitPage e do rep
 
 Não haverá contato entre os integrantes até a próxima reunião, então cada dupla chega com a sua parte pronta.
 
-**Dupla A — Davi e Pedro**
+**Dupla A : Davi e Pedro**
 
 - Subir no repositório a ata da reunião 01, com o link da gravação.
 - Criar a planilha de horas e o modelo de ata.
@@ -63,7 +63,7 @@ Não haverá contato entre os integrantes até a próxima reunião, então cada 
 - Estudar Recursos e Custos e trazer a proposta de medida.
 - Escrever no Overleaf a justificativa de Usabilidade para a Fase 1.
 
-**Dupla B — Karolina e Mateus**
+**Dupla B : Karolina e Mateus**
 
 - Montar o esqueleto do artigo no Overleaf, com o template escolhido (Karolina, até 08/10).
 - Montar a estrutura inicial da GitPage.
@@ -71,7 +71,7 @@ Não haverá contato entre os integrantes até a próxima reunião, então cada 
 - Escrever no Overleaf a justificativa de Eficiência de desempenho para a Fase 1.
 - Juntar as partes da Fase 1 escritas pelas duplas no Overleaf, para revisão na reunião.
 
-**Dupla C — Bryan e Dante**
+**Dupla C : Bryan e Dante**
 
 - Criar o repositório, as issues e as milestones "PC1" (19/10) e "Entrega 1" (26/10), até a meia-noite de 07/10.
 - Criar as labels e as pastas e registrar a versão do Anki usada (26.09.3).

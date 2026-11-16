@@ -1,4 +1,4 @@
-# Fase 2 — Especificar a avaliação
+# Fase 2: Especificar a avaliação
 
 Esta página reproduz a Seção IV do [artigo da Entrega 1](artigo.md), entregue em 26/10/2026.
 
@@ -13,9 +13,9 @@ A equipe selecionou três subcaracterísticas: **reconhecibilidade da adequaçã
 
 ### Objetivo de Medição
 
-O objetivo G1 segue o template do GQM [4] e as decisões comuns da equipe. O propósito de entender o produto serve para identificar pontos de melhoria, conforme o objetivo da avaliação definido na Fase 1.
+O objetivo de Capacidade de interação segue o template do GQM [4] e as decisões comuns da equipe. O propósito de entender o produto serve para identificar pontos de melhoria, conforme o objetivo da avaliação definido na Fase 1.
 
-| Template GQM | G1 — Capacidade de interação |
+| Template GQM | Capacidade de interação |
 |---|---|
 | **Analisar** | o Anki Desktop 26.09.3 e o fluxo de criação de conta, login e sincronização do AnkiWeb |
 | **para o propósito de** | entender, identificando pontos de melhoria |
@@ -25,11 +25,11 @@ O objetivo G1 segue o template do GQM [4] e as decisões comuns da equipe. O pro
 
 ### Grupos de participantes e triagem
 
-**Grupo A — Usuários iniciantes.** Participantes que nunca utilizaram o Anki antes do estudo. Não devem ter experiência prática anterior com as tarefas avaliadas no Anki Desktop ou no AnkiWeb. O uso de outros aplicativos de flashcards é registrado separadamente, pois pode influenciar a aprendizagem.
+**Grupo A: Usuários iniciantes.** Participantes que nunca utilizaram o Anki antes do estudo. Não devem ter experiência prática anterior com as tarefas avaliadas no Anki Desktop ou no AnkiWeb. O uso de outros aplicativos de flashcards é registrado separadamente, pois pode influenciar a aprendizagem.
 
-**Grupo B — Usuários frequentes.** Participantes que utilizaram o Anki regularmente durante as últimas quatro semanas, preferencialmente em pelo menos três dias por semana, e que já realizaram as tarefas centrais avaliadas: criar baralhos e cartões, revisar cartões e sincronizar com o AnkiWeb.
+**Grupo B: Usuários frequentes.** Participantes que utilizaram o Anki regularmente durante as últimas quatro semanas, preferencialmente em pelo menos três dias por semana, e que já realizaram as tarefas centrais avaliadas: criar baralhos e cartões, revisar cartões e sincronizar com o AnkiWeb.
 
-Antes da entrevista ou do preenchimento do formulário de avaliação, a pessoa responde ao formulário de triagem: (1) já utilizou o Anki (nunca / experimentou uma ou duas vezes / já utilizou regularmente); (2) nos últimos 7 dias, em quantos dias utilizou (nenhum / 1–2 / 3–4 / 5–7); (3) há quanto tempo utiliza regularmente (nunca / menos de 4 semanas / 4 semanas a 3 meses / mais de 3 meses); (4)–(6) já criou baralhos e cartões, já revisou e já sincronizou Desktop–AnkiWeb (sim/não); (7) já utilizou outros aplicativos de flashcards (sim/não); (8) familiaridade geral com informática (baixa/média/alta). A classificação no Grupo A ou B segue essas respostas.
+Antes da entrevista ou do preenchimento do formulário de avaliação, a pessoa responde ao formulário de triagem: (1) já utilizou o Anki (nunca / experimentou uma ou duas vezes / já utilizou regularmente); (2) nos últimos 7 dias, em quantos dias utilizou (nenhum / 1-2 / 3-4 / 5-7); (3) há quanto tempo utiliza regularmente (nunca / menos de 4 semanas / 4 semanas a 3 meses / mais de 3 meses); (4)-(6) já criou baralhos e cartões, já revisou e já sincronizou Desktop-AnkiWeb (sim/não); (7) já utilizou outros aplicativos de flashcards (sim/não); (8) familiaridade geral com informática (baixa/média/alta). A classificação no Grupo A ou B segue essas respostas.
 
 ### Questões e Hipóteses
 
@@ -53,10 +53,10 @@ A Tabela IV resume as cinco métricas do escopo (Plano de Medição, Aula 08). T
 
 | Métrica | Q | Definição / cálculo | Referência de origem | Interpretação |
 |---|:---:|---|---|---|
-| Taxa de reconhecimento de funções (T<sub>rf</sub>) | Q1 | Porcentagem de iniciantes que indicam a função correta; N<sub>reconh.</sub> / N<sub>part.</sub> × 100% (operacionalização própria) | Adaptada de Sellier et al. [12] | Maior é melhor; 0–100% |
+| Taxa de reconhecimento de funções (T<sub>rf</sub>) | Q1 | Porcentagem de iniciantes que indicam a função correta; N<sub>reconh.</sub> / N<sub>part.</sub> × 100% (operacionalização própria) | Adaptada de Sellier et al. [12] | Maior é melhor; 0-100% |
 | Tempo de aprendizagem (T<sub>aprend</sub>) | Q2 | Média do tempo total do Grupo A no roteiro completo | Vogel et al. [13] | Menor é melhor; > 0 min |
-| Taxa de sucesso após aprendizagem (T<sub>sa</sub>) | Q2 | Tentativas concluídas com sucesso ÷ tentativas realizadas × 100% | Bird et al. [14] | Maior é melhor; 0–100% |
-| Taxa de conclusão de tarefas (T<sub>ct</sub>) | Q3 | Porcentagem de tarefas concluídas por grupo; N<sub>concluídas</sub> / N<sub>propostas</sub> × 100% | Bird et al. [14] | Maior é melhor; 0–100% |
+| Taxa de sucesso após aprendizagem (T<sub>sa</sub>) | Q2 | Tentativas concluídas com sucesso ÷ tentativas realizadas × 100% | Bird et al. [14] | Maior é melhor; 0-100% |
+| Taxa de conclusão de tarefas (T<sub>ct</sub>) | Q3 | Porcentagem de tarefas concluídas por grupo; N<sub>concluídas</sub> / N<sub>propostas</sub> × 100% | Bird et al. [14] | Maior é melhor; 0-100% |
 | Tempo de execução da tarefa (T<sub>exec</sub>) | Q3 | Média do tempo da pessoa do recebimento da tarefa até o sucesso (também mediana), por tarefa e grupo | Bird et al. [14] | Menor é melhor; > 0 min |
 
 ### Níveis de Pontuação e Critérios de Julgamento
@@ -73,7 +73,7 @@ Os níveis da Tabela V foram fixados antes da coleta. Os limites de T<sub>exec</
 | T<sub>ct</sub>, frequentes (Q3) | T<sub>ct</sub> < 80% ou abandono | 80% ≤ T<sub>ct</sub> < 90%, ou 100% com uma ajuda | 90% ≤ T<sub>ct</sub> < 100% sem ajuda | 100% sem ajuda |
 | T<sub>exec</sub> (Q3) | t > 10 min ou falha | 5 ≤ t ≤ 10 min | 2 ≤ t < 5 min | t < 2 min |
 
-**Regra de julgamento.** O julgamento procede de baixo para cima [4]: cada métrica é classificada em uma faixa, as faixas são agregadas por questão e as questões respondem ao G1. Uma questão é atendida quando suas métricas essenciais (T<sub>rf</sub> em Q1; T<sub>sa</sub> e T<sub>aprend</sub> em Q2; T<sub>ct</sub> e T<sub>exec</sub> em Q3) estão no alvo ou acima; havendo divergência, prevalece a faixa mais baixa. H1–H3 são julgadas pelos valores esperados da Tabela III. Os fatores de variação não alteram os limites, mas são reportados na interpretação. As faixas mínimo e insatisfatório tornam-se recomendações priorizadas, e a mais relevante alimenta a ação de melhoria da Entrega 2.
+**Regra de julgamento.** O julgamento procede de baixo para cima [4]: cada métrica é classificada em uma faixa, as faixas são agregadas por questão e as questões respondem à Capacidade de interação. Uma questão é atendida quando suas métricas essenciais (T<sub>rf</sub> em Q1; T<sub>sa</sub> e T<sub>aprend</sub> em Q2; T<sub>ct</sub> e T<sub>exec</sub> em Q3) estão no alvo ou acima; havendo divergência, prevalece a faixa mais baixa. H1 a H3 são julgadas pelos valores esperados da Tabela III. Os fatores de variação não alteram os limites, mas são reportados na interpretação. As faixas mínimo e insatisfatório tornam-se recomendações priorizadas, e a mais relevante alimenta a ação de melhoria da Entrega 2.
 
 ## Eficiência de Desempenho
 
@@ -81,9 +81,9 @@ A equipe avalia as três subcaracterísticas de Eficiência de Desempenho da ISO
 
 ### Objetivo de Medição
 
-O objetivo G2 segue o template do GQM [4] e as decisões comuns da equipe. O propósito de entender o produto serve para identificar pontos de melhoria, conforme o objetivo da avaliação definido na Fase 1:
+O objetivo de Eficiência de desempenho segue o template do GQM [4] e as decisões comuns da equipe. O propósito de entender o produto serve para identificar pontos de melhoria, conforme o objetivo da avaliação definido na Fase 1.
 
-| Template GQM | G2 — Eficiência de desempenho |
+| Template GQM | Eficiência de desempenho |
 |---|---|
 | **Analisar** | o Anki Desktop 26.09.3 e o fluxo de conta, login e sincronização do AnkiWeb |
 | **para o propósito de** | entender |
@@ -151,7 +151,7 @@ Os critérios de julgamento da Tabela VIII foram fixados antes da coleta. Os lim
 | Preempção involuntária (Ctx<sub>invol</sub>, `nvcswch/s`) | Ctx ≥ 50 | 20 ≤ Ctx < 50 | 10 ≤ Ctx < 20 | Ctx < 10 |
 | Taxa de I/O em disco em repouso (IO<sub>rep</sub>) | IO ≥ 500 kB/s | 100 ≤ IO < 500 kB/s | 10 ≤ IO < 100 kB/s | IO < 10 kB/s |
 
-**Regra de julgamento e plano de medição.** A consolidação ocorre de forma ascendente: cada métrica coletada é enquadrada na respectiva faixa de pontuação, gerando o julgamento de cada questão (Q1–Q4) e respondendo ao objetivo G2. O plano de medição detalhado (responsáveis, cronograma exato de amostragem, massa de dados sintética e scripts de automação) e o plano de análise ficam postergados para o Plano de Avaliação (Fase 3, a ser entregue no Ponto de Controle 2).
+**Regra de julgamento e plano de medição.** O julgamento procede de baixo para cima [4]: cada métrica coletada é classificada em uma faixa da Tabela VIII; as faixas são agregadas por questão (Q1-Q4) e as questões respondem ao objetivo de Eficiência de desempenho. O plano de medição detalhado (responsáveis, cronograma exato de amostragem, massa de dados sintética e scripts de automação) e o plano de análise constam no Plano de Avaliação ([Fase 3](fase3.md)).
 
 ## Flexibilidade (antiga Portabilidade)
 
@@ -159,9 +159,9 @@ A equipe avalia as três subcaracterísticas de Flexibilidade da ISO/IEC 25010:2
 
 ### Objetivo de Medição
 
-O objetivo G3 segue o template do GQM [4], com o ponto de vista definido na Fase 1 e as decisões comuns da equipe. O propósito é identificar pontos de melhoria, e o ponto de vista é o do estudante, usuário final.
+O objetivo de Flexibilidade segue o template do GQM [4], com o ponto de vista definido na Fase 1 e as decisões comuns da equipe. O propósito é identificar pontos de melhoria, e o ponto de vista é o do estudante, usuário final.
 
-| Template GQM | G3 — Flexibilidade |
+| Template GQM | Flexibilidade |
 |---|---|
 | **Analisar** | o Anki Desktop 26.09.3 e o fluxo de conta, login e sincronização do AnkiWeb |
 | **para o propósito de** | entender |
@@ -193,11 +193,11 @@ A Tabela X detalha as seis métricas do escopo, cada uma ligada a uma questão d
 
 | Métrica | Q | Definição | Cálculo | Critério de interpretação |
 |---|:---:|---|---|---|
-| Taxa de instalação bem-sucedida (T<sub>inst</sub>) | Q1 | Percentual de tentativas de instalação concluídas sem falha em cada plataforma | N<sub>sucesso</sub> / N<sub>tentativas</sub> × 100% | Maior é melhor; 0–100% |
+| Taxa de instalação bem-sucedida (T<sub>inst</sub>) | Q1 | Percentual de tentativas de instalação concluídas sem falha em cada plataforma | N<sub>sucesso</sub> / N<sub>tentativas</sub> × 100% | Maior é melhor; 0-100% |
 | Tempo de instalação (T<sub>inst_t</sub>) | Q1 | Tempo entre o início e a conclusão do processo de instalação | t<sub>fim</sub> − t<sub>início</sub> (min) | Menor é melhor; > 0 min |
 | Número de intervenções (N<sub>int</sub>) | Q1 | Quantidade de ações manuais extras exigidas para concluir a instalação | Contagem inteira | Menor é melhor; inteiro ≥ 0 |
-| Pontuação no checklist de integração (P<sub>int</sub>) | Q2 | Soma dos critérios de integração com o SO atendidos (10 itens) | Soma de c<sub>i</sub>, com c<sub>i</sub> ∈ {0, 1}, para i = 1 a 10 | Maior é melhor; 0–10 |
-| Taxa de preservação de dados (T<sub>pd</sub>) | Q3 | Percentual de itens da coleção preservados após a migração | N<sub>preservados</sub> / N<sub>totais</sub> × 100% | Maior é melhor; 0–100% |
+| Pontuação no checklist de integração (P<sub>int</sub>) | Q2 | Soma dos critérios de integração com o SO atendidos (10 itens) | Soma de c<sub>i</sub>, com c<sub>i</sub> ∈ {0, 1}, para i = 1 a 10 | Maior é melhor; 0-10 |
+| Taxa de preservação de dados (T<sub>pd</sub>) | Q3 | Percentual de itens da coleção preservados após a migração | N<sub>preservados</sub> / N<sub>totais</sub> × 100% | Maior é melhor; 0-100% |
 | Tempo de substituição (T<sub>sub</sub>) | Q3 | Tempo entre o início e a conclusão da migração com verificação de integridade | t<sub>fim</sub> − t<sub>início</sub> (min) | Menor é melhor; > 0 min |
 
 ### Níveis de Pontuação e Critérios de Julgamento
@@ -215,7 +215,7 @@ Os níveis da Tabela XI foram definidos por acordo da equipe, com base nas metas
 | Taxa de preservação T<sub>pd</sub> (Q3) | Perda de dados | 100% com intervenção manual | 100% automática em até 1 min | 100% automática em menos de 1 min |
 | Tempo de substituição T<sub>sub</sub> (Q3) | > 5 min | 2 a 5 min | 1 a 2 min | < 1 min |
 
-**Regra de julgamento.** O julgamento procede de baixo para cima [4]: cada métrica é classificada em uma faixa, as faixas são agregadas por questão e as questões respondem ao G3. Uma questão é atendida quando suas métricas essenciais (T<sub>inst</sub> e T<sub>inst_t</sub> em Q1; P<sub>int</sub> em Q2; T<sub>pd</sub> e T<sub>sub</sub> em Q3) estão no alvo ou acima; havendo divergência, prevalece a faixa mais baixa. As faixas mínimo e insatisfatório tornam-se recomendações priorizadas, e a mais relevante alimenta a ação de melhoria da Entrega 2. O plano de medição detalhado (quem coleta, quando e como), o número de participantes e o caminho mínimo das tarefas ficam para o plano de avaliação (Fase 3, PC2).
+**Regra de julgamento.** O julgamento procede de baixo para cima [4]: cada métrica é classificada em uma faixa, as faixas são agregadas por questão e as questões respondem à Flexibilidade. Uma questão é atendida quando suas métricas essenciais (T<sub>inst</sub> e T<sub>inst_t</sub> em Q1; P<sub>int</sub> em Q2; T<sub>pd</sub> e T<sub>sub</sub> em Q3) estão no alvo ou acima; havendo divergência, prevalece a faixa mais baixa. As faixas mínimo e insatisfatório tornam-se recomendações priorizadas, e a mais relevante alimenta a ação de melhoria da Entrega 2. O plano de medição detalhado (quem coleta, quando e como), o número de participantes e o caminho mínimo das tarefas ficam para o plano de avaliação (Fase 3, PC2).
 
 ## Diagrama GQM
 

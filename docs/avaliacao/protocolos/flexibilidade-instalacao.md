@@ -2,7 +2,7 @@
 
 ## 1. Definições
 
-Esta página descreve o procedimento de instalação e desinstalação do Anki Desktop 26.09.3 nas três plataformas, executado pela Dupla C (responsável: Bryan Smith Rodrigues Cavalcante). As métricas M-FLEX-01 (T<sub>inst</sub>), M-FLEX-02 (T<sub>inst_t</sub>) e M-FLEX-03 (N<sub>int</sub>), bem como a hipótese G3-H1 e as faixas de julgamento, estão na [Fase 2](../../fase2.md).
+Esta página descreve o procedimento de instalação e desinstalação do Anki Desktop 26.09.3 nas três plataformas, executado pela Dupla C (responsável: Bryan Smith Rodrigues Cavalcante). As métricas M-FLEX-01 (T<sub>inst</sub>), M-FLEX-02 (T<sub>inst_t</sub>) e M-FLEX-03 (N<sub>int</sub>), bem como a hipótese Flexibilidade-H1 e as faixas de julgamento, estão na [Fase 2](../../fase2.md).
 
 Em síntese operacional, espera-se sucesso integral sem intervenções e tempo inferior a dois minutos no Windows e no macOS, e tempo entre dois e cinco minutos com ao menos uma intervenção no Ubuntu.
 
@@ -45,4 +45,4 @@ Descartar a tentativa se o ambiente não estiver limpo (snapshot não restaurado
 
 ## 6. Relação com o instrumento e com os dados
 
-A Parte C do [Pré-entrevista com participante](pre-entrevista-participante.md) espelha os campos de instalabilidade. Os demais testes de G3 estão em [Checklist](flexibilidade-checklist.md) e [Migração](flexibilidade-migracao.md). A visão das três frentes está em [Protocolos](index.md).
+A Parte C do [Pré-entrevista com participante](pre-entrevista-participante.md) espelha os campos de instalabilidade. Os demais testes de Flexibilidade estão em [Checklist](flexibilidade-checklist.md) e [Migração](flexibilidade-migracao.md). A visão das três frentes está em [Fase 3](../../fase3.md).

@@ -2,7 +2,7 @@
 
 ## 1. Definições
 
-Esta página descreve os cenários de migração de coleção entre máquinas e sistemas operacionais, executados pela Dupla C (Bryan Smith Rodrigues Cavalcante e Dante Fernandes Scarpati). As métricas M-FLEX-05 (T<sub>pd</sub>) e M-FLEX-06 (T<sub>sub</sub>), a questão G3-Q3 e a hipótese G3-H3 estão na [Fase 2](../../fase2.md).
+Esta página descreve os cenários de migração de coleção entre máquinas e sistemas operacionais, executados pela Dupla C (Bryan Smith Rodrigues Cavalcante e Dante Fernandes Scarpati). As métricas M-FLEX-05 (T<sub>pd</sub>) e M-FLEX-06 (T<sub>sub</sub>), a questão Flexibilidade-Q3 e a hipótese Flexibilidade-H3 estão na [Fase 2](../../fase2.md).
 
 ## 2. Pré-requisitos
 
@@ -69,4 +69,4 @@ Descartar a repetição se a cópia `collection.anki2` for lida com o Anki ainda
 
 ## 6. Relação com o instrumento e com os dados
 
-Os campos de substituibilidade constam na Parte C do [Pré-entrevista com participante](pre-entrevista-participante.md). Os demais testes de G3 estão em [Instalação](flexibilidade-instalacao.md) e [Checklist](flexibilidade-checklist.md). A visão das três frentes está em [Protocolos](index.md).
+Os campos de substituibilidade constam na Parte C do [Pré-entrevista com participante](pre-entrevista-participante.md). Os demais testes de Flexibilidade estão em [Instalação](flexibilidade-instalacao.md) e [Checklist](flexibilidade-checklist.md). A visão das três frentes está em [Fase 3](../../fase3.md).

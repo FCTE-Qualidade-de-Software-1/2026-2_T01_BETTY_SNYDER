@@ -2,7 +2,7 @@
 
 ## 1. Definições
 
-Esta página descreve a coleta **instrumentada** de Eficiência de desempenho (G2), executada pela Dupla B (Karolina Vieira Barbosa e Mateus de Siqueira Silva). As definições formais das métricas e as faixas de julgamento estão na [Fase 2](../../fase2.md). O bloco de eficiência percebida, elaborado pela Dupla B, é aplicado pela Dupla A na [entrevista](entrevista.md) e no [Pré-entrevista com participante](pre-entrevista-participante.md).
+Esta página descreve a coleta **instrumentada** de Eficiência de desempenho (Eficiência de desempenho), executada pela Dupla B (Karolina Vieira Barbosa e Mateus de Siqueira Silva). As definições formais das métricas e as faixas de julgamento estão na [Fase 2](../../fase2.md). O bloco de eficiência percebida, elaborado pela Dupla B, é aplicado pela Dupla A na [entrevista](entrevista.md) e no [Pré-entrevista com participante](pre-entrevista-participante.md).
 
 Escopo operacional desta frente:
 
@@ -211,4 +211,4 @@ Descartar e reiniciar a rodada se:
 
 ## 6. Relação com o instrumento e com os dados
 
-A dimensão humana (observação, perguntas pós-tarefa e Likert LIK-PERF) foi elaborada pela Dupla B e é aplicada pela Dupla A em todas as sessões com participantes, conforme a [Entrevista](entrevista.md) e o [Pré-entrevista com participante](pre-entrevista-participante.md). Esta página cobre apenas a medição instrumentada de laboratório. A visão das três frentes está em [Protocolos](index.md).
+A dimensão humana (observação, perguntas pós-tarefa e Likert LIK-PERF) foi elaborada pela Dupla B e é aplicada pela Dupla A em todas as sessões com participantes, conforme a [Entrevista](entrevista.md) e o [Pré-entrevista com participante](pre-entrevista-participante.md). Esta página cobre apenas a medição instrumentada de laboratório. A visão das três frentes está em [Fase 3](../../fase3.md).

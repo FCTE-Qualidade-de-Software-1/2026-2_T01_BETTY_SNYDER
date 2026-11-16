@@ -1,6 +1,6 @@
-# Análise de Eficiência de Desempenho (G2) — Triangulação Multiplataforma
+# Análise de Eficiência de desempenho : Triangulação Multiplataforma
 
-Esta página apresenta a análise crítica, comparativa e interpretativa dos resultados empíricos obtidos na avaliação de **Eficiência de Desempenho (G2)** do **Anki Desktop 26.09.3**, conforme as metas do **GQM (Goal-Question-Metric)** e a norma **ISO/IEC 25010**.
+Esta página apresenta a análise crítica, comparativa e interpretativa dos resultados empíricos obtidos na avaliação de **Eficiência de Desempenho (Eficiência de desempenho)** do **Anki Desktop 26.09.3**, conforme as metas do **GQM (Goal-Question-Metric)** e a norma **ISO/IEC 25010**.
 
 A avaliação foi realizada de forma colaborativa pela **Dupla B** com a participação dos integrantes do Grupo 01, triangulando três sistemas operacionais e duas arquiteturas de processadores distintas.
 
@@ -32,9 +32,9 @@ A tabela a seguir consolida as medições instrumentadas coletadas pelos três i
 | **$T_{\text{inicialização}}$ (Cold Start - Q1)** | $\le 3\text{s}$ (Exc) / $3\text{--}6\text{s}$ (Alvo) | **`1.018 s`** | **`0.152 s`** *(launcher)* | **`0.021 s`** *(launcher)* | 🟢 **Excelente** em todos os SOs |
 | **CPU em Repouso Basal (Q2)** | $\le 2\%$ (Exc) / $2\text{--}5\%$ (Alvo) | **`0.04%`** | **`0.00%`** | **`0.10%`** | 🟢 **Excelente** (basal estritamente inativo) |
 | **RAM RSS em Repouso Basal (Q2)** | $\le 250\text{MB}$ (Exc) / $400\text{--}800\text{MB}$ (Mín) | **`783.89 MB`** | **`73.40 MB`** *(proc. pai)* | **`950.77 MB`** | 🟡 **Mínimo** (arquitetura QtWebEngine) |
-| **Threads em Repouso (Q2)** | — | **56 threads** (6 filhos) | **13-16 threads** (1 filho) | **85-88 threads** (5 filhos) | Nominal para a pilha de processos |
+| **Threads em Repouso (Q2)** | : | **56 threads** (6 filhos) | **13-16 threads** (1 filho) | **85-88 threads** (5 filhos) | Nominal para a pilha de processos |
 | **Pico de RAM sob Estresse (100k - Q2)** | $600\text{--}1000\text{MB}$ (Alvo) / $1\text{--}1.5\text{GB}$ (Mín) | **`1.328,13 MB`** (1.33 GB) | **`26.35 MB`** *(stub)* | **`1.512,06 MB`** (1.51 GB) | 🟡 **Mínimo** (paridade Ubuntu / macOS) |
-| **Pico de CPU sob Carga (Q2)** | — | **`100.6%`** (1 core saturado) | **`98.4%`** (1 core saturado) | **`100.8%`** (1 core saturado) | 🟢 **Excelente** (uso pleno de thread de I/O) |
+| **Pico de CPU sob Carga (Q2)** | : | **`100.6%`** (1 core saturado) | **`98.4%`** (1 core saturado) | **`100.8%`** (1 core saturado) | 🟢 **Excelente** (uso pleno de thread de I/O) |
 | **Isolamento da Main Thread (Q4)** | $\le 15\%$ (Exc) / $15\text{--}30\%$ (Alvo) | **`2.35%`** (Workers: 100%) | **`98.44%`** *(TID 0 saturado)* | **`1.30%`** (Workers: 100.6%) | 🟢 **Excelente** no Ubuntu e macOS |
 | **Vazão Check Database (100k - Q3)** | $\ge 60.000\text{ cards/min}$ (Exc) | **$\approx 2.000.000\text{ c/min}$** (~3s) | *Ação manual sem timer* | **$\approx 3.000.000\text{ c/min}$** (~2s) | 🟢 **Excelente** (motor Rust/SQLite veloz) |
 
@@ -103,7 +103,7 @@ No paradigma **GQM (Goal-Question-Metric)** da engenharia de software, uma hipó
 
 Abaixo, confrontam-se as quatro hipóteses estipuladas no planejamento oficial da Fase 2 ([Fase 2](../../fase2.md#questoes-e-hipoteses_1)) com os dados físicos coletados na Fase 3:
 
-### 4.1 Hipótese H1 (Comportamento no Tempo — Q1)
+### 4.1 Hipótese H1 (Comportamento no Tempo : Q1)
 * **Expectativa da Fase 2:** O tempo de inicialização (*cold start*) e o tempo para iniciar a revisão situam-se na faixa *Excelente* ($t < 3\text{ s}$).
 * **Resultado Empírico:**
   - **Ubuntu (Time-to-Interactive):** `1.018 s`
@@ -126,7 +126,7 @@ Essa decisão apoia-se em três pilares metodológicos e éticos:
    - **Capacidade de Interação (Dupla A):** Avaliada nas sessões assistidas com participantes reais (Tarefas A5 e B4 da [Entrevista](../protocolos/entrevista.md) e item Likert `LIK-PERF-03`).
    - **Flexibilidade e Substituibilidade (Frente de Migração):** Avaliada no Cenário M2 de migração entre plataformas ([Protocolo de Migração](../protocolos/flexibilidade-migracao.md)), aferindo a preservação de 100% dos dados transferidos via nuvem.
 
-### 4.2 Hipótese H2 (Utilização de Recursos — Q2)
+### 4.2 Hipótese H2 (Utilização de Recursos : Q2)
 * **Expectativa da Fase 2:**
   - *Repouso basal:* CPU média entre $2\%$ e $5\%$ e RAM entre $150$ e $250\text{ MB}$ (*Alvo*).
   - *Estresse operacional:* Pico de CPU entre $40\%$ e $70\%$ e RAM estabilizada entre $350$ e $500\text{ MB}$ (*Alvo*).
@@ -139,7 +139,7 @@ Essa decisão apoia-se em três pilares metodológicos e éticos:
 * **Veredito:** 🟡 **Refutada Empiricamente (Achado Crítico de Arquitetura).**  
   A hipótese subdimensionou a pegada de memória do ecossistema Qt6/Chromium e o custo de indexação em memória de 100.000 cartões. Trata-se do achado técnico mais importante para alimentar as ações de melhoria da Entrega 2.
 
-### 4.3 Hipótese H3 (Capacidade e Vazão — Q3)
+### 4.3 Hipótese H3 (Capacidade e Vazão : Q3)
 * **Expectativa da Fase 2:** Com 100 mil cards, o tempo total é inferior a $9\text{ s}$ e a vazão é superior a $15.000\text{ cards/min}$ na verificação do banco de dados SQLite.
 * **Resultado Empírico:**
   - **Tempo de Execução:** `~3.0 s` no Ubuntu (Intel Core i7) e `~2.0 s` no macOS (Apple Silicon M4), amplamente inferiores ao teto de 9 segundos.
@@ -147,7 +147,7 @@ Essa decisão apoia-se em três pilares metodológicos e éticos:
 * **Veredito:** 🟢 **Amplamente Confirmada e Superada em mais de 100 vezes (Excelente).**  
   A reescrita do backend do Anki em Rust (`anki_rs`) integrada ao SQLite em discos SSD NVMe modernos entregou uma vazão mais de 100 vezes superior à expectativa da equipe.
 
-### 4.4 Hipótese H4 (Comportamento Concorrente e Threads — Q4)
+### 4.4 Hipótese H4 (Comportamento Concorrente e Threads : Q4)
 * **Expectativa da Fase 2:** As *Worker Threads* absorvem a sobrecarga de I/O, limitando o consumo de CPU da *Main Thread* entre $15\%$ e $35\%$ (*Alvo*), sem congelamento da interface gráfica.
 
 #### Evolução do Escopo da H4 entre o Planejamento e a Execução:
@@ -187,7 +187,7 @@ Todos os gráficos a seguir foram gerados automaticamente pelo [`analisador_thre
 | :---: | :---: |
 | ![Threads em Repouso - Ubuntu](../dados/grafico_threads_repouso_ubuntu.png) | ![Threads sob Estresse - Ubuntu](../dados/grafico_threads_estresse_ubuntu.png) |
 
-### 5.2 Ambiente macOS Sequoia — Apple Silicon M4 (Davi Severiano)
+### 5.2 Ambiente macOS Sequoia : Apple Silicon M4 (Davi Severiano)
 | Cenário 2A: Repouso Basal | Cenário 2B: Estresse Máximo (100k) |
 | :---: | :---: |
 | ![Threads em Repouso - macOS](../dados/grafico_threads_repouso_macos.png) | ![Threads sob Estresse - macOS](../dados/grafico_threads_estresse_macos.png) |

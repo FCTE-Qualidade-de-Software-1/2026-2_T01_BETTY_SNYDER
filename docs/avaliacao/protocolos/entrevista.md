@@ -9,9 +9,9 @@ Esta página descreve o procedimento observacional aplicado pela **Dupla A** em 
 | Condução | A Dupla A (Davi Severiano Freitas e Pedro Henrique Freire Rodrigues) conduz todas as entrevistas dos Grupos A e B. As Duplas B e C não entrevistam participantes. |
 | Pré-entrevista | [Pré-entrevista com participante](pre-entrevista-participante.md) |
 | Escopo da sessão | Capacidade de interação (tarefas cronometradas e questionário), bloco de eficiência percebida elaborado pela Dupla B e campos de Flexibilidade da Parte C, se a Dupla C os tiver preenchido antes da sessão |
-| Natureza das medidas de G1 | Observação de tarefas cronometradas, e não opinião do participante. O questionário final e a Parte B são evidência qualitativa. |
+| Natureza das medidas de Capacidade de interação | Observação de tarefas cronometradas, e não opinião do participante. O questionário final e a Parte B são evidência qualitativa. |
 
-Correspondência entre as questões de G1 e as etapas da sessão:
+Correspondência entre as questões de Capacidade de interação e as etapas da sessão:
 
 | Questão | Métricas | Etapa da pré-entrevista |
 | --- | --- | --- |
@@ -108,4 +108,4 @@ Toda invalidação é registrada no campo Ocorrências da ficha.
 
 ## 6. Relação com a pré-entrevista e com os dados
 
-Para cada participante, preenche-se uma cópia da [Pré-entrevista com participante](pre-entrevista-participante.md). A visão das três frentes do plano de avaliação está em [Protocolos](index.md).
+Para cada participante, preenche-se uma cópia da [Pré-entrevista com participante](pre-entrevista-participante.md). A visão das três frentes do plano de avaliação está em [Fase 3](../../fase3.md).

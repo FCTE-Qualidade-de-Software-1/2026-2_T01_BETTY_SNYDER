@@ -38,7 +38,7 @@ Os milestones aproximam os marcos (*releases*) do mapeamento CID para contagem d
 | # | Título | Due | Estado atual |
 |---|---|---|---|
 | 1 | PC1 | 19/10/2026 | **closed** (apresentação realizada) |
-| 2 | F1 \| Plano de Medição e Preparação | 26/10/2026 | open: Issues da Entrega 1 / Fases 1–2 |
+| 2 | F1 \| Plano de Medição e Preparação | 26/10/2026 | open: Issues da Entrega 1 / Fases 1-2 |
 | 3 | F2 \| Execução e Análise das Medições | 14/11/2026 | open: execução e análise |
 | 4 | E2 \| Relatório e Recomendações de Melhoria | 22/11/2026 | open: entrega final |
 | 5 | F3 \| Plano de Avaliação (Fase 3) | 08/11/2026 | open: planejamento da avaliação |

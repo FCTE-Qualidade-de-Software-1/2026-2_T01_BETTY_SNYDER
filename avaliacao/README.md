@@ -14,9 +14,9 @@ avaliacao/
   protocolos/     Instrumento unificado e protocolos por característica
   scripts/        Coletores e consolidados (quando existirem)
   dados/
-    interacao/      {bruto, consolidado}   — Capacidade de interação (G1)
-    desempenho/     {bruto, consolidado}   — Eficiência de desempenho (G2)
-    flexibilidade/  {bruto, consolidado}   — Flexibilidade (G3)
+    interacao/      {bruto, consolidado}   : Capacidade de interação (Capacidade de interação)
+    desempenho/     {bruto, consolidado}   : Eficiência de desempenho (Eficiência de desempenho)
+    flexibilidade/  {bruto, consolidado}   : Flexibilidade (Flexibilidade)
   analise/        Julgamentos GQM e evidências derivadas
 ```
 
@@ -37,7 +37,7 @@ Cada arquivo bruto segue o padrão de nomes `<métrica>_<cenário>_<execução>`
 | Artefato | Onde fica |
 | --- | --- |
 | Dados tabulados (CSV) e fichas anonimizadas | Neste repositório, sob `dados/` |
-| Códigos de participante (PA01–PA02, PB01–PB03) | Neste repositório |
+| Códigos de participante (PA01-PA02, PB01-PB03) | Neste repositório |
 | Tabela código → pessoa | **Fora do repositório** (pasta privada da equipe) |
 | Termos de consentimento assinados | Pasta privada, separados dos dados |
 | Gravações de tela/áudio das sessões | Pasta privada; no repo só o índice `gravacoes.csv` |

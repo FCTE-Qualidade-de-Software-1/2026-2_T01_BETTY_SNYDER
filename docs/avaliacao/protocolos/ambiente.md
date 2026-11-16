@@ -1,6 +1,6 @@
 # Ambiente de avaliação
 
-Página de apoio aos [protocolos](index.md): hardware e software das máquinas usadas na avaliação do Anki Desktop (Windows, macOS e Ubuntu).
+Página de apoio à [Fase 3](../../fase3.md): hardware e software das máquinas usadas na avaliação do Anki Desktop (Windows, macOS e Ubuntu).
 
 ## 1. Objetivo
 

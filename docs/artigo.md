@@ -6,13 +6,13 @@ Faculdade de Ciências e Tecnologias em Engenharia (FCTE) / Faculdade UnB Gama (
 
 `{bryan.cavalcante, dante.scarpati, davi.freitas, karolina.barbosa, mateus.siqueira, pedro.rodrigues}@aluno.unb.br`
 
-*Versão entregue na Entrega 1 (Fases 1 e 2), em 26/10/2026. Formato original: IEEE (conferência).*
+*Versão Entrega 2 (Fases 1 a 4), atualizada em 16/11/2026. Fonte canônica LaTeX: `main-ieee.tex`. Formato IEEE (conferência).*
 
 ---
 
-**Abstract.** Anki is a free spaced-repetition study tool widely used by students, who must operate it on their own, on different computers and with collections that keep growing. This paper specifies the quality evaluation of Anki Desktop 26.09.3 and of the AnkiWeb account, login and synchronization flow, based on ISO/IEC 25010:2023 and on the product evaluation process. In Phase 1, the team defined the requester, the purpose of identifying improvement points from the student's point of view, a quality model adapted to the product components, and the scope, prioritizing Interaction Capability (emphasis 5), Performance Efficiency and Flexibility (emphasis 3). In Phase 2, the Goal-Question-Metric approach refined three measurement goals into ten questions with baseline hypotheses, metrics with definition, calculation and interpretation criterion, and four scoring levels (unsatisfactory, minimum, target and excellent), with judgment rules fixed before data collection. The resulting specification is the basis for the evaluation plan (Phase 3) and for the execution and improvement action (Phase 4).
+**Abstract.** This paper reports the ISO/IEC 25010:2023 quality evaluation of Anki Desktop 26.09.3 and of the AnkiWeb account, login and synchronization flow. Phases 1-2 define purpose, scope and a Goal-Question-Metric specification for Interaction Capability, Performance Efficiency and Flexibility. Phase 3 describes the evaluation plan. Phase 4 consolidates indicative Capacidade de interação interview metrics (Trf unsatisfactory; Taprend and Tsa excellent), a Eficiência de desempenho performance synthesis, Flexibilidade gaps, judgment against the Phase 1 purpose, and a high-fidelity prototype improvement action for “Create deck”. Details remain on the team GitPage.
 
-**Resumo.** O Anki é uma ferramenta gratuita de estudo por repetição espaçada muito usada por estudantes, que precisam operá-la sozinhos, em computadores diferentes e com coleções que crescem. Este artigo especifica a avaliação da qualidade do Anki Desktop 26.09.3 e do fluxo de conta, login e sincronização do AnkiWeb, com base na ISO/IEC 25010:2023 e no processo de avaliação de produto. Na Fase 1, a equipe definiu o requisitante, o propósito de indicar pontos de melhoria do ponto de vista do estudante, o modelo de qualidade adaptado aos componentes do produto e o escopo, priorizando Capacidade de interação (ênfase 5), Eficiência de desempenho e Flexibilidade (ênfase 3). Na Fase 2, a abordagem GQM desdobrou três objetivos de medição em dez questões com hipóteses de baseline, métricas com definição, cálculo e critério de interpretação, e níveis de pontuação em quatro faixas (insatisfatório, mínimo, alvo e excelente), com regras de julgamento fixadas antes da coleta. A especificação resultante é a base do plano de avaliação (Fase 3) e da execução e da ação de melhoria (Fase 4).
+**Resumo.** Este artigo reporta a avaliação da qualidade do Anki Desktop 26.09.3 e do fluxo de conta, login e sincronização do AnkiWeb segundo a ISO/IEC 25010:2023. As Fases 1-2 definem propósito, escopo e a especificação GQM para Capacidade de interação, Eficiência de desempenho e Flexibilidade. A Fase 3 descreve o plano de avaliação. A Fase 4 consolida métricas indicativas de Capacidade de interação (T<sub>rf</sub> insatisfatória; T<sub>aprend</sub> e T<sub>sa</sub> excelentes), síntese de Eficiência de desempenho, lacunas de Flexibilidade, julgamento frente ao propósito da Fase 1 e uma ação de melhoria por protótipo de alta fidelidade para “Criar baralho”. Detalhes permanecem na GitPage da equipe.
 
 ---
 
@@ -20,7 +20,7 @@ Faculdade de Ciências e Tecnologias em Engenharia (FCTE) / Faculdade UnB Gama (
 
 O processo de garantia da qualidade de software consolidou-se como disciplina nuclear da Engenharia de Software moderna, estabelecendo critérios objetivos para que produtos atendam tanto às expectativas funcionais dos usuários quanto a restrições de engenharia e desempenho [1]. No contexto de ferramentas educacionais, o **Anki Desktop** ([github.com/ankitects/anki](https://github.com/ankitects/anki)) é uma plataforma de memorização ativa por repetição espaçada (*Spaced Repetition System*, SRS), construída com Python, Rust e a interface gráfica PyQt/QtWebEngine, que funciona em diferentes sistemas operacionais e armazena as coleções localmente em SQLite.
 
-O presente trabalho, conduzido pela **Equipe Betty Snyder** na disciplina de Qualidade de Software 1 da Universidade de Brasília (FGA/FCTE-UnB), tem como objetivo avaliar a qualidade de produto do Anki Desktop (versão 26.09.3) e do fluxo de conta, login e sincronização do AnkiWeb, para indicar pontos de melhoria do ponto de vista do estudante. A avaliação segue a ISO/IEC 25010:2023 [2] e o processo de avaliação de produto [3].
+O presente trabalho, conduzido pela **Equipe Betty Snyder** na disciplina de Qualidade de Software 1 da Universidade de Brasília (FGA/FCTE-UnB), tem como objetivo avaliar a qualidade de produto do Anki Desktop (versão 26.09.3) e do fluxo de conta, login e sincronização do AnkiWeb, para indicar pontos de melhoria do ponto de vista do estudante. A avaliação segue a ISO/IEC 25010:2023 [2] e o processo de avaliação de produto [3]. Este artigo cobre as Fases 1 a 4 até a Entrega 2: requisitos, especificação GQM, plano, execução parcial com julgamento indicativo e ação de melhoria. Protocolos, dados brutos e análises estendidas estão na GitPage ([Fase 3](fase3.md), [Fase 4](fase4.md), [Dados](dados.md)).
 
 ## II. Fundamentação Teórica e Trabalhos Relacionados
 
@@ -42,7 +42,7 @@ A abordagem *Goal-Question-Metric* (GQM), proposta por Basili, Caldiera e Rombac
 
 Rojas et al. [5] mapeiam, em revisão sistemática, 68 métricas e 46 ferramentas de eficiência de desempenho na ISO/IEC 25010, com predominância de comportamento no tempo e utilização de recursos. Pereira et al. [6] medem vazão, tempo de resposta e consumo de CPU e RAM em cenários de estresse. Milichiewicz e Badurowicz [7] comparam a pegada de memória e a integração com o sistema operacional de aplicações multiplataforma, incluindo PyQt, base do Anki Desktop. Sukmandari e Sukardiyono [8] e Jayanto e Jati [9] aplicam a ISO/IEC 25010 com o *USE Questionnaire* [10] e os limiares de tempo de resposta de Hoxmeier e DiCesare [11].
 
-## III. Fase 1 — Estabelecer os Requisitos de Avaliação
+## III. Fase 1: Estabelecer os Requisitos de Avaliação
 
 ### A. Propósito da Avaliação e Uso Pretendido
 
@@ -105,7 +105,7 @@ A ênfase de cada característica foi definida pela combinação do impacto para
 
 A avaliação se relaciona ao ODS 4, Educação de Qualidade. Na **meta 4.3** (acesso igualitário à educação superior de qualidade, a preços acessíveis), o Anki Desktop é gratuito e apoia o estudo autônomo. Na **meta 4.4** (jovens e adultos com habilidades relevantes), o indicador 4.4.1, sobre habilidades em tecnologias da informação e comunicação, relaciona-se à facilidade de aprendizado avaliada em Capacidade de interação. Na **meta 4.5** (eliminar disparidades e garantir acesso a pessoas em situação de vulnerabilidade), relaciona-se à Flexibilidade e aos aspectos de inclusão da interface. Pontos de melhoria que reduzem barreiras de uso ampliam o alcance de uma ferramenta gratuita de estudo.
 
-## IV. Fase 2 — Especificar a Avaliação
+## IV. Fase 2: Especificar a Avaliação
 
 Esta seção especifica a avaliação por meio do GQM [4]. Para cada característica priorizada na Fase 1, apresentam-se o objetivo de medição, as questões e hipóteses, os fatores de variação, as métricas e os níveis de pontuação com os critérios de julgamento. Os níveis seguem quatro faixas comuns às três características: *insatisfatório*, *mínimo*, *alvo* e *excelente*. A Seção IV-D reúne a hierarquia GQM completa, e a Seção IV-E explicita a ligação entre as Fases 1 e 2.
 
@@ -115,9 +115,9 @@ A equipe selecionou três subcaracterísticas: **reconhecibilidade da adequaçã
 
 #### 1) Objetivo de Medição
 
-O objetivo G1 segue o template do GQM [4] e as decisões comuns da equipe. O propósito de entender o produto serve para identificar pontos de melhoria, conforme o objetivo da avaliação definido na Fase 1.
+O objetivo de Capacidade de interação segue o template do GQM [4] e as decisões comuns da equipe. O propósito de entender o produto serve para identificar pontos de melhoria, conforme o objetivo da avaliação definido na Fase 1.
 
-| Template GQM | G1 — Capacidade de interação |
+| Template GQM | Capacidade de interação |
 |---|---|
 | **Analisar** | o Anki Desktop 26.09.3 e o fluxo de criação de conta, login e sincronização do AnkiWeb |
 | **para o propósito de** | entender, identificando pontos de melhoria |
@@ -127,11 +127,11 @@ O objetivo G1 segue o template do GQM [4] e as decisões comuns da equipe. O pro
 
 #### 2) Grupos de participantes e triagem
 
-**Grupo A — Usuários iniciantes.** Participantes que nunca utilizaram o Anki antes do estudo. Não devem ter experiência prática anterior com as tarefas avaliadas no Anki Desktop ou no AnkiWeb. O uso de outros aplicativos de flashcards é registrado separadamente, pois pode influenciar a aprendizagem.
+**Grupo A: Usuários iniciantes.** Participantes que nunca utilizaram o Anki antes do estudo. Não devem ter experiência prática anterior com as tarefas avaliadas no Anki Desktop ou no AnkiWeb. O uso de outros aplicativos de flashcards é registrado separadamente, pois pode influenciar a aprendizagem.
 
-**Grupo B — Usuários frequentes.** Participantes que utilizaram o Anki regularmente durante as últimas quatro semanas, preferencialmente em pelo menos três dias por semana, e que já realizaram as tarefas centrais avaliadas: criar baralhos e cartões, revisar cartões e sincronizar com o AnkiWeb.
+**Grupo B: Usuários frequentes.** Participantes que utilizaram o Anki regularmente durante as últimas quatro semanas, preferencialmente em pelo menos três dias por semana, e que já realizaram as tarefas centrais avaliadas: criar baralhos e cartões, revisar cartões e sincronizar com o AnkiWeb.
 
-Antes da entrevista ou do preenchimento do formulário de avaliação, a pessoa responde ao formulário de triagem: (1) já utilizou o Anki (nunca / experimentou uma ou duas vezes / já utilizou regularmente); (2) nos últimos 7 dias, em quantos dias utilizou (nenhum / 1–2 / 3–4 / 5–7); (3) há quanto tempo utiliza regularmente (nunca / menos de 4 semanas / 4 semanas a 3 meses / mais de 3 meses); (4)–(6) já criou baralhos e cartões, já revisou e já sincronizou Desktop–AnkiWeb (sim/não); (7) já utilizou outros aplicativos de flashcards (sim/não); (8) familiaridade geral com informática (baixa/média/alta). A classificação no Grupo A ou B segue essas respostas.
+Antes da entrevista ou do preenchimento do formulário de avaliação, a pessoa responde ao formulário de triagem: (1) já utilizou o Anki (nunca / experimentou uma ou duas vezes / já utilizou regularmente); (2) nos últimos 7 dias, em quantos dias utilizou (nenhum / 1-2 / 3-4 / 5-7); (3) há quanto tempo utiliza regularmente (nunca / menos de 4 semanas / 4 semanas a 3 meses / mais de 3 meses); (4)-(6) já criou baralhos e cartões, já revisou e já sincronizou Desktop-AnkiWeb (sim/não); (7) já utilizou outros aplicativos de flashcards (sim/não); (8) familiaridade geral com informática (baixa/média/alta). A classificação no Grupo A ou B segue essas respostas.
 
 #### 3) Questões e Hipóteses
 
@@ -155,10 +155,10 @@ A Tabela IV resume as cinco métricas do escopo (Plano de Medição, Aula 08). T
 
 | Métrica | Q | Definição / cálculo | Referência de origem | Interpretação |
 |---|:---:|---|---|---|
-| Taxa de reconhecimento de funções (T<sub>rf</sub>) | Q1 | Porcentagem de iniciantes que indicam a função correta; N<sub>reconh.</sub> / N<sub>part.</sub> × 100% (operacionalização própria) | Adaptada de Sellier et al. [12] | Maior é melhor; 0–100% |
+| Taxa de reconhecimento de funções (T<sub>rf</sub>) | Q1 | Porcentagem de iniciantes que indicam a função correta; N<sub>reconh.</sub> / N<sub>part.</sub> × 100% (operacionalização própria) | Adaptada de Sellier et al. [12] | Maior é melhor; 0-100% |
 | Tempo de aprendizagem (T<sub>aprend</sub>) | Q2 | Média do tempo total do Grupo A no roteiro completo | Vogel et al. [13] | Menor é melhor; > 0 min |
-| Taxa de sucesso após aprendizagem (T<sub>sa</sub>) | Q2 | Tentativas concluídas com sucesso ÷ tentativas realizadas × 100% | Bird et al. [14] | Maior é melhor; 0–100% |
-| Taxa de conclusão de tarefas (T<sub>ct</sub>) | Q3 | Porcentagem de tarefas concluídas por grupo; N<sub>concluídas</sub> / N<sub>propostas</sub> × 100% | Bird et al. [14] | Maior é melhor; 0–100% |
+| Taxa de sucesso após aprendizagem (T<sub>sa</sub>) | Q2 | Tentativas concluídas com sucesso ÷ tentativas realizadas × 100% | Bird et al. [14] | Maior é melhor; 0-100% |
+| Taxa de conclusão de tarefas (T<sub>ct</sub>) | Q3 | Porcentagem de tarefas concluídas por grupo; N<sub>concluídas</sub> / N<sub>propostas</sub> × 100% | Bird et al. [14] | Maior é melhor; 0-100% |
 | Tempo de execução da tarefa (T<sub>exec</sub>) | Q3 | Média do tempo da pessoa do recebimento da tarefa até o sucesso (também mediana), por tarefa e grupo | Bird et al. [14] | Menor é melhor; > 0 min |
 
 #### 6) Níveis de Pontuação e Critérios de Julgamento
@@ -175,7 +175,7 @@ Os níveis da Tabela V foram fixados antes da coleta. Os limites de T<sub>exec</
 | T<sub>ct</sub>, frequentes (Q3) | T<sub>ct</sub> < 80% ou abandono | 80% ≤ T<sub>ct</sub> < 90%, ou 100% com uma ajuda | 90% ≤ T<sub>ct</sub> < 100% sem ajuda | 100% sem ajuda |
 | T<sub>exec</sub> (Q3) | t > 10 min ou falha | 5 ≤ t ≤ 10 min | 2 ≤ t < 5 min | t < 2 min |
 
-**Regra de julgamento.** O julgamento procede de baixo para cima [4]: cada métrica é classificada em uma faixa, as faixas são agregadas por questão e as questões respondem ao G1. Uma questão é atendida quando suas métricas essenciais (T<sub>rf</sub> em Q1; T<sub>sa</sub> e T<sub>aprend</sub> em Q2; T<sub>ct</sub> e T<sub>exec</sub> em Q3) estão no alvo ou acima; havendo divergência, prevalece a faixa mais baixa. H1–H3 são julgadas pelos valores esperados da Tabela III. Os fatores de variação não alteram os limites, mas são reportados na interpretação. As faixas mínimo e insatisfatório tornam-se recomendações priorizadas, e a mais relevante alimenta a ação de melhoria da Entrega 2.
+**Regra de julgamento.** O julgamento procede de baixo para cima [4]: cada métrica é classificada em uma faixa, as faixas são agregadas por questão e as questões respondem à Capacidade de interação. Uma questão é atendida quando suas métricas essenciais (T<sub>rf</sub> em Q1; T<sub>sa</sub> e T<sub>aprend</sub> em Q2; T<sub>ct</sub> e T<sub>exec</sub> em Q3) estão no alvo ou acima; havendo divergência, prevalece a faixa mais baixa. H1: H3 são julgadas pelos valores esperados da Tabela III. Os fatores de variação não alteram os limites, mas são reportados na interpretação. As faixas mínimo e insatisfatório tornam-se recomendações priorizadas, e a mais relevante alimenta a ação de melhoria da Entrega 2.
 
 ### B. Eficiência de Desempenho
 
@@ -183,9 +183,9 @@ A equipe avalia as três subcaracterísticas de Eficiência de Desempenho da ISO
 
 #### 1) Objetivo de Medição
 
-O objetivo G2 segue o template do GQM [4] e as decisões comuns da equipe. O propósito de entender o produto serve para identificar pontos de melhoria, conforme o objetivo da avaliação definido na Fase 1:
+O objetivo de Eficiência de desempenho segue o template do GQM [4] e as decisões comuns da equipe. O propósito de entender o produto serve para identificar pontos de melhoria, conforme o objetivo da avaliação definido na Fase 1.
 
-| Template GQM | G2 — Eficiência de desempenho |
+| Template GQM | Eficiência de desempenho |
 |---|---|
 | **Analisar** | o Anki Desktop 26.09.3 e o fluxo de conta, login e sincronização do AnkiWeb |
 | **para o propósito de** | entender |
@@ -253,7 +253,7 @@ Os critérios de julgamento da Tabela VIII foram fixados antes da coleta. Os lim
 | Preempção involuntária (Ctx<sub>invol</sub>, `nvcswch/s`) | Ctx ≥ 50 | 20 ≤ Ctx < 50 | 10 ≤ Ctx < 20 | Ctx < 10 |
 | Taxa de I/O em disco em repouso (IO<sub>rep</sub>) | IO ≥ 500 kB/s | 100 ≤ IO < 500 kB/s | 10 ≤ IO < 100 kB/s | IO < 10 kB/s |
 
-**Regra de julgamento e plano de medição.** A consolidação ocorre de forma ascendente: cada métrica coletada é enquadrada na respectiva faixa de pontuação, gerando o julgamento de cada questão (Q1–Q4) e respondendo ao objetivo G2. O plano de medição detalhado (responsáveis, cronograma exato de amostragem, massa de dados sintética e scripts de automação) e o plano de análise ficam postergados para o Plano de Avaliação (Fase 3, a ser entregue no Ponto de Controle 2).
+**Regra de julgamento e plano de medição.** A consolidação ocorre de forma ascendente: cada métrica coletada é enquadrada na respectiva faixa de pontuação, gerando o julgamento de cada questão (Q1: Q4) e respondendo ao objetivo de Eficiência de desempenho. O plano de medição detalhado (responsáveis, cronograma exato de amostragem, massa de dados sintética e scripts de automação) e o plano de análise ficam postergados para o Plano de Avaliação (Fase 3, a ser entregue no Ponto de Controle 2).
 
 ### C. Flexibilidade (antiga Portabilidade)
 
@@ -261,9 +261,9 @@ A equipe avalia as três subcaracterísticas de Flexibilidade da ISO/IEC 25010:2
 
 #### 1) Objetivo de Medição
 
-O objetivo G3 segue o template do GQM [4], com o ponto de vista definido na Fase 1 e as decisões comuns da equipe. O propósito é identificar pontos de melhoria, e o ponto de vista é o do estudante, usuário final.
+O objetivo de Flexibilidade segue o template do GQM [4], com o ponto de vista definido na Fase 1 e as decisões comuns da equipe. O propósito é identificar pontos de melhoria, e o ponto de vista é o do estudante, usuário final.
 
-| Template GQM | G3 — Flexibilidade |
+| Template GQM | Flexibilidade |
 |---|---|
 | **Analisar** | o Anki Desktop 26.09.3 e o fluxo de conta, login e sincronização do AnkiWeb |
 | **para o propósito de** | entender |
@@ -295,11 +295,11 @@ A Tabela X detalha as seis métricas do escopo, cada uma ligada a uma questão d
 
 | Métrica | Q | Definição | Cálculo | Critério de interpretação |
 |---|:---:|---|---|---|
-| Taxa de instalação bem-sucedida (T<sub>inst</sub>) | Q1 | Percentual de tentativas de instalação concluídas sem falha em cada plataforma | N<sub>sucesso</sub> / N<sub>tentativas</sub> × 100% | Maior é melhor; 0–100% |
+| Taxa de instalação bem-sucedida (T<sub>inst</sub>) | Q1 | Percentual de tentativas de instalação concluídas sem falha em cada plataforma | N<sub>sucesso</sub> / N<sub>tentativas</sub> × 100% | Maior é melhor; 0-100% |
 | Tempo de instalação (T<sub>inst_t</sub>) | Q1 | Tempo entre o início e a conclusão do processo de instalação | t<sub>fim</sub> − t<sub>início</sub> (min) | Menor é melhor; > 0 min |
 | Número de intervenções (N<sub>int</sub>) | Q1 | Quantidade de ações manuais extras exigidas para concluir a instalação | Contagem inteira | Menor é melhor; inteiro ≥ 0 |
-| Pontuação no checklist de integração (P<sub>int</sub>) | Q2 | Soma dos critérios de integração com o SO atendidos (10 itens) | Soma de c<sub>i</sub>, com c<sub>i</sub> ∈ {0, 1}, para i = 1 a 10 | Maior é melhor; 0–10 |
-| Taxa de preservação de dados (T<sub>pd</sub>) | Q3 | Percentual de itens da coleção preservados após a migração | N<sub>preservados</sub> / N<sub>totais</sub> × 100% | Maior é melhor; 0–100% |
+| Pontuação no checklist de integração (P<sub>int</sub>) | Q2 | Soma dos critérios de integração com o SO atendidos (10 itens) | Soma de c<sub>i</sub>, com c<sub>i</sub> ∈ {0, 1}, para i = 1 a 10 | Maior é melhor; 0-10 |
+| Taxa de preservação de dados (T<sub>pd</sub>) | Q3 | Percentual de itens da coleção preservados após a migração | N<sub>preservados</sub> / N<sub>totais</sub> × 100% | Maior é melhor; 0-100% |
 | Tempo de substituição (T<sub>sub</sub>) | Q3 | Tempo entre o início e a conclusão da migração com verificação de integridade | t<sub>fim</sub> − t<sub>início</sub> (min) | Menor é melhor; > 0 min |
 
 #### 5) Níveis de Pontuação e Critérios de Julgamento
@@ -317,7 +317,7 @@ Os níveis da Tabela XI foram definidos por acordo da equipe, com base nas metas
 | Taxa de preservação T<sub>pd</sub> (Q3) | Perda de dados | 100% com intervenção manual | 100% automática em até 1 min | 100% automática em menos de 1 min |
 | Tempo de substituição T<sub>sub</sub> (Q3) | > 5 min | 2 a 5 min | 1 a 2 min | < 1 min |
 
-**Regra de julgamento.** O julgamento procede de baixo para cima [4]: cada métrica é classificada em uma faixa, as faixas são agregadas por questão e as questões respondem ao G3. Uma questão é atendida quando suas métricas essenciais (T<sub>inst</sub> e T<sub>inst_t</sub> em Q1; P<sub>int</sub> em Q2; T<sub>pd</sub> e T<sub>sub</sub> em Q3) estão no alvo ou acima; havendo divergência, prevalece a faixa mais baixa. As faixas mínimo e insatisfatório tornam-se recomendações priorizadas, e a mais relevante alimenta a ação de melhoria da Entrega 2. O plano de medição detalhado (quem coleta, quando e como), o número de participantes e o caminho mínimo das tarefas ficam para o plano de avaliação (Fase 3, PC2).
+**Regra de julgamento.** O julgamento procede de baixo para cima [4]: cada métrica é classificada em uma faixa, as faixas são agregadas por questão e as questões respondem à Flexibilidade. Uma questão é atendida quando suas métricas essenciais (T<sub>inst</sub> e T<sub>inst_t</sub> em Q1; P<sub>int</sub> em Q2; T<sub>pd</sub> e T<sub>sub</sub> em Q3) estão no alvo ou acima; havendo divergência, prevalece a faixa mais baixa. As faixas mínimo e insatisfatório tornam-se recomendações priorizadas, e a mais relevante alimenta a ação de melhoria da Entrega 2. O plano de medição detalhado (quem coleta, quando e como), o número de participantes e o caminho mínimo das tarefas ficam para o plano de avaliação (Fase 3, PC2).
 
 ### D. Diagrama GQM
 
@@ -331,37 +331,67 @@ A Figura 2 apresenta a hierarquia GQM da avaliação: os três objetivos no nív
 
 A Fase 1 delimitou o escopo, sob o ponto de vista do estudante, em quatro componentes: a interface do Anki Desktop, sua execução em Windows, macOS e Ubuntu, a instalação e o fluxo de conta e sincronização do AnkiWeb. A Fase 2 mantém nos três objetivos esse ponto de vista e a priorização da Fase 1 (Capacidade de interação com ênfase 5, as demais com 3): as questões de **Capacidade de interação** avaliam a interação com a interface e com o fluxo de conta e sincronização; as métricas de **Eficiência de desempenho** medem a execução e a fluidez do estudo; e as de **Flexibilidade** cobrem a instalação e a migração entre as três plataformas.
 
-## V. Considerações Finais e Próximos Passos
+## V. Fase 3: Plano de Avaliação
 
-Este artigo apresentou as Fases 1 e 2 da avaliação da qualidade do Anki Desktop e do AnkiWeb sob a perspectiva do estudante: os requisitos da avaliação e a especificação por meio do GQM, com métricas, níveis de pontuação e critérios de julgamento para Capacidade de interação, Eficiência de desempenho e Flexibilidade. Com o *feedback* do Ponto de Controle 1 (21/10/2026), os artefatos foram refinados para esta Entrega 1. Como próximos passos, o plano de avaliação (Fase 3) será apresentado no Ponto de Controle 2, e a execução, o julgamento e a ação de melhoria, na Entrega 2.
+A Fase 3 operacionaliza a especificação GQM sem redefinir métricas. O método combina entrevistas observadas (Capacidade de interação, Dupla A), instrumentação multiplataforma (Eficiência de desempenho, Dupla B) e protocolos de instalação, integração e migração (Flexibilidade, Dupla C). Recursos e ambiente: máquinas de referência Windows, macOS e Ubuntu; Anki Desktop 26.09.3 ([Ambiente](avaliacao/protocolos/ambiente.md)). Cronograma: protocolos até 11/11; entrevistas PB01 e PB02 em 13/11; entrevista PA01 em 14/11; coletas parciais de Eficiência de desempenho e Flexibilidade; consolidação de Capacidade de interação e julgamento na Entrega 2. Detalhamento: [fase3.md](fase3.md).
+
+## VI. Fase 4: Resultados e Julgamento
+
+### A. Obtenção dos dados e desvios
+
+Participantes anonimizados PA01 (Grupo A), PB01 e PB02 (Grupo B). O Grupo B não executa Etapas 2 e 3; tempos de PB02 na seção Etapa 3 da ficha (e de PB01 na seção Etapa 2) foram consolidados como Etapa 4. Fontes: [Dados](dados.md); gravações em `avaliacao/dados/interacao/bruto/gravacoes/`; [análise de Capacidade de interação](avaliacao/analise/interacao.md).
+
+### B. Resultados de Capacidade de interação
+
+| Métrica | PA01 | Faixa | PB01 | Faixa | PB02 | Faixa |
+| --- | --- | --- | --- | --- | --- | --- |
+| T<sub>rf</sub> | 16,7% | Insatisfatório | 66,7% | Mínimo | 83,3% | Alvo |
+| T<sub>aprend</sub> | 7 min 36 s | Excelente | n/a | - | n/a | - |
+| T<sub>sa</sub> | 100% | Excelente | n/a | - | n/a | - |
+| T<sub>ct</sub> | 80%→100% | Mín./Exc. | 100% (Etapa 4) | Excelente | 100% (Etapa 4) | Excelente |
+| T<sub>exec</sub> mediana | 50 s | Excelente | 39,31 s | Excelente | 25 s | Excelente |
+
+Q1 não atendida; Q2 atendida em PA01; Q3 atendida em PB01 e PB02 (com remapeamento documental). H1 rejeitada no iniciante; H2 sustentada; H3 sustentada no agregado de frequentes. Média de T<sub>rf</sub> entre frequentes: 75,0%. Julgamento **indicativo** (n = 3).
+
+### C. Síntese de Eficiência de desempenho e Flexibilidade
+
+Eficiência de desempenho: cold start e CPU em repouso *excelente*; RAM *mínimo* (QtWebEngine); lacunas Windows/cold start no PC2. Flexibilidade: provisório até CSV faltantes.
+
+### D. Julgamento, relações e ação de melhoria
+
+Prioridade: descoberta de “Criar baralho” e vocabulário nota/tipo/cartão. **Ação:** protótipo de alta fidelidade destacando “Criar baralho”, validação T<sub>rf</sub>(R1) e T<sub>rf</sub> ≥ 75% (alvo). Ver [fase4.md](fase4.md).
+
+## VII. Conclusão
+
+Este artigo apresentou as Fases 1 a 4: requisitos, GQM, plano, execução parcial, julgamento indicativo e ação de melhoria na interface de criação de baralho. Pendências da equipe: fechar Eficiência de desempenho e Flexibilidade do PC2, ampliar entrevistas (Etapa 4) e release E2 com contribuição atualizada.
 
 ## Declaração de Uso de Inteligência Artificial
 
-A equipe utilizou ferramentas de Inteligência Artificial (ChatGPT, Claude, Gemini e DeepSeek) como apoio durante a Entrega 1: na estruturação e formatação do código LaTeX no padrão IEEE; na revisão textual e na tradução de termos técnicos e de artigos científicos; na análise do repositório do Anki; na redação de rascunhos das seções da Fase 1 e dos objetivos GQM; e na produção das atas a partir das transcrições das reuniões. Todo o conteúdo gerado foi revisado pela equipe, em reunião ou de forma assíncrona, e conferido com os materiais da disciplina; as decisões de escopo, a escolha das métricas e os critérios de julgamento foram tomados pela equipe.
+A equipe utilizou ferramentas de Inteligência Artificial (ChatGPT, Claude, Gemini, DeepSeek e Cursor) como apoio nas Entregas 1 e 2: estruturação LaTeX; revisão textual; consolidação de CSV e rascunhos das Fases 3-4 e da análise de Capacidade de interação; atas a partir de transcrições. Todo o conteúdo foi revisado pela equipe; decisões de escopo, métricas, faixas, julgamento e a ação de melhoria foram tomadas pela equipe.
 
 ## Referências
 
 [1] D. Galin, *Software Quality: Concepts and Practice*. New York, NY, USA: John Wiley & Sons / IEEE Press, 2018.
 
-[2] *Systems and software engineering — Systems and software Quality Requirements and Evaluation (SQuaRE) — System and software quality models*, ISO/IEC 25010:2023, International Organization for Standardization, Geneva, Switzerland, 2023.
+[2] *Systems and software engineering: Systems and software Quality Requirements and Evaluation (SQuaRE): System and software quality models*, ISO/IEC 25010:2023, International Organization for Standardization, Geneva, Switzerland, 2023.
 
-[3] *Systems and software engineering — Systems and software Quality Requirements and Evaluation (SQuaRE) — Evaluation process*, ISO/IEC 25040:2023, International Organization for Standardization, Geneva, Switzerland, 2023.
+[3] *Systems and software engineering: Systems and software Quality Requirements and Evaluation (SQuaRE): Evaluation process*, ISO/IEC 25040:2023, International Organization for Standardization, Geneva, Switzerland, 2023.
 
-[4] V. R. Basili, G. Caldiera, and H. D. Rombach, "The Goal Question Metric approach," in *Encyclopedia of Software Engineering*, J. J. Marciniak, Ed. New York, NY, USA: John Wiley & Sons, 1994, pp. 528–532.
+[4] V. R. Basili, G. Caldiera, and H. D. Rombach, "The Goal Question Metric approach," in *Encyclopedia of Software Engineering*, J. J. Marciniak, Ed. New York, NY, USA: John Wiley & Sons, 1994, pp. 528-532.
 
-[5] H. Rojas, R. Renteria, and V. Martinez, "Understanding performance efficiency in ISO/IEC 25000: A systematic literature review," *Int. J. Informatics Visualization (JOIV)*, vol. 9, no. 6, pp. 2405–2417, 2025.
+[5] H. Rojas, R. Renteria, and V. Martinez, "Understanding performance efficiency in ISO/IEC 25000: A systematic literature review," *Int. J. Informatics Visualization (JOIV)*, vol. 9, no. 6, pp. 2405-2417, 2025.
 
-[6] D. S. Pereira, L. F. V. Bezerra, J. S. Nunes, I. M. Barroca Filho, and F. A. S. Lopes, "Performance efficiency evaluation based on ISO/IEC 25010:2011 applied to a case study on load balance and resilient," in *Anais do XXIV Workshop de Testes e Tolerância a Falhas (WTF)*. Porto Alegre, RS, Brasil: SBC, 2023, pp. 108–120, doi: 10.5753/wtf.2023.787.
+[6] D. S. Pereira, L. F. V. Bezerra, J. S. Nunes, I. M. Barroca Filho, and F. A. S. Lopes, "Performance efficiency evaluation based on ISO/IEC 25010:2011 applied to a case study on load balance and resilient," in *Anais do XXIV Workshop de Testes e Tolerância a Falhas (WTF)*. Porto Alegre, RS, Brasil: SBC, 2023, pp. 108-120, doi: 10.5753/wtf.2023.787.
 
-[7] R. Milichiewicz and M. Badurowicz, "Comparative analysis of cross-platform application development tools in terms of operating system integration," *Journal of Computer Science Institute*, vol. 36, pp. 357–364, 2025.
+[7] R. Milichiewicz and M. Badurowicz, "Comparative analysis of cross-platform application development tools in terms of operating system integration," *Journal of Computer Science Institute*, vol. 36, pp. 357-364, 2025.
 
-[8] D. G. Sukmandari and T. Sukardiyono, "Analisis aplikasi jadwal perkuliahan berbasis android berdasarkan standar ISO 25010," *Elinvo (Electronics, Informatics, and Vocational Education)*, vol. 2, no. 1, pp. 80–84, 2017.
+[8] D. G. Sukmandari and T. Sukardiyono, "Analisis aplikasi jadwal perkuliahan berbasis android berdasarkan standar ISO 25010," *Elinvo (Electronics, Informatics, and Vocational Education)*, vol. 2, no. 1, pp. 80-84, 2017.
 
-[9] R. D. Jayanto and H. Jati, "Evaluasi kualitas aplikasi mobile kamus istilah jaringan pada platform android dengan standar ISO/IEC 25010," *Elinvo (Electronics, Informatics, and Vocational Education)*, vol. 2, no. 2, pp. 178–183, 2017.
+[9] R. D. Jayanto and H. Jati, "Evaluasi kualitas aplikasi mobile kamus istilah jaringan pada platform android dengan standar ISO/IEC 25010," *Elinvo (Electronics, Informatics, and Vocational Education)*, vol. 2, no. 2, pp. 178-183, 2017.
 
-[10] A. M. Lund, "Measuring usability with the USE Questionnaire," *Usability Interface*, vol. 8, no. 2, pp. 3–6, 2001.
+[10] A. M. Lund, "Measuring usability with the USE Questionnaire," *Usability Interface*, vol. 8, no. 2, pp. 3-6, 2001.
 
-[11] J. A. Hoxmeier and C. DiCesare, "System response time and user satisfaction: An experimental study of browser-based applications," in *Proc. AMCIS 2000*, 2000, pp. 1–6.
+[11] J. A. Hoxmeier and C. DiCesare, "System response time and user satisfaction: An experimental study of browser-based applications," in *Proc. AMCIS 2000*, 2000, pp. 1-6.
 
 [12] Q. Sellier, A. Sluÿters, J. Vanderdonckt, and I. Poncin, "Evaluating gesture user interfaces: Quantitative measures, qualitative scales, and method," *Int. J. Human-Computer Studies*, vol. 186, Art. no. 103245, 2024.
 
@@ -369,7 +399,7 @@ A equipe utilizou ferramentas de Inteligência Artificial (ChatGPT, Claude, Gemi
 
 [14] M. Bird, N. Carter, A. Lim, N. Kazmie, C. Fajardo, S. Reaume, and M. H. McGillion, "A novel hospital-to-home system for children with medical complexities: Usability testing study," *JMIR Formative Research*, vol. 6, no. 8, Art. no. e34572, 2022.
 
-## Apêndice A — Tabela de Contribuição da Equipe
+## Apêndice A: Tabela de Contribuição da Equipe
 
 *Tabela XII. Contribuição de cada integrante para a Entrega 1 (planilha de horas, registros de 07/10 a 26/10/2026; total de 63,04 horas)*
 
