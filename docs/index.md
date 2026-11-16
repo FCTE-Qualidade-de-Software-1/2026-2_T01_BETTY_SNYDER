@@ -32,7 +32,7 @@ Dessa forma, pretende-se identificar os pontos positivos e as possíveis limita�
 
     ---
 
-    Versão entregue na Entrega 1 (Fases 1 e 2).
+    Versão Entrega 2 (Fases 1 a 4, resultados e ação de melhoria).
 
     [:octicons-arrow-right-24: Abrir](artigo.md)
 
@@ -52,6 +52,22 @@ Dessa forma, pretende-se identificar os pontos positivos e as possíveis limita�
 
     [:octicons-arrow-right-24: Abrir](fase2.md)
 
+-   :material-numeric-3-circle-outline:{ .lg .middle } **Fase 3**
+
+    ---
+
+    Protocolos de avaliação: entrevista, desempenho, flexibilidade, ambiente e análises.
+
+    [:octicons-arrow-right-24: Abrir](fase3.md)
+
+-   :material-numeric-4-circle-outline:{ .lg .middle } **Fase 4**
+
+    ---
+
+    Coleta, análise GQM, julgamento, sugestões e ação de melhoria.
+
+    [:octicons-arrow-right-24: Abrir](fase4.md)
+
 -   :material-database-outline:{ .lg .middle } **Dados**
 
     ---
@@ -59,14 +75,6 @@ Dessa forma, pretende-se identificar os pontos positivos e as possíveis limita�
     Árvore `avaliacao/`, padrão de nomes, códigos de participante e rastreabilidade bruto → métrica.
 
     [:octicons-arrow-right-24: Abrir](dados.md)
-
--   :material-clipboard-check-outline:{ .lg .middle } **Protocolos**
-
-    ---
-
-    Entrevista com participante, testes de desempenho e testes de flexibilidade.
-
-    [:octicons-arrow-right-24: Abrir](avaliacao/protocolos/index.md)
 
 -   :material-chart-line:{ .lg .middle } **Gestão do projeto (PSM)**
 
