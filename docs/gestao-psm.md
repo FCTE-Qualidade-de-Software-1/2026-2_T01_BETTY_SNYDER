@@ -7,7 +7,7 @@ O PSM caracteriza-se como abordagem dirigida por informações (*information-dri
 Após o Ponto de Controle 1, o rastreamento PSM deixou de constar do artigo científico por orientação da disciplina. Os registros permanentes ficam nesta documentação MkDocs e nos arquivos da pasta [`gestao-psm/`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/tree/main/gestao-psm) do repositório.
 
 !!! note "Delimitação: PSM do projeto versus GQM do produto"
- As métricas GQM da Fase 2 (capacidade de interação, eficiência de desempenho e flexibilidade) avaliam o **Anki**. O template de issue `02 - Registro de Medição` registra observações dessas métricas de produto. O PSM, nesta seção, registra o **andamento e a gestão do projeto**. Misturar as duas fontes invalida a interpretação dos indicadores.
+ As métricas GQM da Fase 2 (Capacidade de interação, Eficiência de desempenho e Flexibilidade) avaliam o **Anki**. O template de issue `02 - Registro de Medição` registra observações dessas métricas de produto. O PSM, nesta seção, registra o **andamento e a gestão do projeto**. Misturar as duas fontes invalida a interpretação dos indicadores.
 
 ## Modelo de informação
 
@@ -88,29 +88,43 @@ A configuração de Project, milestones, labels e issues como infraestrutura de 
 
 ## Processo de medição na Entrega 1
 
-O processo de medição na Entrega 1 foi organizado por categoria, com responsabilidades e artefatos fixos:
+Na Entrega 1, cada categoria PSM tinha um coletor e um redator, com CSV por corte em `gestao-psm/`:
 
 | Papel | Atribuição |
 |---|---|
 | Coletor | Obtém os dados brutos e persiste o corte em CSV na pasta `gestao-psm/` do repositório |
 | Redator / analista | Calcula o indicador, interpreta o resultado à luz dos critérios e registra a decisão gerencial |
 
-Cortes documentados: **11/10/2026**, **18/10/2026** e **25/10/2026**. Não houve reunião formal de medição em 18/10 nem em 21/10; nesses intervalos, a consolidação apoiou-se em planilha, atas e documento de pendências.
+Cortes documentados: **11/10/2026**, **18/10/2026**, **25/10/2026** e o recorte de **26/10/2026** na planilha. Não houve reunião formal de medição em 18/10 nem em 21/10; nesses intervalos, o cálculo usou planilha de horas, atas e o documento de pendências da Entrega 1.
 
-**Fontes na Entrega 1.** A equipe decidiu não utilizar issues do GitHub como fonte primária, por prazo insuficiente para implantar o fluxo completo. As fontes adotadas foram:
+**Fontes na Entrega 1.** A equipe não usou issues do GitHub como fonte primária, por prazo insuficiente para implantar o fluxo completo. As fontes adotadas foram:
 
 - planilha de horas (esforço planejado e real);
 - atas e mensagens de planejamento (compromissos e prazos);
 - documento de pendências da Entrega 1;
 - contagens de revisão do artigo (defeitos confirmados e correções).
 
-**Transição após o Ponto de Controle 1.** As tarefas do calendário foram materializadas em 46 issues e em milestones (`PC1`, `F1`, `F2`, `E2`). O Project (Projects V2) `BETTY SNYDER` (#40) tem o repositório como padrão; em 04/11/2026, as 46 Issues estavam vinculadas. O provisionamento está descrito em [Organização no GitHub](gestao-psm/github-organizacao.md). Com as tarefas vinculadas e os campos preenchidos, as datas planejadas e reais apoiam o ICP; o histórico das transições de Status fornece as datas de início real e conclusão para *Cycle Time*, *Throughput* e WIP.
+**Transição após o Ponto de Controle 1.** As tarefas do calendário passaram a 46 issues e aos milestones `PC1`, `F1`, `F2` e `E2`. O Project (Projects V2) `BETTY SNYDER` (#40) tem o repositório como padrão; em 04/11/2026, as 46 Issues estavam vinculadas e foram criadas mais 34 issues da Entrega 2. O provisionamento está em [Organização no GitHub](gestao-psm/github-organizacao.md).
 
 Nenhum valor de indicador deve ser estimado ou inventado: cada medida aponta para arquivo, data de corte e evidência.
 
+## Processo de medição na Entrega 2
+
+Na Entrega 2, a medição PSM mantém os papéis de coletor e redator por categoria e passa a usar **issues e milestones** como fonte principal de Calendário e progresso. Os cortes previstos são **08/11/2026**, **15/11/2026** e **21/11/2026**, acompanhados pelas issues `#78` (E2-P1, Recursos e custos), `#79` (E2-P2, Calendário e progresso), `#80` (E2-P3, Desempenho dos processos) e `#81` (E2-P4, atas das reuniões).
+
+| Categoria | Dupla | Fonte primária na E2 | Artefato do corte |
+|---|---|---|---|
+| Recursos e custos | A | Registro de horas (`2026-11-16_registro-horas.csv`) e planejamento E1 (Hp baseline 78,10 h; semanas pós-19/10 zeradas na planilha) | `2026-11-08_recursos-custos.csv`, `2026-11-15_recursos-custos.csv` |
+| Calendário e progresso | C | Issues do milestone F3 (e, no agregado, F2 e PC2): data de fechamento versus prazo e data do corte | `2026-11-08_calendario-progresso.csv`, `2026-11-15_calendario-progresso.csv` |
+| Desempenho dos processos | B | Contagem de defeitos nas revisões da Fase 3 e do artigo v2 (issue `#80`) | Ainda sem CSV de corte E2 publicado; a série E1 permanece em `desempenho-processos.csv` |
+
+**Procedimento por corte.** Na data do corte, o coletor registra o CSV em `gestao-psm/`; o redator calcula desvio, participação mínima ou ICP, compara aos limiares (participação &lt; 10%; ICP &lt; 70%) e registra a decisão na página da categoria e na Tabela II abaixo. O ICP da E2 distingue (1) issues fechadas até a data do corte e (2) issues fechadas no prazo original da issue; em 08/11 e 15/11, o ICP no prazo original do marco F3 foi 0%.
+
+**Situação em 18/11/2026.** Os cortes de 08/11 e 15/11 de Recursos e de Calendário estão publicados. O corte de 21/11 e a medição de Desempenho dos processos da E2 ainda dependem do fechamento das issues `#78` a `#80`. Detalhe dos cortes: [08/11](gestao-psm/calendario-e-progresso.md#corte-0811) e [15/11](gestao-psm/calendario-e-progresso.md#corte-1511).
+
 ## Série histórica de medições
 
-A Tabela I consolida, por categoria e por corte (ou revisão), o indicador calculado, a decisão tomada e o arquivo de dados brutos. A leitura deve ser feita em conjunto com as páginas de categoria, onde constam definição, fórmula e critério de decisão.
+As Tabelas I e II reúnem, por categoria e por corte (ou revisão), o indicador calculado, a decisão tomada e o arquivo de dados brutos. A leitura deve ser feita em conjunto com as páginas de categoria, onde constam definição, fórmula e critério de decisão.
 
 Interpretação objetiva dos indicadores da série:
 
@@ -143,19 +157,25 @@ em que \(T_c\) é o número de tarefas concluídas no prazo e \(T_p\) é o núme
 | Recursos e custos | 25/10 | Desvio −46,0%; participação mínima 10,3% | Sem sobrecarga da equipe (+30%); acompanhar subutilização | [`2026-10-25_recursos-custos.csv`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/blob/main/gestao-psm/2026-10-25_recursos-custos.csv) |
 | Recursos e custos | 26/10 | Desvio −30,6%; participação mínima 10,04% | Acompanhar; esforço real acumulado abaixo do planejado | [`2026-10-26_recursos-custos.xlsx`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/blob/main/gestao-psm/2026-10-26_recursos-custos.xlsx) |
 | Desempenho dos processos | Rev. 1 | \(D_1 = 1{,}44\); correção 61,5% | Revisão 2 com dados reais | Contagem da Revisão 1 |
-| Desempenho dos processos | Rev. 2 | Correção 100% (10 defeitos confirmados e corrigidos) | Consolidar correções no artigo e na GitPage | [`desempenho-processos.csv`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/blob/main/gestao-psm/desempenho-processos.csv) |
+| Desempenho dos processos | Rev. 2 | Correção 100% (10 defeitos confirmados e corrigidos) | Publicar correções no artigo e na GitPage | [`desempenho-processos.csv`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/blob/main/gestao-psm/desempenho-processos.csv) |
 | Calendário e progresso | 11/10 | ICP 56,3% (9/16) | Redistribuir | [`calendario-progresso.csv`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/blob/main/gestao-psm/calendario-progresso.csv) |
 | Calendário e progresso | 18/10 | ICP 21,4% (3/14) | Redistribuir | idem |
 | Calendário e progresso | 19/10 (PC1) | ICP 100% (1/1) | Apresentação realizada; amostra de um item | idem |
 | Calendário e progresso | 25/10 | ICP 40,0% (6/15) | Redistribuir 9 restantes | idem |
-| Recursos e custos | 08/11 | Desvio −9,2%; participação mínima 8,9% (Dante) | Acompanhar Dante (&lt;10%); Hp = baseline E1 | [`2026-11-08_recursos-custos.csv`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/blob/main/gestao-psm/2026-11-08_recursos-custos.csv) |
-| Recursos e custos | 15/11 | Desvio −7,9%; participação mínima 8,8% (Dante) | Manter acompanhamento; planejamento pós-E1 zerado | [`2026-11-15_recursos-custos.csv`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/blob/main/gestao-psm/2026-11-15_recursos-custos.csv) |
-| Calendário e progresso | 08/11 | ICP 0% (0/14); *throughput* 0; WIP 1 | Replanejamento da Reunião 04 (07/11); proposta de redistribuição da Dupla C | [`2026-11-08_calendario-progresso.csv`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/blob/main/gestao-psm/2026-11-08_calendario-progresso.csv) |
-| Calendário e progresso | 15/11 | ICP 42,9% (6/14 F3 até 15/11); 0 no prazo original | Sem replanejamento dos prazos originais; priorizar `#61` e `#69` | [`2026-11-15_calendario-progresso.csv`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/blob/main/gestao-psm/2026-11-15_calendario-progresso.csv) |
+
+*Tabela II. Série de medições PSM: Entrega 2*
+
+| Categoria | Corte | Indicador | Decisão | Arquivo |
+|---|---|---|---|---|
+| Recursos e custos | 08/11 | Desvio −9,2%; participação mínima 8,9% (Dante) | Acompanhar Dante (&lt;10%); Hp = baseline E1 (78,10 h) | [`2026-11-08_recursos-custos.csv`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/blob/main/gestao-psm/2026-11-08_recursos-custos.csv) |
+| Recursos e custos | 15/11 | Desvio −7,9%; participação mínima 8,8% (Dante) | Manter acompanhamento; atualizar planejamento pós-E1 (zerado na planilha) | [`2026-11-15_recursos-custos.csv`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/blob/main/gestao-psm/2026-11-15_recursos-custos.csv) |
+| Calendário e progresso | 08/11 | ICP 0% (0/14 F3); *throughput* 0; WIP 1 | Replanejamento da Reunião 04 (07/11); proposta de redistribuição da Dupla C | [`2026-11-08_calendario-progresso.csv`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/blob/main/gestao-psm/2026-11-08_calendario-progresso.csv) |
+| Calendário e progresso | 15/11 | ICP 42,9% (6/14 F3 fechadas até 15/11); 0% no prazo original | Sem alteração dos prazos originais; priorizar `#61` e `#69` | [`2026-11-15_calendario-progresso.csv`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/blob/main/gestao-psm/2026-11-15_calendario-progresso.csv) |
+| Desempenho dos processos | E2 | Sem CSV de corte publicado | Aguardar contagem na issue `#80` (E2-P3) | - |
 
 Gráficos por categoria: [esforço acumulado](gestao-psm/recursos-e-custos.md#grafico-esforco-acumulado), [desvio e participação](gestao-psm/recursos-e-custos.md#grafico-desvio-participacao), [ICP](gestao-psm/calendario-e-progresso.md#grafico-icp), [taxa de correção](gestao-psm/desempenho-dos-processos.md#grafico-taxa-correcao) e [densidade de defeitos](gestao-psm/desempenho-dos-processos.md#grafico-densidade).
 
-Os dados brutos permanecem na pasta [`gestao-psm/`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/tree/main/gestao-psm). A [Retrospectiva E1](retrospectiva-e1.md) vincula ações corretivas a limiares explícitos: participação inferior a 10% e ICP inferior a 70%.
+Os dados brutos permanecem na pasta [`gestao-psm/`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/tree/main/gestao-psm). A [Retrospectiva E1](retrospectiva-e1.md) vincula ações corretivas a limiares explícitos: participação inferior a 10% e ICP inferior a 70%. O registro bruto de horas da E2 está em [`2026-11-16_registro-horas.csv`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/blob/main/gestao-psm/2026-11-16_registro-horas.csv).
 
 ## Referências
 
