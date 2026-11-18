@@ -168,7 +168,7 @@ em que: - \(N_{\text{corrigidos}}\): quantidade de defeitos confirmados já corr
     <text x="550" y="321">Revisão 2</text>
   </g>
 </svg>
-<figcaption>A densidade \(D_1 = 1{,}44\) está documentada para a Revisão 1. Para a Revisão 2, o CSV registra os apontamentos, mas não o total de seções efetivamente revisadas; por isso, o indicador não pode ser calculado sem inventar o denominador.</figcaption>
+<figcaption>A densidade D₁ = 1,44 está documentada para a Revisão 1. Para a Revisão 2, o CSV registra os apontamentos, mas não o total de seções efetivamente revisadas; por isso, o indicador não pode ser calculado sem inventar o denominador.</figcaption>
 </figure>
 
 ## Eixo B: Trabalho planejado, concluído e em aberto (mapeamento)
