@@ -71,7 +71,7 @@ flowchart BT
 |---|---|
 | Definição | Esforço estimado do integrante ou da equipe no intervalo acumulado até o corte, em horas. |
 | Escala | Razão (número real ≥ 0). |
-| Coleta | Extração da planilha de horas e do planejamento; persistência no campo `horas_planejadas` dos arquivos `gestao-psm/2026-10-11_recursos-custos.csv`, `2026-10-18_recursos-custos.csv`, `2026-10-25_recursos-custos.csv`, `recursos-custos.csv`, `2026-11-08_recursos-custos.csv`, `2026-11-15_recursos-custos.csv` e `2026-11-16_registro-horas.csv`. O corte mais recente de novembro é 15/11. |
+| Coleta | Extração da planilha de horas, do planejamento E1 e do [Planejamento E2](planejamento-e2.md) (156,5 h nas issues `#48` a `#81`); persistência no campo `horas_planejadas` dos CSV em `gestao-psm/`. Nos cortes de novembro, Hp acumulado = E1 (78,10 h) + milestones E2 vencidos até a data (F3 em 08/11; F3+F2 em 15/11), com rateio igual entre assignees. O corte mais recente de novembro é 15/11. |
 | Cálculo | Valor por integrante; a linha `Equipe` corresponde à soma do acumulado. |
 | Análise | Base do desvio e do julgamento de subutilização ou sobrecarga. |
 | Limitação observada | O vínculo explícito entre hora planejada e funcionalidade ou capacidade individual ainda não está sistematizado nos CSV (agregação por integrante/dupla). |
@@ -135,15 +135,15 @@ em que: - \(H_r^{\text{integrante}}\): esforço real do integrante, em horas, no
 | 18/10 | Desvio −20,0%; participação mínima 11,0% | Manter carga; acompanhar desvios individuais |
 | 25/10 | Desvio −46,0%; participação mínima 10,3% | Sem sobrecarga da equipe (+30%); acompanhar subutilização |
 | 26/10 | Desvio −30,6%; participação mínima 10,04% | Acompanhar; esforço real acumulado abaixo do planejado |
-| 08/11 | Desvio −9,2%; participação mínima 8,9% (Dante) | Acompanhar Dante (&lt;10%); Hp = baseline E1 (78,10 h) |
-| 15/11 | Desvio −7,9%; participação mínima 8,8% (Dante) | Manter acompanhamento; atualizar planejamento pós-E1 (zerado) |
+| 08/11 | Desvio −46,9%; participação mínima 8,9% (Dante); Hp 133,60 h | Acompanhar Dante (&lt;10%) e subutilização agregada; Hp = E1 (78,10 h) + F3 do [Planejamento E2](planejamento-e2.md) (55,5 h) |
+| 15/11 | Desvio −58,3%; participação mínima 8,8% (Dante); Hp 172,60 h | Manter acompanhamento; Hp = E1 + F3 + F2 (94,5 h E2); Hr com último lançamento em 09/11 |
 
 ### Gráfico: esforço acumulado por recorte { #grafico-esforco-acumulado }
 
 <figure class="psm-chart">
 <svg viewBox="0 0 960 400" role="img" aria-labelledby="recursos-chart-title recursos-chart-desc">
   <title id="recursos-chart-title">Esforço planejado e real acumulado por recorte</title>
-  <desc id="recursos-chart-desc">Gráfico de barras comparando horas planejadas e reais nos recortes de 11, 18, 25 e 26 de outubro e 08 e 15 de novembro. Totais planejado/real: 20,67/11,98; 49,37/39,50; 78,10/42,17; 90,77/63,04; 78,10/70,94; 78,10/71,94.</desc>
+  <desc id="recursos-chart-desc">Gráfico de barras comparando horas planejadas e reais nos recortes de 11, 18, 25 e 26 de outubro e 08 e 15 de novembro. Totais planejado/real: 20,67/11,98; 49,37/39,50; 78,10/42,17; 90,77/63,04; 133,60/70,94; 172,60/71,94.</desc>
   <g class="chart-grid">
     <line x1="90" y1="300" x2="920" y2="300" />
     <line x1="90" y1="258" x2="920" y2="258" />
@@ -158,38 +158,38 @@ em que: - \(H_r^{\text{integrante}}\): esforço real do integrante, em horas, no
   </g>
   <g text-anchor="end">
     <text x="80" y="304">0</text>
-    <text x="80" y="262">20</text>
-    <text x="80" y="220">40</text>
-    <text x="80" y="178">60</text>
-    <text x="80" y="136">80</text>
-    <text x="80" y="94">100</text>
+    <text x="80" y="262">40</text>
+    <text x="80" y="220">80</text>
+    <text x="80" y="178">120</text>
+    <text x="80" y="136">160</text>
+    <text x="80" y="94">200</text>
   </g>
   <text x="18" y="195" transform="rotate(-90 18 195)">Horas acumuladas</text>
   <g>
-    <rect class="bar-planned" x="138.33" y="256.59" width="28" height="43.41" rx="3" />
-    <rect class="bar-actual" x="170.33" y="274.84" width="28" height="25.16" rx="3" />
-    <text class="chart-value" x="152.33" y="249.59" text-anchor="middle">20.67</text>
-    <text class="chart-value" x="184.33" y="267.84" text-anchor="middle">11.98</text>
-    <rect class="bar-planned" x="275.00" y="196.32" width="28" height="103.68" rx="3" />
-    <rect class="bar-actual" x="307.00" y="217.05" width="28" height="82.95" rx="3" />
-    <text class="chart-value" x="289.00" y="189.32" text-anchor="middle">49.37</text>
-    <text class="chart-value" x="321.00" y="210.05" text-anchor="middle">39.50</text>
-    <rect class="bar-planned" x="411.67" y="135.99" width="28" height="164.01" rx="3" />
-    <rect class="bar-actual" x="443.67" y="211.44" width="28" height="88.56" rx="3" />
-    <text class="chart-value" x="425.67" y="128.99" text-anchor="middle">78.10</text>
-    <text class="chart-value" x="457.67" y="204.44" text-anchor="middle">42.17</text>
-    <rect class="bar-planned" x="548.33" y="109.38" width="28" height="190.62" rx="3" />
-    <rect class="bar-actual" x="580.33" y="167.62" width="28" height="132.38" rx="3" />
-    <text class="chart-value" x="562.33" y="102.38" text-anchor="middle">90.77</text>
-    <text class="chart-value" x="594.33" y="160.62" text-anchor="middle">63.04</text>
-    <rect class="bar-planned" x="685.00" y="135.99" width="28" height="164.01" rx="3" />
-    <rect class="bar-actual" x="717.00" y="151.03" width="28" height="148.97" rx="3" />
-    <text class="chart-value" x="699.00" y="128.99" text-anchor="middle">78.10</text>
-    <text class="chart-value" x="731.00" y="144.03" text-anchor="middle">70.94</text>
-    <rect class="bar-planned" x="821.67" y="135.99" width="28" height="164.01" rx="3" />
-    <rect class="bar-actual" x="853.67" y="148.93" width="28" height="151.07" rx="3" />
-    <text class="chart-value" x="835.67" y="128.99" text-anchor="middle">78.10</text>
-    <text class="chart-value" x="867.67" y="141.93" text-anchor="middle">71.94</text>
+    <rect class="bar-planned" x="138.33" y="278.30" width="28" height="21.70" rx="3" />
+    <rect class="bar-actual" x="170.33" y="287.42" width="28" height="12.58" rx="3" />
+    <text class="chart-value" x="152.33" y="271.30" text-anchor="middle">20.67</text>
+    <text class="chart-value" x="184.33" y="280.42" text-anchor="middle">11.98</text>
+    <rect class="bar-planned" x="275.00" y="248.16" width="28" height="51.84" rx="3" />
+    <rect class="bar-actual" x="307.00" y="258.53" width="28" height="41.47" rx="3" />
+    <text class="chart-value" x="289.00" y="241.16" text-anchor="middle">49.37</text>
+    <text class="chart-value" x="321.00" y="251.53" text-anchor="middle">39.50</text>
+    <rect class="bar-planned" x="411.67" y="218.00" width="28" height="82.00" rx="3" />
+    <rect class="bar-actual" x="443.67" y="255.72" width="28" height="44.28" rx="3" />
+    <text class="chart-value" x="425.67" y="211.00" text-anchor="middle">78.10</text>
+    <text class="chart-value" x="457.67" y="248.72" text-anchor="middle">42.17</text>
+    <rect class="bar-planned" x="548.33" y="204.69" width="28" height="95.31" rx="3" />
+    <rect class="bar-actual" x="580.33" y="233.81" width="28" height="66.19" rx="3" />
+    <text class="chart-value" x="562.33" y="197.69" text-anchor="middle">90.77</text>
+    <text class="chart-value" x="594.33" y="226.81" text-anchor="middle">63.04</text>
+    <rect class="bar-planned" x="685.00" y="159.72" width="28" height="140.28" rx="3" />
+    <rect class="bar-actual" x="717.00" y="225.51" width="28" height="74.49" rx="3" />
+    <text class="chart-value" x="699.00" y="152.72" text-anchor="middle">133.60</text>
+    <text class="chart-value" x="731.00" y="218.51" text-anchor="middle">70.94</text>
+    <rect class="bar-planned" x="821.67" y="118.77" width="28" height="181.23" rx="3" />
+    <rect class="bar-actual" x="853.67" y="224.46" width="28" height="75.54" rx="3" />
+    <text class="chart-value" x="835.67" y="111.77" text-anchor="middle">172.60</text>
+    <text class="chart-value" x="867.67" y="217.46" text-anchor="middle">71.94</text>
   </g>
   <g text-anchor="middle">
     <text x="168.33" y="326" text-anchor="middle">11/10</text>
@@ -206,61 +206,60 @@ em que: - \(H_r^{\text{integrante}}\): esforço real do integrante, em horas, no
     <text x="485" y="367">Real</text>
   </g>
 </svg>
-<figcaption>Esforço acumulado da equipe em cada corte. Outubro: CSV e planilha E1. Novembro: <code>2026-11-08_recursos-custos.csv</code> e <code>2026-11-15_recursos-custos.csv</code> (Hp = baseline E1 de 78,10 h; planejamento pós-19/10 zerado). Fonte do registro: <code>2026-11-16_registro-horas.csv</code>.</figcaption>
+<figcaption>Esforço acumulado da equipe em cada corte. Outubro: CSV e planilha E1. Novembro: <code>2026-11-08_recursos-custos.csv</code> e <code>2026-11-15_recursos-custos.csv</code> (Hp = E1 78,10 h + horas do Planejamento E2 nos milestones F3 e F3+F2). Fonte do registro: <code>2026-11-16_registro-horas.csv</code>.</figcaption>
 </figure>
 
 <figure id="grafico-desvio-participacao" class="psm-chart">
 <svg viewBox="0 0 960 400" role="img" aria-labelledby="recursos-indicadores-title recursos-indicadores-desc">
   <title id="recursos-indicadores-title">Desvio do esforço e participação mínima por recorte</title>
-  <desc id="recursos-indicadores-desc">Desvio percentual: −42,0%, −20,0%, −46,0%, −30,6%, −9,2% e −7,9% nos recortes de 11, 18, 25 e 26 de outubro e 08 e 15 de novembro. Participação mínima: 2,8%, 11,0%, 10,3%, 10,04%, 8,9% e 8,8%.</desc>
+  <desc id="recursos-indicadores-desc">Desvio percentual: −42,0%, −20,0%, −46,0%, −30,6%, −46,9% e −58,3% nos recortes de 11, 18, 25 e 26 de outubro e 08 e 15 de novembro. Participação mínima: 2,8%, 11,0%, 10,3%, 10,04%, 8,9% e 8,8%.</desc>
   <g class="chart-grid">
     <line x1="90" y1="90" x2="920" y2="90" />
-    <line x1="90" y1="150" x2="920" y2="150" />
-    <line x1="90" y1="150.00" x2="920" y2="150.00" />
-    <line x1="90" y1="270" x2="920" y2="270" />
+    <line x1="90" y1="136.67" x2="920" y2="136.67" />
+    <line x1="90" y1="230.00" x2="920" y2="230.00" />
     <line x1="90" y1="300" x2="920" y2="300" />
   </g>
   <g class="chart-axis">
     <line x1="90" y1="90" x2="90" y2="300" />
-    <line x1="90" y1="150.00" x2="920" y2="150.00" />
+    <line x1="90" y1="136.67" x2="920" y2="136.67" />
     <line x1="90" y1="300" x2="920" y2="300" />
   </g>
   <g text-anchor="end">
     <text x="80" y="94">20%</text>
-    <text x="80" y="154.00">0%</text>
-    <text x="80" y="274">−40%</text>
-    <text x="80" y="304">−50%</text>
+    <text x="80" y="140.67">0%</text>
+    <text x="80" y="234">−40%</text>
+    <text x="80" y="304">−70%</text>
   </g>
   <text x="18" y="205" transform="rotate(-90 18 205)">Percentual</text>
-  <path class="line-deviation" d="M 168.33 276.00 L 305.00 210.00 L 441.67 288.00 L 578.33 241.80 L 715.00 177.60 L 851.67 173.70" />
-  <path class="line-participation" d="M 168.33 141.60 L 305.00 117.00 L 441.67 119.10 L 578.33 119.88 L 715.00 123.30 L 851.67 123.60" />
+  <path class="line-deviation" d="M 168.33 234.67 L 305.00 183.33 L 441.67 244.00 L 578.33 208.07 L 715.00 246.10 L 851.67 272.70" />
+  <path class="line-participation" d="M 168.33 130.13 L 305.00 111.00 L 441.67 112.63 L 578.33 113.24 L 715.00 115.90 L 851.67 116.13" />
   <g>
-    <circle class="point-deviation" cx="168.33" cy="276.00" r="6" />
-    <circle class="point-participation" cx="168.33" cy="141.60" r="6" />
-    <circle class="point-deviation" cx="305.00" cy="210.00" r="6" />
-    <circle class="point-participation" cx="305.00" cy="117.00" r="6" />
-    <circle class="point-deviation" cx="441.67" cy="288.00" r="6" />
-    <circle class="point-participation" cx="441.67" cy="119.10" r="6" />
-    <circle class="point-deviation" cx="578.33" cy="241.80" r="6" />
-    <circle class="point-participation" cx="578.33" cy="119.88" r="6" />
-    <circle class="point-deviation" cx="715.00" cy="177.60" r="6" />
-    <circle class="point-participation" cx="715.00" cy="123.30" r="6" />
-    <circle class="point-deviation" cx="851.67" cy="173.70" r="6" />
-    <circle class="point-participation" cx="851.67" cy="123.60" r="6" />
+    <circle class="point-deviation" cx="168.33" cy="234.67" r="6" />
+    <circle class="point-participation" cx="168.33" cy="130.13" r="6" />
+    <circle class="point-deviation" cx="305.00" cy="183.33" r="6" />
+    <circle class="point-participation" cx="305.00" cy="111.00" r="6" />
+    <circle class="point-deviation" cx="441.67" cy="244.00" r="6" />
+    <circle class="point-participation" cx="441.67" cy="112.63" r="6" />
+    <circle class="point-deviation" cx="578.33" cy="208.07" r="6" />
+    <circle class="point-participation" cx="578.33" cy="113.24" r="6" />
+    <circle class="point-deviation" cx="715.00" cy="246.10" r="6" />
+    <circle class="point-participation" cx="715.00" cy="115.90" r="6" />
+    <circle class="point-deviation" cx="851.67" cy="272.70" r="6" />
+    <circle class="point-participation" cx="851.67" cy="116.13" r="6" />
   </g>
   <g class="chart-value" text-anchor="middle">
-    <text x="168.33" y="264.00">−42.0%</text>
-    <text x="168.33" y="129.60">2.8%</text>
-    <text x="305.00" y="198.00">−20.0%</text>
-    <text x="305.00" y="105.00">11.0%</text>
-    <text x="441.67" y="276.00">−46.0%</text>
-    <text x="441.67" y="107.10">10.3%</text>
-    <text x="578.33" y="229.80">−30.6%</text>
-    <text x="578.33" y="107.88">10.0%</text>
-    <text x="715.00" y="165.60">−9.2%</text>
-    <text x="715.00" y="111.30">8.9%</text>
-    <text x="851.67" y="161.70">−7.9%</text>
-    <text x="851.67" y="111.60">8.8%</text>
+    <text x="168.33" y="222.67">−42.0%</text>
+    <text x="168.33" y="118.13">2.8%</text>
+    <text x="305.00" y="171.33">−20.0%</text>
+    <text x="305.00" y="99.00">11.0%</text>
+    <text x="441.67" y="232.00">−46.0%</text>
+    <text x="441.67" y="100.63">10.3%</text>
+    <text x="578.33" y="196.07">−30.6%</text>
+    <text x="578.33" y="101.24">10.0%</text>
+    <text x="715.00" y="234.10">−46.9%</text>
+    <text x="715.00" y="103.90">8.9%</text>
+    <text x="851.67" y="260.70">−58.3%</text>
+    <text x="851.67" y="104.13">8.8%</text>
   </g>
   <g text-anchor="middle">
     <text x="168.33" y="326">11/10</text>
@@ -277,7 +276,7 @@ em que: - \(H_r^{\text{integrante}}\): esforço real do integrante, em horas, no
     <text x="488" y="368">Participação mínima</text>
   </g>
 </svg>
-<figcaption>Desvio = (Hr − Hp) / Hp. Participação mínima = menor parcela individual do esforço real. Cortes de novembro: Dante com 8,9% (08/11) e 8,8% (15/11), abaixo do limiar de 10%. Fontes: CSV de recursos em <code>gestao-psm/</code>.</figcaption>
+<figcaption>Desvio = (Hr − Hp) / Hp. Participação mínima = menor parcela individual do esforço real. Cortes de novembro: Dante com 8,9% (08/11) e 8,8% (15/11), abaixo do limiar de 10%; o desvio negativo aumenta porque o Hp passa a incluir o Planejamento E2. Fontes: CSV de recursos em <code>gestao-psm/</code>.</figcaption>
 </figure>
 
 ## Necessidade 2: Precisão e viabilidade das estimativas em nível de funcionalidade
@@ -330,9 +329,10 @@ flowchart BT
 | Artefato | Papel |
 |---|---|
 | `gestao-psm/2026-10-*_recursos-custos.csv` e `2026-11-*_recursos-custos.csv` | Cortes oficiais de medição |
-| `gestao-psm/2026-11-16_registro-horas.csv` | Registro bruto de horas (fonte dos cortes de novembro) |
+| `gestao-psm/2026-11-16_registro-horas.csv` | Registro bruto de horas (fonte de \(H_r\) nos cortes de novembro) |
 | `gestao-psm/recursos-custos.csv` | Consolidado do último corte |
-| Planilha de horas | Coleta bruta de \(H_r\) e planejamento de \(H_p\) |
+| [Planejamento E2](planejamento-e2.md) | Fonte de \(H_p\) da Entrega 2 (156,5 h; R$ 5.477,50 a R$ 35,00/h) |
+| Planilha de horas | Coleta bruta de \(H_r\) e planejamento E1 de \(H_p\) |
 | [Organização no GitHub](github-organizacao.md) | Campos de esforço e custo no Project |
 | [Retrospectiva E1](../retrospectiva-e1.md) | Critério de participação inferior a 10% |
 

@@ -114,7 +114,7 @@ Na Entrega 2, a medição PSM mantém os papéis de coletor e redator por catego
 
 | Categoria | Dupla | Fonte primária na E2 | Artefato do corte |
 |---|---|---|---|
-| Recursos e custos | A | Registro de horas (`2026-11-16_registro-horas.csv`) e planejamento E1 (Hp baseline 78,10 h; semanas pós-19/10 zeradas na planilha) | `2026-11-08_recursos-custos.csv`, `2026-11-15_recursos-custos.csv` |
+| Recursos e custos | A | Registro de horas (`2026-11-16_registro-horas.csv`); Hp acumulado = E1 (78,10 h) + horas do [Planejamento E2](gestao-psm/planejamento-e2.md) nos milestones vencidos até o corte (F3 em 08/11; F3+F2 em 15/11), com rateio igual entre assignees das issues | `2026-11-08_recursos-custos.csv`, `2026-11-15_recursos-custos.csv` |
 | Calendário e progresso | C | Issues do milestone F3 (e, no agregado, F2 e PC2): data de fechamento versus prazo e data do corte | `2026-11-08_calendario-progresso.csv`, `2026-11-15_calendario-progresso.csv` |
 | Desempenho dos processos | B | Contagem de defeitos nas revisões da Fase 3 e do artigo v2 (issue `#80`) | Ainda sem CSV de corte E2 publicado; a série E1 permanece em `desempenho-processos.csv` |
 
@@ -167,15 +167,15 @@ em que \(T_c\) é o número de tarefas concluídas no prazo e \(T_p\) é o núme
 
 | Categoria | Corte | Indicador | Decisão | Arquivo |
 |---|---|---|---|---|
-| Recursos e custos | 08/11 | Desvio −9,2%; participação mínima 8,9% (Dante) | Acompanhar Dante (&lt;10%); Hp = baseline E1 (78,10 h) | [`2026-11-08_recursos-custos.csv`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/blob/main/gestao-psm/2026-11-08_recursos-custos.csv) |
-| Recursos e custos | 15/11 | Desvio −7,9%; participação mínima 8,8% (Dante) | Manter acompanhamento; atualizar planejamento pós-E1 (zerado na planilha) | [`2026-11-15_recursos-custos.csv`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/blob/main/gestao-psm/2026-11-15_recursos-custos.csv) |
+| Recursos e custos | 08/11 | Desvio −46,9%; participação mínima 8,9% (Dante); Hp 133,60 h (E1 + F3) | Acompanhar Dante (&lt;10%) e subutilização agregada frente ao Planejamento E2 | [`2026-11-08_recursos-custos.csv`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/blob/main/gestao-psm/2026-11-08_recursos-custos.csv) |
+| Recursos e custos | 15/11 | Desvio −58,3%; participação mínima 8,8% (Dante); Hp 172,60 h (E1 + F3 + F2) | Manter acompanhamento; Hr ainda reflete poucos lançamentos após 09/11 | [`2026-11-15_recursos-custos.csv`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/blob/main/gestao-psm/2026-11-15_recursos-custos.csv) |
 | Calendário e progresso | 08/11 | ICP 0% (0/14 F3); *throughput* 0; WIP 1 | Replanejamento da Reunião 04 (07/11); proposta de redistribuição da Dupla C | [`2026-11-08_calendario-progresso.csv`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/blob/main/gestao-psm/2026-11-08_calendario-progresso.csv) |
 | Calendário e progresso | 15/11 | ICP 42,9% (6/14 F3 fechadas até 15/11); 0% no prazo original | Sem alteração dos prazos originais; priorizar `#61` e `#69` | [`2026-11-15_calendario-progresso.csv`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/blob/main/gestao-psm/2026-11-15_calendario-progresso.csv) |
 | Desempenho dos processos | E2 | Sem CSV de corte publicado | Aguardar contagem na issue `#80` (E2-P3) | - |
 
 Gráficos por categoria: [esforço acumulado](gestao-psm/recursos-e-custos.md#grafico-esforco-acumulado), [desvio e participação](gestao-psm/recursos-e-custos.md#grafico-desvio-participacao), [ICP](gestao-psm/calendario-e-progresso.md#grafico-icp), [taxa de correção](gestao-psm/desempenho-dos-processos.md#grafico-taxa-correcao) e [densidade de defeitos](gestao-psm/desempenho-dos-processos.md#grafico-densidade).
 
-Os dados brutos permanecem na pasta [`gestao-psm/`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/tree/main/gestao-psm). A [Retrospectiva E1](retrospectiva-e1.md) vincula ações corretivas a limiares explícitos: participação inferior a 10% e ICP inferior a 70%. O registro bruto de horas da E2 está em [`2026-11-16_registro-horas.csv`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/blob/main/gestao-psm/2026-11-16_registro-horas.csv).
+Os dados brutos permanecem na pasta [`gestao-psm/`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/tree/main/gestao-psm). A [Retrospectiva E1](retrospectiva-e1.md) vincula ações corretivas a limiares explícitos: participação inferior a 10% e ICP inferior a 70%. O registro bruto de horas da E2 está em [`2026-11-16_registro-horas.csv`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/blob/main/gestao-psm/2026-11-16_registro-horas.csv). O esforço planejado da Entrega 2 (156,5 h) está no [Planejamento E2](gestao-psm/planejamento-e2.md).
 
 ## Referências
 
