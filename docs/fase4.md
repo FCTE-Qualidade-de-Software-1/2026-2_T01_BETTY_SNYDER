@@ -38,6 +38,10 @@ Três sessões com consentimento (TCLE) e gravação de tela e áudio:
 
 **Agregados do Grupo B.** Média de T<sub>rf</sub> = 75,0% (faixa alvo). T<sub>ct</sub> = 100% nos dois participantes. Mediana aproximada de T<sub>exec</sub> ≈ 32 s (faixa excelente).
 
+![Tempo por tarefa (T_exec): Grupo A (PA01) e Grupo B (média PB01 e PB02), com faixa alvo de 2 a 5 min](assets/grafico_texec_tarefas_interacao.png)
+
+*Figura. Tempo por tarefa alinhado semanticamente (criar conta, criar baralho, adicionar cartões, estudar, sincronizar). Grupo A: PA01, rodada 1. Grupo B: média de PB01 e PB02 (tempos remapeados para Etapa 4). Fonte: `M-INT_tarefas.csv`. A faixa sombreada é o alvo da Fase 2 (2 a 5 min); valores abaixo de 2 min estão na faixa excelente.*
+
 ### Análise
 
 | Questão | Evidência | Resposta |

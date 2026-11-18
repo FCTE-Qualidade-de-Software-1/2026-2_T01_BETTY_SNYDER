@@ -39,6 +39,12 @@ Esta página consolida as métricas de Capacidade de interação a partir das fi
 | PB02 | 83,3% | Alvo | 100% (excelente) | 25 s | Excelente |
 | Agregado B | 75,0% (média T<sub>rf</sub>) | Alvo | 100% | ~32 s | Excelente |
 
+### Tempo por tarefa (T<sub>exec</sub>)
+
+![Tempo por tarefa (T_exec): Grupo A (PA01) e Grupo B (média PB01 e PB02)](../../assets/grafico_texec_tarefas_interacao.png)
+
+Barras agrupadas com a faixa alvo de 2 a 5 min da Fase 2. Grupo A: PA01, rodada 1 (A1 a A5). Grupo B: média de PB01 e PB02, com tempos remapeados para Etapa 4 e alinhados às mesmas tarefas semânticas (criar conta, criar baralho, adicionar cartões, estudar, sincronizar). Cópia do arquivo também em `docs/avaliacao/dados/grafico_texec_tarefas_interacao.png`.
+
 ## 3. Respostas a Q1 a Q3 e hipóteses
 
 | Questão | Evidência | Resposta indicativa |
