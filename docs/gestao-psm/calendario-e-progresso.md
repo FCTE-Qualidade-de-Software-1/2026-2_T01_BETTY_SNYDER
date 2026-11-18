@@ -117,6 +117,7 @@ em que: - \(\sum \text{itens concluídos}\): quantidade de *work items* concluí
 | 19/10 (PC1) | ICP 100% (1/1) | Apresentação realizada; amostra de um item |
 | 25/10 | ICP 40,0% (6/15) | Redistribuir 9 restantes |
 | 08/11 (E2) | ICP 0% (0/14); *throughput* 0 por semana; WIP 1 | Ver [Corte de 08/11](#corte-0811) |
+| 15/11 (E2) | ICP 42,9% (6/14 F3 fechadas até 15/11); 0 no prazo original | Ver [Corte de 15/11](#corte-1511) |
 
 ### Corte de 08/11 (E2) { #corte-0811 }
 
@@ -144,24 +145,41 @@ Primeiro corte da E2 (issue E2-P2). Fonte: Project `BETTY SNYDER` (#40), com os 
 3. Se a coleta não couber até 13/11, levar à Reunião 05 (12/11) a decisão de cortes de escopo, conforme a seção de riscos do planejamento.
 4. Cada responsável move a issue para "Em andamento" ao começar, para que o WIP do próximo corte seja medido no dia.
 
+
+### Corte de 15/11 (E2) { #corte-1511 }
+
+Segundo corte da E2 (issue E2-P2). Fonte: issues do milestone F3 no GitHub, cruzadas com os prazos de [`2026-11-08_calendario-progresso.csv`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/blob/main/gestao-psm/2026-11-08_calendario-progresso.csv). Arquivo: [`gestao-psm/2026-11-15_calendario-progresso.csv`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/blob/main/gestao-psm/2026-11-15_calendario-progresso.csv).
+
+| Medida | Valor | Como foi obtida |
+|---|---|---|
+| \(T_p\) | 14 | Mesmas issues do marco F3 (E2-00 a E2-40) |
+| \(T_c\) (fechadas até 15/11) | 6 | Issues `#48`, `#50`, `#51`, `#58`, `#59` e `#60` fechadas até 15/11 |
+| ICP (fechadas / comprometidas) | 42,9% | \(T_c / T_p\); nenhuma das 6 fechadas cumpriu o prazo original de 05 a 08/11 |
+| ICP no prazo original | 0% (0/14) | `concluida_no_prazo_original = nao` em todas as linhas do CSV |
+| Escopo F3+F2+PC2 até 15/11 | 23,1% (6/26) | Seis fechadas até 15/11 entre 26 issues desses milestones |
+
+**Interpretação.** Em relação a 08/11 (ICP 0%), seis issues do plano F3 foram fechadas até 15/11, elevando o indicador de fechamento para 42,9%. O atraso em relação aos prazos originais permanece: o ICP no prazo original continua 0%. Em 16/11, a maior parte das issues de F3 e F2 foi fechada no GitHub, o que deve aparecer no próximo corte (21/11), não neste.
+
+**Decisão de gestão.** Sem replanejamento formal dos prazos originais. Priorizar o fechamento da E2-40 (`#61`) e da consolidação de Flexibilidade (E2-72, `#69`), ainda abertas no milestone, e publicar os cortes PSM nas issues E2-P1 a E2-P3.
+
 ### Gráfico: conformidade de prazos por recorte { #grafico-icp }
 
 <figure class="psm-chart">
-<svg viewBox="0 0 760 380" role="img" aria-labelledby="calendario-chart-title calendario-chart-desc">
+<svg viewBox="0 0 960 380" role="img" aria-labelledby="calendario-chart-title calendario-chart-desc">
   <title id="calendario-chart-title">Índice de Conformidade de Prazos por recorte</title>
-  <desc id="calendario-chart-desc">Gráfico de linha do ICP: 56,3 por cento em 11 de outubro (9 de 16), 21,4 por cento em 18 de outubro (3 de 14), 100 por cento no Ponto de Controle 1 em 19 de outubro (1 de 1) e 40 por cento em 25 de outubro (6 de 15). A linha tracejada indica o critério de 70 por cento.</desc>
+  <desc id="calendario-chart-desc">ICP por recorte: 56,3% (9/16) em 11/10; 21,4% (3/14) em 18/10; 100% (1/1) no PC1 em 19/10; 40% (6/15) em 25/10; 0% (0/14) em 08/11; 42,9% (6/14) em 15/11. Critério: 70%.</desc>
   <g class="chart-grid">
-    <line x1="90" y1="295" x2="710" y2="295" />
-    <line x1="90" y1="238.75" x2="710" y2="238.75" />
-    <line x1="90" y1="182.5" x2="710" y2="182.5" />
-    <line x1="90" y1="126.25" x2="710" y2="126.25" />
-    <line x1="90" y1="70" x2="710" y2="70" />
+    <line x1="90" y1="295" x2="920" y2="295" />
+    <line x1="90" y1="238.75" x2="920" y2="238.75" />
+    <line x1="90" y1="182.5" x2="920" y2="182.5" />
+    <line x1="90" y1="126.25" x2="920" y2="126.25" />
+    <line x1="90" y1="70" x2="920" y2="70" />
   </g>
   <g class="chart-axis">
     <line x1="90" y1="70" x2="90" y2="295" />
-    <line x1="90" y1="295" x2="710" y2="295" />
+    <line x1="90" y1="295" x2="920" y2="295" />
   </g>
-  <line class="threshold" x1="90" y1="137.5" x2="710" y2="137.5" />
+  <line class="threshold" x1="90" y1="137.50" x2="920" y2="137.50" />
   <g text-anchor="end">
     <text x="80" y="299">0%</text>
     <text x="80" y="243">25%</text>
@@ -170,29 +188,35 @@ Primeiro corte da E2 (issue E2-P2). Fonte: Project `BETTY SNYDER` (#40), com os 
     <text x="80" y="74">100%</text>
   </g>
   <text x="19" y="195" transform="rotate(-90 19 195)">ICP</text>
-  <path class="line-icp" d="M 155 168.3 L 320 246.85 L 485 70 L 650 205" />
+  <path class="line-icp" d="M 176.67 168.33 L 310.00 246.85 L 443.33 70.00 L 576.67 205.00 L 710.00 295.00 L 843.33 198.48" />
   <g>
-    <circle class="point-icp" cx="155" cy="168.3" r="6" />
-    <circle class="point-icp" cx="320" cy="246.85" r="6" />
-    <circle class="point-icp" cx="485" cy="70" r="6" />
-    <circle class="point-icp" cx="650" cy="205" r="6" />
+    <circle class="point-icp" cx="176.67" cy="168.33" r="6" />
+    <circle class="point-icp" cx="310.00" cy="246.85" r="6" />
+    <circle class="point-icp" cx="443.33" cy="70.00" r="6" />
+    <circle class="point-icp" cx="576.67" cy="205.00" r="6" />
+    <circle class="point-icp" cx="710.00" cy="295.00" r="6" />
+    <circle class="point-icp" cx="843.33" cy="198.48" r="6" />
   </g>
   <g class="chart-value" text-anchor="middle">
-    <text x="155" y="151">56,3% (9/16)</text>
-    <text x="320" y="229">21,4% (3/14)</text>
-    <text x="485" y="51">100% (1/1)</text>
-    <text x="650" y="187">40% (6/15)</text>
+    <text x="176.67" y="154.33">56.3% (9/16)</text>
+    <text x="310.00" y="232.85">21.4% (3/14)</text>
+    <text x="443.33" y="56.00">100% (1/1)</text>
+    <text x="576.67" y="191.00">40.0% (6/15)</text>
+    <text x="710.00" y="281.00">0% (0/14)</text>
+    <text x="843.33" y="184.48">42.9% (6/14)</text>
   </g>
   <g text-anchor="middle">
-    <text x="155" y="321">11/10</text>
-    <text x="320" y="321">18/10</text>
-    <text x="485" y="321">19/10 · PC1</text>
-    <text x="650" y="321">25/10</text>
+    <text x="176.67" y="321">11/10</text>
+    <text x="310.00" y="321">18/10</text>
+    <text x="443.33" y="321">19/10 · PC1</text>
+    <text x="576.67" y="321">25/10</text>
+    <text x="710.00" y="321">08/11</text>
+    <text x="843.33" y="321">15/11</text>
   </g>
   <line class="threshold" x1="430" y1="357" x2="470" y2="357" />
   <text x="480" y="362">Critério: 70%</text>
 </svg>
-<figcaption>Valores calculados por recorte a partir de <code>gestao-psm/calendario-progresso.csv</code>. Cada fração mostra tarefas concluídas no prazo / tarefas com prazo no recorte. O resultado de 19/10 corresponde a um único item do PC1 e não deve ser comparado sem considerar o tamanho da amostra.</figcaption>
+<figcaption>Outubro: <code>calendario-progresso.csv</code>. Novembro: issues do milestone F3 em <code>2026-11-08_calendario-progresso.csv</code> e <code>2026-11-15_calendario-progresso.csv</code> (fechadas até a data do corte / 14 comprometidas). Em 15/11, nenhuma das 6 fechadas cumpriu o prazo original de 05–08/11.</figcaption>
 </figure>
 
 ## Necessidade 2: Fluxo, vazão e filas

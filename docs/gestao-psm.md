@@ -148,7 +148,10 @@ em que \(T_c\) é o número de tarefas concluídas no prazo e \(T_p\) é o núme
 | Calendário e progresso | 18/10 | ICP 21,4% (3/14) | Redistribuir | idem |
 | Calendário e progresso | 19/10 (PC1) | ICP 100% (1/1) | Apresentação realizada; amostra de um item | idem |
 | Calendário e progresso | 25/10 | ICP 40,0% (6/15) | Redistribuir 9 restantes | idem |
+| Recursos e custos | 08/11 | Desvio −9,2%; participação mínima 8,9% (Dante) | Acompanhar Dante (&lt;10%); Hp = baseline E1 | [`2026-11-08_recursos-custos.csv`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/blob/main/gestao-psm/2026-11-08_recursos-custos.csv) |
+| Recursos e custos | 15/11 | Desvio −7,9%; participação mínima 8,8% (Dante) | Manter acompanhamento; planejamento pós-E1 zerado | [`2026-11-15_recursos-custos.csv`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/blob/main/gestao-psm/2026-11-15_recursos-custos.csv) |
 | Calendário e progresso | 08/11 | ICP 0% (0/14); *throughput* 0; WIP 1 | Replanejamento da Reunião 04 (07/11); proposta de redistribuição da Dupla C | [`2026-11-08_calendario-progresso.csv`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/blob/main/gestao-psm/2026-11-08_calendario-progresso.csv) |
+| Calendário e progresso | 15/11 | ICP 42,9% (6/14 F3 até 15/11); 0 no prazo original | Sem replanejamento dos prazos originais; priorizar `#61` e `#69` | [`2026-11-15_calendario-progresso.csv`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/blob/main/gestao-psm/2026-11-15_calendario-progresso.csv) |
 
 Gráficos por categoria: [esforço acumulado](gestao-psm/recursos-e-custos.md#grafico-esforco-acumulado), [desvio e participação](gestao-psm/recursos-e-custos.md#grafico-desvio-participacao), [ICP](gestao-psm/calendario-e-progresso.md#grafico-icp), [taxa de correção](gestao-psm/desempenho-dos-processos.md#grafico-taxa-correcao) e [densidade de defeitos](gestao-psm/desempenho-dos-processos.md#grafico-densidade).
 
