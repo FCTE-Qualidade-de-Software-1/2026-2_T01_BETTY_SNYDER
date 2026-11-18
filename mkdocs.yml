@@ -31,6 +31,7 @@ nav:
   - Artigo: artigo.md
   - Gestão PSM:
       - Visão geral: gestao-psm.md
+      - Planejamento E2: gestao-psm/planejamento-e2.md
       - 1. Recursos e custos: gestao-psm/recursos-e-custos.md
       - 2. Calendário e progresso: gestao-psm/calendario-e-progresso.md
       - 3. Desempenho dos processos: gestao-psm/desempenho-dos-processos.md
