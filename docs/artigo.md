@@ -363,11 +363,11 @@ Prioridade: descoberta de “Criar baralho” e vocabulário nota/tipo/cartão. 
 
 ## VII. Conclusão
 
-Este artigo apresentou as Fases 1 a 4: requisitos, GQM, plano, execução parcial, julgamento indicativo e ação de melhoria na interface de criação de baralho. Pendências da equipe: fechar Eficiência de desempenho e Flexibilidade do PC2, ampliar entrevistas (Etapa 4) e release E2 com contribuição atualizada.
+Este artigo apresentou as Fases 1 a 4: requisitos, GQM, plano, execução parcial, julgamento indicativo e ação de melhoria na interface de criação de baralho (protótipo de alta fidelidade). Permanecem abertos, com rastreabilidade explícita na GitPage: medições de Flexibilidade (CSV), itens de desempenho no Windows, corte PSM de 21/11 e a Release E2 no GitHub. Detalhe: [Fase 4](fase4.md) e [checklist de critérios](criterios-gitpage.md).
 
 ## Declaração de Uso de Inteligência Artificial
 
-A equipe utilizou ferramentas de Inteligência Artificial (ChatGPT, Claude, Gemini, DeepSeek e Cursor) como apoio nas Entregas 1 e 2: estruturação LaTeX; revisão textual; consolidação de CSV e rascunhos das Fases 3-4 e da análise de Capacidade de interação; atas a partir de transcrições. Todo o conteúdo foi revisado pela equipe; decisões de escopo, métricas, faixas, julgamento e a ação de melhoria foram tomadas pela equipe.
+A equipe utilizou ferramentas de Inteligência Artificial (ChatGPT, Claude, Gemini, DeepSeek e Cursor) como apoio nas Entregas 1 e 2: estruturação LaTeX; revisão textual; consolidação de CSV e rascunhos das Fases 3-4 e da análise de Capacidade de interação; atas a partir de transcrições; apoio à redação e organização da GitPage (incluindo o protótipo da ação de melhoria). **Como a equipe conferiu:** cada trecho gerado ou sugerido foi confrontado com CSV, atas, protocolos e decisões de escopo já acordadas; números de medição só entram no texto quando existem no repositório; objetivos GQM, faixas, julgamento e a escolha da ação de melhoria foram decididos pela equipe. Não há emojis nem figurinhas no corpo do relatório.
 
 ## Referências
 
@@ -401,7 +401,7 @@ A equipe utilizou ferramentas de Inteligência Artificial (ChatGPT, Claude, Gemi
 
 ## Apêndice A: Tabela de Contribuição da Equipe
 
-*Tabela XII. Contribuição de cada integrante para a Entrega 1 (planilha de horas, registros de 07/10 a 26/10/2026; total de 63,04 horas)*
+*Tabela XII. Contribuição de cada integrante para a Entrega 1 (planilha de horas, registros de 07/10 a 26/10/2026; total de 63,04 horas; percentuais somam 100%)*
 
 | Integrante | Dupla | Atividades realizadas | Esforço (%) |
 |---|:---:|---|---:|
@@ -412,3 +412,5 @@ A equipe utilizou ferramentas de Inteligência Artificial (ChatGPT, Claude, Gemi
 | Mateus de Siqueira Silva | B | Reunião; layout e textos iniciais do artigo; estudo de Desempenho dos Processos; correções e revisão do GQM de Eficiência de desempenho | 14,28 |
 | Pedro Henrique Freire Rodrigues | A | Reuniões; termo de consentimento; métricas e níveis de Capacidade de interação; slides 9 e 10; revisão do artigo frente às pendências da Dupla A | 19,48 |
 | **Total** | | **63,04 horas registradas** | **100,00** |
+
+**Entrega 2 (transparência AG-C5).** O registro [`2026-11-16_registro-horas.csv`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/blob/main/gestao-psm/2026-11-16_registro-horas.csv) ainda concentra lançamentos da E1 e apenas 8,9 h após 26/10/2026 (Pedro e Davi). Não se publica percentual E2 completo até a equipe fechar o lançamento de horas de todos os integrantes; a Tabela XII permanece a referência quantificada (100%) disponível nesta entrega.

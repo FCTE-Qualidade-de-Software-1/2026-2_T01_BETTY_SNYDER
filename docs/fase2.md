@@ -228,3 +228,9 @@ A Figura 2 apresenta a hierarquia GQM da avaliação: os três objetivos no nív
 ## Coerência entre as Fases 1 e 2
 
 A Fase 1 delimitou o escopo, sob o ponto de vista do estudante, em quatro componentes: a interface do Anki Desktop, sua execução em Windows, macOS e Ubuntu, a instalação e o fluxo de conta e sincronização do AnkiWeb. A Fase 2 mantém nos três objetivos esse ponto de vista e a priorização da Fase 1 (Capacidade de interação com ênfase 5, as demais com 3): as questões de **Capacidade de interação** avaliam a interação com a interface e com o fluxo de conta e sincronização; as métricas de **Eficiência de desempenho** medem a execução e a fluidez do estudo; e as de **Flexibilidade** cobrem a instalação e a migração entre as três plataformas.
+
+O plano de obtenção dessas métricas está na [Fase 3](fase3.md). A execução e o julgamento estão na [Fase 4](fase4.md).
+
+## Declaração de uso de IA (F2-C9)
+
+A equipe utilizou ferramentas de Inteligência Artificial (ChatGPT, Claude, Gemini, DeepSeek e Cursor) como apoio à estruturação e revisão textual das Fases 1 e 2. O texto foi conferido e ajustado pela equipe; objetivos GQM, questões, hipóteses, métricas e faixas foram decididos pela equipe. Declaração completa (Entregas 1 e 2): [Artigo](artigo.md#declaração-de-uso-de-inteligência-artificial).

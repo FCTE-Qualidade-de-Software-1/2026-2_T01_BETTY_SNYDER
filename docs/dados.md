@@ -65,9 +65,11 @@ Exceção: `gravacoes.csv` é o índice das gravações e não segue o trio.
 | Capacidade de interação | Taprend, Tsa, Tct, Texec | [`M-INT_tarefas.csv`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/blob/main/avaliacao/dados/interacao/bruto/M-INT_tarefas.csv) | idem |
 | Capacidade de interação | Evidência de sessão | [`Entrevistas/PA01_…`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/tree/main/avaliacao/dados/interacao/bruto/Entrevistas), [`gravacoes.csv`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/blob/main/avaliacao/dados/interacao/bruto/gravacoes.csv) | - |
 | Eficiência de desempenho | T_ini, T_rev, T_sinc, CPU, RAM, … | `dados/desempenho/bruto/<métrica>_<cenário>_<execução>.*` | `dados/desempenho/consolidado/`; [análise](avaliacao/analise/desempenho.md) |
-| Flexibilidade | T_inst, T_inst_t, N_int, P_int, T_pd, T_sub | `dados/flexibilidade/bruto/<métrica>_<cenário>_<execução>.*` | `dados/flexibilidade/consolidado/` (lacunas PC2) |
+| Flexibilidade | T_inst, T_inst_t, N_int, P_int, T_pd, T_sub | `dados/flexibilidade/bruto/<métrica>_<cenário>_<execução>.*` (ainda sem arquivos de medição) | `dados/flexibilidade/consolidado/` (vazio); [análise de Flexibilidade](avaliacao/analise/flexibilidade.md) |
 
 Fluxo Capacidade de interação realizado: fichas anonimizadas → CSV bruto → `consolidado/M-INT_metricas.csv` → [análise de interação](avaliacao/analise/interacao.md) → [Fase 4](fase4.md).
+
+Fluxo Flexibilidade (pendente): protocolos publicados → CSV bruto (faltando) → consolidado (faltando) → [análise](avaliacao/analise/flexibilidade.md) → [Fase 4](fase4.md).
 
 ## Participantes e anonimização
 

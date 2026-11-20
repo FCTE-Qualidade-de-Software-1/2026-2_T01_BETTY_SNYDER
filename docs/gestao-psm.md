@@ -120,7 +120,7 @@ Na Entrega 2, a medição PSM mantém os papéis de coletor e redator por catego
 
 **Procedimento por corte.** Na data do corte, o coletor registra o CSV em `gestao-psm/`; o redator calcula desvio, participação mínima ou ICP, compara aos limiares (participação &lt; 10%; ICP &lt; 70%) e registra a decisão na página da categoria e na Tabela II abaixo. O ICP da E2 distingue (1) issues fechadas até a data do corte e (2) issues fechadas no prazo original da issue; em 08/11 e 15/11, o ICP no prazo original do marco F3 foi 0%.
 
-**Situação em 18/11/2026.** Os cortes de 08/11 e 15/11 de Recursos e de Calendário estão publicados. O corte de 21/11 e a medição de Desempenho dos processos da E2 ainda dependem do fechamento das issues `#78` a `#80`. Detalhe dos cortes: [08/11](gestao-psm/calendario-e-progresso.md#corte-0811) e [15/11](gestao-psm/calendario-e-progresso.md#corte-1511).
+**Situação em 20/11/2026.** Os cortes de 08/11 e 15/11 de Recursos e de Calendário estão publicados. O corte de **21/11/2026** ainda não ocorreu (data futura em relação a este registro). A medição de Desempenho dos processos da E2 permanece sem CSV de corte (issue `#80`). Não se inventam indicadores: na data do corte, a Dupla responsável publica o CSV em `gestao-psm/` e atualiza a Tabela II. Detalhe dos cortes já feitos: [08/11](gestao-psm/calendario-e-progresso.md#corte-0811) e [15/11](gestao-psm/calendario-e-progresso.md#corte-1511).
 
 ## Série histórica de medições
 
@@ -171,7 +171,8 @@ em que \(T_c\) é o número de tarefas concluídas no prazo e \(T_p\) é o núme
 | Recursos e custos | 15/11 | Desvio −58,3%; participação mínima 8,8% (Dante); Hp 172,60 h (E1 + F3 + F2) | Manter acompanhamento; Hr ainda reflete poucos lançamentos após 09/11 | [`2026-11-15_recursos-custos.csv`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/blob/main/gestao-psm/2026-11-15_recursos-custos.csv) |
 | Calendário e progresso | 08/11 | ICP 0% (0/14 F3); *throughput* 0; WIP 1 | Replanejamento da Reunião 04 (07/11); proposta de redistribuição da Dupla C | [`2026-11-08_calendario-progresso.csv`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/blob/main/gestao-psm/2026-11-08_calendario-progresso.csv) |
 | Calendário e progresso | 15/11 | ICP 42,9% (6/14 F3 fechadas até 15/11); 0% no prazo original | Sem alteração dos prazos originais; priorizar `#61` e `#69` | [`2026-11-15_calendario-progresso.csv`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/blob/main/gestao-psm/2026-11-15_calendario-progresso.csv) |
-| Desempenho dos processos | E2 | Sem CSV de corte publicado | Aguardar contagem na issue `#80` (E2-P3) | - |
+| Desempenho dos processos | E2 (até 20/11) | Sem CSV de corte publicado | Aguardar contagem na issue `#80` (E2-P3); série E1 permanece válida | [`desempenho-processos.csv`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/blob/main/gestao-psm/desempenho-processos.csv) (E1) |
+| Recursos / Calendário | 21/11 | Pendente (corte ainda não vencido em 20/11) | Executar procedimento de corte na data | A criar: `2026-11-21_*.csv` |
 
 Gráficos por categoria: [esforço acumulado](gestao-psm/recursos-e-custos.md#grafico-esforco-acumulado), [desvio e participação](gestao-psm/recursos-e-custos.md#grafico-desvio-participacao), [ICP](gestao-psm/calendario-e-progresso.md#grafico-icp), [taxa de correção](gestao-psm/desempenho-dos-processos.md#grafico-taxa-correcao) e [densidade de defeitos](gestao-psm/desempenho-dos-processos.md#grafico-densidade).
 

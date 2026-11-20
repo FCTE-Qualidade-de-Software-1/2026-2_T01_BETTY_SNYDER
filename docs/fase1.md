@@ -1,8 +1,10 @@
 # Fase 1: Estabelecer os requisitos de avaliação
 
-Esta página reproduz a Seção III do [artigo da Entrega 1](artigo.md), entregue em 26/10/2026.
+Esta página reproduz a Seção III do [artigo](artigo.md) (requisitos de avaliação). A rubrica detalhada da Fase 1 no PDF do trabalho remete ao Moodle; o conteúdo abaixo cobre propósito, partes interessadas, produto, modelo ISO/IEC 25010:2023, priorização, escopo e ODS.
 
 > As referências entre colchetes seguem a numeração do [artigo](artigo.md#referencias).
+
+Continuidade: [Fase 2](fase2.md) (GQM) · [Fase 3](fase3.md) (plano) · [Fase 4](fase4.md) (execução e julgamento). Declaração de uso de IA: [Artigo](artigo.md#declaração-de-uso-de-inteligência-artificial).
 
 
 ## Propósito da Avaliação e Uso Pretendido

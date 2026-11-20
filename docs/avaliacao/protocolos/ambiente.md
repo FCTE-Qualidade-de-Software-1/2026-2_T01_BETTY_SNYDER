@@ -34,10 +34,16 @@ Definir qual máquina será utilizada como referência para cada sistema operaci
 | Software | Versão / Registro |
 |---|---|
 | Anki Desktop | 26.09.3 |
-| AnkiWeb | Registrar a data de acesso |
+| AnkiWeb | Data de acesso registrada em cada ficha de sessão (PB01/PB02/PA01 em 13–14/11/2026) |
 
-Para o AnkiWeb, registrar a data em que a plataforma foi acessada durante a avaliação.
+## 5. Massa de dados e perfil exigido (F3-C2)
 
-## 5. Observações
+| Frente | Massa de dados | Justificativa | Conhecimento exigido |
+| --- | --- | --- | --- |
+| Eficiência de desempenho | Coleções sintéticas (ex.: 10k, 50k, 100k cards) geradas com o pacote `anki` | Exercer capacidade e utilização de recursos sob carga próxima a coleções grandes reais; alinhar às métricas de vazão e RAM da [Fase 2](../../fase2.md) | Avaliador com informática intermediária e familiaridade com o coletor em `avaliacao/scripts/` |
+| Flexibilidade | Coleção padrão de migração M1/M2 (protocolo) | Medir T<sub>pd</sub> e T<sub>sub</sub> com conteúdo conhecido | Avaliador com informática básica e o roteiro do protocolo |
+| Capacidade de interação | Baralhos compartilhados / tarefas do instrumento unificado | Exercícios de reconhecimento e estudo sem depender de coleção do participante | Participante: informática básica; sem exigência de domínio de repetição espaçada (Fase 1). Facilitador: treinado no [Pré-entrevista](pre-entrevista-participante.md) |
 
-Registrar eventuais diferenças de configuração entre as máquinas e condições relevantes para a execução dos testes.
+## 6. Observações
+
+Diferenças relevantes: notebooks Ubuntu de referência com 8 GB de RAM condicionam a interpretação da faixa de memória em Eficiência de desempenho; o cold start no Windows/macOS medido como *launcher* não é comparável 1:1 ao TTI do Ubuntu (ver [análise de desempenho](../analise/desempenho.md)).

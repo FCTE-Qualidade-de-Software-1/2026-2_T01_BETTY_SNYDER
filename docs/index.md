@@ -7,9 +7,19 @@
 Turma T01 · Semestre 2026-2
 
 [Ver artigo](artigo.md){ .md-button .md-button--primary }
-[Ver atas](atas/reuniao-01-ata.md){ .md-button }
+[Release E1](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/releases/tag/Entrega1){ .md-button }
+[Repositório](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER){ .md-button }
 
 </div>
+
+## Percurso da avaliação (Fases 1 a 4)
+
+1. **[Fase 1](fase1.md):** requisitos, propósito e modelo ISO/IEC 25010:2023.  
+2. **[Fase 2](fase2.md):** especificação GQM (objetivos, questões, hipóteses, métricas e níveis).  
+3. **[Fase 3](fase3.md):** plano, protocolos, ambiente e cronograma.  
+4. **[Fase 4](fase4.md):** coleta, julgamento, sugestões e [ação de melhoria (protótipo)](prototipo-acao-melhoria.md).  
+
+Checklist enunciado × GitPage: [criterios-gitpage.md](criterios-gitpage.md). Releases: [página de releases](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/releases) (E1 publicada; E2 a criar na entrega final).
 
 ## Sobre o projeto
 

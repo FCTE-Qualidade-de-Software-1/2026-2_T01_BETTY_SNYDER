@@ -8,7 +8,7 @@ Esta página registra a obtenção dos dados, a análise GQM frente às questõe
 | --- | --- | --- | --- |
 | Capacidade de interação | [`Entrevistas/`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/tree/main/avaliacao/dados/interacao/bruto/Entrevistas) (PA01, PB01, PB02), [`gravacoes/`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/tree/main/avaliacao/dados/interacao/bruto/gravacoes), CSV `M-INT-*` | [`M-INT_metricas.csv`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/blob/main/avaliacao/dados/interacao/consolidado/M-INT_metricas.csv); [análise](avaliacao/analise/interacao.md) | Três participantes; um iniciante (PA01); métricas T<sub>rf</sub>, T<sub>aprend</sub>, T<sub>sa</sub>, T<sub>ct</sub> e T<sub>exec</sub> calculadas |
 | Eficiência de desempenho | CSV e gráficos em `docs/avaliacao/dados/desempenho/bruto/` e `docs/avaliacao/dados/` | [análise de desempenho](avaliacao/analise/desempenho.md) | Medições em Ubuntu, Windows 11 e macOS; no PC2 restam itens “refazer” e medições incompletas no Windows |
-| Flexibilidade | `avaliacao/dados/flexibilidade/` (apenas README e `.gitkeep`) | Seção Flexibilidade abaixo | Sem CSV de instalação, checklist ou migração e sem gráficos de instalação no repositório |
+| Flexibilidade | `avaliacao/dados/flexibilidade/` (apenas README e `.gitkeep`) | [análise de Flexibilidade](avaliacao/analise/flexibilidade.md); seção abaixo | Sem CSV de instalação, checklist ou migração e sem gráficos de instalação no repositório (F4-C1/C2 incompletos nesta frente) |
 
 ---
 
@@ -109,15 +109,17 @@ Valores tomados de [desempenho.md](avaliacao/analise/desempenho.md). As faixas a
 
 ## Flexibilidade
 
-### Coleta
+Detalhamento do estado e do impacto no GQM: [análise de Flexibilidade](avaliacao/analise/flexibilidade.md).
 
-Os protocolos de [instalação](avaliacao/protocolos/flexibilidade-instalacao.md), [checklist](avaliacao/protocolos/flexibilidade-checklist.md) e [migração](avaliacao/protocolos/flexibilidade-migracao.md) preveem, em laboratório (Dupla C), as métricas T<sub>inst</sub>, T<sub>inst_t</sub>, N<sub>int</sub>, P<sub>int</sub>, T<sub>pd</sub> e T<sub>sub</sub> nas máquinas de referência Windows, macOS e Ubuntu.
+### Coleta (F4-C1 / F4-C2)
 
-Em `avaliacao/dados/flexibilidade/bruto/` e `avaliacao/dados/flexibilidade/consolidado/` existem apenas README e `.gitkeep`. Não há CSV nomeados (`T_inst_*`, `P_int_*`, `M-FLEX-*` ou equivalentes), nem gráficos de instalação, nem página `docs/avaliacao/analise/flexibilidade.md`.
+Os protocolos de [instalação](avaliacao/protocolos/flexibilidade-instalacao.md), [checklist](avaliacao/protocolos/flexibilidade-checklist.md) e [migração](avaliacao/protocolos/flexibilidade-migracao.md) preveem, em laboratório (Dupla C), as métricas T<sub>inst</sub>, T<sub>inst_t</sub>, N<sub>int</sub>, P<sub>int</sub>, T<sub>pd</sub> e T<sub>sub</sub> nas máquinas de referência Windows, macOS e Ubuntu ([Ambiente](avaliacao/protocolos/ambiente.md)).
+
+Em `avaliacao/dados/flexibilidade/bruto/` e `avaliacao/dados/flexibilidade/consolidado/` existem apenas README e `.gitkeep`. Não há CSV nomeados (`T_inst_*`, `P_int_*`, `M-FLEX-*` ou equivalentes) nem gráficos de instalação. **Consequência:** a obtenção de medidas desta frente não cumpre integralmente o plano da Fase 3 (F4-C1) e a rastreabilidade bruto → métrica fica incompleta (F4-C2).
 
 ### Resultados
 
-**Quantitativos.** Nenhum valor de T<sub>inst</sub>, T<sub>inst_t</sub>, N<sub>int</sub>, P<sub>int</sub>, T<sub>pd</sub> ou T<sub>sub</sub> está publicado no repositório; portanto não há tabela de faixas da Fase 2 aplicável nesta página.
+**Quantitativos.** Nenhum valor de T<sub>inst</sub>, T<sub>inst_t</sub>, N<sub>int</sub>, P<sub>int</sub>, T<sub>pd</sub> ou T<sub>sub</sub> está publicado; as faixas da Tabela XI da [Fase 2](fase2.md) não se aplicam.
 
 **Qualitativos (Parte C das entrevistas; não substituem o laboratório).**
 
@@ -127,37 +129,57 @@ Em `avaliacao/dados/flexibilidade/bruto/` e `avaliacao/dados/flexibilidade/conso
 | PB02 (Windows) | Instalação “tranquila” e “intuitiva”; sem passo além do instalador. |
 | PA01 (Grupo A) | Anki já instalado pela equipe antes da sessão; perguntas de instalabilidade do Grupo B marcadas N/A. |
 
-### Análise
+### Análise (F4-C3)
 
 | Questão / hipótese (Fase 2) | Situação nesta página |
 | --- | --- |
-| **Q1 / H1** (instalabilidade: T<sub>inst</sub>, T<sub>inst_t</sub>, N<sub>int</sub>) | Sem julgamento quantitativo: faltam CSV de instalação nos três SOs e gráficos de instalação. |
-| **Q2 / H2** (adaptabilidade: P<sub>int</sub> 10 critérios) | Sem julgamento quantitativo: falta o checklist pontuado por SO. |
-| **Q3 / H3** (substituibilidade: T<sub>pd</sub>, T<sub>sub</sub>) | Sem julgamento quantitativo: faltam CSV de migração M1/M2. |
+| **Q1 / H1** (instalabilidade) | Sem julgamento quantitativo |
+| **Q2 / H2** (adaptabilidade) | Sem julgamento quantitativo |
+| **Q3 / H3** (substituibilidade) | Sem julgamento quantitativo |
+| **Objetivo G (Flexibilidade)** | Sem resposta numérica nesta entrega |
 
-Arquivos esperados para fechar o julgamento: CSV em `avaliacao/dados/flexibilidade/bruto/` (instalação, checklist e migração), consolidado com faixas da Tabela XI da Fase 2, e gráficos de instalação citados no cronograma da [Fase 3](fase3.md). Até a publicação desses artefatos, as questões de Flexibilidade permanecem sem resposta numérica.
+Arquivos esperados para fechar o julgamento: CSV em `avaliacao/dados/flexibilidade/bruto/`, consolidado com faixas da Tabela XI e gráficos citados no cronograma da [Fase 3](fase3.md).
 
 ---
 
-## Relações entre características
+## Coerência com o propósito da Fase 1 (F4-C4)
 
-- Falhas de reconhecibilidade (T<sub>rf</sub> de PA01 = 16,7%; R1 falhou) elevam o esforço na primeira sincronização e no vocabulário nota/tipo de nota/cartão, mesmo com cold start e vazão de banco na faixa excelente em Eficiência de desempenho.
-- RAM em repouso na faixa mínimo (≈ 780–950 MB em Ubuntu e macOS) e picos de 1,33–1,51 GB sob 100k cards podem afetar a fluidez percebida em notebooks de 8 GB, o perfil da máquina Ubuntu da avaliação.
-- Sem CSV de instalação e migração no Ubuntu, não se fecha o julgamento conjunto do primeiro uso (Flexibilidade × Capacidade de interação).
+O [propósito da avaliação](fase1.md#propósito-da-avaliação-e-uso-pretendido) é **indicar pontos de melhoria** no Anki, sob o ponto de vista do estudante, para a requisitante (professora), com recomendações priorizadas para mantenedores e estudantes.
 
-## Sugestões priorizadas
-
-| Prioridade | Sugestão | Base |
+| Expectativa da Fase 1 | Resultado da Fase 4 | Atende? |
 | --- | --- | --- |
-| 1 | Tornar **Criar baralho** mais visível | T<sub>rf</sub> R1; PA01 e PB02 |
-| 2 | Glossário ou tooltips para nota, tipo de nota e cartão | Q1; respostas da Etapa 5 |
-| 3 | Revisar footprint de memória do QtWebEngine | RAM na faixa mínimo sob 100k cartões (Ubuntu 1,33 GB; macOS 1,51 GB) |
-| 4 | Publicar CSV de Flexibilidade no Ubuntu e gráficos de instalação | Arquivos ausentes em `avaliacao/dados/flexibilidade/` |
+| Identificar barreiras de uso na interface (ênfase 5) | Q1 de Capacidade de interação não atendida (T<sub>rf</sub> do iniciante 16,7%); Q2 e Q3 atendidas no escopo amostral | Sim, com limitação de n = 3 |
+| Informar comportamento de desempenho em estudo prolongado | Cold start e vazão excelentes; RAM na faixa mínimo; Windows parcial | Parcial |
+| Informar instalabilidade e migração entre SO | Sem CSV de Flexibilidade | Não (quantitativo) |
+| Fundamentar uma ação de melhoria | Protótipo de alta fidelidade para “Criar baralho” | Sim |
+
+O julgamento, portanto, cumpre o uso pretendido na característica priorizada (Capacidade de interação) e deixa explícita a lacuna de Flexibilidade e a incompletude de desempenho no Windows.
+
+## Relações entre características (Premissa 1)
+
+- **Capacidade de interação × Eficiência de desempenho.** Falhas de reconhecibilidade (T<sub>rf</sub> de PA01 = 16,7%; R1 falhou) elevam o esforço cognitivo na primeira sessão, mesmo com cold start e vazão de banco na faixa excelente. Evidência: [interacao.md](avaliacao/analise/interacao.md) e [desempenho.md](avaliacao/analise/desempenho.md).
+- **Eficiência de desempenho × uso em notebook.** RAM em repouso na faixa mínimo (≈ 780–950 MB em Ubuntu e macOS) e picos de 1,33–1,51 GB sob 100k cards podem afetar a fluidez percebida em máquinas de 8 GB (perfil Ubuntu da avaliação). Limitação: RAM do Windows ainda incompleta (só processo pai).
+- **Flexibilidade × Capacidade de interação.** Sem CSV de instalação e migração, **não** se estabelece relação quantitativa do primeiro uso entre plataformas. Os relatos qualitativos (PB01/PB02) sugerem instalação simples, mas não medem T<sub>inst</sub> nem N<sub>int</sub>. Evidência e limites: [flexibilidade.md](avaliacao/analise/flexibilidade.md).
+
+Onde os dados não permitem relação: qualquer afirmação causal entre instalabilidade Ubuntu e T<sub>rf</sub>, ou entre migração M1/M2 e T<sub>exec</sub>.
+
+## Sugestões priorizadas (F4-C5)
+
+| Prioridade | Sugestão (ação concreta) | Base |
+| --- | --- | --- |
+| 1 | Destacar **Criar baralho** na tela inicial (lista de baralhos como home) | T<sub>rf</sub> R1; PA01 e PB02 |
+| 2 | Incluir glossário ou tooltips para nota, tipo de nota e cartão | Q1; respostas da Etapa 5 |
+| 3 | Revisar footprint de memória do QtWebEngine sob coleções grandes | RAM na faixa mínimo (Ubuntu 1,33 GB; macOS 1,51 GB com 100k cards) |
+| 4 | Completar medições de Flexibilidade (CSV + gráficos) e itens “refazer” no Windows | Lacunas F4-C1/C2 nesta entrega |
 
 ## Ação de melhoria
 
 **Problema.** “Criar baralho” não é reconhecido de imediato (T<sub>rf</sub> do iniciante 16,7%; PB02 só após três tentativas).
 
-**Ação.** Protótipo de alta fidelidade com a lista de baralhos como tela inicial e destaque para **Criar Baralho**, além de tutorial introdutório guiado. Artefato publicado em [Protótipo da ação de melhoria](prototipo-acao-melhoria.md) ([abrir interativo](prototipo-interativo/index.html)).
+**Justificativa.** Prioridade 1 da tabela acima; ênfase 5 da Fase 1; evidência direta de Q1/H1.
 
-**Validação.** Nova sessão com iniciante: R1 correto e T<sub>rf</sub> ≥ 75% (alvo), ou localização espontânea em no máximo 10 s sem ajuda.
+**Ação.** Protótipo de alta fidelidade com a lista de baralhos como tela inicial e destaque para **Criar Baralho**, além de tutorial introdutório guiado. Artefato: [Protótipo da ação de melhoria](prototipo-acao-melhoria.md) ([abrir interativo](prototipo-interativo/index.html)).
+
+**Validação proposta.** Nova sessão com iniciante: R1 correto e T<sub>rf</sub> ≥ 75% (alvo), ou localização espontânea em no máximo 10 s sem ajuda.
+
+**O que a ação não cobre.** Não substitui CSV de Flexibilidade nem o fechamento das medições de desempenho no Windows.
