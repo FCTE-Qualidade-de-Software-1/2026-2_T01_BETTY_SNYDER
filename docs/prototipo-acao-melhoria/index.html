@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Usuário 1 - Anki</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <div class="desktop" id="desktop">
+      <div class="app is-maximized" id="app" data-window="main">
+        <!-- Tela principal: listagem de baralhos (substitui a tela Início) -->
+        <section class="screen screen--decks" id="screen-decks" aria-label="Listar baralhos">
+          <header class="titlebar" data-drag-window="main">
+            <img
+              class="titlebar__icon"
+              src="assets/anki-logo.png"
+              width="15"
+              height="19"
+              alt=""
+            />
+            <span class="titlebar__title">Usuário 1 - Anki</span>
+            <div class="win-controls" data-window-controls="main">
+              <button type="button" class="win-btn win-btn--min" data-win="minimize" aria-label="Minimizar" title="Minimizar">
+                <svg viewBox="0 0 10 10" aria-hidden="true"><path d="M1 5h8" /></svg>
+              </button>
+              <button type="button" class="win-btn win-btn--max" data-win="maximize" aria-label="Restaurar" title="Restaurar">
+                <svg class="icon-max" viewBox="0 0 10 10" aria-hidden="true"><rect x="1.5" y="1.5" width="7" height="7" rx="0.5" /></svg>
+                <svg class="icon-restore" viewBox="0 0 10 10" aria-hidden="true">
+                  <rect x="2.5" y="3.5" width="5.5" height="5.5" rx="0.4" />
+                  <path d="M3.5 3.5V2.2a.5.5 0 0 1 .5-.5h4.3a.5.5 0 0 1 .5.5V6.5a.5.5 0 0 1-.5.5H7.5" />
+                </svg>
+              </button>
+              <button type="button" class="win-btn win-btn--close" data-win="close" aria-label="Fechar" title="Fechar">
+                <svg viewBox="0 0 10 10" aria-hidden="true"><path d="M1.5 1.5l7 7M8.5 1.5l-7 7" /></svg>
+              </button>
+            </div>
+          </header>
+
+          <nav class="menubar" aria-label="Menu do aplicativo">
+            <button type="button" class="menubar__item" data-menu="arquivo">Arquivo</button>
+            <button type="button" class="menubar__item" data-menu="editar">Editar</button>
+            <button type="button" class="menubar__item" data-menu="exibir">Exibir</button>
+            <button type="button" class="menubar__item" data-menu="ferramentas">Ferramentas</button>
+            <button type="button" class="menubar__item" id="btn-ajuda" data-menu="ajuda">Ajuda</button>
+          </nav>
+
+          <nav class="main-nav" aria-label="Navegação principal" data-tour="nav">
+            <button type="button" class="main-nav__item is-active" data-nav="inicio">
+              Início
+            </button>
+            <button type="button" class="main-nav__item" data-nav="adicionar" id="btn-nav-adicionar">
+              Adicionar
+            </button>
+            <button type="button" class="main-nav__item" data-nav="painel">Painel</button>
+            <button type="button" class="main-nav__item" data-nav="estatisticas">
+              Estatísticas
+            </button>
+            <button type="button" class="main-nav__item" data-nav="sincronizar">
+              Sincronizar
+            </button>
+          </nav>
+
+          <div class="deck-panel" id="deck-panel" data-tour="deck-list">
+            <div class="deck-panel__header-top">
+              <span class="deck-panel__name-spacer" aria-hidden="true"></span>
+              <span class="deck-panel__cards-title">Cartões</span>
+              <span class="deck-panel__gear-spacer" aria-hidden="true"></span>
+            </div>
+            <div class="deck-panel__header">
+              <span class="col-name">Baralho</span>
+              <span class="col-new">Novos</span>
+              <span class="col-learn">A aprender</span>
+              <span class="col-review">A revisar</span>
+            </div>
+            <div class="deck-panel__divider"></div>
+            <div class="deck-panel__list" id="deck-list" role="list"></div>
+          </div>
+
+          <p class="study-summary" id="study-summary">
+            Estudado hoje: 0 cartões em 0 segundos (0 s por cartão)
+          </p>
+
+          <footer class="bottom-actions" data-tour="bottom-actions">
+            <button type="button" class="btn-pill" id="btn-obter-compartilhados">
+              Obter compartilhados
+            </button>
+            <button type="button" class="btn-pill" id="btn-criar-baralho" data-tour="criar">
+              Criar Baralho
+            </button>
+            <button type="button" class="btn-pill" id="btn-importar">Importar arquivo</button>
+          </footer>
+
+          <div class="dropdown dropdown--deck hidden" id="menu-deck" role="menu" data-tour="deck-menu">
+            <button type="button" class="dropdown__item" data-action="renomear" role="menuitem">
+              Renomear
+            </button>
+            <button type="button" class="dropdown__item" data-action="opcoes" role="menuitem">
+              Opções do baralho
+            </button>
+            <button type="button" class="dropdown__item" data-action="exportar" role="menuitem">
+              Exportar
+            </button>
+            <button type="button" class="dropdown__item" data-action="excluir" role="menuitem">
+              Excluir
+            </button>
+          </div>
+        </section>
+
+        <!-- Modal Adicionar -->
+        <div class="overlay hidden" id="overlay-add" aria-hidden="true">
+          <button
+            type="button"
+            class="overlay__backdrop"
+            id="overlay-add-backdrop"
+            aria-label="Fechar diálogo"
+          ></button>
+          <div
+            class="dialog dialog--add"
+            id="dialog-add"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="dialog-add-title"
+            data-window="dialog-add"
+          >
+            <header class="dialog__header dialog__header--add" data-drag-window="dialog-add">
+              <div class="dialog__title-wrap">
+                <img src="assets/anki-logo.png" width="15" height="19" alt="" />
+                <h2 id="dialog-add-title">Adicionar</h2>
+              </div>
+              <div class="win-controls win-controls--dialog" data-window-controls="dialog-add">
+                <button type="button" class="win-btn win-btn--min" data-win="minimize" aria-label="Minimizar" title="Minimizar">
+                  <svg viewBox="0 0 10 10" aria-hidden="true"><path d="M1 5h8" /></svg>
+                </button>
+                <button type="button" class="win-btn win-btn--max" data-win="maximize" aria-label="Expandir" title="Expandir">
+                  <svg class="icon-max" viewBox="0 0 10 10" aria-hidden="true"><rect x="1.5" y="1.5" width="7" height="7" rx="0.5" /></svg>
+                  <svg class="icon-restore" viewBox="0 0 10 10" aria-hidden="true">
+                    <rect x="2.5" y="3.5" width="5.5" height="5.5" rx="0.4" />
+                    <path d="M3.5 3.5V2.2a.5.5 0 0 1 .5-.5h4.3a.5.5 0 0 1 .5.5V6.5a.5.5 0 0 1-.5.5H7.5" />
+                  </svg>
+                </button>
+                <button type="button" class="win-btn win-btn--close" data-win="close" aria-label="Fechar" title="Fechar">
+                  <svg viewBox="0 0 10 10" aria-hidden="true"><path d="M1.5 1.5l7 7M8.5 1.5l-7 7" /></svg>
+                </button>
+              </div>
+            </header>
+
+            <div class="add-body">
+              <div class="add-meta">
+                <div class="add-meta__row">
+                  <span class="add-meta__label">Tipo</span>
+                  <button type="button" class="add-meta__select" id="add-type-btn">Básico</button>
+                </div>
+                <div class="add-meta__row">
+                  <span class="add-meta__label">Baralho</span>
+                  <button type="button" class="add-meta__select" id="add-deck-btn">Teste 1</button>
+                </div>
+              </div>
+
+              <div class="add-toolbar">
+                <button type="button" class="add-toolbar__text">Campos...</button>
+                <button type="button" class="add-toolbar__text">Cartões...</button>
+                <span class="add-toolbar__sep"></span>
+                <button type="button" class="add-toolbar__icon" title="Opções">⚙</button>
+                <button type="button" class="add-toolbar__icon" title="Negrito"><strong>B</strong></button>
+                <button type="button" class="add-toolbar__icon" title="Itálico"><em>I</em></button>
+                <button type="button" class="add-toolbar__icon" title="Sublinhado"><u>U</u></button>
+                <button type="button" class="add-toolbar__icon" title="Sobrescrito">x²</button>
+                <button type="button" class="add-toolbar__icon" title="Subscrito">x₂</button>
+                <button type="button" class="add-toolbar__icon" title="Cor">A</button>
+              </div>
+
+              <label class="add-field-label" for="add-front">Frente</label>
+              <textarea class="add-field is-active" id="add-front" rows="5"></textarea>
+
+              <label class="add-field-label" for="add-back">Verso</label>
+              <textarea class="add-field" id="add-back" rows="5"></textarea>
+
+              <label class="add-field-label" for="add-tags">Etiquetas</label>
+              <input class="add-tags" id="add-tags" type="text" />
+
+              <div class="add-actions">
+                <button type="button" class="btn-dialog" id="btn-add-card">Adicionar</button>
+                <button type="button" class="btn-dialog" id="btn-add-history">Histórico ▾</button>
+                <button type="button" class="btn-dialog" id="btn-add-close">Fechar</button>
+                <button type="button" class="btn-dialog" id="btn-add-help">Ajuda</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Diálogo Criar Baralho -->
+        <div class="overlay hidden" id="overlay-create" aria-hidden="true">
+          <button
+            type="button"
+            class="overlay__backdrop"
+            id="overlay-create-backdrop"
+            aria-label="Fechar diálogo"
+          ></button>
+          <div
+            class="dialog"
+            id="dialog-create"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="dialog-create-title"
+            data-window="dialog-create"
+          >
+            <header class="dialog__header" data-drag-window="dialog-create">
+              <h2 id="dialog-create-title">Criar Baralho</h2>
+              <div class="win-controls win-controls--dialog" data-window-controls="dialog-create">
+                <button type="button" class="win-btn win-btn--min" data-win="minimize" aria-label="Minimizar" title="Minimizar">
+                  <svg viewBox="0 0 10 10" aria-hidden="true"><path d="M1 5h8" /></svg>
+                </button>
+                <button type="button" class="win-btn win-btn--max" data-win="maximize" aria-label="Expandir" title="Expandir">
+                  <svg class="icon-max" viewBox="0 0 10 10" aria-hidden="true"><rect x="1.5" y="1.5" width="7" height="7" rx="0.5" /></svg>
+                  <svg class="icon-restore" viewBox="0 0 10 10" aria-hidden="true">
+                    <rect x="2.5" y="3.5" width="5.5" height="5.5" rx="0.4" />
+                    <path d="M3.5 3.5V2.2a.5.5 0 0 1 .5-.5h4.3a.5.5 0 0 1 .5.5V6.5a.5.5 0 0 1-.5.5H7.5" />
+                  </svg>
+                </button>
+                <button type="button" class="win-btn win-btn--close" data-win="close" aria-label="Fechar" title="Fechar">
+                  <svg viewBox="0 0 10 10" aria-hidden="true"><path d="M1.5 1.5l7 7M8.5 1.5l-7 7" /></svg>
+                </button>
+              </div>
+            </header>
+            <div class="dialog__body">
+              <label class="dialog__label" for="input-deck-name">Nome do baralho:</label>
+              <input
+                class="dialog__input"
+                id="input-deck-name"
+                type="text"
+                autocomplete="off"
+              />
+              <div class="dialog__actions">
+                <button type="button" class="btn-dialog" id="dialog-create-cancel">Cancelar</button>
+                <button type="button" class="btn-dialog" id="dialog-create-ok" disabled>OK</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tela de opções do baralho -->
+        <section class="screen screen--options hidden" id="screen-options" aria-label="Opções do baralho" data-window="options">
+          <header class="options-topbar" data-drag-window="options">
+            <span class="options-topbar__title" id="options-title">Opções para Teste 1</span>
+            <div class="win-controls" data-window-controls="options">
+              <button type="button" class="win-btn win-btn--min" data-win="minimize" aria-label="Minimizar" title="Minimizar">
+                <svg viewBox="0 0 10 10" aria-hidden="true"><path d="M1 5h8" /></svg>
+              </button>
+              <button type="button" class="win-btn win-btn--max" data-win="maximize" aria-label="Expandir" title="Expandir">
+                <svg class="icon-max" viewBox="0 0 10 10" aria-hidden="true"><rect x="1.5" y="1.5" width="7" height="7" rx="0.5" /></svg>
+                <svg class="icon-restore" viewBox="0 0 10 10" aria-hidden="true">
+                  <rect x="2.5" y="3.5" width="5.5" height="5.5" rx="0.4" />
+                  <path d="M3.5 3.5V2.2a.5.5 0 0 1 .5-.5h4.3a.5.5 0 0 1 .5.5V6.5a.5.5 0 0 1-.5.5H7.5" />
+                </svg>
+              </button>
+              <button type="button" class="win-btn win-btn--close" data-win="close" aria-label="Fechar" title="Fechar">
+                <svg viewBox="0 0 10 10" aria-hidden="true"><path d="M1.5 1.5l7 7M8.5 1.5l-7 7" /></svg>
+              </button>
+            </div>
+          </header>
+
+          <div class="options-toolbar">
+            <button type="button" class="preset-select" aria-haspopup="listbox">
+              <span>Padrão (usado por 3 baralhos)</span>
+              <span class="preset-select__chevron">⌄</span>
+            </button>
+            <div class="save-group">
+              <button type="button" class="btn-save" id="btn-save-options">Salvar</button>
+              <button type="button" class="btn-save-chevron" aria-label="Mais opções de salvar">
+                ⌄
+              </button>
+            </div>
+          </div>
+
+          <div class="options-scroll">
+            <article class="options-card">
+              <header class="options-card__header">
+                <h3>Limites Diários</h3>
+                <button type="button" class="help-btn" aria-label="Ajuda sobre Limites Diários">?</button>
+              </header>
+              <div class="options-card__divider"></div>
+
+              <div class="field-row">
+                <label>Novos cartões/dia</label>
+                <div class="field-control">
+                  <div class="scope-tabs">
+                    <button type="button" class="scope-tab is-active">Preset</button>
+                    <button type="button" class="scope-tab">Esse baralho</button>
+                    <button type="button" class="scope-tab">Somente hoje</button>
+                  </div>
+                  <input type="text" value="20" />
+                </div>
+              </div>
+
+              <div class="field-row">
+                <label>Revisões máximas/dia</label>
+                <div class="field-control">
+                  <div class="scope-tabs">
+                    <button type="button" class="scope-tab is-active">Preset</button>
+                    <button type="button" class="scope-tab">Esse baralho</button>
+                    <button type="button" class="scope-tab">Somente hoje</button>
+                  </div>
+                  <input type="text" value="200" />
+                </div>
+              </div>
+
+              <div class="toggle-row">
+                <span>Novos cartões ignoram o limite de revisão. <span class="info-dot">◉</span></span>
+                <button type="button" class="toggle" aria-pressed="false" aria-label="Alternar">
+                  <span class="toggle__knob"></span>
+                </button>
+              </div>
+              <div class="toggle-row">
+                <span>Os limites começam do deck superior <span class="info-dot">◉</span></span>
+                <button type="button" class="toggle" aria-pressed="false" aria-label="Alternar">
+                  <span class="toggle__knob"></span>
+                </button>
+              </div>
+            </article>
+
+            <article class="options-card">
+              <header class="options-card__header">
+                <h3>Novos Cartões</h3>
+                <button type="button" class="help-btn" aria-label="Ajuda sobre Novos Cartões">?</button>
+              </header>
+              <div class="options-card__divider"></div>
+
+              <div class="field-row field-row--inline">
+                <label>Etapas de aprendizagem</label>
+                <input type="text" value="1m 10m" />
+              </div>
+              <div class="field-row field-row--inline">
+                <label>Intervalo de graduação</label>
+                <input type="text" value="1" />
+              </div>
+              <div class="field-row field-row--inline">
+                <label>Intervalo fácil</label>
+                <input type="text" value="4" />
+              </div>
+              <div class="field-row field-row--inline">
+                <label>Ordem de inserção</label>
+                <button type="button" class="select-like">
+                  <span>Sequencial (cartões mais antigos prim...</span>
+                  <span class="select-like__chevron">⌄</span>
+                </button>
+              </div>
+            </article>
+
+            <article class="options-card">
+              <header class="options-card__header">
+                <h3>Falhas</h3>
+                <button type="button" class="help-btn" aria-label="Ajuda sobre Falhas">?</button>
+              </header>
+              <div class="options-card__divider"></div>
+
+              <div class="field-row field-row--inline">
+                <label>Etapas de reaprendizagem</label>
+                <input type="text" value="10m" />
+              </div>
+              <div class="field-row field-row--inline">
+                <label>Intervalo mínimo</label>
+                <input type="text" value="1" />
+              </div>
+              <div class="field-row field-row--inline">
+                <label>Limite sanguessuga</label>
+                <input type="text" value="8" />
+              </div>
+              <div class="field-row field-row--inline">
+                <label>Ação sanguessuga</label>
+                <button type="button" class="select-like">
+                  <span>Somente Etiquetas</span>
+                  <span class="select-like__chevron">⌄</span>
+                </button>
+              </div>
+            </article>
+          </div>
+        </section>
+      </div>
+
+      <!-- Barra de tarefas para janelas minimizadas -->
+      <div class="taskbar" id="taskbar" aria-label="Janelas minimizadas"></div>
+
+      <!-- Tutorial de introdução -->
+      <div class="tour-overlay hidden" id="tour-overlay" aria-hidden="true">
+        <div class="tour-spotlight" id="tour-spotlight" hidden></div>
+        <div class="tour-card" id="tour-card" role="dialog" aria-modal="true" aria-labelledby="tour-title">
+          <div class="tour-card__progress">
+            <div class="tour-card__bar" id="tour-progress-bar"></div>
+          </div>
+          <p class="tour-card__step" id="tour-step-label">Passo 1 de 7</p>
+          <h2 class="tour-card__title" id="tour-title">Bem-vindo</h2>
+          <div class="tour-card__body" id="tour-body"></div>
+          <div class="tour-card__actions">
+            <button type="button" class="tour-btn tour-btn--ghost" id="tour-skip">Pular</button>
+            <div class="tour-card__nav">
+              <button type="button" class="tour-btn tour-btn--ghost" id="tour-prev" disabled>Anterior</button>
+              <button type="button" class="tour-btn tour-btn--primary" id="tour-next">Próximo</button>
+            </div>
+          </div>
+          <p class="tour-card__source">
+            Conteúdo baseado na documentação oficial em
+            <a href="https://docs.ankiweb.net/manual/getting-started" target="_blank" rel="noopener">
+              docs.ankiweb.net
+            </a>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/app.js"></script>
+  </body>
+</html>
