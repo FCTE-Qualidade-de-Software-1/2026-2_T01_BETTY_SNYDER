@@ -68,8 +68,6 @@
       target: "criar",
       body: `
         <p>Use <strong>Criar Baralho</strong> para organizar um novo conjunto de cartões.</p>
-        <p>Subbaralhos podem ser nomeados com <code>::</code>, por exemplo <code>Chinês::Hanzi</code>.</p>
-        <p>Os botões no canto superior direito permitem minimizar, expandir ou fechar a janela, no padrão do Windows.</p>
       `,
     },
     {

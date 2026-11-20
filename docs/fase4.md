@@ -158,6 +158,6 @@ Arquivos esperados para fechar o julgamento: CSV em `avaliacao/dados/flexibilida
 
 **Problema.** “Criar baralho” não é reconhecido de imediato (T<sub>rf</sub> do iniciante 16,7%; PB02 só após três tentativas).
 
-**Ação.** Protótipo de alta fidelidade com a lista de baralhos como tela inicial e destaque para **Criar Baralho**, além de tutorial introdutório guiado. Artefato publicado em [Protótipo da ação de melhoria](prototipo-acao-melhoria.md) ([abrir interativo](prototipo-acao-melhoria/index.html)).
+**Ação.** Protótipo de alta fidelidade com a lista de baralhos como tela inicial e destaque para **Criar Baralho**, além de tutorial introdutório guiado. Artefato publicado em [Protótipo da ação de melhoria](prototipo-acao-melhoria.md) ([abrir interativo](prototipo-interativo/index.html)).
 
 **Validação.** Nova sessão com iniciante: R1 correto e T<sub>rf</sub> ≥ 75% (alvo), ou localização espontânea em no máximo 10 s sem ajuda.

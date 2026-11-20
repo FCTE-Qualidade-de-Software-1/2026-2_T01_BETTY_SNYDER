@@ -8,17 +8,17 @@ Reduzir a dificuldade de reconhecimento da ação de criar um baralho (problema 
 
 ## Como usar
 
-1. Abra o [protótipo interativo](prototipo-acao-melhoria/index.html) em uma nova aba.
+1. Abra o [protótipo interativo](prototipo-interativo/index.html) em uma nova aba.
 2. Siga o tutorial guiado (ou reabra-o pelo menu **Ajuda**).
 3. Experimente **Criar Baralho**, **Adicionar**, opções do baralho e os controles de janela no padrão do Windows.
 
 <iframe
-  src="prototipo-acao-melhoria/index.html"
+  src="../prototipo-interativo/index.html"
   title="Protótipo interativo da ação de melhoria do Anki"
   style="width:100%;height:720px;border:1px solid #444;border-radius:8px;background:#1a1a1a;"
 ></iframe>
 
-<p><a class="md-button md-button--primary" href="prototipo-acao-melhoria/index.html" target="_blank" rel="noopener">Abrir protótipo em tela cheia</a></p>
+<p><a class="md-button md-button--primary" href="../prototipo-interativo/index.html" target="_blank" rel="noopener">Abrir protótipo em tela cheia</a></p>
 
 ## Base documental
 
