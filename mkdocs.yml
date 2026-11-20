@@ -1,5 +1,5 @@
 site_name: BETTY SNYDER
-copyright: "Equipe Betty Snyder · FGA0315 Qualidade de Software 1 · Versão E2 (Fases 3-4) · Atualizado em 16/11/2026"
+copyright: "Equipe Betty Snyder · FGA0315 Qualidade de Software 1 · Versão E2 (Fases 3-4) · Atualizado em 20/11/2026"
 site_url: https://FCTE-Qualidade-de-Software-1.github.io/2026-2_T01_BETTY_SNYDER/
 exclude_docs: |
   avaliacao/checklist-pc2.md
@@ -26,7 +26,9 @@ nav:
           - Instalação e desinstalação: avaliacao/protocolos/flexibilidade-instalacao.md
           - Checklist de integração: avaliacao/protocolos/flexibilidade-checklist.md
           - Migração: avaliacao/protocolos/flexibilidade-migracao.md
-  - Fase 4: fase4.md
+  - Fase 4:
+      - Visão geral: fase4.md
+      - Protótipo da ação de melhoria: prototipo-acao-melhoria.md
   - Dados: dados.md
   - Artigo: artigo.md
   - Gestão PSM:
