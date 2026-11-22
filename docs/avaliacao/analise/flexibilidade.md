@@ -19,7 +19,7 @@ Máquinas de referência: [Ambiente](../protocolos/ambiente.md) (Windows: Bryan;
 | CSV bruto (`T_inst_*`, `P_int_*`, `T_pd_*`, `T_sub_*`, …) | Ausentes; pastas com README e `.gitkeep` |
 | Consolidado com faixas da Tabela XI | Ausente |
 | Gráficos de instalação | Ausentes |
-| Relatos qualitativos (Parte C das entrevistas) | Disponíveis nas fichas PA01, PB01 e PB02; ver [Fase 4](../../fase4.md) |
+| Relatos qualitativos (Parte C das entrevistas) | Disponíveis nas fichas PA01, PB01, PB02 e PB03; ver [Fase 4](../../fase4.md) |
 
 ## Julgamento
 
@@ -29,7 +29,7 @@ Máquinas de referência: [Ambiente](../protocolos/ambiente.md) (Windows: Bryan;
 | Q2 / H2 | Não realizado | Sem checklist pontuado por SO |
 | Q3 / H3 | Não realizado | Sem CSV de migração M1/M2 |
 
-**Impacto no objetivo G de Flexibilidade.** O objetivo da Fase 2 não recebe resposta numérica nesta entrega. A evidência qualitativa das entrevistas (instalação “tranquila” em PB01/PB02; Gatekeeper no macOS) **não substitui** T<sub>inst</sub>, P<sub>int</sub> ou T<sub>pd</sub>.
+**Impacto no objetivo G de Flexibilidade.** O objetivo da Fase 2 não recebe resposta numérica nesta entrega. A evidência qualitativa das entrevistas (PB01/PB02/PB03; Gatekeeper no macOS; site confuso em PB03) **não substitui** T<sub>inst</sub>, P<sub>int</sub> ou T<sub>pd</sub>.
 
 ## Limitações e próximo passo da equipe
 

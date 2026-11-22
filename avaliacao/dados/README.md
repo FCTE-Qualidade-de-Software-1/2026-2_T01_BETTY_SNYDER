@@ -1,26 +1,23 @@
-# Dados da avaliação
+# Dados de avaliação
 
-Dados do **produto Anki** (não confundir com `gestao-psm/`, que mede o andamento do projeto).
+Estrutura por característica ISO/IEC 25010:
 
-## Pastas por característica
+```
+dados/
+  interacao/
+    bruto/
+    consolidado/
+  desempenho/
+    bruto/
+    consolidado/
+  flexibilidade/
+    bruto/
+    consolidado/
+```
 
-| Pasta | Característica ISO 25010:2023 | Objetivo GQM |
-| --- | --- | --- |
-| `interacao/` | Capacidade de interação | Capacidade de interação |
-| `desempenho/` | Eficiência de desempenho | Eficiência de desempenho |
-| `flexibilidade/` | Flexibilidade | Flexibilidade |
+## Nomenclatura dos arquivos brutos
 
-Em cada uma: `bruto/` (observações e execuções) e `consolidado/` (agregados que apontam para o bruto).
-
-## Padrão de nomes: `<métrica>_<cenário>_<execução>`
-
-Separador `_`.
-
-| Peça | Conteúdo | Exemplos |
-| --- | --- | --- |
-| métrica | Código GQM | `M-INT-01`, `M-INT_tarefas`, `T_ini`, `T_inst` |
-| cenário | Tarefa, rodada ou ambiente | `reconhecimento`, `A3`, `coldstart`, `win11` |
-| execução | Participante ou repetição de lab | `PA01`, `PB02`, `01` |
+Padrão preferido: `métrica_cenário_execução` (ou código de participante + data).
 
 Exemplos:
 
@@ -29,7 +26,7 @@ Exemplos:
 - `ficha_PA01_2026-11-12.pdf` (ficha escaneada; código + data)
 - `T_ini_coldstart_01.csv` (laboratório de desempenho)
 
-Exceção documentada: `gravacoes.csv` é o **índice** das gravações (mídia fora do repo) e não segue o trio métrica-cenário-execução.
+Exceção documentada: `sessoes.csv` é o **índice** das sessões (data, formato e ata; mídia fora do repo) e não segue o trio métrica-cenário-execução.
 
 ## Códigos de participante
 
@@ -44,5 +41,5 @@ A tabela que liga código a nome/e-mail fica **fora deste repositório**. Nos CS
 
 Conforme o TCLE, arquivos de tela/áudio ficam em pasta privada da equipe. Neste repositório:
 
-- Índice: `interacao/bruto/gravacoes.csv` (e índices análogos se outras características gravarem sessão).
-- Colunas mínimas: `participante,grupo,data,formato,arquivo_gravacao,observacoes`, onde `arquivo_gravacao` é o caminho **privado** (não um blob no Git).
+- Índice: `interacao/bruto/sessoes.csv` (e índices análogos se outras características gravarem sessão).
+- Colunas mínimas: `participante,grupo,data,formato,duracao,ata_gitpage,observacoes`. A mídia não é versionada.

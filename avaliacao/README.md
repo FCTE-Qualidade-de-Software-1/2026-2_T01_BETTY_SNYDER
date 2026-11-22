@@ -40,6 +40,6 @@ Cada arquivo bruto segue o padrão de nomes `<métrica>_<cenário>_<execução>`
 | Códigos de participante (PA01-PA02, PB01-PB03) | Neste repositório |
 | Tabela código → pessoa | **Fora do repositório** (pasta privada da equipe) |
 | Termos de consentimento assinados | Pasta privada, separados dos dados |
-| Gravações de tela/áudio das sessões | Pasta privada; no repo só o índice `gravacoes.csv` |
+| Gravações de tela/áudio das sessões | Pasta privada; no repo só o índice `sessoes.csv` |
 
 Decisão alinhada ao Termo de Consentimento Livre e Esclarecido: registros em diretório privado, acesso restrito à professora e à equipe, anonimização antes da apresentação dos resultados, retenção até 14/12/2026.

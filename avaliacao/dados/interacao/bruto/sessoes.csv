@@ -1,0 +1,5 @@
+participante,grupo,data,formato,duracao,ata_gitpage,observacoes
+PA01,A,2026-11-14,presencial,00:41:10,docs/avaliacao/atas/sessao-PA01_2026-11-14.md,Grupo A iniciante
+PB01,B,2026-11-13,online,01:05:54,docs/avaliacao/atas/sessao-PB01_2026-11-13.md,Grupo B; Etapa 4 via tempos remapeados da secao Etapa 2 da ficha
+PB02,B,2026-11-13,online,00:42:20,docs/avaliacao/atas/sessao-PB02_2026-11-13.md,Grupo B piloto; Etapa 4 via tempos remapeados da secao Etapa 3 da ficha; incluida na avaliacao geral e como linha de base
+PB03,B,2026-11-21,online,,docs/avaliacao/atas/sessao-PB03_2026-11-21.md,Grupo B frequente; Etapa 4 com B2 Revisar nao coletado; Windows 10

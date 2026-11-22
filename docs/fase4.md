@@ -6,7 +6,7 @@ Esta página registra a obtenção dos dados, a análise GQM frente às questõe
 
 | Frente | Dados brutos | Métricas e análise | Situação objetiva |
 | --- | --- | --- | --- |
-| Capacidade de interação | [`Entrevistas/`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/tree/main/avaliacao/dados/interacao/bruto/Entrevistas) (PA01, PB01, PB02), atas de sessão, CSV `M-INT-*` | [`M-INT_metricas.csv`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/blob/main/avaliacao/dados/interacao/consolidado/M-INT_metricas.csv); [análise](avaliacao/analise/interacao.md) | Três participantes; um iniciante (PA01); PB02 é entrevista piloto incluída na avaliação geral; métricas T<sub>rf</sub>, T<sub>aprend</sub>, T<sub>sa</sub>, T<sub>ct</sub> e T<sub>exec</sub> calculadas |
+| Capacidade de interação | [`Entrevistas/`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/tree/main/avaliacao/dados/interacao/bruto/Entrevistas) (PA01, PB01, PB02, PB03), atas de sessão, CSV `M-INT-*` | [`M-INT_metricas.csv`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/blob/main/avaliacao/dados/interacao/consolidado/M-INT_metricas.csv); [análise](avaliacao/analise/interacao.md) | Quatro participantes; um iniciante (PA01); três frequentes (PB02 piloto); métricas T<sub>rf</sub>, T<sub>aprend</sub>, T<sub>sa</sub>, T<sub>ct</sub> e T<sub>exec</sub> calculadas |
 | Eficiência de desempenho | CSV e gráficos em `docs/avaliacao/dados/desempenho/bruto/` e `docs/avaliacao/dados/` | [análise de desempenho](avaliacao/analise/desempenho.md) | Medições em Ubuntu, Windows 11 e macOS; no PC2 restam itens “refazer” e medições incompletas no Windows |
 | Flexibilidade | `avaliacao/dados/flexibilidade/` (apenas README e `.gitkeep`) | [análise de Flexibilidade](avaliacao/analise/flexibilidade.md); seção abaixo | Sem CSV de instalação, checklist ou migração e sem gráficos de instalação no repositório (F4-C1/C2 incompletos nesta frente) |
 
@@ -16,31 +16,32 @@ Esta página registra a obtenção dos dados, a análise GQM frente às questõe
 
 ### Coleta e notas de cálculo
 
-Três sessões com consentimento (TCLE). A evidência pública no repositório são as fichas anonimizadas e as atas; as gravações de tela e áudio permanecem em diretório privado.
+Quatro sessões com consentimento (TCLE). A evidência pública no repositório são as fichas anonimizadas e as atas; as gravações de tela e áudio permanecem em diretório privado.
 
 | Código | Data | Modalidade / SO | Grupo e etapas | Evidência |
 | --- | --- | --- | --- | --- |
 | PA01 | 14/11/2026 | Presencial, Windows 11 | A (iniciante): Etapas 1 a 3 e 5 | [ficha](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/blob/main/avaliacao/dados/interacao/bruto/Entrevistas/PA01_2026-11-14.md); [ata](avaliacao/atas/sessao-PA01_2026-11-14.md) |
 | PB01 | 13/11/2026 | Online, macOS | B (frequente): Etapas 1, 4 e 5 | [ficha](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/blob/main/avaliacao/dados/interacao/bruto/Entrevistas/PB01_2026-11-13.md); [ata](avaliacao/atas/sessao-PB01_2026-11-13.md) |
 | PB02 | 13/11/2026 | Online, Windows 10 | B (frequente / piloto): Etapas 1, 4 e 5 | [ficha](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/blob/main/avaliacao/dados/interacao/bruto/Entrevistas/PB02_2026-11-13.md); [ata](avaliacao/atas/sessao-PB02_2026-11-13.md) |
+| PB03 | 21/11/2026 | Online, Windows 10 | B (frequente): Etapas 1, 4 e 5 | [ficha](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/blob/main/avaliacao/dados/interacao/bruto/Entrevistas/PB03_2026-11-21.md); [ata](avaliacao/atas/sessao-PB03_2026-11-21.md) |
 
-**Notas de cálculo.** O Grupo A executa Etapas 1 a 3 e 5. O Grupo B não executa Etapas 2 e 3. Em PB01, os tempos preenchidos na seção Etapa 2 da ficha foram contabilizados como Etapa 4. Em PB02, os tempos preenchidos na seção Etapa 3 da ficha foram contabilizados como Etapa 4. PA01 é Grupo A; marcação residual “B” na ficha, se houver, é erro de digitação. A sessão **PB02** foi conduzida como entrevista piloto e, no escopo deste projeto da disciplina, **permanece na avaliação geral**: serve como linha de base de comparação entre participantes frequentes e integra o conjunto de dados que fundamenta as métricas, o julgamento e as recomendações. Detalhe em [interacao.md](avaliacao/analise/interacao.md).
+**Notas de cálculo.** O Grupo A executa Etapas 1 a 3 e 5. O Grupo B não executa Etapas 2 e 3. Em PB01, os tempos da seção Etapa 2 da ficha foram contabilizados como Etapa 4. Em PB02, os tempos da seção Etapa 3 foram contabilizados como Etapa 4. Em PB03, quatro tarefas da Etapa 4 têm tempo; B2 Revisar não foi coletada. A sessão **PB02** (piloto) permanece na avaliação geral como linha de base e dado consolidado. Detalhe em [interacao.md](avaliacao/analise/interacao.md).
 
 ### Resultados
 
-| Métrica | PA01 | Faixa | PB01 | Faixa | PB02 | Faixa |
-| --- | --- | --- | --- | --- | --- | --- |
-| T<sub>rf</sub> | 16,7% (1/6) | Insatisfatório | 66,7% | Mínimo | 83,3% | Alvo |
-| T<sub>aprend</sub> | 7 min 36 s (456,05 s) | Excelente | n/a | - | n/a | - |
-| T<sub>sa</sub> | 100% (4/4 sem ajuda) | Excelente | n/a | - | n/a | - |
-| T<sub>ct</sub> | 80% → 100% (rodadas 1-2) | Mínimo → Excelente | 100% (Etapa 4) | Excelente | 100% (Etapa 4) | Excelente |
-| T<sub>exec</sub> mediana | 50 s | Excelente | 39,31 s | Excelente | 25 s | Excelente |
+| Métrica | PA01 | Faixa | PB01 | Faixa | PB02 | Faixa | PB03 | Faixa |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| T<sub>rf</sub> | 16,7% (1/6) | Insatisfatório | 66,7% | Mínimo | 83,3% | Alvo | 66,7% | Mínimo |
+| T<sub>aprend</sub> | 7 min 36 s (456,05 s) | Excelente | n/a | - | n/a | - | n/a | - |
+| T<sub>sa</sub> | 100% (4/4 sem ajuda) | Excelente | n/a | - | n/a | - | n/a | - |
+| T<sub>ct</sub> | 80% → 100% (rodadas 1-2) | Mínimo → Excelente | 100% (Etapa 4) | Excelente | 100% (Etapa 4) | Excelente | 100% (4/4) | Excelente |
+| T<sub>exec</sub> mediana | 50 s | Excelente | 39,31 s | Excelente | 25 s | Excelente | 27,285 s | Excelente |
 
-**Agregados do Grupo B.** Média de T<sub>rf</sub> = 75,0% (faixa alvo). T<sub>ct</sub> = 100% nos dois participantes. Mediana aproximada de T<sub>exec</sub> ≈ 32 s (faixa excelente).
+**Agregados do Grupo B.** Média de T<sub>rf</sub> = 72,2% (faixa mínimo). T<sub>ct</sub> = 100% nos três frequentes. Mediana aproximada de T<sub>exec</sub> ≈ 30,5 s (faixa excelente).
 
-![Tempo por tarefa (T_exec): Grupo A (PA01) e Grupo B (média PB01 e PB02), com faixa alvo de 2 a 5 min](assets/grafico_texec_tarefas_interacao.png)
+![Tempo por tarefa (T_exec): Grupo A (PA01) e Grupo B, com faixa alvo de 2 a 5 min](assets/grafico_texec_tarefas_interacao.png)
 
-*Figura. Tempo por tarefa alinhado semanticamente (criar conta, criar baralho, adicionar cartões, estudar, sincronizar). Grupo A: PA01, rodada 1. Grupo B: média de PB01 e PB02 (tempos remapeados para Etapa 4). Fonte: `M-INT_tarefas.csv`. A faixa sombreada é o alvo da Fase 2 (2 a 5 min); valores abaixo de 2 min estão na faixa excelente.*
+*Figura. Tempo por tarefa alinhado semanticamente. Grupo A: PA01, rodada 1. Grupo B: Etapa 4 (fonte canônica `M-INT_tarefas.csv`, com PB03). A figura pode ainda mostrar a média anterior só de PB01 e PB02. A faixa sombreada é o alvo da Fase 2 (2 a 5 min).*
 
 ### Análise
 
@@ -48,17 +49,17 @@ Três sessões com consentimento (TCLE). A evidência pública no repositório s
 | --- | --- | --- |
 | **Q1** (reconhecibilidade) | T<sub>rf</sub> de PA01 = 16,7%, abaixo de 75% (alvo) | Não atendida |
 | **Q2** (aprendizagem) | T<sub>aprend</sub> = 7 min 36 s e T<sub>sa</sub> = 100% em PA01, ambos na faixa excelente | Atendida em PA01 (n = 1 iniciante) |
-| **Q3** (operabilidade) | T<sub>ct</sub> = 100% e T<sub>exec</sub> mediana &lt; 2 min em PB01 e PB02 | Atendida no escopo da Etapa 4 remapeada |
+| **Q3** (operabilidade) | T<sub>ct</sub> = 100% e T<sub>exec</sub> mediana &lt; 2 min em PB01, PB02 e PB03 | Atendida no escopo da Etapa 4 (com ressalvas) |
 
 | Hipótese | Julgamento |
 | --- | --- |
-| **H1** | Rejeitada no iniciante (T<sub>rf</sub> 16,7%). PB02 só acertou R1 (“Criar baralho”) após três tentativas. |
+| **H1** | Rejeitada no iniciante (T<sub>rf</sub> 16,7%). PB02 só acertou R1 após três tentativas. PB03 errou R4 e R6. |
 | **H2** | Sustentada em PA01 para o roteiro de aprendizagem. |
-| **H3** | Sustentada no agregado de frequentes (T<sub>ct</sub> e T<sub>exec</sub> em alvo ou excelente), com a ressalva do remapeamento documental das seções da ficha. |
+| **H3** | Sustentada no agregado de frequentes (T<sub>ct</sub> e T<sub>exec</sub> em alvo ou excelente), com remapeamento documental em PB01/PB02 e B2 não coletada em PB03. |
 
-**Evidência qualitativa (Etapa 5).** PA01 falhou em localizar “Criar baralho” e pediu botões autoexplicativos. PB01 confundiu “nota” com “cartão” e pediu tutorial prático. PB02 descreveu “Criar baralho” como pouco intuitivo na parte inferior da janela e sugeriu reposicioná-lo.
+**Evidência qualitativa (Etapa 5).** PA01 falhou em localizar “Criar baralho” e pediu botões autoexplicativos. PB01 confundiu “nota” com “cartão” e pediu tutorial prático. PB02 descreveu “Criar baralho” como pouco intuitivo na parte inferior. PB03 apontou clareza dos botões iniciais, confusão em “nota” e desejo de interface/termos menos técnicos.
 
-**Limitações.** Amostra de três participantes, com um único iniciante para Q1 e Q2. Em frequentes, a Etapa 4 foi registrada em seções erradas da ficha (2 ou 3) e remapeada no cálculo das métricas. O julgamento de Capacidade de interação baseia-se nesses três casos e preserva a ênfase 5 da Fase 1.
+**Limitações.** Amostra de quatro participantes, com um único iniciante para Q1 e Q2. Em PB01/PB02, a Etapa 4 foi remapeada a partir de seções erradas da ficha. Em PB03, B2 Revisar não foi coletada. O julgamento preserva a ênfase 5 da Fase 1.
 
 ---
 
@@ -127,6 +128,7 @@ Em `avaliacao/dados/flexibilidade/bruto/` e `avaliacao/dados/flexibilidade/conso
 | --- | --- |
 | PB01 (macOS) | Instalação “tranquila”; precisou autorizar a abertura do aplicativo baixado da internet (Gatekeeper). |
 | PB02 (Windows) | Instalação “tranquila” e “intuitiva”; sem passo além do instalador. |
+| PB03 (Windows) | Instalação “um pouco confusa” no site (extensões externas); precisou de passo além do instalador. |
 | PA01 (Grupo A) | Anki já instalado pela equipe antes da sessão; perguntas de instalabilidade do Grupo B marcadas N/A. |
 
 ### Análise (F4-C3)
@@ -148,7 +150,7 @@ O [propósito da avaliação](fase1.md#propósito-da-avaliação-e-uso-pretendid
 
 | Expectativa da Fase 1 | Resultado da Fase 4 | Atende? |
 | --- | --- | --- |
-| Identificar barreiras de uso na interface (ênfase 5) | Q1 de Capacidade de interação não atendida (T<sub>rf</sub> do iniciante 16,7%); Q2 e Q3 atendidas no escopo amostral | Sim, com limitação de n = 3 |
+| Identificar barreiras de uso na interface (ênfase 5) | Q1 de Capacidade de interação não atendida (T<sub>rf</sub> do iniciante 16,7%); Q2 e Q3 atendidas no escopo amostral | Sim, com limitação de n = 4 (1 iniciante) |
 | Informar comportamento de desempenho em estudo prolongado | Cold start e vazão excelentes; RAM na faixa mínimo; Windows parcial | Parcial |
 | Informar instalabilidade e migração entre SO | Sem CSV de Flexibilidade | Não (quantitativo) |
 | Fundamentar uma ação de melhoria | Protótipo de alta fidelidade para “Criar baralho” | Sim |
@@ -159,7 +161,7 @@ O julgamento, portanto, cumpre o uso pretendido na característica priorizada (C
 
 - **Capacidade de interação × Eficiência de desempenho.** Falhas de reconhecibilidade (T<sub>rf</sub> de PA01 = 16,7%; R1 falhou) elevam o esforço cognitivo na primeira sessão, mesmo com cold start e vazão de banco na faixa excelente. Evidência: [interacao.md](avaliacao/analise/interacao.md) e [desempenho.md](avaliacao/analise/desempenho.md).
 - **Eficiência de desempenho × uso em notebook.** RAM em repouso na faixa mínimo (≈ 780–950 MB em Ubuntu e macOS) e picos de 1,33–1,51 GB sob 100k cards podem afetar a fluidez percebida em máquinas de 8 GB (perfil Ubuntu da avaliação). Limitação: RAM do Windows ainda incompleta (só processo pai).
-- **Flexibilidade × Capacidade de interação.** Sem CSV de instalação e migração, **não** se estabelece relação quantitativa do primeiro uso entre plataformas. Os relatos qualitativos (PB01/PB02) sugerem instalação simples, mas não medem T<sub>inst</sub> nem N<sub>int</sub>. Evidência e limites: [flexibilidade.md](avaliacao/analise/flexibilidade.md).
+- **Flexibilidade × Capacidade de interação.** Sem CSV de instalação e migração, **não** se estabelece relação quantitativa do primeiro uso entre plataformas. Os relatos qualitativos (PB01/PB02/PB03) não substituem T<sub>inst</sub> nem N<sub>int</sub>. Evidência e limites: [flexibilidade.md](avaliacao/analise/flexibilidade.md).
 
 Onde os dados não permitem relação: qualquer afirmação causal entre instalabilidade Ubuntu e T<sub>rf</sub>, ou entre migração M1/M2 e T<sub>exec</sub>.
 

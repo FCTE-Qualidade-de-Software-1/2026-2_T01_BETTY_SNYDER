@@ -15,10 +15,15 @@ PB02,B,Taprend,,s,nao_aplicavel,Grupo B nao executa Etapas 2-3
 PB02,B,Tsa,,%,nao_aplicavel,Grupo B nao executa Etapas 2-3
 PB02,B,Tct_etapa4,100.0,%,excelente,5 de 5; tempos da secao Etapa 3 remapeados para Etapa 4
 PB02,B,Texec_mediana_etapa4,25.0,s,excelente,mediana 65 33 15 25 19
+PB03,B,Trf,66.67,%,minimo,M-INT-01; 4 de 6 (R4 e R6 = N)
+PB03,B,Taprend,,s,nao_aplicavel,Grupo B nao executa Etapas 2-3
+PB03,B,Tsa,,%,nao_aplicavel,Grupo B nao executa Etapas 2-3
+PB03,B,Tct_etapa4,100.0,%,excelente,4 de 4 tarefas com tempo; B2 Revisar nao coletado
+PB03,B,Texec_mediana_etapa4,27.285,s,excelente,mediana 3.11 5.00 49.57 82.88 (exclui B2 nao coletado)
 AGG,A,Trf_grupo,16.67,%,insatisfatorio,somente PA01
 AGG,A,Taprend_mediana,456.05,s,excelente,somente PA01
 AGG,A,Tsa_mediana,100.0,%,excelente,somente PA01
-AGG,B,Trf_grupo,75.00,%,alvo,media PB01 66.67 e PB02 83.33
-AGG,B,Tct_grupo,100.0,%,excelente,PB01 e PB02
-AGG,B,Texec_mediana_grupo,32.155,s,excelente,media das medianas PB01 e PB02
-AGG,ALL,julgamento,indicativo,,limitacao,n=3; 1 iniciante; Q3 com remapeamento documental Etapa 2/3 da ficha para Etapa 4 em frequentes
+AGG,B,Trf_grupo,72.22,%,minimo,media PB01 66.67 PB02 83.33 PB03 66.67
+AGG,B,Tct_grupo,100.0,%,excelente,PB01 PB02 PB03
+AGG,B,Texec_mediana_grupo,30.532,s,excelente,media das medianas PB01 39.31 PB02 25.00 PB03 27.285
+AGG,ALL,julgamento,indicativo,,limitacao,n=4; 1 iniciante; 3 frequentes (PB02 piloto); Q3 com remapeamento documental em PB01/PB02; PB03 B2 nao coletado

@@ -96,7 +96,7 @@ Os arquivos brutos ficam em `avaliacao/dados/interacao/bruto/`, conforme o padr�
 | `M-INT-01_reconhecimento.csv` | Itens R1 a R6 |
 | `M-INT_tarefas.csv` | Uma linha por tarefa das Etapas 2 a 4 |
 | `ficha_<código>_<data>.pdf` | Ficha preenchida |
-| `gravacoes.csv` | Índice das gravações (a mídia permanece em pasta privada) |
+| `sessoes.csv` | Índice das sessões (data, formato e ata; a mídia permanece em pasta privada) |
 
 ## 5. Critérios de invalidação
 

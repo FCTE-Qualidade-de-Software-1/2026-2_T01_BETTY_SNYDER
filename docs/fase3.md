@@ -33,7 +33,7 @@ A execução segue o GQM da Fase 2 e o instrumento unificado, em três frentes:
 - **Software:** Anki Desktop 26.09.3; AnkiWeb na data da sessão; coletores em `avaliacao/scripts/` para Eficiência de desempenho.
 - **Hardware e sistemas operacionais:** tabela em [Ambiente](avaliacao/protocolos/ambiente.md) (Windows, macOS e Ubuntu; máquinas de referência por característica).
 - **Participantes (plano):** até 2 iniciantes (PA) e até 3 frequentes (PB); triagem conforme [Fase 2](fase2.md).
-- **Realizado até a Entrega 2:** PA01 (Grupo A, 14/11/2026), PB01 e PB02 (Grupo B, 13/11/2026; PB02 como entrevista piloto incluída na avaliação geral). Evidência pública: fichas e [atas de sessão](avaliacao/atas/sessao-PA01_2026-11-14.md). Ver [análise de Capacidade de interação](avaliacao/analise/interacao.md).
+- **Realizado até a Entrega 2:** PA01 (Grupo A, 14/11/2026), PB01 e PB02 (Grupo B, 13/11/2026; PB02 piloto), PB03 (Grupo B, 21/11/2026). Evidência pública: fichas e atas de sessão. Ver [análise de Capacidade de interação](avaliacao/analise/interacao.md).
 
 ## 3. Cronograma de avaliação
 
@@ -42,6 +42,7 @@ A execução segue o GQM da Fase 2 e o instrumento unificado, em três frentes:
 | Protocolos e pré-entrevista publicados na GitPage | até 11/11/2026 | Páginas publicadas em `docs/avaliacao/protocolos/` |
 | Entrevistas de Capacidade de interação (PB01 e PB02) | 13/11/2026 | Realizado: Grupo B, Etapas 1, 4 e 5; tempos da seção Etapa 2 (PB01) e Etapa 3 (PB02) da ficha contabilizados como Etapa 4 |
 | Entrevista de Capacidade de interação (PA01) | 14/11/2026 | Realizado: Grupo A, Etapas 1 a 3 e 5 |
+| Entrevista de Capacidade de interação (PB03) | 21/11/2026 | Realizado: Grupo B, Etapas 1, 4 e 5; B2 Revisar não coletada |
 | Coletas de Eficiência de desempenho (Ubuntu, Windows e macOS) | PC2 até Entrega 2 | [Análise publicada](avaliacao/analise/desempenho.md); itens “refazer” e medições incompletas no Windows permanecem abertos |
 | Coletas de Flexibilidade (instalação, integração e migração) | PC2 até Entrega 2 | Sem CSV nem gráficos; status documentado em [análise de Flexibilidade](avaliacao/analise/flexibilidade.md) |
 | Cálculo das métricas a partir dos CSV e redação da análise de Capacidade de interação | 15/11/2026 a 16/11/2026 | `M-INT_metricas.csv` e [análise de Capacidade de interação](avaliacao/analise/interacao.md) publicados |

@@ -17,3 +17,9 @@ PB02,B,R3,"Abriria meu cartao (clicou no baralho)",S,confundiu o termo cartao
 PB02,B,R4,"Conjunto da frente e o verso",S,
 PB02,B,R5,"Tipo da nota criada",S,
 PB02,B,R6,"Apenas a questao visual; a informacao e a mesma",N,ficha marca a revisar; contabilizado como N
+PB03,B,R1,"Criar baralho",S,
+PB03,B,R2,"Adicionar",S,
+PB03,B,R3,"Clica no baralho + sessoes de estudo",S,
+PB03,B,R4,"Nao lembro",N,confundiu ou nao recordou definicao de nota
+PB03,B,R5,"Tipo de cartao",S,parcialmente alinhado a referencia (tipo de nota)
+PB03,B,R6,"Nao sei",N,

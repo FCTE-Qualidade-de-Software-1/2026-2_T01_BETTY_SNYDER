@@ -18,3 +18,8 @@ PB02,B,4,B2,,,33.00,S,0,,N,Windows 10,33s
 PB02,B,4,B3,,,15.00,S,0,,N,Windows 10,15s
 PB02,B,4,B4,,,25.00,S,0,,N,Windows 10,25s
 PB02,B,4,B5,,,19.00,S,0,,N,Windows 10,19s
+PB03,B,4,B1,,,82.88,S,0,,N,Windows 10,1min22seg88; rotulo na ficha B1 Criar conta; Etapa 4
+PB03,B,4,B2,,,,N,0,,S,Windows 10,B2 Revisar; nao coletado na ficha
+PB03,B,4,B3,,,5.00,S,0,,N,Windows 10,5seg; rotulo na ficha B3 Criar baralho
+PB03,B,4,B4,,,49.57,S,0,,N,Windows 10,49seg57; rotulo na ficha B4 Adicionar cartao
+PB03,B,4,B5,,,3.11,S,0,,N,Windows 10,3seg11; rotulo na ficha B5 Sincronizacao
