@@ -1,0 +1,4 @@
+so,versao_so,arquitetura,sessao_grafica,avaliador,admin,sucesso,tempo_instalacao_seg,tempo_instalacao_min,intervencoes,desinstalacao_ok,arquivos_remanescentes,observacoes
+Windows 11,11,x64,NA,Bryan,sim,sim,229,3.82,0,sim,nao,"Instalador permaneceu mais de 1 min na etapa de status/extração."
+macOS,27,ARM,NA,Davi,sim,sim,33,0.55,0,sim,nao,"Instalação rápida via .dmg padrão."
+Ubuntu,26.04.1,x64,Wayland,Dante,sim,sim,58,0.97,0,sim,nao,"Instalação via terminal (sudo ./install.sh). Desinstalação via apt."
