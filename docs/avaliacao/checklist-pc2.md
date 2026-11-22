@@ -8,8 +8,8 @@ Uso interno da equipe para montar os slides. Não entra no menu nem na publicaç
 | --- | --- |
 | Iniciantes | **PA01** (Grupo A; Etapas 1 a 3 e 5) |
 | Frequentes | **PB01** e **PB02** (Grupo B; Etapas 1, 4 e 5; sem Etapas 2 e 3) |
-| Gravações | `avaliacao/dados/interacao/bruto/gravacoes/*.mp4` |
-| Atas | `docs/avaliacao/atas/sessao-PA01_…`, `sessao-PB01_…`, `sessao-PB02_…` |
+| Gravações | Privadas (não versionadas); índice em `gravacoes.csv` |
+| Atas | `docs/avaliacao/atas/sessao-PA01_…`, `sessao-PB01_…`, `sessao-PB02_…`; feedback PC2 |
 
 ## Slides 11 e 12: Capacidade de interação
 

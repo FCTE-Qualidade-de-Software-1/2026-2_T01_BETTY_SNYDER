@@ -1,1 +1,1 @@
-avaliacao/dados/interacao/bruto/gravacoes/*.mp4 filter=lfs diff=lfs merge=lfs -text
+# (sem regra LFS para gravações de entrevista; mídia permanece fora do repositório)

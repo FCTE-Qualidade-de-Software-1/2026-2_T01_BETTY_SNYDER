@@ -33,7 +33,7 @@ A execução segue o GQM da Fase 2 e o instrumento unificado, em três frentes:
 - **Software:** Anki Desktop 26.09.3; AnkiWeb na data da sessão; coletores em `avaliacao/scripts/` para Eficiência de desempenho.
 - **Hardware e sistemas operacionais:** tabela em [Ambiente](avaliacao/protocolos/ambiente.md) (Windows, macOS e Ubuntu; máquinas de referência por característica).
 - **Participantes (plano):** até 2 iniciantes (PA) e até 3 frequentes (PB); triagem conforme [Fase 2](fase2.md).
-- **Realizado até a Entrega 2:** PA01 (Grupo A, 14/11/2026), PB01 e PB02 (Grupo B, 13/11/2026). Gravações em `avaliacao/dados/interacao/bruto/gravacoes/`. Ver [análise de Capacidade de interação](avaliacao/analise/interacao.md).
+- **Realizado até a Entrega 2:** PA01 (Grupo A, 14/11/2026), PB01 e PB02 (Grupo B, 13/11/2026; PB02 como entrevista piloto incluída na avaliação geral). Evidência pública: fichas e [atas de sessão](avaliacao/atas/sessao-PA01_2026-11-14.md). Ver [análise de Capacidade de interação](avaliacao/analise/interacao.md).
 
 ## 3. Cronograma de avaliação
 

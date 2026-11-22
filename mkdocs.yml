@@ -1,5 +1,5 @@
 site_name: BETTY SNYDER
-copyright: "Equipe Betty Snyder · FGA0315 Qualidade de Software 1 · Versão E2 (Fases 3-4) · Atualizado em 20/11/2026 · Checklist: criterios-gitpage.md"
+copyright: "Equipe Betty Snyder · FGA0315 Qualidade de Software 1 · Versão E2 (Fases 3-4) · Atualizado em 22/11/2026 · Checklist: criterios-gitpage.md"
 site_url: https://FCTE-Qualidade-de-Software-1.github.io/2026-2_T01_BETTY_SNYDER/
 exclude_docs: |
   avaliacao/checklist-pc2.md
@@ -18,6 +18,7 @@ nav:
               - Ata sessão PA01: avaliacao/atas/sessao-PA01_2026-11-14.md
               - Ata sessão PB01: avaliacao/atas/sessao-PB01_2026-11-13.md
               - Ata sessão PB02: avaliacao/atas/sessao-PB02_2026-11-13.md
+              - Feedback PC2: avaliacao/atas/feedback-PC2_2026-11-16.md
       - Eficiência de desempenho:
           - Protocolo: avaliacao/protocolos/desempenho.md
           - Análise de desempenho (Triangulação): avaliacao/analise/desempenho.md

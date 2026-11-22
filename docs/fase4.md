@@ -6,7 +6,7 @@ Esta página registra a obtenção dos dados, a análise GQM frente às questõe
 
 | Frente | Dados brutos | Métricas e análise | Situação objetiva |
 | --- | --- | --- | --- |
-| Capacidade de interação | [`Entrevistas/`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/tree/main/avaliacao/dados/interacao/bruto/Entrevistas) (PA01, PB01, PB02), [`gravacoes/`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/tree/main/avaliacao/dados/interacao/bruto/gravacoes), CSV `M-INT-*` | [`M-INT_metricas.csv`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/blob/main/avaliacao/dados/interacao/consolidado/M-INT_metricas.csv); [análise](avaliacao/analise/interacao.md) | Três participantes; um iniciante (PA01); métricas T<sub>rf</sub>, T<sub>aprend</sub>, T<sub>sa</sub>, T<sub>ct</sub> e T<sub>exec</sub> calculadas |
+| Capacidade de interação | [`Entrevistas/`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/tree/main/avaliacao/dados/interacao/bruto/Entrevistas) (PA01, PB01, PB02), atas de sessão, CSV `M-INT-*` | [`M-INT_metricas.csv`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/blob/main/avaliacao/dados/interacao/consolidado/M-INT_metricas.csv); [análise](avaliacao/analise/interacao.md) | Três participantes; um iniciante (PA01); PB02 é entrevista piloto incluída na avaliação geral; métricas T<sub>rf</sub>, T<sub>aprend</sub>, T<sub>sa</sub>, T<sub>ct</sub> e T<sub>exec</sub> calculadas |
 | Eficiência de desempenho | CSV e gráficos em `docs/avaliacao/dados/desempenho/bruto/` e `docs/avaliacao/dados/` | [análise de desempenho](avaliacao/analise/desempenho.md) | Medições em Ubuntu, Windows 11 e macOS; no PC2 restam itens “refazer” e medições incompletas no Windows |
 | Flexibilidade | `avaliacao/dados/flexibilidade/` (apenas README e `.gitkeep`) | [análise de Flexibilidade](avaliacao/analise/flexibilidade.md); seção abaixo | Sem CSV de instalação, checklist ou migração e sem gráficos de instalação no repositório (F4-C1/C2 incompletos nesta frente) |
 
@@ -16,15 +16,15 @@ Esta página registra a obtenção dos dados, a análise GQM frente às questõe
 
 ### Coleta e notas de cálculo
 
-Três sessões com consentimento (TCLE) e gravação de tela e áudio:
+Três sessões com consentimento (TCLE). A evidência pública no repositório são as fichas anonimizadas e as atas; as gravações de tela e áudio permanecem em diretório privado.
 
 | Código | Data | Modalidade / SO | Grupo e etapas | Evidência |
 | --- | --- | --- | --- | --- |
-| PA01 | 14/11/2026 | Presencial, Windows 11 | A (iniciante): Etapas 1 a 3 e 5 | [ficha](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/blob/main/avaliacao/dados/interacao/bruto/Entrevistas/PA01_2026-11-14.md); [gravação](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/blob/main/avaliacao/dados/interacao/bruto/gravacoes/PA01_2026-11-14.mp4); [ata](avaliacao/atas/sessao-PA01_2026-11-14.md) |
-| PB01 | 13/11/2026 | Online, macOS | B (frequente): Etapas 1, 4 e 5 | [ficha](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/blob/main/avaliacao/dados/interacao/bruto/Entrevistas/PB01_2026-11-13.md); [gravação](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/blob/main/avaliacao/dados/interacao/bruto/gravacoes/PB01_2026-11-13.mp4); [ata](avaliacao/atas/sessao-PB01_2026-11-13.md) |
-| PB02 | 13/11/2026 | Online, Windows 10 | B (frequente): Etapas 1, 4 e 5 | [ficha](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/blob/main/avaliacao/dados/interacao/bruto/Entrevistas/PB02_2026-11-13.md); [gravação](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/blob/main/avaliacao/dados/interacao/bruto/gravacoes/PB02_2026-11-13.mp4); [ata](avaliacao/atas/sessao-PB02_2026-11-13.md) |
+| PA01 | 14/11/2026 | Presencial, Windows 11 | A (iniciante): Etapas 1 a 3 e 5 | [ficha](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/blob/main/avaliacao/dados/interacao/bruto/Entrevistas/PA01_2026-11-14.md); [ata](avaliacao/atas/sessao-PA01_2026-11-14.md) |
+| PB01 | 13/11/2026 | Online, macOS | B (frequente): Etapas 1, 4 e 5 | [ficha](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/blob/main/avaliacao/dados/interacao/bruto/Entrevistas/PB01_2026-11-13.md); [ata](avaliacao/atas/sessao-PB01_2026-11-13.md) |
+| PB02 | 13/11/2026 | Online, Windows 10 | B (frequente / piloto): Etapas 1, 4 e 5 | [ficha](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/blob/main/avaliacao/dados/interacao/bruto/Entrevistas/PB02_2026-11-13.md); [ata](avaliacao/atas/sessao-PB02_2026-11-13.md) |
 
-**Notas de cálculo.** O Grupo A executa Etapas 1 a 3 e 5. O Grupo B não executa Etapas 2 e 3. Em PB01, os tempos preenchidos na seção Etapa 2 da ficha foram contabilizados como Etapa 4. Em PB02, os tempos preenchidos na seção Etapa 3 da ficha foram contabilizados como Etapa 4. PA01 é Grupo A; marcação residual “B” na ficha, se houver, é erro de digitação. Detalhe em [interacao.md](avaliacao/analise/interacao.md).
+**Notas de cálculo.** O Grupo A executa Etapas 1 a 3 e 5. O Grupo B não executa Etapas 2 e 3. Em PB01, os tempos preenchidos na seção Etapa 2 da ficha foram contabilizados como Etapa 4. Em PB02, os tempos preenchidos na seção Etapa 3 da ficha foram contabilizados como Etapa 4. PA01 é Grupo A; marcação residual “B” na ficha, se houver, é erro de digitação. A sessão **PB02** foi conduzida como entrevista piloto e, no escopo deste projeto da disciplina, **permanece na avaliação geral**: serve como linha de base de comparação entre participantes frequentes e integra o conjunto de dados que fundamenta as métricas, o julgamento e as recomendações. Detalhe em [interacao.md](avaliacao/analise/interacao.md).
 
 ### Resultados
 

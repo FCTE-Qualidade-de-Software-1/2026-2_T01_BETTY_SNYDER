@@ -55,7 +55,7 @@ Formato: **`<métrica>_<cenário>_<execução>`** (separador `_`).
 
 Exemplos: `M-INT-01_reconhecimento_PA01.csv`; `ficha_PA01_2026-11-12.pdf`; `T_ini_coldstart_01.csv`.
 
-Exceção: `gravacoes.csv` é o índice das gravações e não segue o trio.
+Exceção: `gravacoes.csv` é o índice das sessões (duração e ata) e não segue o trio; não aponta arquivos de mídia no repositório.
 
 ## Rastreabilidade métrica → arquivo
 
@@ -63,7 +63,7 @@ Exceção: `gravacoes.csv` é o índice das gravações e não segue o trio.
 | --- | --- | --- | --- |
 | Capacidade de interação | Trf (M-INT-01) | [`M-INT-01_reconhecimento.csv`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/blob/main/avaliacao/dados/interacao/bruto/M-INT-01_reconhecimento.csv) | [`M-INT_metricas.csv`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/blob/main/avaliacao/dados/interacao/consolidado/M-INT_metricas.csv); [análise](avaliacao/analise/interacao.md) |
 | Capacidade de interação | Taprend, Tsa, Tct, Texec | [`M-INT_tarefas.csv`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/blob/main/avaliacao/dados/interacao/bruto/M-INT_tarefas.csv) | idem |
-| Capacidade de interação | Evidência de sessão | [`Entrevistas/PA01_…`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/tree/main/avaliacao/dados/interacao/bruto/Entrevistas), [`gravacoes.csv`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/blob/main/avaliacao/dados/interacao/bruto/gravacoes.csv) | - |
+| Capacidade de interação | Evidência de sessão | [`Entrevistas/`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/tree/main/avaliacao/dados/interacao/bruto/Entrevistas); atas em `docs/avaliacao/atas/`; índice [`gravacoes.csv`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/blob/main/avaliacao/dados/interacao/bruto/gravacoes.csv) (sem mídia versionada) | - |
 | Eficiência de desempenho | T_ini, T_rev, T_sinc, CPU, RAM, … | `dados/desempenho/bruto/<métrica>_<cenário>_<execução>.*` | `dados/desempenho/consolidado/`; [análise](avaliacao/analise/desempenho.md) |
 | Flexibilidade | T_inst, T_inst_t, N_int, P_int, T_pd, T_sub | `dados/flexibilidade/bruto/<métrica>_<cenário>_<execução>.*` (ainda sem arquivos de medição) | `dados/flexibilidade/consolidado/` (vazio); [análise de Flexibilidade](avaliacao/analise/flexibilidade.md) |
 
@@ -82,8 +82,8 @@ Fluxo Flexibilidade (pendente): protocolos publicados → CSV bruto (faltando) �
 - A tabela código → pessoa permanece **fora do repositório** (pasta privada da equipe).
 - Termos de consentimento assinados ficam na pasta privada, separados dos CSVs.
 
-## Gravações (leitura do TCLE)
+## Gravações e anonimização (leitura do TCLE)
 
 O Termo de Consentimento Livre e Esclarecido estabelece que os registros ficam em **diretório privado**, com acesso restrito à professora e à equipe, até 14/12/2026, com anonimização antes da apresentação dos resultados.
 
-**Decisão (Entrega 2):** as gravações das três sessões de Capacidade de interação estão versionadas em [`avaliacao/dados/interacao/bruto/gravacoes/`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/tree/main/avaliacao/dados/interacao/bruto/gravacoes) (Git LFS), com índice em [`gravacoes.csv`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/blob/main/avaliacao/dados/interacao/bruto/gravacoes.csv) e atas objetivas em [Ata PA01](avaliacao/atas/sessao-PA01_2026-11-14.md), [Ata PB01](avaliacao/atas/sessao-PB01_2026-11-13.md) e [Ata PB02](avaliacao/atas/sessao-PB02_2026-11-13.md). A tabela código → pessoa permanece fora do repositório.
+**Decisão (Entrega 2, após o PC2):** as gravações de tela e áudio **não** são versionadas no repositório Git. Permanecem apenas em armazenamento privado. A evidência pública da sessão são as atas objetivas ([Ata PA01](avaliacao/atas/sessao-PA01_2026-11-14.md), [Ata PB01](avaliacao/atas/sessao-PB01_2026-11-13.md), [Ata PB02](avaliacao/atas/sessao-PB02_2026-11-13.md)), as fichas anonimizadas e o índice [`gravacoes.csv`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/blob/main/avaliacao/dados/interacao/bruto/gravacoes.csv) (duração e caminho da ata, sem arquivo de mídia). A tabela código → pessoa permanece fora do repositório.

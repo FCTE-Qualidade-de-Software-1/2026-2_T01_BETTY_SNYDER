@@ -339,7 +339,7 @@ A Fase 3 operacionaliza a especificação GQM sem redefinir métricas. O método
 
 ### A. Obtenção dos dados e desvios
 
-Participantes anonimizados PA01 (Grupo A), PB01 e PB02 (Grupo B). O Grupo B não executa Etapas 2 e 3; tempos de PB02 na seção Etapa 3 da ficha (e de PB01 na seção Etapa 2) foram consolidados como Etapa 4. Fontes: [Dados](dados.md); gravações em `avaliacao/dados/interacao/bruto/gravacoes/`; [análise de Capacidade de interação](avaliacao/analise/interacao.md).
+Participantes anonimizados PA01 (Grupo A), PB01 e PB02 (Grupo B). O Grupo B não executa Etapas 2 e 3; tempos de PB02 na seção Etapa 3 da ficha (e de PB01 na seção Etapa 2) foram consolidados como Etapa 4. A sessão **PB02** foi a entrevista piloto e, no escopo deste projeto da disciplina, permanece na avaliação geral: funciona como linha de base de comparação entre frequentes e integra os dados que fundamentam métricas, julgamento e recomendações. Fontes públicas: [Dados](dados.md); atas de sessão; [análise de Capacidade de interação](avaliacao/analise/interacao.md). As gravações de tela e áudio ficam em diretório privado, sem versionamento no repositório.
 
 ### B. Resultados de Capacidade de interação
 

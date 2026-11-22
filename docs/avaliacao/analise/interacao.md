@@ -1,14 +1,14 @@
 # Análise de Capacidade de interação
 
-Esta página consolida as métricas de Capacidade de interação a partir das fichas anonimizadas `PA01`, `PB01` e `PB02`, das gravações em `avaliacao/dados/interacao/bruto/gravacoes/`, dos CSV e das faixas da [Fase 2](../../fase2.md). O julgamento é **indicativo** (n = 3; um iniciante).
+Esta página consolida as métricas de Capacidade de interação a partir das fichas anonimizadas `PA01`, `PB01` e `PB02`, das atas de sessão, dos CSV e das faixas da [Fase 2](../../fase2.md). As gravações de tela e áudio não são versionadas no repositório (diretório privado). O julgamento é **indicativo** (n = 3; um iniciante).
 
 ## 1. Fontes e decisões de consolidação
 
 | Código | Sessão | Grupo | Evidência |
 | --- | --- | --- | --- |
-| PA01 | 14/11/2026, presencial, Windows 11 | A (iniciante): Etapas 1 a 3 e 5 | [ficha](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/blob/main/avaliacao/dados/interacao/bruto/Entrevistas/PA01_2026-11-14.md); [gravação](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/blob/main/avaliacao/dados/interacao/bruto/gravacoes/PA01_2026-11-14.mp4); [ata](../atas/sessao-PA01_2026-11-14.md) |
-| PB01 | 13/11/2026, online, macOS | B (frequente): Etapas 1, 4 e 5 | [ficha](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/blob/main/avaliacao/dados/interacao/bruto/Entrevistas/PB01_2026-11-13.md); [gravação](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/blob/main/avaliacao/dados/interacao/bruto/gravacoes/PB01_2026-11-13.mp4); [ata](../atas/sessao-PB01_2026-11-13.md) |
-| PB02 | 13/11/2026, online, Windows 10 | B (frequente/piloto): Etapas 1, 4 e 5 | [ficha](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/blob/main/avaliacao/dados/interacao/bruto/Entrevistas/PB02_2026-11-13.md); [gravação](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/blob/main/avaliacao/dados/interacao/bruto/gravacoes/PB02_2026-11-13.mp4); [ata](../atas/sessao-PB02_2026-11-13.md) |
+| PA01 | 14/11/2026, presencial, Windows 11 | A (iniciante): Etapas 1 a 3 e 5 | [ficha](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/blob/main/avaliacao/dados/interacao/bruto/Entrevistas/PA01_2026-11-14.md); [ata](../atas/sessao-PA01_2026-11-14.md) |
+| PB01 | 13/11/2026, online, macOS | B (frequente): Etapas 1, 4 e 5 | [ficha](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/blob/main/avaliacao/dados/interacao/bruto/Entrevistas/PB01_2026-11-13.md); [ata](../atas/sessao-PB01_2026-11-13.md) |
+| PB02 | 13/11/2026, online, Windows 10 | B (frequente / piloto): Etapas 1, 4 e 5 | [ficha](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/blob/main/avaliacao/dados/interacao/bruto/Entrevistas/PB02_2026-11-13.md); [ata](../atas/sessao-PB02_2026-11-13.md) |
 
 **Regras de roteiro**
 
@@ -17,6 +17,7 @@ Esta página consolida as métricas de Capacidade de interação a partir das fi
 3. Em PB02, os tempos preenchidos na seção “Etapa 3” da ficha correspondem à **Etapa 4** (uso diário) e são consolidados como tal.
 4. Em PB01, os tempos preenchidos na seção “Etapa 2” da ficha seguem a mesma lógica documental e são consolidados como **Etapa 4**.
 5. PA01 é Grupo A (iniciante). Marcação “B” residual na ficha, se houver, trata-se de erro de digitação e foi corrigida.
+6. **Entrevista piloto (PB02).** No escopo deste projeto da disciplina, a sessão piloto é considerada parte da avaliação geral resultante: além de linha de base de comparação entre usuários frequentes, seus dados entram nas métricas consolidadas, no julgamento das questões GQM e nas recomendações de melhoria.
 
 ## 2. Cálculo das métricas
 
@@ -70,6 +71,7 @@ Barras agrupadas com a faixa alvo de 2 a 5 min da Fase 2. Grupo A: PA01, rodada 
 - Um iniciante na amostra de Q1 e Q2.
 - Em frequentes, a Etapa 4 foi registrada em seções erradas da ficha (2 ou 3) e remapeada na consolidação.
 - Julgamento **indicativo**.
+- PB02 é sessão piloto; sua inclusão na avaliação geral e como linha de base está explícita na regra 6 da seção 1, conforme orientação do feedback do [Ponto de Controle 2](../atas/feedback-PC2_2026-11-16.md).
 
 ## 6. Ação de melhoria
 
