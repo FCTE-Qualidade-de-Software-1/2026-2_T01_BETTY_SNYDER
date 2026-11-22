@@ -20,7 +20,7 @@ Faculdade de Ciências e Tecnologias em Engenharia (FCTE) / Faculdade UnB Gama (
 
 O processo de garantia da qualidade de software consolidou-se como disciplina nuclear da Engenharia de Software moderna, estabelecendo critérios objetivos para que produtos atendam tanto às expectativas funcionais dos usuários quanto a restrições de engenharia e desempenho [1]. No contexto de ferramentas educacionais, o **Anki Desktop** ([github.com/ankitects/anki](https://github.com/ankitects/anki)) é uma plataforma de memorização ativa por repetição espaçada (*Spaced Repetition System*, SRS), construída com Python, Rust e a interface gráfica PyQt/QtWebEngine, que funciona em diferentes sistemas operacionais e armazena as coleções localmente em SQLite.
 
-O presente trabalho, conduzido pela **Equipe Betty Snyder** na disciplina de Qualidade de Software 1 da Universidade de Brasília (FGA/FCTE-UnB), tem como objetivo avaliar a qualidade de produto do Anki Desktop (versão 26.09.3) e do fluxo de conta, login e sincronização do AnkiWeb, para indicar pontos de melhoria do ponto de vista do estudante. A avaliação segue a ISO/IEC 25010:2023 [2] e o processo de avaliação de produto [3]. Este artigo cobre as Fases 1 a 4 até a Entrega 2: requisitos, especificação GQM, plano, execução parcial com julgamento indicativo e ação de melhoria. Protocolos, dados brutos e análises estendidas estão na GitPage ([Fase 3](fase3.md), [Fase 4](fase4.md), [Dados](dados.md)).
+O presente trabalho, conduzido pela **Equipe Betty Snyder** na disciplina de Qualidade de Software 1 da Universidade de Brasília (FGA/FCTE-UnB), tem como objetivo avaliar a qualidade de produto do Anki Desktop (versão 26.09.3) e do fluxo de conta, login e sincronização do AnkiWeb, para indicar pontos de melhoria do ponto de vista do estudante. A avaliação segue a ISO/IEC 25010:2023 [2] e o processo de avaliação de produto [3]. Este artigo cobre as Fases 1 a 4 até a Entrega 2: requisitos, especificação GQM, plano, execução parcial com julgamento indicativo e ação de melhoria. Protocolos, dados brutos e análises estendidas estão na GitPage ([Fase 3](fase3.md), [Fase 4](fase4.md)).
 
 ## II. Fundamentação Teórica e Trabalhos Relacionados
 
@@ -339,23 +339,23 @@ A Fase 3 operacionaliza a especificação GQM sem redefinir métricas. O método
 
 ### A. Obtenção dos dados e desvios
 
-Participantes anonimizados PA01 (Grupo A), PB01, PB02 e PB03 (Grupo B). O Grupo B não executa Etapas 2 e 3; tempos de PB02 na seção Etapa 3 da ficha (e de PB01 na seção Etapa 2) foram consolidados como Etapa 4. Em PB03 (21/11/2026), quatro tarefas da Etapa 4 têm tempo; B2 Revisar não foi coletada. A sessão **PB02** foi a entrevista piloto e permanece na avaliação geral como linha de base e dado consolidado. Fontes públicas: [Dados](dados.md); atas de sessão; [análise de Capacidade de interação](avaliacao/analise/interacao.md). As gravações ficam em diretório privado.
+Participantes anonimizados PA01 (Grupo A), PB01, PB02 e PB03 (Grupo B). O Grupo B não executa Etapas 2 e 3; tempos de PB02 na seção Etapa 3 da ficha (e de PB01 na seção Etapa 2) foram consolidados como Etapa 4. Em PB03 (21/11/2026), quatro tarefas da Etapa 4 têm tempo; B2 Revisar não foi coletada. A sessão **PB02** foi a entrevista piloto e permanece na avaliação geral como linha de base e dado consolidado. Fontes públicas: [organização dos dados na Fase 4](fase4.md#organizacao-dos-dados); atas de sessão; [análise de Capacidade de interação](avaliacao/analise/interacao.md). As gravações ficam em diretório privado.
 
 ### B. Resultados de Capacidade de interação
 
-| Métrica | PA01 | Faixa | PB01 | Faixa | PB02 | Faixa |
-| --- | --- | --- | --- | --- | --- | --- |
-| T<sub>rf</sub> | 16,7% | Insatisfatório | 66,7% | Mínimo | 83,3% | Alvo |
-| T<sub>aprend</sub> | 7 min 36 s | Excelente | n/a | - | n/a | - |
-| T<sub>sa</sub> | 100% | Excelente | n/a | - | n/a | - |
-| T<sub>ct</sub> | 80%→100% | Mín./Exc. | 100% (Etapa 4) | Excelente | 100% (Etapa 4) | Excelente |
-| T<sub>exec</sub> mediana | 50 s | Excelente | 39,31 s | Excelente | 25 s | Excelente |
+| Métrica | PA01 | Faixa | PB01 | Faixa | PB02 | Faixa | PB03 | Faixa |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| T<sub>rf</sub> | 16,7% | Insatisfatório | 66,7% | Mínimo | 83,3% | Alvo | 66,7% | Mínimo |
+| T<sub>aprend</sub> | 7 min 36 s | Excelente | n/a | - | n/a | - | n/a | - |
+| T<sub>sa</sub> | 100% | Excelente | n/a | - | n/a | - | n/a | - |
+| T<sub>ct</sub> | 80%→100% | Mín./Exc. | 100% (Etapa 4) | Excelente | 100% (Etapa 4) | Excelente | 100% (4/4) | Excelente |
+| T<sub>exec</sub> mediana | 50 s | Excelente | 39,31 s | Excelente | 25 s | Excelente | 27,285 s | Excelente |
 
 Q1 não atendida; Q2 atendida em PA01; Q3 atendida em PB01, PB02 e PB03 (com ressalvas documentais). H1 rejeitada no iniciante; H2 sustentada; H3 sustentada no agregado de frequentes. Média de T<sub>rf</sub> entre frequentes: 72,2%. Julgamento **indicativo** (n = 4).
 
 ### C. Síntese de Eficiência de desempenho e Flexibilidade
 
-Eficiência de desempenho: cold start e CPU em repouso *excelente*; RAM *mínimo* (QtWebEngine); lacunas Windows/cold start no PC2. Flexibilidade: provisório até CSV faltantes.
+Eficiência de desempenho: cold start e CPU em repouso *excelente*; RAM *mínimo* (QtWebEngine); lacunas Windows no PC2. Flexibilidade: instalação e checklist publicados (Q1 e Q2 atendidas; H1 parcial no Ubuntu); migração (Q3) sem CSV.
 
 ### D. Julgamento, relações e ação de melhoria
 
@@ -363,7 +363,7 @@ Prioridade: descoberta de “Criar baralho” e vocabulário nota/tipo/cartão. 
 
 ## VII. Conclusão
 
-Este artigo apresentou as Fases 1 a 4: requisitos, GQM, plano, execução parcial, julgamento indicativo e ação de melhoria na interface de criação de baralho (protótipo de alta fidelidade). Permanecem abertos, com rastreabilidade explícita na GitPage: medições de Flexibilidade (CSV), itens de desempenho no Windows, corte PSM de 21/11 e a Release E2 no GitHub. Detalhe: [Fase 4](fase4.md) e [checklist de critérios](criterios-gitpage.md).
+Este artigo apresentou as Fases 1 a 4: requisitos, GQM, plano, execução parcial, julgamento indicativo e ação de melhoria na interface de criação de baralho (protótipo de alta fidelidade). Permanecem abertos, com rastreabilidade explícita na GitPage: CSV de migração (Flexibilidade Q3), itens de desempenho no Windows, corte PSM de 21/11 e a Release E2 no GitHub. Detalhe: [Fase 4](fase4.md).
 
 ## Declaração de Uso de Inteligência Artificial
 
