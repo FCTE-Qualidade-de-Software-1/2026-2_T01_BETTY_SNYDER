@@ -201,7 +201,7 @@ Todos os gráficos a seguir foram gerados automaticamente pelo [`analisador_thre
 
 ## 6. Rastreabilidade dos Dados Brutos
 
-Todos os arquivos CSV brutos que embasam esta análise estão versionados no repositório oficial na pasta `avaliacao/dados/desempenho/bruto/` (catalogados em [Dados](../../dados.md)):
+Todos os arquivos CSV brutos que embasam esta análise estão versionados no repositório oficial na pasta `avaliacao/dados/desempenho/bruto/` (ou espelhados em `docs/avaliacao/dados/desempenho/bruto/`; ver [Fase 4](../../fase4.md#organizacao-dos-dados)):
 
 | Arquivo Bruto | Sistema Operacional | Responsável | Métrica Principal | Amostras |
 | :--- | :--- | :--- | :--- | :---: |

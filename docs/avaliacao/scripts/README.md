@@ -127,7 +127,7 @@ cd /home/siqueira-prog/2026-2_T01_BETTY_SNYDER
 
 ## 🎯 Padrão de Nomenclatura dos Arquivos de Saída
 
-Conforme a convenção estabelecida em [Dados](../../dados.md):
+Conforme a convenção estabelecida na [Fase 4](../../fase4.md#organizacao-dos-dados):
 - `<métrica>_<cenário>_<sistema_operacional>_<rodada>.csv`
 - Exemplo: `CPU_repouso_ubuntu_01.csv`, `T_ini_coldstart_windows_01.csv`.
 - **Regra de Governança:** Arquivos contendo `windows` pertencem às rodadas em Windows 11 e **não devem ser sobrescritos** por execuções em outros sistemas operacionais.

@@ -37,7 +37,7 @@ Ação manual extra para a instalação concluir, por exemplo: `sudo apt install
 
 - Gravar a tela de cada tentativa.
 - Ficha: `avaliacao/dados/flexibilidade/bruto/instalacao/ficha_instalacao.csv`.
-- Padrão de nomes: [Dados](../../dados.md).
+- Padrão de nomes: [Fase 4](../../fase4.md#organizacao-dos-dados).
 
 ## 5. Critérios de invalidação
 

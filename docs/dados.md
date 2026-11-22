@@ -1,39 +1,43 @@
-# Dados da avaliação
+# Dados da avaliação (rascunho local)
 
-Esta página documenta a organização dos dados da avaliação do Anki Desktop 26.09.3 e do fluxo AnkiWeb no repositório, para satisfazer a **rastreabilidade entre dado bruto e métrica** (F4-C2; premissas 4 e 5 do enunciado) e a **proteção da identificação** dos participantes.
+> Uso interno da equipe. Esta página **não** entra no menu nem na publicação da GitPage (`exclude_docs` no `mkdocs.yml`). A versão pública da organização dos dados está na [Fase 4](fase4.md#organizacao-dos-dados).
 
-Os dados do **produto** ficam em [`avaliacao/`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/tree/main/avaliacao). Não confundir com [`gestao-psm/`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/tree/main/gestao-psm), que registra o andamento do projeto acadêmico (PSM).
+Esta página explica, em linguagem acessível, onde ficam os arquivos da avaliação do Anki Desktop 26.09.3 e do fluxo AnkiWeb, como o nome de cada arquivo se relaciona com uma métrica (quantidade medida) e como a privacidade dos participantes é protegida.
 
-## Árvore no repositório
+Os dados do **produto** (resultados da avaliação do Anki) ficam em [`avaliacao/`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/tree/main/avaliacao). Não confundir com [`gestao-psm/`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/tree/main/gestao-psm), que registra o andamento do projeto acadêmico (PSM, o acompanhamento de esforço e progresso da equipe).
+
+## O que está em cada pasta
 
 ```text
 avaliacao/
-  protocolos/     Instrumento unificado de sessão
-  scripts/        Coletores e consolidados (quando existirem)
+  protocolos/     Como conduzir entrevistas e ensaios de laboratório
+  scripts/        Programas que coletam ou consolidam medidas
   dados/
-    interacao/      {bruto, consolidado}  : Capacidade de interação (Capacidade de interação)
-    desempenho/     {bruto, consolidado}  : Eficiência de desempenho (Eficiência de desempenho)
-    flexibilidade/  {bruto, consolidado}  : Flexibilidade (Flexibilidade)
-  analise/        Julgamentos GQM e evidências derivadas
+    interacao/      {bruto, consolidado}  Capacidade de interação (facilidade de uso)
+    desempenho/     {bruto, consolidado}  Eficiência de desempenho (tempo e recursos)
+    flexibilidade/  {bruto, consolidado}  Flexibilidade (instalação, integração e migração)
+  analise/        Textos que interpretam as métricas frente ao GQM
 ```
 
-| Pasta | Link |
-| --- | --- |
-| Visão geral | [`avaliacao/`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/tree/main/avaliacao) |
-| Protocolos | [`avaliacao/protocolos/`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/tree/main/avaliacao/protocolos) |
-| Dados | [`avaliacao/dados/`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/tree/main/avaliacao/dados) |
-| Análise | [`avaliacao/analise/`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/tree/main/avaliacao/analise) |
+| Pasta | Para que serve | Link |
+| --- | --- | --- |
+| Visão geral | Entrada da avaliação no repositório | [`avaliacao/`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/tree/main/avaliacao) |
+| Protocolos | Passo a passo das coletas | [`avaliacao/protocolos/`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/tree/main/avaliacao/protocolos) |
+| Dados | Planilhas e fichas (bruto e consolidado) | [`avaliacao/dados/`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/tree/main/avaliacao/dados) |
+| Análise | Julgamento das questões e hipóteses | [`avaliacao/analise/`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/tree/main/avaliacao/analise) |
 
-Protocolos de avaliação (entrevista, desempenho e flexibilidade): [Fase 3](fase3.md). Pré-entrevista com participante: [Pré-entrevista com participante](avaliacao/protocolos/pre-entrevista-participante.md). Métricas e faixas: [Fase 2](fase2.md).
+Protocolos: [Fase 3](fase3.md). Métricas e faixas (níveis insatisfatório, mínimo, alvo e excelente): [Fase 2](fase2.md). Execução e julgamento: [Fase 4](fase4.md).
 
-## Fluxo de rastreabilidade
+## Do protocolo à métrica (rastreabilidade)
+
+A rastreabilidade é a capacidade de seguir o caminho do arquivo bruto até o número publicado na análise. Em termos práticos: cada valor na Fase 4 deve apontar para um CSV ou ficha no repositório.
 
 ```mermaid
 flowchart LR
   protocolo["Protocolos"]
-  bruto["Dados brutos da característica"]
-  consol["Dados consolidados da característica"]
-  analiseNode["Análise"]
+  bruto["Dados brutos"]
+  consol["Dados consolidados"]
+  analiseNode["Análise e Fase 4"]
   gqm["Fase 2 (GQM)"]
   protocolo --> bruto
   bruto -->|"métrica, cenário e execução"| consol
@@ -41,49 +45,51 @@ flowchart LR
   gqm -->|"código da métrica"| bruto
 ```
 
-Cada métrica da Fase 2 tem caminho de origem em `dados/<caracteristica>/bruto/`. Arquivos em `consolidado/` e em `analise/` citam essas fontes.
-
-## Padrão de nomes
-
-Formato: **`<métrica>_<cenário>_<execução>`** (separador `_`).
-
-| Peça | Conteúdo | Exemplos |
-| --- | --- | --- |
-| métrica | Código GQM | `M-INT-01`, `M-INT_tarefas`, `T_ini`, `T_inst` |
-| cenário | Tarefa, rodada ou ambiente | `reconhecimento`, `A3`, `coldstart`, `win11` |
-| execução | Participante ou repetição de lab | `PA01`, `PB02`, `01` |
-
-Exemplos: `M-INT-01_reconhecimento_PA01.csv`; `ficha_PA01_2026-11-12.pdf`; `T_ini_coldstart_01.csv`.
-
-Exceção: `sessoes.csv` é o índice das sessões (data, formato e ata) e não segue o trio; não aponta arquivos de mídia.
-
-## Rastreabilidade métrica → arquivo
-
-| Objetivo | Métrica | Bruto | Consolidado / análise |
-| --- | --- | --- | --- |
-| Capacidade de interação | Trf (M-INT-01) | [`M-INT-01_reconhecimento.csv`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/blob/main/avaliacao/dados/interacao/bruto/M-INT-01_reconhecimento.csv) | [`M-INT_metricas.csv`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/blob/main/avaliacao/dados/interacao/consolidado/M-INT_metricas.csv); [análise](avaliacao/analise/interacao.md) |
-| Capacidade de interação | Taprend, Tsa, Tct, Texec | [`M-INT_tarefas.csv`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/blob/main/avaliacao/dados/interacao/bruto/M-INT_tarefas.csv) | idem |
-| Capacidade de interação | Evidência de sessão | [`Entrevistas/`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/tree/main/avaliacao/dados/interacao/bruto/Entrevistas); atas em `docs/avaliacao/atas/`; índice [`sessoes.csv`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/blob/main/avaliacao/dados/interacao/bruto/sessoes.csv) | - |
-| Eficiência de desempenho | T_ini, T_rev, T_sinc, CPU, RAM, … | `dados/desempenho/bruto/<métrica>_<cenário>_<execução>.*` | `dados/desempenho/consolidado/`; [análise](avaliacao/analise/desempenho.md) |
-| Flexibilidade | T_inst, T_inst_t, N_int, P_int, T_pd, T_sub | `dados/flexibilidade/bruto/<métrica>_<cenário>_<execução>.*` (ainda sem arquivos de medição) | `dados/flexibilidade/consolidado/` (vazio); [análise de Flexibilidade](avaliacao/analise/flexibilidade.md) |
-
-Fluxo Capacidade de interação realizado: fichas anonimizadas → CSV bruto → `consolidado/M-INT_metricas.csv` → [análise de interação](avaliacao/analise/interacao.md) → [Fase 4](fase4.md).
-
-Fluxo Flexibilidade (pendente): protocolos publicados → CSV bruto (faltando) → consolidado (faltando) → [análise](avaliacao/analise/flexibilidade.md) → [Fase 4](fase4.md).
-
-## Participantes e anonimização
-
-| Código | Grupo |
+| Etapa | O que acontece |
 | --- | --- |
-| PA01, PA02 | A: iniciantes (realizado: PA01) |
-| PB01, PB02, PB03 | B: usuários frequentes (realizados: PB01, PB02 piloto, PB03) |
+| Protocolo | Define o que medir e como registrar |
+| Bruto | Guarda a observação crua (tempo, acerto, checklist) |
+| Consolidado | Resume por participante, sistema operacional ou grupo |
+| Análise / Fase 4 | Classifica em faixas e responde às questões GQM |
 
-- No repositório e nesta GitPage aparecem **apenas códigos**.
-- A tabela código → pessoa permanece **fora do repositório** (pasta privada da equipe).
-- Termos de consentimento assinados ficam na pasta privada, separados dos CSVs.
+## Como nomear arquivos
 
-## Gravações e anonimização (leitura do TCLE)
+Formato preferido: **`<métrica>_<cenário>_<execução>`** (separador `_`).
 
-O Termo de Consentimento Livre e Esclarecido estabelece que os registros ficam em **diretório privado**, com acesso restrito à professora e à equipe, até 14/12/2026, com anonimização antes da apresentação dos resultados.
+| Peça | Significado em linguagem comum | Exemplos |
+| --- | --- | --- |
+| métrica | Qual quantidade está sendo medida | `M-INT-01`, `M-INT_tarefas`, `T_ini`, `T_inst` |
+| cenário | Em que situação a medida foi tomada | `reconhecimento`, `coldstart`, `win11` |
+| execução | Quem ou qual repetição gerou o arquivo | `PA01`, `PB03`, `01` |
 
-**Decisão (Entrega 2, após o PC2):** as gravações de tela e áudio **não** são versionadas no repositório Git. A pasta `gravacoes/` foi removida. A evidência pública da sessão são as atas objetivas ([PA01](avaliacao/atas/sessao-PA01_2026-11-14.md), [PB01](avaliacao/atas/sessao-PB01_2026-11-13.md), [PB02](avaliacao/atas/sessao-PB02_2026-11-13.md), [PB03](avaliacao/atas/sessao-PB03_2026-11-21.md)), as fichas anonimizadas e o índice [`sessoes.csv`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/blob/main/avaliacao/dados/interacao/bruto/sessoes.csv). A tabela código → pessoa permanece fora do repositório.
+Exemplos: `M-INT-01_reconhecimento.csv`; `T_ini_coldstart_ubuntu_01.csv`.
+
+Exceção: `sessoes.csv` lista as entrevistas (data, formato e caminho da ata). Não aponta arquivo de mídia, porque as gravações ficam fora do repositório.
+
+## De cada métrica ao arquivo
+
+| Frente | Métricas principais | Onde está o bruto | Onde está o consolidado / análise |
+| --- | --- | --- | --- |
+| Capacidade de interação | T<sub>rf</sub> (reconhecimento) | [`M-INT-01_reconhecimento.csv`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/blob/main/avaliacao/dados/interacao/bruto/M-INT-01_reconhecimento.csv) | [`M-INT_metricas.csv`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/blob/main/avaliacao/dados/interacao/consolidado/M-INT_metricas.csv); [análise](avaliacao/analise/interacao.md) |
+| Capacidade de interação | T<sub>aprend</sub>, T<sub>sa</sub>, T<sub>ct</sub>, T<sub>exec</sub> | [`M-INT_tarefas.csv`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/blob/main/avaliacao/dados/interacao/bruto/M-INT_tarefas.csv) | Idem |
+| Capacidade de interação | Evidência de sessão | [`Entrevistas/`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/tree/main/avaliacao/dados/interacao/bruto/Entrevistas); atas; [`sessoes.csv`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/blob/main/avaliacao/dados/interacao/bruto/sessoes.csv) | [Fase 4](fase4.md) |
+| Eficiência de desempenho | Cold start, CPU, RAM, threads, vazão | Preferência: `avaliacao/dados/desempenho/bruto/`; cópia usada na GitPage em `docs/avaliacao/dados/desempenho/bruto/` | [análise de desempenho](avaliacao/analise/desempenho.md) |
+| Flexibilidade | T<sub>inst</sub>, T<sub>inst_t</sub>, N<sub>int</sub>, P<sub>int</sub> | Consolidados em [`flexibilidade/consolidado/`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/tree/main/avaliacao/dados/flexibilidade/consolidado) (instalação e checklist); migração (T<sub>pd</sub>, T<sub>sub</sub>) ainda sem CSV | [análise de Flexibilidade](avaliacao/analise/flexibilidade.md) |
+
+**Capacidade de interação (concluída na amostra atual):** fichas anonimizadas → CSV bruto → `M-INT_metricas.csv` → análise → Fase 4.
+
+**Flexibilidade (parcial):** instalação e checklist publicados; migração entre sistemas operacionais ainda sem CSV de T<sub>pd</sub> e T<sub>sub</sub>.
+
+## Participantes e privacidade
+
+| Código | Grupo | Situação na coleta |
+| --- | --- | --- |
+| PA01, PA02 | A: iniciantes (pessoas que nunca usaram o Anki) | Realizado: PA01 |
+| PB01, PB02, PB03 | B: usuários frequentes | Realizados: PB01, PB02 (piloto), PB03 |
+
+Regras práticas:
+
+1. No repositório e na GitPage aparecem **somente códigos** (PA01, PB01, …).
+2. A tabela que liga código ao nome da pessoa fica **fora do repositório**.
+3. Os termos de consentimento assinados ficam em pasta privada, separados das planilhas.
+4. Gravações de tela e áudio **não** são versionadas. A evidência pública da sessão são as [atas](avaliacao/atas/sessao-PA01_2026-11-14.md), as fichas em `Entrevistas/` e o índice `sessoes.csv`.

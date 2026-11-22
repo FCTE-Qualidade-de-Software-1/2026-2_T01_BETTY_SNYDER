@@ -4,7 +4,7 @@ Formulário preenchível por sessão (triagem, termo de consentimento e roteiro 
 
 Produto avaliado: Anki Desktop 26.09.3 e fluxo de conta, login e sincronização do AnkiWeb. Norma de referência: ISO/IEC 25010:2023. Características cobertas no instrumento: Capacidade de interação (Capacidade de interação), evidência de Eficiência de desempenho percebida (Eficiência de desempenho) e campos estruturados de Flexibilidade (Flexibilidade).
 
-Documentação operacional: [Entrevista](entrevista.md). Organização dos dados: [Dados](../../dados.md).
+Documentação operacional: [Entrevista](entrevista.md). Organização dos dados: [Fase 4](../../fase4.md#organizacao-dos-dados).
 
 ## 1. Identificação da sessão
 

@@ -61,7 +61,7 @@ Duas cópias da coleção; editar uma nota e apagar um card na cópia “depois�
 
 ## 4. Registro de dados
 
-Linhas da ficha e diffs em `avaliacao/dados/flexibilidade/bruto/migracao/`, nomes `M-FLEX-05_<origem>-<destino>_<cenário>_r<repetição>_<data>.csv`. Ver [Dados](../../dados.md).
+Linhas da ficha e diffs em `avaliacao/dados/flexibilidade/bruto/migracao/`, nomes `M-FLEX-05_<origem>-<destino>_<cenário>_r<repetição>_<data>.csv`. Ver [Fase 4](../../fase4.md#organizacao-dos-dados).
 
 ## 5. Critérios de invalidação
 

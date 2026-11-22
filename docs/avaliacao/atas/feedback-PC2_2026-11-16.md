@@ -39,7 +39,7 @@ No projeto Betty Snyder, essa orientação aplica-se à sessão **PB02** (Grupo 
 ## Encerramento e ações da equipe
 
 1. Manter PB02 na consolidação e declarar formalmente seu papel de piloto, linha de base e dado da avaliação geral.
-2. Reforçar a anonimização: gravações de tela e áudio fora do repositório público; evidência pública limitada a atas e fichas anonimizadas ([Dados](../../dados.md)).
+2. Reforçar a anonimização: gravações de tela e áudio fora do repositório público; evidência pública limitada a atas e fichas anonimizadas ([Fase 4](../../fase4.md#organizacao-dos-dados)).
 3. Preservar e destacar a triangulação multiplataforma da Dupla B na narrativa da Fase 4 e do artigo.
 
 Este registro não substitui as atas das sessões com participantes; complementa a rastreabilidade do retorno docente no PC2.

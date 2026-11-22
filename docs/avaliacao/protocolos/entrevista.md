@@ -2,7 +2,7 @@
 
 ## 1. Definições
 
-Esta página descreve o procedimento observacional aplicado pela **Dupla A** em todas as sessões com participantes voluntários. O formulário completo, com campos de registro, consta no [Pré-entrevista com participante](pre-entrevista-participante.md). As métricas, hipóteses e faixas de julgamento estão na [Fase 2](../../fase2.md). A organização dos arquivos está em [Dados](../../dados.md).
+Esta página descreve o procedimento observacional aplicado pela **Dupla A** em todas as sessões com participantes voluntários. O formulário completo, com campos de registro, consta no [Pré-entrevista com participante](pre-entrevista-participante.md). As métricas, hipóteses e faixas de julgamento estão na [Fase 2](../../fase2.md). A organização dos arquivos está na [Fase 4](../../fase4.md#organizacao-dos-dados).
 
 | Elemento | Definição operacional nesta frente |
 | --- | --- |
@@ -35,7 +35,7 @@ O facilitador lê as falas e os enunciados exatamente como escritos e aplica a r
 
 Na sessão online, o participante compartilha a tela inteira e a equipe grava tela e áudio. Na sessão presencial, a gravação é local. Utiliza-se o Anki Desktop 26.09.3 em perfil de teste. No Grupo A, a equipe fornece e-mail descartável. No Grupo B, o perfil já contém o baralho Apoio e o login da conta de teste.
 
-As máquinas de referência estão em [Ambiente](ambiente.md). A política de armazenamento das gravações está em [Dados](../../dados.md).
+As máquinas de referência estão em [Ambiente](ambiente.md). A política de armazenamento das gravações está na [Fase 4](../../fase4.md#organizacao-dos-dados).
 
 ### 2.3 Regras de condução
 
@@ -89,7 +89,7 @@ O facilitador agradece, solicita a exclusão do perfil e, no Grupo A, da conta d
 
 ## 4. Registro de dados
 
-Os arquivos brutos ficam em `avaliacao/dados/interacao/bruto/`, conforme o padrão descrito em [Dados](../../dados.md).
+Os arquivos brutos ficam em `avaliacao/dados/interacao/bruto/`, conforme o padrão descrito na [Fase 4](../../fase4.md#organizacao-dos-dados).
 
 | Arquivo | Conteúdo |
 | --- | --- |

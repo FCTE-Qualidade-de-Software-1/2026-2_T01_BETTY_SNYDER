@@ -23,4 +23,4 @@ O arquivo `Protocolo_Avaliacao_Participante.docx`, se presente nesta pasta, é c
 | Flexibilidade: checklist (Flexibilidade) | [flexibilidade-checklist.md](../../docs/avaliacao/protocolos/flexibilidade-checklist.md) |
 | Flexibilidade: migração (Flexibilidade) | [flexibilidade-migracao.md](../../docs/avaliacao/protocolos/flexibilidade-migracao.md) |
 
-Dados e rastreabilidade: [docs/dados.md](../../docs/dados.md).
+Dados e rastreabilidade: [docs/fase4.md](../../docs/fase4.md#organizacao-dos-dados).

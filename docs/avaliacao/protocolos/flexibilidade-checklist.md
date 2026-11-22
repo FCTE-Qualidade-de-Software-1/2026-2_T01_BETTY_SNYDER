@@ -58,7 +58,7 @@ Preparação:
 
 ## 4. Registro de dados
 
-Planilha modelo: [`flexibilidade-checklist-registro.csv`](flexibilidade-checklist-registro.csv). Preenchida: `M-FLEX-04_registro_<data>.csv` em `avaliacao/dados/flexibilidade/bruto/checklist/`, com as capturas. Ver [Dados](../../dados.md).
+Planilha modelo: [`flexibilidade-checklist-registro.csv`](flexibilidade-checklist-registro.csv). Preenchida (consolidado): [`flexibilidade-checklist-registro.csv`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/blob/main/avaliacao/dados/flexibilidade/consolidado/flexibilidade-checklist-registro.csv). Ver [Fase 4](../../fase4.md#organizacao-dos-dados).
 
 ## 5. Critérios de invalidação / análise
 

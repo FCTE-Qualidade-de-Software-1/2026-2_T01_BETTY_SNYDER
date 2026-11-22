@@ -1,8 +1,10 @@
 site_name: BETTY SNYDER
-copyright: "Equipe Betty Snyder · FGA0315 Qualidade de Software 1 · Versão E2 (Fases 3-4) · Atualizado em 22/11/2026 · Checklist: criterios-gitpage.md"
+copyright: "Equipe Betty Snyder · FGA0315 Qualidade de Software 1 · Versão E2 (Fases 3-4) · Atualizado em 22/11/2026"
 site_url: https://FCTE-Qualidade-de-Software-1.github.io/2026-2_T01_BETTY_SNYDER/
 exclude_docs: |
   avaliacao/checklist-pc2.md
+  criterios-gitpage.md
+  dados.md
 nav:
   - Início: index.md
   - Fase 1: fase1.md
@@ -32,8 +34,6 @@ nav:
       - Visão geral: fase4.md
       - Análise de Flexibilidade: avaliacao/analise/flexibilidade.md
       - Protótipo da ação de melhoria: prototipo-acao-melhoria.md
-  - Dados: dados.md
-  - Critérios × GitPage: criterios-gitpage.md
   - Artigo: artigo.md
   - Gestão PSM:
       - Visão geral: gestao-psm.md

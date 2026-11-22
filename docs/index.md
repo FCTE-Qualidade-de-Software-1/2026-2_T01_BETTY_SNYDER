@@ -17,9 +17,9 @@ Turma T01 · Semestre 2026-2
 1. **[Fase 1](fase1.md):** requisitos, propósito e modelo ISO/IEC 25010:2023.  
 2. **[Fase 2](fase2.md):** especificação GQM (objetivos, questões, hipóteses, métricas e níveis).  
 3. **[Fase 3](fase3.md):** plano, protocolos, ambiente e cronograma.  
-4. **[Fase 4](fase4.md):** coleta, julgamento, sugestões e [ação de melhoria (protótipo)](prototipo-acao-melhoria.md).  
+4. **[Fase 4](fase4.md):** coleta, organização dos dados, julgamento, sugestões e [ação de melhoria (protótipo)](prototipo-acao-melhoria.md).  
 
-Checklist enunciado × GitPage: [criterios-gitpage.md](criterios-gitpage.md). Releases: [página de releases](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/releases) (E1 publicada; E2 a criar na entrega final).
+Releases: [página de releases](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/releases) (E1 publicada; E2 a criar na entrega final).
 
 ## Sobre o projeto
 
@@ -74,17 +74,9 @@ Dessa forma, pretende-se identificar os pontos positivos e as possíveis limita�
 
     ---
 
-    Coleta, análise GQM, julgamento, sugestões e ação de melhoria.
+    Organização dos dados, coleta, análise GQM, julgamento, sugestões e ação de melhoria.
 
     [:octicons-arrow-right-24: Abrir](fase4.md)
-
--   :material-database-outline:{ .lg .middle } **Dados**
-
-    ---
-
-    Árvore `avaliacao/`, padrão de nomes, códigos de participante e rastreabilidade bruto → métrica.
-
-    [:octicons-arrow-right-24: Abrir](dados.md)
 
 -   :material-chart-line:{ .lg .middle } **Gestão do projeto (PSM)**
 

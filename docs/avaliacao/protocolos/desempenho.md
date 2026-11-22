@@ -138,7 +138,7 @@ Massas: 10k, 50k e 100k cards.
 
 ## 4. Registro de dados e resultados empíricos
 
-Pasta oficial de evidências: `avaliacao/dados/desempenho/bruto/`, com padrão de nomenclatura `<métrica>_<cenário>_<SO>_<execução>.csv` (ver [Dados](../../dados.md)).
+Pasta oficial de evidências: `avaliacao/dados/desempenho/bruto/`, com padrão de nomenclatura `<métrica>_<cenário>_<SO>_<execução>.csv` (ver [Fase 4](../../fase4.md#organizacao-dos-dados)).
 
 ### 4.1 Matriz de faixas de julgamento GQM
 
@@ -166,7 +166,7 @@ A bateria completa de testes instrumentados executada no ambiente Linux de refer
 | **Pico de Escrita no SSD (I/O)** | **`228.4 MB/s`** ($228.416\text{ KB/s}$) | Capacidade NVMe | 🟢 **Nominal** | [`metricas_estresse_ubuntu_01.csv`](../dados/desempenho/bruto/metricas_estresse_ubuntu_01.csv) |
 | **Vazão Check Database (Q3)** | **$\approx 2.000.000\text{ cards/min}$** ($3.0\text{s}$) | $\ge 60.000\text{ cards/min}$ | 🟢 **Excelente** | [`metricas_estresse_ubuntu_01.csv`](../dados/desempenho/bruto/metricas_estresse_ubuntu_01.csv) |
 
-*(Nota de Rastreabilidade: Os dados coletados em ambiente Windows 11 pela integrante Karolina Vieira Barbosa estão versionados sob o padrão `threads_*windows*.csv` conforme catalogado em [Dados](../../dados.md)).*
+*(Nota de Rastreabilidade: Os dados coletados em ambiente Windows 11 pela integrante Karolina Vieira Barbosa estão versionados sob o padrão `threads_*windows*.csv` conforme catalogado na [Fase 4](../../fase4.md#organizacao-dos-dados)).*
 
 ### 4.3 Análise técnica aprofundada: consumo de RAM em repouso basal (783,89 MB - Q2)
 

@@ -20,7 +20,7 @@ avaliacao/
   analise/        Julgamentos GQM e evidências derivadas
 ```
 
-Documentação pública na GitPage: [Dados](../docs/dados.md).
+Documentação pública na GitPage: [organização dos dados (Fase 4)](../docs/fase4.md#organizacao-dos-dados).
 
 ## Fluxo de rastreabilidade
 

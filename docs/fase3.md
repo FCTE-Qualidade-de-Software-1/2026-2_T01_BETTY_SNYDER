@@ -1,6 +1,6 @@
 # Fase 3: Protocolos de avaliação
 
-Esta seção documenta o plano de avaliação (Fase 3) do Anki Desktop 26.09.3 e do fluxo de conta, login e sincronização do AnkiWeb. Os procedimentos estão em três frentes que correspondem aos objetivos GQM da [Fase 2](fase2.md) e à árvore de pastas descrita em [Dados](dados.md).
+Esta seção documenta o plano de avaliação (Fase 3) do Anki Desktop 26.09.3 e do fluxo de conta, login e sincronização do AnkiWeb. Os procedimentos estão em três frentes que correspondem aos objetivos GQM da [Fase 2](fase2.md) e à árvore de pastas descrita na [organização dos dados (Fase 4)](fase4.md#organizacao-dos-dados).
 
 O formulário aplicado em cada sessão com participante é o [Pré-entrevista com participante](avaliacao/protocolos/pre-entrevista-participante.md). As configurações de hardware e software das máquinas de referência estão em [Ambiente](avaliacao/protocolos/ambiente.md).
 
@@ -44,7 +44,7 @@ A execução segue o GQM da Fase 2 e o instrumento unificado, em três frentes:
 | Entrevista de Capacidade de interação (PA01) | 14/11/2026 | Realizado: Grupo A, Etapas 1 a 3 e 5 |
 | Entrevista de Capacidade de interação (PB03) | 21/11/2026 | Realizado: Grupo B, Etapas 1, 4 e 5; B2 Revisar não coletada |
 | Coletas de Eficiência de desempenho (Ubuntu, Windows e macOS) | PC2 até Entrega 2 | [Análise publicada](avaliacao/analise/desempenho.md); itens “refazer” e medições incompletas no Windows permanecem abertos |
-| Coletas de Flexibilidade (instalação, integração e migração) | PC2 até Entrega 2 | Sem CSV nem gráficos; status documentado em [análise de Flexibilidade](avaliacao/analise/flexibilidade.md) |
+| Coletas de Flexibilidade (instalação, integração e migração) | PC2 até Entrega 2 | Instalação e checklist publicados; migração sem CSV; ver [análise de Flexibilidade](avaliacao/analise/flexibilidade.md) |
 | Cálculo das métricas a partir dos CSV e redação da análise de Capacidade de interação | 15/11/2026 a 16/11/2026 | `M-INT_metricas.csv` e [análise de Capacidade de interação](avaliacao/analise/interacao.md) publicados |
 | Julgamento, sugestões e ação de melhoria | Entrega 2 | Publicado em [Fase 4](fase4.md); protótipo em [Protótipo](prototipo-acao-melhoria.md) |
 | Cortes PSM | 08/11, 15/11 e 21/11/2026 | 08/11 e 15/11 publicados; 21/11 e Desempenho dos processos E2 ainda pendentes ([PSM](gestao-psm.md)) |
@@ -77,4 +77,4 @@ As páginas de procedimento repetem a mesma sequência de seções, para permiti
 3. Procedimento passo a passo
 4. Registro de dados em `avaliacao/dados/...`, com o padrão `<métrica>_<cenário>_<execução>`
 5. Critérios de invalidação ou encerramento
-6. Relação com o [Pré-entrevista com participante](avaliacao/protocolos/pre-entrevista-participante.md) e com a página [Dados](dados.md)
+6. Relação com o [Pré-entrevista com participante](avaliacao/protocolos/pre-entrevista-participante.md) e com a [organização dos dados na Fase 4](fase4.md#organizacao-dos-dados)
