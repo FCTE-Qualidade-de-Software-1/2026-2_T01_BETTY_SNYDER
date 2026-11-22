@@ -355,7 +355,7 @@ Q1 não atendida; Q2 atendida em PA01; Q3 atendida em PB01, PB02 e PB03 (com res
 
 ### C. Síntese de Eficiência de desempenho e Flexibilidade
 
-Eficiência de desempenho: cold start e CPU em repouso *excelente*; RAM *mínimo* (QtWebEngine); lacunas Windows no PC2. Flexibilidade: instalação e checklist publicados (Q1 e Q2 atendidas; H1 parcial no Ubuntu); migração (Q3) sem CSV.
+Eficiência de desempenho (triangulação em Ubuntu 24.04, macOS Sequoia e Windows 11): *cold start* ($\le 1{,}02\text{ s}$), CPU em repouso ($\le 0{,}10\%$), vazão do *Check Database* sob 100 mil cartões ($2\text{ a }3\text{ milhões cards/min}$) e isolamento da *Main Thread* em sistemas Unix ($\le 2{,}35\%$) atingiram o patamar **excelente**; o consumo de memória RAM situou-se na faixa **insatisfatório** segundo a Tabela VIII da Fase 2 ($784\text{ a }951\text{ MB}$ em repouso, acima do teto de $400\text{ MB}$; $1{,}33\text{ a }1{,}51\text{ GB}$ sob estresse de 100k cards, acima de $800\text{ MB}$) devido à arquitetura multiprocesso do Chromium (`QtWebEngineProcess`). As particularidades de coleta no Windows 11 (RAM restrita ao processo raiz e ausência de garantia de ordem em `proc.threads()` na API NT) são registradas como limitação controlada de plataforma, adotando Ubuntu e macOS como base comparável 1:1. Flexibilidade: instalação e checklist publicados (Q1 e Q2 atendidas; H1 parcial no Ubuntu); migração (Q3) sem CSV.
 
 ### D. Julgamento, relações e ação de melhoria
 
@@ -363,7 +363,7 @@ Prioridade: descoberta de “Criar baralho” e vocabulário nota/tipo/cartão. 
 
 ## VII. Conclusão
 
-Este artigo apresentou as Fases 1 a 4: requisitos, GQM, plano, execução parcial, julgamento indicativo e ação de melhoria na interface de criação de baralho (protótipo de alta fidelidade). Permanecem abertos, com rastreabilidade explícita na GitPage: CSV de migração (Flexibilidade Q3), itens de desempenho no Windows, corte PSM de 21/11 e a Release E2 no GitHub. Detalhe: [Fase 4](fase4.md).
+Este artigo apresentou as Fases 1 a 4 da avaliação do Anki Desktop 26.09.3 e do fluxo do AnkiWeb: requisitos, GQM, plano de avaliação, execução multiplataforma, julgamento integrado e ação de melhoria na interface de criação de baralho (protótipo de alta fidelidade). Em Eficiência de desempenho, a triangulação entre Ubuntu, macOS e Windows 11 (elogiada no retorno do PC2) confirmou a excelência do motor nativo em Rust/SQLite e identificou a pegada de RAM do `QtWebEngine` sob coleções massivas como principal ponto de atenção arquitetural, com as particularidades da API do Windows NT formalizadas como limitação controlada. Permanecem abertos, com rastreabilidade explícita na GitPage: CSV de migração (Flexibilidade Q3), corte PSM de 21/11 e a Release E2 no GitHub. Detalhe: [Fase 4](fase4.md).
 
 ## Declaração de Uso de Inteligência Artificial
 

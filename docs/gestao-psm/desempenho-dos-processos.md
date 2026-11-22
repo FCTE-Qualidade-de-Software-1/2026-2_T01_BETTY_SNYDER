@@ -83,23 +83,24 @@ em que: - \(N_{\text{corrigidos}}\): quantidade de defeitos confirmados já corr
 
 | Elemento | Descrição |
 |---|---|
-| Coleta | Revisão 1: \(D_1 = 1{,}44\); correção 61,5% (resumo na visão geral). Revisão 2: [`gestao-psm/desempenho-processos.csv`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/blob/main/gestao-psm/desempenho-processos.csv), com campos `identificador`, `revisão`, `seção`, `tipo`, `descrição`, `quem apontou`, `confirmado`, `corrigido`. |
-| Análise | Rev. 1 motivou a Revisão 2 com dados reais. A Rev. 2 registrou 10 apontamentos; os 10 foram confirmados e corrigidos. |
-| Limitação | A Revisão 1 não possui registro de defeitos por item; só os totais consolidados acima. Os defeitos ficam em um único arquivo, `gestao-psm/desempenho-processos.csv`, e as próximas revisões entram nele com o número da revisão na coluna `revisão`. |
+| Coleta | Revisão 1: \(D_1 = 1{,}44\); correção 61,5% (resumo na visão geral). Revisões 2 (E1) e 3 (E2): [`gestao-psm/desempenho-processos.csv`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/blob/main/gestao-psm/desempenho-processos.csv), com campos `identificador`, `revisão`, `seção`, `tipo`, `descrição`, `quem apontou`, `confirmado`, `corrigido`. |
+| Análise | Rev. 1 motivou a Revisão 2 com dados reais. A Rev. 2 registrou 10 apontamentos (10/10 corrigidos). Na Entrega 2, a **Revisão 3** (Fase 3, Artigo v2, GitPage e feedback do PC2) avaliou 10 unidades/seções documentais, registrando 8 defeitos confirmados (\(D_3 = 0{,}80\)), todos corrigidos (100%). |
+| Limitação | A Revisão 1 (\(D_1 = 1{,}44 \approx 13/9\)) não possui registro de defeitos por item. Na Revisão 2, o CSV registra 10 defeitos em 10 **subseções** distintas (`2.1` a `5.3`), mas não foi anotado o total de subseções inspecionadas (incluindo as sem defeito); usar `10` contaria apenas subseções com defeito e reutilizar `9` (da R1) misturaria granularidade de seções e subseções, razão pela qual \(D_2\) é mantida como **N/D** para não fabricar o denominador. Na Revisão 3 (E2), tanto o numerador (8) quanto o denominador (10 seções/unidades) são rastreados integralmente. |
 
 ### Indicadores e decisões
 
 | Corte / revisão | Indicador | Decisão |
 |---|---|---|
-| Revisão 1 | \(D_1 = 1{,}44\); correção 61,5% | Conduzir Revisão 2 com dados reais |
-| Revisão 2 | 10 apontamentos; 10 confirmados e 10 corrigidos | Consolidar correções no artigo e na GitPage |
+| Revisão 1 (E1) | \(D_1 = 1{,}44\); correção 61,5% | Conduzir Revisão 2 com dados reais |
+| Revisão 2 (E1) | 10 apontamentos; 10 confirmados e 10 corrigidos (100%) | Consolidar correções no artigo e na GitPage da E1 |
+| Revisão 3 (E2 / pós-PC2) | \(D_3 = 0{,}80\) (8 defeitos em 10 seções); correção 100% (8/8) | Incorporar feedback do PC2, remover gravações públicas por TCLE, fechar limitações controladas e liberar Release E2 |
 
 ### Gráfico: taxa de correção por revisão { #grafico-taxa-correcao }
 
 <figure class="psm-chart">
 <svg viewBox="0 0 760 380" role="img" aria-labelledby="processos-chart-title processos-chart-desc">
   <title id="processos-chart-title">Taxa de correção dos defeitos confirmados por revisão</title>
-  <desc id="processos-chart-desc">A taxa de correção foi de 61,5 por cento na Revisão 1 e de 100 por cento na Revisão 2, na qual 10 de 10 apontamentos foram confirmados e corrigidos.</desc>
+  <desc id="processos-chart-desc">A taxa de correção foi de 61,5 por cento na Revisão 1, 100 por cento na Revisão 2 (10 de 10) e 100 por cento na Revisão 3 da Entrega 2 (8 de 8).</desc>
   <g class="chart-grid">
     <line x1="100" y1="295" x2="700" y2="295" />
     <line x1="100" y1="238.75" x2="700" y2="238.75" />
@@ -119,18 +120,21 @@ em que: - \(N_{\text{corrigidos}}\): quantidade de defeitos confirmados já corr
     <text x="90" y="74">100%</text>
   </g>
   <text x="23" y="195" transform="rotate(-90 23 195)">Taxa de correção</text>
-  <rect class="bar-rate" x="230" y="156.63" width="100" height="138.37" rx="4" />
-  <rect class="bar-rate" x="500" y="70" width="100" height="225" rx="4" />
+  <rect class="bar-rate" x="160" y="156.63" width="90" height="138.37" rx="4" />
+  <rect class="bar-rate" x="355" y="70" width="90" height="225" rx="4" />
+  <rect class="bar-rate" x="550" y="70" width="90" height="225" rx="4" />
   <g class="chart-value" text-anchor="middle">
-    <text x="280" y="148">61,5%</text>
-    <text x="550" y="61">100% (10/10)</text>
+    <text x="205" y="148">61,5%</text>
+    <text x="400" y="61">100% (10/10)</text>
+    <text x="595" y="61">100% (8/8)</text>
   </g>
   <g text-anchor="middle">
-    <text x="280" y="321">Revisão 1</text>
-    <text x="550" y="321">Revisão 2</text>
+    <text x="205" y="321">Revisão 1 (E1)</text>
+    <text x="400" y="321">Revisão 2 (E1)</text>
+    <text x="595" y="321">Revisão 3 (E2)</text>
   </g>
 </svg>
-<figcaption>A Revisão 1 é o valor consolidado no resumo histórico; a Revisão 2 é calculada do CSV, com 10 defeitos confirmados e 10 corrigidos. A densidade da Revisão 2 não é comparada porque a quantidade total de seções revisadas não foi registrada.</figcaption>
+<figcaption>A Revisão 1 é o valor consolidado no resumo histórico; as Revisões 2 (10/10) e 3 (8/8, Entrega 2 / pós-PC2) são calculadas diretamente de <code>gestao-psm/desempenho-processos.csv</code>.</figcaption>
 </figure>
 
 ### Gráfico: densidade de defeitos { #grafico-densidade }
@@ -138,7 +142,7 @@ em que: - \(N_{\text{corrigidos}}\): quantidade de defeitos confirmados já corr
 <figure class="psm-chart">
 <svg viewBox="0 0 760 380" role="img" aria-labelledby="densidade-chart-title densidade-chart-desc">
   <title id="densidade-chart-title">Densidade de defeitos por revisão</title>
-  <desc id="densidade-chart-desc">A densidade registrada para a Revisão 1 foi 1,44 defeito por seção. A densidade da Revisão 2 não está disponível, pois não foi registrada a quantidade total de seções revisadas.</desc>
+  <desc id="densidade-chart-desc">A densidade registrada para a Revisão 1 foi 1,44 defeito por seção. A Revisão 2 está N/D por ausência do total de seções. Na Revisão 3 (Entrega 2), a densidade caiu para 0,80 defeito por seção (8 defeitos em 10 seções).</desc>
   <g class="chart-grid">
     <line x1="100" y1="295" x2="700" y2="295" />
     <line x1="100" y1="238.75" x2="700" y2="238.75" />
@@ -158,17 +162,20 @@ em que: - \(N_{\text{corrigidos}}\): quantidade de defeitos confirmados já corr
     <text x="90" y="74">2,0</text>
   </g>
   <text x="23" y="195" transform="rotate(-90 23 195)">Defeitos por seção</text>
-  <rect class="bar-rate" x="230" y="133" width="100" height="162" rx="4" />
+  <rect class="bar-rate" x="160" y="133" width="90" height="162" rx="4" />
+  <rect class="bar-rate" x="550" y="205" width="90" height="90" rx="4" />
   <g class="chart-value" text-anchor="middle">
-    <text x="280" y="124">1,44</text>
-    <text x="550" y="160">N/D</text>
+    <text x="205" y="124">1,44</text>
+    <text x="400" y="160">N/D</text>
+    <text x="595" y="196">0,80 (8/10)</text>
   </g>
   <g text-anchor="middle">
-    <text x="280" y="321">Revisão 1</text>
-    <text x="550" y="321">Revisão 2</text>
+    <text x="205" y="321">Revisão 1 (E1)</text>
+    <text x="400" y="321">Revisão 2 (E1)</text>
+    <text x="595" y="321">Revisão 3 (E2)</text>
   </g>
 </svg>
-<figcaption>A densidade D₁ = 1,44 está documentada para a Revisão 1. Para a Revisão 2, o CSV registra os apontamentos, mas não o total de seções efetivamente revisadas; por isso, o indicador não pode ser calculado sem inventar o denominador.</figcaption>
+<figcaption>A densidade caiu de D₁ = 1,44 (Revisão 1, 13 defeitos em 9 seções) para D₃ = 0,80 (Revisão 3, 8 defeitos em 10 seções/unidades revisadas da Fase 3, Artigo v2 e GitPage), indicando amadurecimento do processo de revisão. A Revisão 2 permanece como N/D porque o CSV registra 10 apontamentos em subseções distintas sem registrar o total de subseções inspecionadas (incluindo as sem defeito), evitando fabricar o denominador ou misturar granularidades.</figcaption>
 </figure>
 
 ## Eixo B: Trabalho planejado, concluído e em aberto (mapeamento)
@@ -243,7 +250,7 @@ As entidades (itens de trabalho) são compartilhadas. A interpretação difere:
 
 | Artefato | Papel |
 |---|---|
-| `gestao-psm/desempenho-processos.csv` | Defeitos da Revisão 2 |
+| `gestao-psm/desempenho-processos.csv` | Defeitos da Revisão 2 (E1) e da Revisão 3 (E2 / pós-PC2) |
 | `gestao-psm/calendario-progresso.csv` | Proxy para \(W_p\) e \(W_c\) |
 | Plano da Fase 2 (pasta `PSM/` do projeto acadêmico) | Definição de defeito e escolha da medida |
 

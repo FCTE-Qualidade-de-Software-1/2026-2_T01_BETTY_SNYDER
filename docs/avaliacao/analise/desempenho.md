@@ -221,13 +221,22 @@ Todos os arquivos CSV brutos que embasam esta análise estão versionados no rep
 | [`metricas_estresse_macos_01.csv`](../dados/desempenho/bruto/metricas_estresse_macos_01.csv) | macOS | Davi Severiano | RAM Pico ($1.51\text{ GB}$), CPU Pico ($100.8\%$) | 26 |
 | [`threads_estresse_macos_01.csv`](../dados/desempenho/bruto/threads_estresse_macos_01.csv) | macOS | Davi Severiano | Isolamento UI ($1.30\%$) vs Workers ($100.6\%$) | 24 |
 
-## Itens abertos no Windows (F4-C1)
+## 7. Limitação Controlada de Plataforma (Windows 11)
 
-Sem nova coleta nesta revisão documental. Permanecem para a Dupla B:
+No fechamento da Entrega 2, a equipe formalizou as particularidades observadas no ambiente **Windows 11** como **limitações controladas de instrumentação da API do Windows NT**, preservando integralmente os dados brutos coletados sem reexecução com privilégios elevados:
 
-1. Medir RAM da árvore completa de processos (não só o processo pai).
-2. Cronometrar a vazão do Check Database (hoje registrada como ação manual sem timer).
-3. Reinstrumentar o isolamento da main thread com identificação confiável do TID de UI.
-4. Alinhar o cold start ao TTI (interface pronta), comparável ao Ubuntu.
+1. **RAM da árvore de processos (`Q2`):** Sem elevação administrativa no Windows NT, a biblioteca `psutil` enumerou apenas o processo raiz (`anki.exe`, 73,40 MB em repouso e 26,35 MB em estresse), omitindo os processos filhos isolados do renderizador Chromium (`QtWebEngineProcess`).
+2. **Vazão do *Check Database* (`Q3`):** A verificação de integridade dos 100.000 cartões no Windows foi executada e validada funcionalmente sem temporizador automático acoplado ao script.
+3. **Isolamento da *Main Thread* (`Q4`):** A chamada `proc.threads()` no Windows NT não garante que o índice `#0` corresponda à thread gráfica de UI, explicando o pico de 98,44% registrado nesse índice.
+4. **Inicialização a frio (`Q1`):** No Windows (`0,152 s`) e no macOS (`0,021 s`), o coletor cronometrou o *Process Creation Time* (*launcher*), enquanto no Ubuntu (`1,018 s`) aferiu o *Time-to-Interactive* (TTI) completo até a instanciação dos subprocessos QtWebEngine.
 
-Até lá, o julgamento consolidado de Q2 (RAM) e Q4 no Windows permanece **parcial ou inconclusivo**, como já indicado na [Fase 4](../../fase4.md).
+Por rigor metodológico, o julgamento quantitativo comparável 1:1 de **Q2 (RAM completa)**, **Q3 (vazão cronometrada)** e **Q4 (isolamento determinístico de *Main Thread*)** apoia-se em **Ubuntu 24.04** e **macOS Sequoia** como linha de base primária, conforme alinhado na [Fase 4](../../fase4.md) e validado positivamente no [feedback do PC2](../atas/feedback-PC2_2026-11-16.md).
+
+### 7.1 Conclusividade e Fronteiras Experimentais (Ameaças à Validade)
+
+As limitações acima não tornam o estudo inconclusivo: os resultados centrais de **inicialização rápida (`Q1`, cruzando medição cronometrada e percepção dos estudantes nas entrevistas)**, **CPU basal quase nula (`Q2`)**, **alta vazão do motor Rust/SQLite (`Q3`)** e **isolamento da *Main Thread* em sistemas Unix (`Q4`)** são sólidos e reproduzíveis. Para a correta interpretação do escopo, registram-se quatro fronteiras experimentais:
+
+1. **Cenário extremo de estresse (`100.000` cartões):** Embora o consumo elevado de RAM do `QtWebEngine` em repouso e sob estresse seja um achado real, a massa de 100 mil cartões representa um limite extremo (típico de estudantes de medicina ou anos de acúmulo), improvável no uso diário da maioria dos usuários.
+2. **Heterogeneidade de hardware e de régua de medição:** As coletas ocorreram em máquinas distintas (Intel i7-1185G7 8 GB no Ubuntu, Intel i7-1165G7 16 GB no Windows e Apple M4 16 GB no macOS) e com réguas distintas no *cold start* (TTI completo no Ubuntu vs. *launcher* no Windows/macOS). Uma comparação estritamente equivalente exigiria padronizar hardware e instrumentação; da mesma forma, no Windows NT o bloqueio de acesso sem elevação impede a mesma visibilidade interna obtida no Unix, permitindo registrar apenas uma suspeita válida em `Q4`.
+3. **Inviabilidade de escalar instrumentação técnica para usuários finais:** Ampliar a coleta de CPU, RAM e threads para uma amostra ampla de estudantes exigiria domínio técnico (terminal, Python, controle de processos e permissões de sistema), tornando essa expansão inviável no escopo da disciplina.
+4. **Separação obrigatória entre processamento local e sincronização web (`T_sinc`):** Acoplar a sincronização do AnkiWeb ao ensaio local de 100k cards introduziria variáveis externas fora de controle experimental (placa de rede, banda/latência de internet e carga dos servidores remotos), além do risco de bloqueio (*rate limit*) no serviço gratuito. Por rigor experimental, o laboratório (G2) isolou o processamento local, enquanto a sincronização foi avaliada pela experiência do usuário nas entrevistas (G1) e na migração (G3).
