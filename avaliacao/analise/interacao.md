@@ -1,4 +1,4 @@
-# Análise de Capacidade de interação
+# Avaliação de Capacidade de interação
 
 Espelho canônico: [`docs/avaliacao/analise/interacao.md`](../../docs/avaliacao/analise/interacao.md).
 

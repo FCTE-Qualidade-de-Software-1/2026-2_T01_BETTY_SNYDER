@@ -15,7 +15,7 @@ nav:
       - Capacidade de interação:
           - Pré-entrevista com participante: avaliacao/protocolos/pre-entrevista-participante.md
           - Entrevista com participante: avaliacao/protocolos/entrevista.md
-          - Análise de Capacidade de interação: avaliacao/analise/interacao.md
+          - Avaliação de Capacidade de interação: avaliacao/analise/interacao.md
           - Atas:
               - Ata sessão PA01: avaliacao/atas/sessao-PA01_2026-11-14.md
               - Ata verificação PA01 (protótipo): avaliacao/atas/sessao-PA01-verificacao-prototipo_2026-11-22.md
@@ -25,16 +25,17 @@ nav:
               - Feedback PC2: avaliacao/atas/feedback-PC2_2026-11-16.md
       - Eficiência de desempenho:
           - Protocolo: avaliacao/protocolos/desempenho.md
-          - Análise de desempenho (Triangulação): avaliacao/analise/desempenho.md
+          - Avaliação de desempenho (Triangulação): avaliacao/analise/desempenho.md
           - Ferramentas e scripts: avaliacao/scripts/README.md
       - Flexibilidade:
           - Instalação e desinstalação: avaliacao/protocolos/flexibilidade-instalacao.md
           - Checklist de integração: avaliacao/protocolos/flexibilidade-checklist.md
           - Migração: avaliacao/protocolos/flexibilidade-migracao.md
+          - Avaliação de Flexibilidade: avaliacao/analise/flexibilidade.md
   - Fase 4:
       - Visão geral: fase4.md
       - Avaliação de Capacidade de interação: avaliacao/analise/interacao.md
-      - Avaliação de Eficiência de desempenho: avaliacao/analise/desempenho.md
+      - Avaliação de desempenho (Triangulação): avaliacao/analise/desempenho.md
       - Avaliação de Flexibilidade: avaliacao/analise/flexibilidade.md
       - Protótipo da ação de melhoria: prototipo-acao-melhoria.md
   - Artigo: artigo.md

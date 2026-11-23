@@ -1,5 +1,57 @@
 # Avaliação de Flexibilidade
 
+Esta página reúne a **coleta**, os **resultados** e a **análise** de Flexibilidade na Fase 4, frente ao GQM da [Fase 2](../../fase2.md). Voltar à [Visão geral da Fase 4](../../fase4.md).
+
+## Coleta
+
+Os protocolos de [instalação](../protocolos/flexibilidade-instalacao.md), [checklist](../protocolos/flexibilidade-checklist.md) e [migração](../protocolos/flexibilidade-migracao.md) preveem, em laboratório (Dupla C), as métricas T<sub>inst</sub>, T<sub>inst_t</sub>, N<sub>int</sub>, P<sub>int</sub>, T<sub>pd</sub> e T<sub>sub</sub> nas máquinas de referência Windows, macOS e Ubuntu ([Ambiente](../protocolos/ambiente.md)).
+
+Publicados em [`avaliacao/dados/flexibilidade/consolidado/`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/tree/main/avaliacao/dados/flexibilidade/consolidado): tempos de instalação, checklist de integração (P<sub>int</sub>), migração M1/M2 (T<sub>pd</sub>, T<sub>sub</sub>) e dois gráficos. A pasta `bruto/` ainda não espelha os arquivos `diff_m*_rep*.csv` citados no consolidado.
+
+## Resultados
+
+Fontes: [`flexibilidade-instalacao-tempo.csv`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/blob/main/avaliacao/dados/flexibilidade/consolidado/flexibilidade-instalacao-tempo.csv), [`flexibilidade-checklist-registro.csv`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/blob/main/avaliacao/dados/flexibilidade/consolidado/flexibilidade-checklist-registro.csv) e [`flexibilidade-migracao.csv`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/blob/main/avaliacao/dados/flexibilidade/consolidado/flexibilidade-migracao.csv). Faixas da Tabela XI da [Fase 2](../../fase2.md).
+
+| Sistema | T<sub>inst</sub> | T<sub>inst_t</sub> | N<sub>int</sub> | Faixas (T<sub>inst</sub> / T<sub>inst_t</sub> / N<sub>int</sub>) | P<sub>int</sub> | Faixa P<sub>int</sub> |
+| --- | --- | --- | --- | --- | --- | --- |
+| Windows 11 | 100% (1/1) | 3,82 min | 0 | Alvo / alvo / excelente | 10/10 | Excelente |
+| macOS 27 (ARM) | 100% (1/1) | 0,55 min | 0 | Excelente / excelente / excelente | 10/10 | Excelente |
+| Ubuntu 26.04.1 | 100% (1/1) | 0,97 min | 0 | Excelente / excelente / excelente | 10/10 | Excelente |
+
+![Tempo de instalação nos três sistemas operacionais](../../assets/grafico_flexibilidade_tempo_instalacao_3so.png)
+
+*Figura. Tempo de instalação (T<sub>inst_t</sub>) em Windows, macOS e Ubuntu.*
+
+![Checklist de integração (P_int) nos três sistemas](../../assets/grafico-flexibilidade-checklist.png)
+
+*Figura. Pontuação do checklist de integração (P<sub>int</sub>) por sistema operacional.*
+
+**Migração (Q3).** Seis ensaios em 20/11/2026 (M1 `.apkg` e M2 AnkiWeb, três pares de SO cada): T<sub>pd</sub> = 100% (0 diferenças em 10.000 cartões; sem intervenção); T<sub>sub</sub> entre 2,33 e 2,66 min (média 2,51 min), faixa **mínimo**.
+
+**Qualitativos (Parte C das entrevistas; complementam o laboratório).**
+
+| Participante | Relato sobre instalação |
+| --- | --- |
+| PB01 (macOS) | Instalação “tranquila”; precisou autorizar a abertura do aplicativo baixado da internet (Gatekeeper). |
+| PB02 (Windows) | Instalação “tranquila” e “intuitiva”; sem passo além do instalador. |
+| PB03 (Windows) | Instalação “um pouco confusa” no site (extensões externas); precisou de passo além do instalador. |
+| PA01 (Grupo A) | Anki já instalado pela equipe antes da sessão; perguntas de instalabilidade do Grupo B marcadas N/A. |
+
+## Análise
+
+| Questão / hipótese (Fase 2) | Situação nesta página |
+| --- | --- |
+| **Q1 / H1** (instalabilidade) | Atendida nos três sistemas (T<sub>inst</sub> e T<sub>inst_t</sub> no alvo ou excelente; N<sub>int</sub> = 0). H1 parcial: no Ubuntu o tempo ficou abaixo de 2 min e sem intervenção, diferente da expectativa de 2 a 5 min com intervenção. |
+| **Q2 / H2** (adaptabilidade) | Atendida: P<sub>int</sub> = 10/10 nos três sistemas (faixa excelente). |
+| **Q3 / H3** (substituibilidade) | T<sub>pd</sub> = 100% (preservação confirmada); T<sub>sub</sub> média 2,51 min (faixa mínimo). Q3 não atendida no alvo. H3 parcial: preservação sim; tempo &lt; 1 min não. |
+| **Objetivo G (Flexibilidade)** | Q1 e Q2 atendidas; Q3 com evidência completa na faixa mínimo (tempo de migração). |
+
+Arquivos opcionais remanescentes: espelhar `diff_m*_rep*.csv` em `avaliacao/dados/flexibilidade/bruto/migracao/`.
+
+---
+
+## Detalhamento e evidências
+
 Esta página interpreta as medidas de Flexibilidade (Dupla C) frente ao GQM da [Fase 2](../../fase2.md) e aos protocolos da [Fase 3](../../fase3.md). Os valores vêm dos CSV publicados em `avaliacao/dados/flexibilidade/consolidado/`, incluindo a migração M1/M2 publicada por Bryan70897 em 23/11/2026.
 
 ## Escopo GQM

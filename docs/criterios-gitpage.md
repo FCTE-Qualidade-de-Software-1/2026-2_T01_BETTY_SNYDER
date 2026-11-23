@@ -15,7 +15,7 @@ Diagnóstico em 22/11/2026, cruzando o PDF *Trabalho final completo v1* com o co
 | F3-C1, F3-C2 | OK | [Fase 3](fase3.md), [Ambiente](avaliacao/protocolos/ambiente.md) |
 | F3-C3 | Parcial | Cronograma atualizado ao status real (migração e Windows incompletos) |
 | F3-C7, F3-C8 | OK / reforçado | Menu F1–F4; coerência F2↔F3 explicitada na Fase 3 |
-| F4-C1, F4-C2 | Parcial | Interação completa; desempenho parcial no Windows; Flexibilidade com instalação, checklist e migração ([análise](avaliacao/analise/flexibilidade.md)) |
+| F4-C1, F4-C2 | Parcial | Interação completa; desempenho parcial no Windows; Flexibilidade com instalação, checklist e migração ([Avaliação de Flexibilidade](avaliacao/analise/flexibilidade.md)) |
 | F4-C3 | Parcial | Q/H respondidas para interação, desempenho (em parte) e Flexibilidade Q1/Q2; Q3 sem resposta numérica |
 | F4-C4, F4-C5 | OK / reforçado | Propósito Fase 1, sugestões e [protótipo](prototipo-acao-melhoria.md) |
 | AG-C3 | OK | Declaração de IA no [Artigo](artigo.md) |

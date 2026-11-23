@@ -1,4 +1,51 @@
-# Avaliação de Eficiência de desempenho
+# Avaliação de desempenho (Triangulação)
+
+Esta página reúne a **coleta**, os **resultados** e a **análise** de Eficiência de desempenho na Fase 4 (triangulação multiplataforma), frente ao GQM da [Fase 2](../../fase2.md). Voltar à [Visão geral da Fase 4](../../fase4.md).
+
+## Coleta
+
+A Dupla B instrumentou o Anki Desktop 26.09.3 em três máquinas de referência ([Ambiente](../protocolos/ambiente.md)):
+
+| Avaliador | SO | Arquitetura | Hardware |
+| --- | --- | --- | --- |
+| Mateus de Siqueira | Ubuntu 24.04 LTS | x86_64 | Intel Core i7-1185G7, 8 GB RAM |
+| Karolina Vieira | Windows 11 | x86_64 | Intel Core i7-1165G7, 16 GB RAM |
+| Davi Severiano | macOS Sequoia | ARM64 | Apple Silicon M4, 16 GB unificada |
+
+Os CSV e gráficos usados nesta página estão em `docs/avaliacao/dados/desempenho/bruto/` e `docs/avaliacao/dados/` (gráficos de threads). O diretório canônico `avaliacao/dados/desempenho/` contém apenas README e `.gitkeep` nesta entrega.
+
+**Ressalvas de medição.** No Windows e no macOS, o cold start registrado é o tempo de criação do processo (*launcher*), não o tempo até a interface pronta (TTI, tempo até a tela ficar utilizável); no Ubuntu, o coletor mediu até a ativação dos subprocessos QtWebEngine (TTI ≈ 1,018 s). A RAM do Windows (73,40 MB em repouso; 26,35 MB no estresse) enumera só o processo pai, sem a árvore de renderizadores. T<sub>sinc</sub> foi retirado dos ensaios de laboratório (risco de *rate limit* no AnkiWeb e dependência de rede externa); a sincronização permanece nas entrevistas (Capacidade de interação) e no cenário M2 de migração (Flexibilidade).
+
+## Resultados
+
+As faixas abaixo seguem a Tabela VIII da [Fase 2](../../fase2.md), salvo quando essa avaliação registra enquadramento próprio e isso é indicado no texto.
+
+| Métrica | Ubuntu 24.04 | Windows 11 | macOS Sequoia | Enquadramento |
+| --- | --- | --- | --- | --- |
+| Cold start (Q1) | 1,018 s (TTI) | 0,152 s (*launcher*) | 0,021 s (*launcher*) | Excelente (&lt; 3 s) nos três |
+| CPU em repouso (Q2) | 0,04% | 0,00% | 0,10% | Excelente |
+| RAM em repouso (Q2) | 783,89 MB | 73,40 MB (só processo pai) | 950,77 MB | Insatisfatório em Ubuntu e macOS (≥ 400 MB; QtWebEngine) |
+| Threads em repouso | 56 (6 filhos) | 13–16 (1 filho) | 85–88 (5 filhos) | Contagem observada |
+| RAM pico 100k cards (Q2) | 1.328,13 MB (1,33 GB) | 26,35 MB (*stub*) | 1.512,06 MB (1,51 GB) | Insatisfatório em Ubuntu e macOS (≥ 800 MB) |
+| CPU pico sob carga (Q2) | 100,6% (1 núcleo) | 98,4% (1 núcleo) | 100,8% (1 núcleo) | Um núcleo saturado; demais livres |
+| Main thread sob estresse (Q4) | 2,35% | 98,44% (TID #0) | 1,30% | Excelente em Ubuntu e macOS; Windows: limitação controlada da API NT |
+| Vazão Check Database 100k (Q3) | ≈ 2.000.000 cards/min (~3 s) | Ação manual sem timer | ≈ 3.000.000 cards/min (~2 s) | Excelente em Ubuntu e macOS |
+
+## Análise
+
+| Questão / hipótese | Evidência | Julgamento |
+| --- | --- | --- |
+| **Q1 / H1** (comportamento no tempo) | Cold start &lt; 1,5 s em todos os SOs; T<sub>sinc</sub> fora do laboratório | H1 confirmada para cold start (faixa excelente). T<sub>sinc</sub> não julgado nestes ensaios. |
+| **Q2 / H2** (CPU) | CPU em repouso ≤ 0,10% | H2 para CPU superada (faixa excelente; abaixo do alvo 2–5% previsto). |
+| **Q2 / H2** (RAM) | 783,89 MB e 950,77 MB em repouso; 1,33 GB e 1,51 GB sob 100k cards | H2 para RAM refutada: faixa insatisfatório (Tabela VIII: ≥ 400 MB repouso / ≥ 800 MB estresse). Pegada do QtWebEngine/Chromium e índices SQLite sob 100k cards. |
+| **Q3 / H3** (capacidade e vazão) | Check Database em ~2–3 s; vazão ≫ 15.000 cards/min | H3 confirmada e superada (faixa excelente). |
+| **Q4 / H4** (threads / UI) | Main thread 2,35% (Ubuntu) e 1,30% (macOS); Windows 98,44% no TID #0 | H4 confirmada em Unix (faixa excelente). No Windows, o pico no índice #0 é registrado como limitação controlada da API NT (ausência de garantia de ordem cronológica em `proc.threads()`). |
+
+**Limitação controlada de plataforma (Windows 11).** A triangulação multiplataforma, destacada positivamente no [feedback do PC2](../atas/feedback-PC2_2026-11-16.md), evidencia que, sem privilégios elevados no Windows NT, a biblioteca `psutil` isola apenas o processo raiz (`anki.exe`, omitindo os renderizadores `QtWebEngineProcess`) e não garante que o índice `#0` de `proc.threads()` corresponda à thread de interface gráfica. Da mesma forma, o disparo de *cold start* no Windows e no macOS registra o *process creation time* (*launcher*), enquanto no Ubuntu registra o *Time-to-Interactive* completo (1,018 s). Por rigor metodológico, o julgamento quantitativo comparável 1:1 de Q2 (árvore completa de RAM), Q3 (vazão cronometrada) e Q4 (isolamento determinístico de *Main Thread*) adota Ubuntu 24.04 e macOS Sequoia como linha de base primária, preservando os registros brutos do Windows 11 para transparência da avaliação.
+
+---
+
+## Detalhamento da triangulação
 
 Esta página apresenta a análise crítica, comparativa e interpretativa dos resultados empíricos obtidos na avaliação de **Eficiência de Desempenho (Eficiência de desempenho)** do **Anki Desktop 26.09.3**, conforme as metas do **GQM (Goal-Question-Metric)** e a norma **ISO/IEC 25010**.
 

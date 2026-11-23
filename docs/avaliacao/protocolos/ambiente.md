@@ -46,4 +46,4 @@ Definir qual máquina será utilizada como referência para cada sistema operaci
 
 ## 6. Observações
 
-Diferenças relevantes: notebooks Ubuntu de referência com 8 GB de RAM condicionam a interpretação da faixa de memória em Eficiência de desempenho; o cold start no Windows/macOS medido como *launcher* não é comparável 1:1 ao TTI do Ubuntu (ver [Avaliação de Eficiência de desempenho](../analise/desempenho.md)).
+Diferenças relevantes: notebooks Ubuntu de referência com 8 GB de RAM condicionam a interpretação da faixa de memória em Eficiência de desempenho; o cold start no Windows/macOS medido como *launcher* não é comparável 1:1 ao TTI do Ubuntu (ver [Avaliação de desempenho (Triangulação)](../analise/desempenho.md)).
