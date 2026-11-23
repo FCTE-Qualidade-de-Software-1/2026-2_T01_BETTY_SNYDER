@@ -1,0 +1,35 @@
+data_corte,issue,tarefa_id,tarefa,responsavel,prazo,situacao_no_corte,fechada_ate_22_11,concluida_no_prazo_original,esforco_planejado_h,data_fim_real,situacao_atual
+2026-11-22,#48,E2-00,"Organização da E2: fechar issues da E1, conferir release E1 e unificar CSV de defeitos","Bryan, Dante, Davi",2026-11-05,fechada,sim,nao,2,2026-11-10,fechada
+2026-11-22,#49,E2-01,Ajustes de coerência da Fase 2 antes do plano de avaliação,"Bryan, Davi, Pedro, Mateus",2026-11-06,fechada,sim,nao,3,2026-11-16,fechada
+2026-11-22,#50,E2-02,Inventário das máquinas e do ambiente de avaliação,Karolina,2026-11-05,fechada,sim,nao,1.5,2026-11-09,fechada
+2026-11-22,#51,E2-03,"Estrutura de dados, convenções de nomes e política de gravações",Pedro,2026-11-06,fechada,sim,nao,2,2026-11-11,fechada
+2026-11-22,#52,E2-10,"[Interação] Protocolo do teste com usuários (roteiro, regras e fichas)","Davi, Pedro",2026-11-06,fechada,sim,nao,6,2026-11-16,fechada
+2026-11-22,#53,E2-11,"[Interação] Recrutamento, triagem e agenda das sessões (meta: 2 iniciantes e 3 frequentes)","Davi, Pedro",2026-11-08,fechada,sim,nao,3,2026-11-16,fechada
+2026-11-22,#54,E2-12,[Interação] Sessão piloto e ajuste do protocolo,"Davi, Pedro",2026-11-07,fechada,sim,nao,2,2026-11-16,fechada
+2026-11-22,#55,E2-20,"[Eficiência] Massa de dados sintética (10k, 50k, 100k) e coleção padrão",Mateus,2026-11-06,fechada,sim,nao,4,2026-11-16,fechada
+2026-11-22,#56,E2-21,"[Eficiência] Instrumentação: add-on de carimbos de tempo, coletor psutil e pidstat","Karolina, Mateus",2026-11-07,fechada,sim,nao,8,2026-11-16,fechada
+2026-11-22,#57,E2-22,"[Eficiência] Protocolo de medição (cenários, repetições, controle) e piloto","Karolina, Mateus",2026-11-07,fechada,sim,nao,4,2026-11-16,fechada
+2026-11-22,#58,E2-30,[Flexibilidade] Protocolo de instalação e desinstalação nos três SO,Bryan,2026-11-06,fechada,sim,nao,3,2026-11-11,fechada
+2026-11-22,#59,E2-31,[Flexibilidade] Procedimento de teste dos 10 critérios do checklist de integração,Dante,2026-11-06,fechada,sim,nao,3,2026-11-10,fechada
+2026-11-22,#60,E2-32,[Flexibilidade] Cenários de migração e script de verificação de integridade,"Bryan, Dante",2026-11-07,fechada,sim,nao,4,2026-11-11,fechada
+2026-11-22,#61,E2-40,Plano de avaliação (Fase 3) no artigo e na GitPage,"Bryan, Dante, Davi, Karolina, Pedro, Mateus",2026-11-08,fechada_apos_corte,nao,nao,10,2026-11-23,fechada
+2026-11-22,#62,E2-50,[Interação] Sessões do Grupo A (iniciantes),"Pedro, Davi",2026-11-13,fechada,sim,nao,3,2026-11-16,fechada
+2026-11-22,#63,E2-51,[Interação] Sessões do Grupo B (usuários frequentes),"Pedro, Davi",2026-11-13,fechada,sim,nao,4,2026-11-16,fechada
+2026-11-22,#64,E2-52,"[Interação] Consolidação, cálculo e enquadramento nas faixas (G1)","Pedro, Davi",2026-11-14,fechada,sim,nao,5,2026-11-16,fechada
+2026-11-22,#65,E2-60,"[Eficiência] Medições em Windows, macOS e Ubuntu","Mateus, Karolina",2026-11-12,fechada,sim,nao,10,2026-11-16,fechada
+2026-11-22,#66,E2-61,"[Eficiência] Consolidação, cálculo e enquadramento nas faixas (G2)","Mateus, Karolina",2026-11-13,fechada,sim,nao,5,2026-11-16,fechada
+2026-11-22,#67,E2-70,[Flexibilidade] Instalações e desinstalações nos três SO,"Dante, Bryan",2026-11-11,fechada,sim,nao,4,2026-11-15,fechada
+2026-11-22,#68,E2-71,[Flexibilidade] Checklist de integração e migrações,"Dante, Bryan",2026-11-12,fechada,sim,nao,5,2026-11-16,fechada
+2026-11-22,#69,E2-72,"[Flexibilidade] Consolidação, cálculo e enquadramento nas faixas (G3)","Dante, Bryan",2026-11-13,fechada,sim,nao,3,2026-11-22,fechada
+2026-11-22,#70,E2-41,Slides e apresentação do PC2 (16/11): cada dupla apresenta a sua característica,"Mateus, Karolina, Pedro, Dante, Davi, Bryan",2026-11-16,fechada,sim,nao,9,2026-11-22,fechada
+2026-11-22,#71,E2-80,"Julgamento integrado, recomendações priorizadas e relações entre características","Mateus, Pedro, Dante, Davi",2026-11-14,fechada,sim,nao,6,2026-11-16,fechada
+2026-11-22,#72,E2-81,Ação de melhoria: execução e validação,"Karolina, Pedro, Davi",2026-11-16,fechada,sim,nao,10,2026-11-22,fechada
+2026-11-22,#73,E2-90,"Artigo v2 para o PC2: Fases 3 e 4, resultados, discussão e conclusão","Mateus, Karolina, Pedro, Dante, Davi, Bryan",2026-11-16,fechada,sim,sim,12,2026-11-16,fechada
+2026-11-22,#74,E2-91,"GitPage da E2: Fases 3 e 4, dados, melhoria, versão e data no rodapé","Karolina, Pedro",2026-11-21,fechada,sim,nao,4,2026-11-22,fechada
+2026-11-22,#75,E2-92,Release E2 e submissão no Moodle,Davi,2026-11-22,aberta,nao,nao,1,,aberta
+2026-11-22,#76,E2-93,Apresentação final do trabalho,"Mateus, Karolina, Pedro, Dante, Davi, Bryan",2026-11-22,aberta,nao,nao,4,,aberta
+2026-11-22,#77,E2-95,Incorporar o feedback do PC2 e revisão final do artigo (máx. 15 páginas),"Mateus, Karolina, Pedro, Dante, Davi, Bryan",2026-11-21,fechada_apos_corte,nao,nao,8,2026-11-23,fechada
+2026-11-22,#78,E2-P1,"PSM Recursos e Custos: cortes de 08/11, 15/11 e 21/11","Pedro, Davi",2026-11-21,fechada_apos_corte,nao,nao,2,2026-11-23,fechada
+2026-11-22,#79,E2-P2,"PSM Calendário e Progresso: cortes de 08/11, 15/11 e 21/11","Dante, Bryan",2026-11-21,fechada_apos_corte,nao,nao,2,2026-11-23,fechada
+2026-11-22,#80,E2-P3,PSM Desempenho dos Processos: defeitos nas revisões da Fase 3 e do artigo v2,"Mateus, Karolina",2026-11-21,fechada,sim,nao,2,2026-11-22,fechada
+2026-11-22,#81,E2-P4,"Atas das reuniões 04 (05/11), 05 (12/11), 06 (14/11) e 07 (pós-PC2)",Davi,2026-11-21,fechada_apos_corte,nao,nao,2,2026-11-23,fechada

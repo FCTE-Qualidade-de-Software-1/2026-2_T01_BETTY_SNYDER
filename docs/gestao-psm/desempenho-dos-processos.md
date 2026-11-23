@@ -19,7 +19,7 @@ O mapeamento associa a categoria à necessidade de conhecer o status do marco, o
 | Elemento | Definição da equipe |
 |---|---|
 | Defeito | Informação incorreta ou sem fonte; divergência com decisão da equipe; item exigido pela rubrica que está ausente. Conta apenas o defeito **confirmado** pela equipe (inclusive apontamentos com apoio de IA). |
-| Fonte | Revisões do artigo; CSV `gestao-psm/desempenho-processos.csv`. |
+| Fonte | Revisões do artigo; CSV `gestao-psm/desempenho-processos.csv` (e snapshot `2026-11-22_desempenho-processos.csv` no corte E2). |
 
 ### Instância do modelo de informação
 
@@ -83,8 +83,8 @@ em que: - \(N_{\text{corrigidos}}\): quantidade de defeitos confirmados já corr
 
 | Elemento | Descrição |
 |---|---|
-| Coleta | Revisão 1: \(D_1 = 1{,}44\); correção 61,5% (resumo na visão geral). Revisões 2 (E1) e 3 (E2): [`gestao-psm/desempenho-processos.csv`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/blob/main/gestao-psm/desempenho-processos.csv), com campos `identificador`, `revisão`, `seção`, `tipo`, `descrição`, `quem apontou`, `confirmado`, `corrigido`. |
-| Análise | Rev. 1 motivou a Revisão 2 com dados reais. A Rev. 2 registrou 10 apontamentos (10/10 corrigidos). Na Entrega 2, a **Revisão 3** (Fase 3, Artigo v2, GitPage e feedback do PC2) avaliou 10 unidades/seções documentais, registrando 8 defeitos confirmados (\(D_3 = 0{,}80\)), todos corrigidos (100%). |
+| Coleta | Revisão 1: \(D_1 = 1{,}44\); correção 61,5% (resumo na visão geral). Revisões 2 (E1) e 3 (E2): [`gestao-psm/desempenho-processos.csv`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/blob/main/gestao-psm/desempenho-processos.csv), com campos `identificador`, `revisão`, `seção`, `tipo`, `descrição`, `quem apontou`, `confirmado`, `corrigido`. O corte E2 de 22/11 republica a Revisão 3 em [`gestao-psm/2026-11-22_desempenho-processos.csv`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/blob/main/gestao-psm/2026-11-22_desempenho-processos.csv) (snapshot simétrico aos demais cortes). |
+| Análise | Rev. 1 motivou a Revisão 2 com dados reais. A Rev. 2 registrou 10 apontamentos (10/10 corrigidos). Na Entrega 2, a **Revisão 3** (Fase 3, Artigo v2, GitPage e feedback do PC2) avaliou 10 unidades/seções documentais, registrando 8 defeitos confirmados (\(D_3 = 0{,}80\)), todos corrigidos (100%). Status do corte E2: **publicado** em 22/11 (issue `#80`). |
 | Limitação | A Revisão 1 (\(D_1 = 1{,}44 \approx 13/9\)) não possui registro de defeitos por item. Na Revisão 2, o CSV registra 10 defeitos em 10 **subseções** distintas (`2.1` a `5.3`), mas não foi anotado o total de subseções inspecionadas (incluindo as sem defeito); usar `10` contaria apenas subseções com defeito e reutilizar `9` (da R1) misturaria granularidade de seções e subseções, razão pela qual \(D_2\) é mantida como **N/D** para não fabricar o denominador. Na Revisão 3 (E2), tanto o numerador (8) quanto o denominador (10 seções/unidades) são rastreados integralmente. |
 
 ### Indicadores e decisões
@@ -93,7 +93,7 @@ em que: - \(N_{\text{corrigidos}}\): quantidade de defeitos confirmados já corr
 |---|---|---|
 | Revisão 1 (E1) | \(D_1 = 1{,}44\); correção 61,5% | Conduzir Revisão 2 com dados reais |
 | Revisão 2 (E1) | 10 apontamentos; 10 confirmados e 10 corrigidos (100%) | Consolidar correções no artigo e na GitPage da E1 |
-| Revisão 3 (E2 / pós-PC2) | \(D_3 = 0{,}80\) (8 defeitos em 10 seções); correção 100% (8/8) | Incorporar feedback do PC2, remover gravações públicas por TCLE, fechar limitações controladas e liberar Release E2 |
+| Revisão 3 (E2 / pós-PC2; corte 22/11) | \(D_3 = 0{,}80\) (8 defeitos em 10 seções); correção 100% (8/8) | Incorporar feedback do PC2, remover gravações públicas por TCLE, fechar limitações controladas e liberar Release E2; snapshot em `2026-11-22_desempenho-processos.csv` |
 
 ### Gráfico: taxa de correção por revisão { #grafico-taxa-correcao }
 
@@ -251,6 +251,7 @@ As entidades (itens de trabalho) são compartilhadas. A interpretação difere:
 | Artefato | Papel |
 |---|---|
 | `gestao-psm/desempenho-processos.csv` | Defeitos da Revisão 2 (E1) e da Revisão 3 (E2 / pós-PC2) |
+| `gestao-psm/2026-11-22_desempenho-processos.csv` | Snapshot datado do corte E2 (Revisão 3) |
 | `gestao-psm/calendario-progresso.csv` | Proxy para \(W_p\) e \(W_c\) |
 | Plano da Fase 2 (pasta `PSM/` do projeto acadêmico) | Definição de defeito e escolha da medida |
 
