@@ -1,29 +1,28 @@
 <div class="hero" markdown>
 
-<p class="hero__eyebrow">Equipe Betty Snyder · FGA0315 · Turma T01 · 2026-2</p>
+<figure class="hero__portrait">
+  <img src="https://www.computer.org/wp-media/2018/04/06201614/frances-holberton-e1523045838497.jpg" alt="Frances Elizabeth Snyder Holberton (Betty Snyder)" width="220" height="280" loading="lazy" />
+</figure>
+
+<div class="hero__copy" markdown>
+
+<p class="hero__eyebrow">Equipe · FGA0315 · Turma T01 · 2026-2</p>
 
 # Betty Snyder
 
-**Avaliação da qualidade do Anki**
+<p class="hero__subtitle">Avaliação da qualidade do Anki</p>
 
 <p class="hero__lead">Documentação pública das Fases 1 a 4: requisitos, GQM, plano, coleta, julgamento e ação de melhoria, sob a ISO/IEC 25010:2023.</p>
 
-[Ver artigo](artigo.md){ .md-button .md-button--primary }
-[Release E2](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/releases/tag/Release2){ .md-button }
-[Release E1](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/releases/tag/Entrega1){ .md-button }
-[Repositório](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER){ .md-button }
+[Repositório](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER){ .md-button .md-button--primary }
+
+</div>
 
 </div>
 
 ## Homenagem: Betty Snyder
 
 <div class="homage" markdown>
-
-<figure class="homage__portrait">
-  <img src="https://www.computer.org/wp-media/2018/04/06201614/frances-holberton-e1523045838497.jpg" alt="Retrato de Frances Elizabeth Snyder Holberton (Betty Snyder)" width="220" height="280" loading="lazy" />
-</figure>
-
-<div class="homage__body" markdown>
 
 Nossa equipe leva o nome de **Frances Elizabeth Snyder Holberton** (1917 a 2001), conhecida como **Betty Snyder**, pioneira da computação e uma das seis programadoras originais do ENIAC (Electronic Numerical Integrator and Computer: o primeiro computador digital eletrônico de propósito geral operacional).
 
@@ -32,8 +31,6 @@ Betty defendia que os computadores só prosperariam se fossem fáceis de program
 Escolhemos esse nome porque a avaliação de qualidade, neste projeto, também pergunta se o software é compreensível, utilizável e confiável para quem estuda. A biografia e a premiação Computer Pioneer Award (1997) estão no perfil da IEEE Computer Society:
 
 [Frances Snyder Holberton · IEEE Computer Society](https://www.computer.org/profiles/frances-snyder-holberton){ .md-button }
-
-</div>
 
 </div>
 
