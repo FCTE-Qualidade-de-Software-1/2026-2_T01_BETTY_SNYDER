@@ -152,7 +152,7 @@ Terceiro corte da E2 (issue E2-P1), publicado em **22/11/2026** (corresponde ao 
 
 **Interpretação.** O desvio negativo permanece elevado porque o Hp do corte incorpora todo o esforço planejado da E2, enquanto o registro de horas (117,24 h) cobre só parte do trabalho efetivo lançado. Em relação a 15/11 (−58,3%), o desvio melhora para −50,0% com o aumento de \(H_r\), mas a participação da Dupla C continua abaixo de 10%.
 
-**Decisão de gestão.** Acompanhar a subutilização agregada e a participação de Bryan e Dante. Não inventar horas: a próxima atualização deve vir do preenchimento real do registro, alinhado ao fechamento de `#75` e `#76`.
+**Decisão de gestão.** Acompanhar a subutilização agregada e a participação de Bryan e Dante. Não inventar horas: a próxima atualização deve vir do preenchimento real do registro, alinhado ao fechamento de `#76` (apresentação final; `#75` já fechada com a Release 2).
 
 ### Gráfico: esforço acumulado por recorte { #grafico-esforco-acumulado }
 

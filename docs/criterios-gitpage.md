@@ -8,7 +8,7 @@ Diagnóstico em 22/11/2026, cruzando o PDF *Trabalho final completo v1* com o co
 | --- | --- | --- |
 | Premissa 1 (3–4 características + relações) | Sim | [Fase 1](fase1.md); relações em [Fase 4](fase4.md) (migração com T<sub>pd</sub>/T<sub>sub</sub>) |
 | Premissa 2 (GQM + definição de métricas) | OK | [Fase 2](fase2.md) |
-| Premissa 3 (PSM/CID) | Parcial | [Gestão PSM](gestao-psm.md); faltam corte 21/11 e CSV de Desempenho dos processos E2 |
+| Premissa 3 (PSM/CID) | OK | [Gestão PSM](gestao-psm.md); cortes 08/11, 15/11 e 22/11; Desempenho dos processos E2 (Revisão 3) |
 | Premissas 4–6 (repo, rastreabilidade, entrevistas) | OK | [Organização dos dados na Fase 4](fase4.md#organizacao-dos-dados); atas e fichas anonimizadas; mídia de gravação fora do repositório |
 | F2-C1 a F2-C6, F2-C11, F2-C12 | OK | [Fase 2](fase2.md) + diagrama GQM |
 | F2-C7 a F2-C10 | OK / a monitorar | Organização e rodapé; declaração de IA também em [Artigo](artigo.md) |
@@ -19,7 +19,7 @@ Diagnóstico em 22/11/2026, cruzando o PDF *Trabalho final completo v1* com o co
 | F4-C3 | Parcial | Q/H respondidas para interação, desempenho (em parte) e Flexibilidade Q1/Q2; Q3 sem resposta numérica |
 | F4-C4, F4-C5 | OK / reforçado | Propósito Fase 1, sugestões e [protótipo](prototipo-acao-melhoria.md) |
 | AG-C3 | OK | Declaração de IA no [Artigo](artigo.md) |
-| AG-C4 | Parcial | Home com F1–F4 e link de release E1; Release E2 ainda não publicada |
+| AG-C4 | OK | Home com F1–F4 e links das releases [E1](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/releases/tag/Entrega1) e [E2](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/releases/tag/Release2) |
 | AG-C5 | Parcial | Apêndice A com % E1 = 100%; horas E2 no registro ainda incompletas |
 
 **Fase 1 (rubrica Moodle):** o PDF remete ao Moodle. Esta GitPage cobre propósito, stakeholders, modelo ISO/IEC 25010:2023, priorização e escopo em [fase1.md](fase1.md).

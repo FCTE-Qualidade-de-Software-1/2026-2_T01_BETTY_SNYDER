@@ -26,7 +26,7 @@ data_corte,issue,tarefa_id,tarefa,responsavel,prazo,situacao_no_corte,fechada_at
 2026-11-22,#72,E2-81,Ação de melhoria: execução e validação,"Karolina, Pedro, Davi",2026-11-16,fechada,sim,nao,10,2026-11-22,fechada
 2026-11-22,#73,E2-90,"Artigo v2 para o PC2: Fases 3 e 4, resultados, discussão e conclusão","Mateus, Karolina, Pedro, Dante, Davi, Bryan",2026-11-16,fechada,sim,sim,12,2026-11-16,fechada
 2026-11-22,#74,E2-91,"GitPage da E2: Fases 3 e 4, dados, melhoria, versão e data no rodapé","Karolina, Pedro",2026-11-21,fechada,sim,nao,4,2026-11-22,fechada
-2026-11-22,#75,E2-92,Release E2 e submissão no Moodle,Davi,2026-11-22,aberta,nao,nao,1,,aberta
+2026-11-22,#75,E2-92,Release E2 e submissão no Moodle,Davi,2026-11-22,fechada_apos_corte,nao,nao,1,2026-11-23,fechada
 2026-11-22,#76,E2-93,Apresentação final do trabalho,"Mateus, Karolina, Pedro, Dante, Davi, Bryan",2026-11-22,aberta,nao,nao,4,,aberta
 2026-11-22,#77,E2-95,Incorporar o feedback do PC2 e revisão final do artigo (máx. 15 páginas),"Mateus, Karolina, Pedro, Dante, Davi, Bryan",2026-11-21,fechada_apos_corte,nao,nao,8,2026-11-23,fechada
 2026-11-22,#78,E2-P1,"PSM Recursos e Custos: cortes de 08/11, 15/11 e 21/11","Pedro, Davi",2026-11-21,fechada_apos_corte,nao,nao,2,2026-11-23,fechada

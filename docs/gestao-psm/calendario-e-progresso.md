@@ -118,7 +118,7 @@ em que: - \(\sum \text{itens concluídos}\): quantidade de *work items* concluí
 | 25/10 | ICP 40,0% (6/15) | Redistribuir 9 restantes |
 | 08/11 (E2) | ICP 0% (0/14); *throughput* 0 por semana; WIP 1 | Ver [Corte de 08/11](#corte-0811) |
 | 15/11 (E2) | ICP 42,9% (6/14 F3 fechadas até 15/11); 0 no prazo original | Ver [Corte de 15/11](#corte-1511) |
-| 22/11 (E2) | F3: 13/14 fechadas até 22/11 (92,9%); 0 no prazo original; escopo atual 32/34 | Ver [Corte de 22/11](#corte-2211) |
+| 22/11 (E2) | F3: 13/14 fechadas até 22/11 (92,9%); 0 no prazo original; escopo atual 33/34 | Ver [Corte de 22/11](#corte-2211) |
 
 ### Corte de 08/11 (E2) { #corte-0811 }
 
@@ -159,7 +159,7 @@ Segundo corte da E2 (issue E2-P2). Fonte: issues do milestone F3 no GitHub, cruz
 | ICP no prazo original | 0% (0/14) | `concluida_no_prazo_original = nao` em todas as linhas do CSV |
 | Escopo F3+F2+PC2 até 15/11 | 23,1% (6/26) | Seis fechadas até 15/11 entre 26 issues desses milestones |
 
-**Interpretação.** Em relação a 08/11 (ICP 0%), seis issues do plano F3 foram fechadas até 15/11, elevando o indicador de fechamento para 42,9%. O atraso em relação aos prazos originais permanece: o ICP no prazo original continua 0%. Em 16/11, a maior parte das issues de F3 e F2 foi fechada no GitHub, o que deve aparecer no próximo corte (21/11), não neste.
+**Interpretação.** Em relação a 08/11 (ICP 0%), seis issues do plano F3 foram fechadas até 15/11, elevando o indicador de fechamento para 42,9%. O atraso em relação aos prazos originais permanece: o ICP no prazo original continua 0%. Em 16/11, a maior parte das issues de F3 e F2 foi fechada no GitHub, o que deve aparecer no próximo corte (22/11), não neste.
 
 **Decisão de gestão.** Sem replanejamento formal dos prazos originais. Priorizar o fechamento da E2-40 (`#61`) e da consolidação de Flexibilidade (E2-72, `#69`), ainda abertas no milestone, e publicar os cortes PSM nas issues E2-P1 a E2-P3.
 
@@ -173,13 +173,13 @@ Terceiro corte da E2 (issue E2-P2), publicado em **22/11/2026** (corresponde ao 
 | Fechadas até 22/11 (F3) | 13 | Campo `fechada_ate_22_11 = sim`; `#61` fechou após o corte (UTC) |
 | ICP (fechadas / comprometidas, F3) | 92,9% | \(13 / 14\) |
 | ICP no prazo original (F3) | 0% (0/14) | Nenhuma issue F3 com `concluida_no_prazo_original = sim` |
-| Escopo E2 completo (situação atual) | 94,1% (32/34) | Abertas: `#75` (E2-92) e `#76` (E2-93) |
+| Escopo E2 completo (situação atual em 23/11) | 97,1% (33/34) | Aberta: `#76` (E2-93). `#75` (E2-92) fechou após o corte, com a [Release 2](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/releases/tag/Release2) publicada |
 | *Throughput* desde 16/11 | 20 issues | Issues com `data_fim_real` entre 16/11 e 22/11 (inclusive no corte) |
-| Esforço planejado ainda em aberto | 5,0 h | Soma de `#75` (1 h) e `#76` (4 h) |
+| Esforço planejado ainda em aberto | 4,0 h | Somente `#76` (4 h); `#75` (1 h) já fechada |
 
-**Interpretação.** A série F3 sobe de 42,9% (15/11) para 92,9% de fechamento até 22/11, mas o ICP no prazo original permanece 0%: o atraso em relação às datas de 05 a 08/11 não foi recuperado no calendário. No escopo das 34 issues da E2, a **situação atual** no GitHub é 32/34 fechadas; sete issues fecharam com `closed_at` após o fim do dia 22/11 (horário de Brasília) e entram na situação atual, não no contador `fechada_ate_22_11`. Restam a release/Moodle e a apresentação final.
+**Interpretação.** A série F3 sobe de 42,9% (15/11) para 92,9% de fechamento até 22/11, mas o ICP no prazo original permanece 0%: o atraso em relação às datas de 05 a 08/11 não foi recuperado no calendário. Os indicadores `fechada_ate_22_11` permanecem congelados no corte. A **situação atual** (conferida em 23/11/2026 na API do GitHub) é 33/34 fechadas: seis issues (`#61`, `#75`, `#77`, `#78`, `#79`, `#81`) fecharam após o fim do dia 22/11 (horário de Brasília) e entram só em `situacao_atual`. Resta a apresentação final (`#76`).
 
-**Decisão de gestão.** Manter os prazos originais na série histórica. Priorizar o fechamento de `#75` e `#76` e registrar evidências no Project. Não alterar o ICP da série F3 para incorporar fechamentos posteriores ao corte.
+**Decisão de gestão.** Manter os prazos originais na série histórica. Priorizar o fechamento de `#76` (apresentação final) e registrar evidências no Project. Não alterar o ICP da série F3 para incorporar fechamentos posteriores ao corte.
 
 ### Gráfico: conformidade de prazos por recorte { #grafico-icp }
 

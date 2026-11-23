@@ -93,7 +93,7 @@ em que: - \(N_{\text{corrigidos}}\): quantidade de defeitos confirmados já corr
 |---|---|---|
 | Revisão 1 (E1) | \(D_1 = 1{,}44\); correção 61,5% | Conduzir Revisão 2 com dados reais |
 | Revisão 2 (E1) | 10 apontamentos; 10 confirmados e 10 corrigidos (100%) | Consolidar correções no artigo e na GitPage da E1 |
-| Revisão 3 (E2 / pós-PC2; corte 22/11) | \(D_3 = 0{,}80\) (8 defeitos em 10 seções); correção 100% (8/8) | Incorporar feedback do PC2, remover gravações públicas por TCLE, fechar limitações controladas e liberar Release E2; snapshot em `2026-11-22_desempenho-processos.csv` |
+| Revisão 3 (E2 / pós-PC2; corte 22/11) | \(D_3 = 0{,}80\) (8 defeitos em 10 seções); correção 100% (8/8) | Feedback do PC2 incorporado; gravações públicas removidas por TCLE; limitações controladas fechadas; Release 2 publicada (tag `Release2`); snapshot em `2026-11-22_desempenho-processos.csv` |
 
 ### Gráfico: taxa de correção por revisão { #grafico-taxa-correcao }
 
