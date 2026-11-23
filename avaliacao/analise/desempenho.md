@@ -1,4 +1,4 @@
-# Avaliação de desempenho (Triangulação)
+# Avaliação de Eficiência de desempenho (Triangulação)
 
 Espelho canônico: [`docs/avaliacao/analise/desempenho.md`](../../docs/avaliacao/analise/desempenho.md).
 

@@ -5,7 +5,7 @@ Artefatos derivados que comparam medidas consolidadas aos níveis de pontuação
 Páginas canônicas:
 
 - [Avaliação de Capacidade de interação](../../docs/avaliacao/analise/interacao.md)
-- [Avaliação de desempenho (Triangulação)](../../docs/avaliacao/analise/desempenho.md)
+- [Avaliação de Eficiência de desempenho (Triangulação)](../../docs/avaliacao/analise/desempenho.md)
 - [Avaliação de Flexibilidade](../../docs/avaliacao/analise/flexibilidade.md)
 
 Convenções: citar caminhos em `../dados/<caracteristica>/consolidado/` (e, se necessário, o bruto). Usar apenas códigos de participante (PA/PB); nunca nomes.

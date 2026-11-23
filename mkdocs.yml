@@ -25,7 +25,7 @@ nav:
               - Feedback PC2: avaliacao/atas/feedback-PC2_2026-11-16.md
       - Eficiência de desempenho:
           - Protocolo: avaliacao/protocolos/desempenho.md
-          - Avaliação de desempenho (Triangulação): avaliacao/analise/desempenho.md
+          - Avaliação de Eficiência de desempenho (Triangulação): avaliacao/analise/desempenho.md
           - Ferramentas e scripts: avaliacao/scripts/README.md
       - Flexibilidade:
           - Instalação e desinstalação: avaliacao/protocolos/flexibilidade-instalacao.md
@@ -35,7 +35,7 @@ nav:
   - Fase 4:
       - Visão geral: fase4.md
       - Avaliação de Capacidade de interação: avaliacao/analise/interacao.md
-      - Avaliação de desempenho (Triangulação): avaliacao/analise/desempenho.md
+      - Avaliação de Eficiência de desempenho (Triangulação): avaliacao/analise/desempenho.md
       - Avaliação de Flexibilidade: avaliacao/analise/flexibilidade.md
       - Protótipo da ação de melhoria: prototipo-acao-melhoria.md
   - Artigo: artigo.md

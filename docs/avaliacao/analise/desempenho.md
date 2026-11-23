@@ -1,4 +1,4 @@
-# Avaliação de desempenho (Triangulação)
+# Avaliação de Eficiência de desempenho (Triangulação)
 
 Esta página reúne a **coleta**, os **resultados** e a **análise** de Eficiência de desempenho na Fase 4 (triangulação multiplataforma), frente ao GQM da [Fase 2](../../fase2.md). Voltar à [Visão geral da Fase 4](../../fase4.md).
 

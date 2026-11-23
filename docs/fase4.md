@@ -1,6 +1,6 @@
 # Fase 4: Executar a avaliação e julgar
 
-Esta página documenta a execução da avaliação do Anki Desktop 26.09.3 e do fluxo de conta, login e sincronização do AnkiWeb. Em sequência: a visão geral (organização dos dados e estado da coleta); o julgamento perante o propósito da [Fase 1](fase1.md); as relações entre características; as sugestões priorizadas; e a ação de melhoria. O detalhamento por característica (coleta, resultados e análise) está nas páginas [Avaliação de Capacidade de interação](avaliacao/analise/interacao.md), [Avaliação de desempenho (Triangulação)](avaliacao/analise/desempenho.md) e [Avaliação de Flexibilidade](avaliacao/analise/flexibilidade.md).
+Esta página documenta a execução da avaliação do Anki Desktop 26.09.3 e do fluxo de conta, login e sincronização do AnkiWeb. Em sequência: a visão geral (organização dos dados e estado da coleta); o julgamento perante o propósito da [Fase 1](fase1.md); as relações entre características; as sugestões priorizadas; e a ação de melhoria. O detalhamento por característica (coleta, resultados e análise) está nas páginas [Avaliação de Capacidade de interação](avaliacao/analise/interacao.md), [Avaliação de Eficiência de desempenho (Triangulação)](avaliacao/analise/desempenho.md) e [Avaliação de Flexibilidade](avaliacao/analise/flexibilidade.md).
 
 ## Visão geral
 
@@ -33,7 +33,7 @@ avaliacao/
 | Frente | O que procurar no bruto | Onde ler o consolidado e a avaliação |
 | --- | --- | --- |
 | Capacidade de interação | [`M-INT-01_reconhecimento.csv`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/blob/main/avaliacao/dados/interacao/bruto/M-INT-01_reconhecimento.csv), [`M-INT_tarefas.csv`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/blob/main/avaliacao/dados/interacao/bruto/M-INT_tarefas.csv), [`Entrevistas/`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/tree/main/avaliacao/dados/interacao/bruto/Entrevistas), [`sessoes.csv`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/blob/main/avaliacao/dados/interacao/bruto/sessoes.csv) | [`M-INT_metricas.csv`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/blob/main/avaliacao/dados/interacao/consolidado/M-INT_metricas.csv); [Avaliação de Capacidade de interação](avaliacao/analise/interacao.md) |
-| Eficiência de desempenho | CSV e gráficos em `docs/avaliacao/dados/desempenho/` (espelho usado na GitPage); canônico previsto em `avaliacao/dados/desempenho/` | [Avaliação de desempenho (Triangulação)](avaliacao/analise/desempenho.md) |
+| Eficiência de desempenho | CSV e gráficos em `docs/avaliacao/dados/desempenho/` (espelho usado na GitPage); canônico previsto em `avaliacao/dados/desempenho/` | [Avaliação de Eficiência de desempenho (Triangulação)](avaliacao/analise/desempenho.md) |
 | Flexibilidade | Consolidados em [`flexibilidade/consolidado/`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/tree/main/avaliacao/dados/flexibilidade/consolidado) (instalação, checklist e migração) | [Avaliação de Flexibilidade](avaliacao/analise/flexibilidade.md) |
 
 **Participantes e privacidade.** Códigos públicos: PA01 (Grupo A, iniciante); PB01, PB02 (piloto) e PB03 (Grupo B, frequentes). A tabela código > pessoa e os termos de consentimento ficam fora do repositório. Gravações de tela e áudio não são versionadas; a evidência pública da sessão são as atas, as fichas anonimizadas e `sessoes.csv`.
@@ -45,7 +45,7 @@ A coleta da Fase 4 materializa o plano da [Fase 3](fase3.md) em três frentes. O
 | Frente | Método e responsável | Estado da coleta | Onde aprofundar |
 | --- | --- | --- | --- |
 | Capacidade de interação | Entrevistas observadas (Dupla A), com TCLE (Termo de Consentimento Livre e Esclarecido) | Quatro sessões publicadas (PA01, PB01, PB02 piloto, PB03); consolidado `M-INT_metricas.csv` disponível | [Avaliação de Capacidade de interação](avaliacao/analise/interacao.md) |
-| Eficiência de desempenho | Instrumentação multiplataforma (Dupla B) | Ensaios em Ubuntu, Windows 11 e macOS publicados; ressalvas de plataforma documentadas | [Avaliação de desempenho (Triangulação)](avaliacao/analise/desempenho.md) |
+| Eficiência de desempenho | Instrumentação multiplataforma (Dupla B) | Ensaios em Ubuntu, Windows 11 e macOS publicados; ressalvas de plataforma documentadas | [Avaliação de Eficiência de desempenho (Triangulação)](avaliacao/analise/desempenho.md) |
 | Flexibilidade | Ensaios de laboratório (Dupla C): instalação, checklist e migração | Consolidados de instalação, checklist e migração M1/M2 publicados | [Avaliação de Flexibilidade](avaliacao/analise/flexibilidade.md) |
 
 ---
