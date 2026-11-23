@@ -31,7 +31,7 @@ O objetivo de Capacidade de interação segue o template do GQM [4] e as decisõ
 
 Antes da entrevista ou do preenchimento do formulário de avaliação, a pessoa responde ao formulário de triagem: (1) já utilizou o Anki (nunca / experimentou uma ou duas vezes / já utilizou regularmente); (2) nos últimos 7 dias, em quantos dias utilizou (nenhum / 1-2 / 3-4 / 5-7); (3) há quanto tempo utiliza regularmente (nunca / menos de 4 semanas / 4 semanas a 3 meses / mais de 3 meses); (4)-(6) já criou baralhos e cartões, já revisou e já sincronizou Desktop-AnkiWeb (sim/não); (7) já utilizou outros aplicativos de flashcards (sim/não); (8) familiaridade geral com informática (baixa/média/alta). A classificação no Grupo A ou B segue essas respostas.
 
-### Questões e Hipóteses
+### Questões e Hipóteses { #interacao-questoes-hipoteses }
 
 *Tabela III. Questões e hipóteses de Capacidade de interação*
 
@@ -59,7 +59,7 @@ A Tabela IV resume as cinco métricas do escopo (Plano de Medição, Aula 08). T
 | Taxa de conclusão de tarefas (T<sub>ct</sub>) | Q3 | Porcentagem de tarefas concluídas por grupo; N<sub>concluídas</sub> / N<sub>propostas</sub> × 100% | Bird et al. [14] | Maior é melhor; 0-100% |
 | Tempo de execução da tarefa (T<sub>exec</sub>) | Q3 | Média do tempo da pessoa do recebimento da tarefa até o sucesso (também mediana), por tarefa e grupo | Bird et al. [14] | Menor é melhor; > 0 min |
 
-### Níveis de Pontuação e Critérios de Julgamento
+### Níveis de Pontuação e Critérios de Julgamento { #interacao-niveis-pontuacao }
 
 Os níveis da Tabela V foram fixados antes da coleta. Os limites de T<sub>exec</sub> medem o tempo da pessoa para concluir a tarefa e foram definidos por acordo da equipe (os limiares de 3, 9 e 12 s de Hoxmeier e DiCesare [11] aplicam-se ao tempo de resposta do sistema na Eficiência de desempenho, não a estas tarefas). Os demais limites também foram definidos por acordo da equipe, por falta de dados históricos do Anki.
 
