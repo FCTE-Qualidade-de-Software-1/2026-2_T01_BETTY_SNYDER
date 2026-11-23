@@ -1,0 +1,691 @@
+/* Betty Snyder · GitPage
+   Paleta alinhada ao Anki Desktop (novos / a aprender / a revisar)
+   e tipografia atual para documentação Material. */
+
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap");
+
+:root {
+  --anki-new: #3b82f6;
+  --anki-new-deep: #2563eb;
+  --anki-learn: #ff5a69;
+  --anki-review: #00c94f;
+  --anki-surface: #f3f6fb;
+  --anki-ink: #1a2332;
+  --anki-muted: #5b6575;
+  --anki-card: #ffffff;
+  --anki-line: rgba(37, 99, 235, 0.14);
+  --anki-shadow: 0 18px 40px rgba(26, 35, 50, 0.08);
+  --anki-radius: 14px;
+  --font-display: "Manrope", "Segoe UI", sans-serif;
+  --font-body: "Source Sans 3", "Segoe UI", sans-serif;
+}
+
+[data-md-color-scheme="default"] {
+  --md-primary-fg-color: #2563eb;
+  --md-primary-fg-color--light: #3b82f6;
+  --md-primary-fg-color--dark: #1d4ed8;
+  --md-primary-bg-color: #ffffff;
+  --md-accent-fg-color: #00a844;
+  --md-default-bg-color: #eef2f8;
+  --md-default-fg-color: #1a2332;
+  --md-default-fg-color--light: #5b6575;
+  --md-typeset-a-color: #2563eb;
+  --md-code-bg-color: #e7edf7;
+  --md-footer-bg-color: #1a2332;
+  --md-footer-bg-color--dark: #121821;
+  --md-typeset-color: #1a2332;
+}
+
+[data-md-color-scheme="slate"] {
+  --md-hue: 220;
+  --md-primary-fg-color: #202020;
+  --md-primary-fg-color--light: #303030;
+  --md-primary-fg-color--dark: #151515;
+  --md-primary-bg-color: #e8e8e8;
+  --md-accent-fg-color: #5aa9ff;
+  --md-default-bg-color: #222222;
+  --md-default-fg-color: #ececec;
+  --md-default-fg-color--light: #b0b0b0;
+  --md-typeset-color: #ececec;
+  --md-typeset-a-color: #5aa9ff;
+  --md-code-bg-color: #2b2b2b;
+  --md-code-fg-color: #ececec;
+  --md-footer-bg-color: #151515;
+  --anki-surface: #2b2b2b;
+  --anki-ink: #ececec;
+  --anki-muted: #a8a8a8;
+  --anki-card: #303030;
+  --anki-line: rgba(90, 169, 255, 0.22);
+  --anki-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
+}
+
+.md-typeset,
+.md-nav,
+.md-tabs,
+.md-header__topic,
+.md-search__input,
+.md-footer {
+  font-family: var(--font-body);
+}
+
+.md-typeset h1,
+.md-typeset h2,
+.md-typeset h3,
+.md-header__title,
+.hero h1 {
+  font-family: var(--font-display);
+  letter-spacing: -0.02em;
+}
+
+.md-typeset h1,
+.md-typeset h2 {
+  font-weight: 700;
+}
+
+.md-header {
+  box-shadow: none;
+  border-bottom: 1px solid var(--anki-line);
+  backdrop-filter: saturate(1.2) blur(8px);
+}
+
+.md-tabs {
+  background: color-mix(in srgb, var(--md-primary-fg-color) 92%, #000 8%);
+}
+
+[data-md-color-scheme="default"] .md-tabs {
+  background: linear-gradient(90deg, #1d4ed8 0%, #2563eb 55%, #1e40af 100%);
+}
+
+[data-md-color-scheme="slate"] .md-tabs {
+  background: #1a1a1a;
+  border-bottom: 1px solid #303030;
+}
+
+.md-typeset table:not([class]),
+.md-typeset .admonition,
+.md-typeset details {
+  border-radius: 10px;
+}
+
+.md-button {
+  border-radius: 999px;
+  font-family: var(--font-display);
+  font-weight: 600;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.md-typeset .md-button:hover,
+.md-typeset .md-button:focus {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.22);
+}
+
+.md-typeset .md-button--primary {
+  background: var(--anki-new-deep);
+  border-color: transparent;
+  color: #fff;
+}
+
+/* ---------- Hero (primeira dobra ≈ 50vh) ---------- */
+.hero {
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(96px, 132px);
+  gap: 0.85rem 1.15rem;
+  align-items: center;
+  overflow: hidden;
+  text-align: left;
+  max-height: 50vh;
+  min-height: 0;
+  padding: clamp(0.7rem, 1.6vh, 1.1rem) clamp(0.9rem, 2vw, 1.4rem);
+  margin: 0 0 1.25rem;
+  border-radius: calc(var(--anki-radius) + 2px);
+  background:
+    radial-gradient(ellipse 72% 95% at 96% 8%, rgba(59, 130, 246, 0.3), transparent 58%),
+    radial-gradient(ellipse 48% 70% at 4% 96%, rgba(0, 201, 79, 0.16), transparent 55%),
+    radial-gradient(ellipse 42% 55% at 38% -8%, rgba(255, 90, 105, 0.1), transparent 60%),
+    linear-gradient(148deg, #fbfdff 0%, #eaf2fc 38%, #f2f6fb 68%, #e7eef8 100%);
+  border: 1px solid color-mix(in srgb, var(--anki-new) 18%, transparent);
+  box-shadow:
+    var(--anki-shadow),
+    inset 0 1px 0 rgba(255, 255, 255, 0.72);
+  animation: hero-in 0.7s ease both;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(37, 99, 235, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(37, 99, 235, 0.05) 1px, transparent 1px);
+  background-size: 26px 26px;
+  background-position: -1px -1px;
+  mask-image: radial-gradient(ellipse 85% 80% at 32% 48%, #000 15%, transparent 78%);
+  -webkit-mask-image: radial-gradient(ellipse 85% 80% at 32% 48%, #000 15%, transparent 78%);
+  opacity: 0.9;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: -35% -20%;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 88% 28%, rgba(59, 130, 246, 0.22), transparent 32%),
+    radial-gradient(circle at 12% 78%, rgba(0, 201, 79, 0.14), transparent 30%),
+    radial-gradient(circle at 48% 18%, rgba(255, 90, 105, 0.08), transparent 26%);
+  filter: blur(36px);
+  animation: hero-glow 14s ease-in-out infinite alternate;
+}
+
+[data-md-color-scheme="slate"] .hero {
+  background:
+    radial-gradient(ellipse 72% 95% at 96% 8%, rgba(90, 169, 255, 0.2), transparent 58%),
+    radial-gradient(ellipse 48% 70% at 4% 96%, rgba(0, 201, 79, 0.1), transparent 55%),
+    radial-gradient(ellipse 42% 55% at 38% -8%, rgba(255, 90, 105, 0.08), transparent 60%),
+    linear-gradient(160deg, #262626 0%, #1f1f1f 52%, #2a2a2a 100%);
+  border-color: #3a3a3a;
+  box-shadow:
+    var(--anki-shadow),
+    inset 0 1px 0 rgba(255, 255, 255, 0.04);
+}
+
+[data-md-color-scheme="slate"] .hero::before {
+  background-image:
+    linear-gradient(rgba(90, 169, 255, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(90, 169, 255, 0.06) 1px, transparent 1px);
+}
+
+[data-md-color-scheme="slate"] .hero::after {
+  background:
+    radial-gradient(circle at 88% 28%, rgba(90, 169, 255, 0.18), transparent 32%),
+    radial-gradient(circle at 12% 78%, rgba(0, 201, 79, 0.1), transparent 30%),
+    radial-gradient(circle at 48% 18%, rgba(255, 90, 105, 0.07), transparent 26%);
+}
+
+.hero__portrait {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+  margin: 0;
+  max-height: calc(50vh - 1.6rem);
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.hero__portrait img {
+  display: block;
+  width: 100%;
+  max-height: calc(50vh - 3.2rem);
+  height: auto;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 2px solid color-mix(in srgb, var(--anki-new) 45%, #fff 20%);
+  box-shadow:
+    0 10px 22px rgba(26, 35, 50, 0.16),
+    0 0 0 4px color-mix(in srgb, #fff 70%, transparent);
+  transform: rotate(7deg);
+}
+
+.hero__copy {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.2rem;
+  min-width: 0;
+  max-height: calc(50vh - 1.6rem);
+  overflow: hidden;
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.hero__eyebrow {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--anki-new-deep);
+}
+
+[data-md-color-scheme="slate"] .hero__eyebrow {
+  color: #5aa9ff;
+}
+
+.hero h1 {
+  margin: 0;
+  font-size: clamp(1.45rem, 3.2vh, 2rem);
+  line-height: 1.08;
+  font-weight: 800;
+  color: var(--anki-ink);
+}
+
+.hero__subtitle {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(0.92rem, 2vh, 1.08rem);
+  font-weight: 700;
+  line-height: 1.25;
+  color: var(--anki-new-deep);
+}
+
+[data-md-color-scheme="slate"] .hero__subtitle {
+  color: #7eb6ff;
+}
+
+.hero p,
+.hero__lead {
+  margin: 0;
+  color: var(--anki-muted);
+  font-size: clamp(0.8rem, 1.6vh, 0.92rem);
+  line-height: 1.35;
+  max-width: 36rem;
+}
+
+.hero .md-button {
+  align-self: flex-start;
+  margin: 0.4rem 0 0;
+  padding: 0.35em 0.95em;
+  font-size: 0.78rem;
+}
+
+.md-typeset .hero h1 {
+  margin: 0;
+  font-size: clamp(1.45rem, 3.2vh, 2rem);
+}
+
+.md-typeset .hero p {
+  margin: 0;
+}
+
+.md-typeset .hero .md-button {
+  margin-top: 0.4rem;
+}
+
+@keyframes hero-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes hero-glow {
+  from {
+    transform: translate3d(0, 0, 0) scale(1);
+    opacity: 0.85;
+  }
+  to {
+    transform: translate3d(-2%, 3%, 0) scale(1.05);
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero,
+  .hero::after,
+  .homage {
+    animation: none;
+  }
+}
+
+/* ---------- Homenagem Betty Snyder ---------- */
+.homage {
+  padding: 1.35rem 1.35rem 1.5rem;
+  margin: 0 0 2rem;
+  border-radius: var(--anki-radius);
+  background: var(--anki-card);
+  border: 1px solid var(--anki-line);
+  box-shadow: var(--anki-shadow);
+  animation: hero-in 0.8s ease 0.08s both;
+}
+
+.homage > p:first-child {
+  margin-top: 0;
+}
+
+.homage .md-button {
+  margin-top: 0.35rem;
+}
+
+@media (max-width: 760px) {
+  .hero {
+    grid-template-columns: minmax(0, 1fr) 84px;
+    max-height: 50vh;
+    gap: 0.65rem 0.8rem;
+    padding: 0.65rem 0.8rem;
+  }
+
+  .hero__portrait {
+    max-width: 84px;
+    grid-column: 2;
+  }
+
+  .hero__copy {
+    grid-column: 1;
+  }
+
+  .hero__portrait img {
+    max-height: calc(50vh - 1.4rem);
+  }
+
+  .hero .md-button {
+    margin-top: 0.4rem;
+  }
+}
+
+/* ---------- Percurso ---------- */
+.path-steps {
+  list-style: none;
+  margin: 0 0 1.25rem;
+  padding: 0;
+  display: grid;
+  gap: 0.65rem;
+  counter-reset: path;
+}
+
+.path-steps li {
+  position: relative;
+  margin: 0;
+  padding: 0.9rem 1rem 0.9rem 3.1rem;
+  border-radius: 12px;
+  background: var(--anki-card);
+  border: 1px solid var(--anki-line);
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.path-steps li:hover {
+  transform: translateX(4px);
+  border-color: color-mix(in srgb, var(--anki-new) 45%, transparent);
+  box-shadow: var(--anki-shadow);
+}
+
+.path-steps li::before {
+  counter-increment: path;
+  content: counter(path);
+  position: absolute;
+  left: 0.85rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1.7rem;
+  height: 1.7rem;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #fff;
+  background: var(--anki-new-deep);
+}
+
+.path-steps li:nth-child(2)::before {
+  background: #4b7bec;
+}
+
+.path-steps li:nth-child(3)::before {
+  background: var(--anki-learn);
+}
+
+.path-steps li:nth-child(4)::before {
+  background: #00a844;
+}
+
+.path-steps a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.path-steps strong {
+  font-family: var(--font-display);
+}
+
+/* ---------- Características (faixas Anki) ---------- */
+.trait-row {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.9rem;
+  margin: 1rem 0 1.4rem;
+}
+
+.trait {
+  padding: 1rem 1.05rem;
+  border-radius: 12px;
+  background: var(--anki-card);
+  border: 1px solid var(--anki-line);
+  border-top-width: 4px;
+  box-shadow: var(--anki-shadow);
+  transition: transform 0.2s ease;
+}
+
+.trait:hover {
+  transform: translateY(-3px);
+}
+
+.trait--new {
+  border-top-color: var(--anki-new);
+}
+
+.trait--learn {
+  border-top-color: var(--anki-learn);
+}
+
+.trait--review {
+  border-top-color: var(--anki-review);
+}
+
+.trait p {
+  margin: 0.35rem 0 0;
+  color: var(--anki-muted);
+  font-size: 0.95rem;
+}
+
+.trait strong {
+  font-family: var(--font-display);
+  font-size: 1rem;
+}
+
+@media (max-width: 900px) {
+  .trait-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ---------- Cards de navegação ---------- */
+.md-typeset .grid.cards > ul > li {
+  border-radius: 14px;
+  border-color: var(--anki-line);
+  box-shadow: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.md-typeset .grid.cards > ul > li:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--anki-shadow);
+  border-color: color-mix(in srgb, var(--anki-new) 40%, transparent);
+}
+
+.md-typeset .grid.cards > ul > li > :last-child {
+  margin-bottom: 0;
+}
+
+/* ---------- Equipe ---------- */
+.team {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.team a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 1.1rem 0.8rem;
+  border-radius: 14px;
+  border: 1px solid var(--anki-line);
+  background: var(--anki-card);
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.team a:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--anki-shadow);
+  border-color: color-mix(in srgb, var(--anki-new) 45%, transparent);
+}
+
+.team img {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  border: 3px solid var(--anki-new);
+  object-fit: cover;
+}
+
+.team span {
+  font-family: var(--font-display);
+  font-weight: 600;
+  color: var(--anki-ink);
+}
+
+@media (max-width: 700px) {
+  .team {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ---------- Gráficos PSM ---------- */
+.psm-chart {
+  margin: 1.5rem auto;
+  max-width: 800px;
+}
+
+.psm-chart svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.psm-chart text {
+  fill: var(--md-typeset-color, var(--md-default-fg-color));
+  font-family: var(--font-body);
+  font-size: 13px;
+}
+
+.psm-chart .chart-grid {
+  stroke: currentColor;
+  stroke-opacity: 0.18;
+}
+
+.psm-chart .chart-axis {
+  stroke: currentColor;
+  stroke-opacity: 0.55;
+}
+
+.psm-chart .chart-value {
+  font-weight: 700;
+}
+
+.psm-chart .bar-planned {
+  fill: #3b82f6;
+}
+
+.psm-chart .bar-actual {
+  fill: #e6953b;
+}
+
+.psm-chart .line-icp {
+  fill: none;
+  stroke: #2563eb;
+  stroke-width: 3;
+}
+
+.psm-chart .line-deviation {
+  fill: none;
+  stroke: #ff5a69;
+  stroke-width: 3;
+}
+
+.psm-chart .line-participation {
+  fill: none;
+  stroke: #e6953b;
+  stroke-width: 3;
+}
+
+.psm-chart .point-icp {
+  fill: #2563eb;
+  stroke: var(--md-default-bg-color);
+  stroke-width: 2;
+}
+
+.psm-chart .point-deviation {
+  fill: #ff5a69;
+  stroke: var(--md-default-bg-color);
+  stroke-width: 2;
+}
+
+.psm-chart .point-participation {
+  fill: #e6953b;
+  stroke: var(--md-default-bg-color);
+  stroke-width: 2;
+}
+
+.psm-chart .threshold {
+  stroke: #ff5a69;
+  stroke-dasharray: 7 5;
+  stroke-width: 2;
+}
+
+.psm-chart .bar-rate {
+  fill: #3b82f6;
+}
+
+.psm-chart figcaption {
+  margin-top: 0.5rem;
+  color: var(--md-default-fg-color--light, var(--md-default-fg-color));
+  font-size: 0.8rem;
+}
+
+/* Gráficos de Capacidade de interação (e demais figuras marcadas) */
+.md-typeset img.chart-readable {
+  display: block;
+  width: min(100%, 960px);
+  max-width: 100%;
+  height: auto;
+  margin: 0.75rem auto 0.35rem;
+  border-radius: 10px;
+  border: 1px solid var(--anki-line);
+  background: #fff;
+  box-shadow: var(--anki-shadow);
+}
+
+/* Conteúdo geral: respiro e tipografia */
+.md-content__inner {
+  padding-top: 0.4rem;
+}
+
+.md-typeset {
+  font-size: 0.95rem;
+  line-height: 1.65;
+}
+
+.md-typeset a:hover {
+  text-decoration-thickness: 2px;
+}
