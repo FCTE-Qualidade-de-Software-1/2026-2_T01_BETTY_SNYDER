@@ -34,7 +34,7 @@ A análise correspondente permanece em [desempenho.md](../analise/desempenho.md)
 
 A professora recomendou **explicitar** que a entrevista piloto está sendo considerada, no escopo do projeto da disciplina, não apenas como ensaio metodológico descartável. Além de funcionar como **linha de base de comparação**, os dados dessa sessão integram a **avaliação geral resultante** (métricas consolidadas, julgamento das questões GQM e recomendações).
 
-No projeto Betty Snyder, essa orientação aplica-se à sessão **PB02** (Grupo B, frequente / piloto). O tratamento correspondente está registrado na [análise de Capacidade de interação](../analise/interacao.md), na [Fase 4](../../fase4.md), no [artigo](../../artigo.md) e na [ata da sessão PB02](sessao-PB02_2026-11-13.md).
+No projeto Betty Snyder, essa orientação aplica-se à sessão **PB02** (Grupo B, frequente / piloto). O tratamento correspondente está registrado na [Avaliação de Capacidade de interação](../analise/interacao.md), na [Fase 4](../../fase4.md), no [artigo](../../artigo.md) e na [ata da sessão PB02](sessao-PB02_2026-11-13.md).
 
 ## Encerramento e ações da equipe
 

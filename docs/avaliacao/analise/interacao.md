@@ -1,4 +1,4 @@
-# Análise de Capacidade de interação
+# Avaliação de Capacidade de interação
 
 Esta página consolida as métricas de Capacidade de interação a partir das fichas anonimizadas `PA01`, `PB01`, `PB02` e `PB03`, das atas de sessão, dos CSV e das faixas da [Fase 2](../../fase2.md). As gravações de tela e áudio não são versionadas no repositório (diretório privado). O julgamento é **indicativo** (n = 4; um iniciante).
 

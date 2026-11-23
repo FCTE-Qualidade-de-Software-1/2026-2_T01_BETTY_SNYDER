@@ -1,4 +1,4 @@
-# Análise de Eficiência de desempenho : Triangulação Multiplataforma
+# Avaliação de Eficiência de desempenho
 
 Esta página apresenta a análise crítica, comparativa e interpretativa dos resultados empíricos obtidos na avaliação de **Eficiência de Desempenho (Eficiência de desempenho)** do **Anki Desktop 26.09.3**, conforme as metas do **GQM (Goal-Question-Metric)** e a norma **ISO/IEC 25010**.
 

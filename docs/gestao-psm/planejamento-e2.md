@@ -24,7 +24,7 @@ As três características e o GQM da Fase 2 não mudam, e os nomes usados em tod
 | Sáb 14/11 (tarde) | Julgamento integrado; recomendações priorizadas; escolha da ação de melhoria | Reunião 06 (online) |
 | Sáb 14/11 a Dom 15/11 | Ação de melhoria; artigo v2 completo; slides; corte PSM 2; ensaio em 15/11 | - |
 | Seg 16/11 | Apresentação do PC2 | **PC2** |
-| Ter 17/11 a Sáb 21/11 | Feedback do PC2 transformado em tarefas; refinamento da ação; revisão cruzada do artigo; GitPage final; corte PSM 3; release em 21/11 | Reunião 07 logo após o PC2 |
+| Ter 17/11 a Sáb 21/11 | Feedback do PC2 transformado em tarefas; refinamento da ação; revisão cruzada do artigo; GitPage final; corte PSM 3 (publicado em 22/11); release em 21/11 | Reunião 07 logo após o PC2 |
 | Dom 22/11 | Margem de segurança e submissão no Moodle | **E2** |
 
 A coleta é o caminho crítico. As sessões com participantes vão de 09/11 a 13/11, e depois disso não há data extra antes do julgamento de 14/11. Por isso o recrutamento começa já, em paralelo aos protocolos, as sessões são marcadas o mais cedo possível dentro da janela, e os tempos e acertos de cada sessão são lançados na planilha no mesmo dia.
@@ -83,7 +83,7 @@ A sequência abaixo vale para a equipe toda. Dentro de cada etapa, as duplas tra
 
 **Etapa 6: artigo e slides para o PC2 (13/11 a 16/11).** E2-90 (artigo completo) e E2-41 (slides) andam juntos: cada dupla escreve a seção de resultados e faz os slides da sua característica assim que termina a Etapa 4. A GitPage da issue E2-91 entra aqui com as páginas das Fases 3 e 4 já publicadas e os dados brutos linkados. Segundo corte do PSM em 15/11 e ensaio na mesma noite.
 
-**Etapa 7: depois do PC2 (17/11 a 22/11).** E2-95 transforma o feedback em tarefas e faz a revisão cruzada do artigo. E2-91 finaliza a GitPage. Terceiro corte do PSM em 21/11, que alimenta a tabela de contribuição. E2-92 publica a release em 21/11 e submete no Moodle, deixando 22/11 como margem. E2-93 prepara a apresentação final.
+**Etapa 7: depois do PC2 (17/11 a 22/11).** E2-95 transforma o feedback em tarefas e faz a revisão cruzada do artigo. E2-91 finaliza a GitPage. Terceiro corte do PSM, previsto para 21/11 e publicado em **22/11/2026**, que alimenta a tabela de contribuição. E2-92 publica a release em 21/11 e submete no Moodle, deixando 22/11 como margem. E2-93 prepara a apresentação final.
 
 ### 4.4 Resumo por dupla
 
@@ -223,9 +223,9 @@ Gravações: o termo de consentimento define onde ficam. Se ele autoriza manter 
 | F4-C4 / F4-C5 Propósito e julgamento | Recomendações priorizadas para mantenedores e estudantes, ligadas ao propósito da Fase 1 | E2-80 |
 | Ação de melhoria | Seleção justificada pela evidência, execução e validação | E2-81 |
 | Premissa 1 Relações entre características | Seção de discussão com evidências, limitações e casos sem dados suficientes | E2-80, E2-90 |
-| Premissa 3 PSM | Cortes de 08/11, 15/11 e 21/11 com interpretação e decisão registrada | E2-P1, E2-P2, E2-P3 |
+| Premissa 3 PSM | Cortes de 08/11, 15/11 e 22/11 (corte 3 oficial) com interpretação e decisão registrada | E2-P1, E2-P2, E2-P3 |
 | AG-C1, AG-C2, AG-C3 Artigo | Versão completa no PC2 e revisão final após o feedback, limite de 15 páginas, declaração de IA atualizada | E2-90, E2-95 |
-| AG-C5 Contribuição | Tabela com porcentagens que somam 100%, a partir do corte PSM de 21/11 | E2-95, E2-P1 |
+| AG-C5 Contribuição | Tabela com porcentagens que somam 100%, a partir do corte PSM de 22/11 | E2-95, E2-P1 |
 
 ## 9. Riscos e contingências
 

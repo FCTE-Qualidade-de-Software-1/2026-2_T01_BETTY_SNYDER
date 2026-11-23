@@ -1,47 +1,64 @@
 # Fase 4: Executar a avaliação e julgar
 
-Esta página registra a obtenção dos dados, a organização dos arquivos no repositório, a análise GQM (Goal-Question-Metric: método que liga objetivos a perguntas e a medidas) frente às questões e hipóteses da [Fase 2](fase2.md), o julgamento frente ao propósito da [Fase 1](fase1.md), as relações entre características, as sugestões priorizadas e a ação de melhoria obrigatória. As análises detalhadas estão em [interacao.md](avaliacao/analise/interacao.md), [desempenho.md](avaliacao/analise/desempenho.md) e [flexibilidade.md](avaliacao/analise/flexibilidade.md).
+Esta página documenta a execução da avaliação do Anki Desktop 26.09.3 e do fluxo de conta, login e sincronização do AnkiWeb. Em sequência: a visão geral (organização dos dados e estado da coleta); a avaliação de cada característica frente ao GQM (Goal-Question-Metric: método que liga objetivos a perguntas e a medidas) da [Fase 2](fase2.md); o julgamento perante o propósito da [Fase 1](fase1.md); as relações entre características; as sugestões priorizadas; e a ação de melhoria. O detalhamento por característica está nas seções [Avaliação de Capacidade de interação](#avaliacao-capacidade-interacao), [Avaliação de Eficiência de desempenho](#avaliacao-eficiencia-desempenho) e [Avaliação de Flexibilidade](#avaliacao-flexibilidade), com páginas estendidas em [interacao.md](avaliacao/analise/interacao.md), [desempenho.md](avaliacao/analise/desempenho.md) e [flexibilidade.md](avaliacao/analise/flexibilidade.md).
 
-## Organização dos dados
+## Visão geral
 
-Os dados do **produto** (avaliação do Anki) ficam em [`avaliacao/`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/tree/main/avaliacao). Não confundir com [`gestao-psm/`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/tree/main/gestao-psm), que acompanha o projeto acadêmico (esforço e progresso da equipe).
+A Visão geral reúne apenas informações transversais: onde os dados ficam no repositório e qual é o estado objetivo de cada frente de coleta. Os números por métrica, as faixas e o julgamento por questão aparecem somente nas seções de avaliação de cada característica.
+
+### Organização dos dados { #organizacao-dos-dados }
+
+Os arquivos da avaliação do **produto** (o Anki) ficam em [`avaliacao/`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/tree/main/avaliacao). Essa pasta é distinta de [`gestao-psm/`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/tree/main/gestao-psm), que registra esforço, prazos e processos da **equipe** no projeto acadêmico. Misturar as duas fontes invalida a interpretação: um CSV em `avaliacao/` responde a uma métrica GQM do Anki; um CSV em `gestao-psm/` responde a um indicador PSM do trabalho da equipe.
+
+Na prática, a pasta `avaliacao/` separa quatro papéis que se leem em cadeia:
+
+1. **Protocolos** (`protocolos/`): o roteiro escrito de como coletar (entrevista, instrumentação, instalação, checklist, migração).
+2. **Scripts** (`scripts/`): programas que geram ou consolidam medidas de desempenho e utilitários de verificação.
+3. **Dados** (`dados/<frente>/{bruto,consolidado}/`): o registro bruto da sessão ou do ensaio e a tabela já calculada para publicação.
+4. **Análise** (`analise/` e esta Fase 4): a interpretação frente às questões, hipóteses e faixas da Fase 2.
 
 ```text
 avaliacao/
   protocolos/     Como conduzir entrevistas e ensaios
   scripts/        Programas de coleta e consolidação
   dados/
-    interacao/      {bruto, consolidado}  Capacidade de interação (facilidade de uso)
-    desempenho/     {bruto, consolidado}  Eficiência de desempenho (tempo e recursos)
-    flexibilidade/  {bruto, consolidado}  Flexibilidade (instalação, integração e migração)
+    interacao/      {bruto, consolidado}  Capacidade de interação
+    desempenho/     {bruto, consolidado}  Eficiência de desempenho
+    flexibilidade/  {bruto, consolidado}  Flexibilidade
   analise/        Interpretação das métricas frente ao GQM
 ```
 
-**Rastreabilidade** (caminho do arquivo bruto até o número publicado): protocolo → dado bruto → consolidado → análise e esta Fase 4. Nomes preferenciais: `<métrica>_<cenário>_<execução>` (exemplo: `T_ini_coldstart_ubuntu_01.csv`). Exceção: `sessoes.csv` indexa entrevistas (data, formato e ata), sem apontar mídia.
+**Rastreabilidade útil no dia a dia.** Para conferir um número da GitPage ou do artigo, percorra: protocolo > dado bruto > consolidado > análise nesta Fase 4. Os nomes preferenciais dos arquivos brutos seguem `<métrica>_<cenário>_<execução>` (exemplo: `T_ini_coldstart_ubuntu_01.csv`). A exceção deliberada é `sessoes.csv`, que indexa entrevistas (data, formato e ata) sem apontar mídia.
 
-| Frente | Bruto principal | Consolidado / análise |
+| Frente | O que procurar no bruto | Onde ler o consolidado e a avaliação |
 | --- | --- | --- |
-| Capacidade de interação | [`M-INT-01_reconhecimento.csv`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/blob/main/avaliacao/dados/interacao/bruto/M-INT-01_reconhecimento.csv), [`M-INT_tarefas.csv`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/blob/main/avaliacao/dados/interacao/bruto/M-INT_tarefas.csv), [`Entrevistas/`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/tree/main/avaliacao/dados/interacao/bruto/Entrevistas), [`sessoes.csv`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/blob/main/avaliacao/dados/interacao/bruto/sessoes.csv) | [`M-INT_metricas.csv`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/blob/main/avaliacao/dados/interacao/consolidado/M-INT_metricas.csv); [análise](avaliacao/analise/interacao.md) |
-| Eficiência de desempenho | CSV em `docs/avaliacao/dados/desempenho/bruto/` (espelho usado na GitPage); canônico previsto em `avaliacao/dados/desempenho/` | [análise de desempenho](avaliacao/analise/desempenho.md) |
-| Flexibilidade | Consolidados de instalação, checklist e migração em [`flexibilidade/consolidado/`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/tree/main/avaliacao/dados/flexibilidade/consolidado) | [análise de Flexibilidade](avaliacao/analise/flexibilidade.md) |
+| Capacidade de interação | [`M-INT-01_reconhecimento.csv`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/blob/main/avaliacao/dados/interacao/bruto/M-INT-01_reconhecimento.csv), [`M-INT_tarefas.csv`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/blob/main/avaliacao/dados/interacao/bruto/M-INT_tarefas.csv), [`Entrevistas/`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/tree/main/avaliacao/dados/interacao/bruto/Entrevistas), [`sessoes.csv`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/blob/main/avaliacao/dados/interacao/bruto/sessoes.csv) | [`M-INT_metricas.csv`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/blob/main/avaliacao/dados/interacao/consolidado/M-INT_metricas.csv); [Avaliação de Capacidade de interação](#avaliacao-capacidade-interacao) |
+| Eficiência de desempenho | CSV e gráficos em `docs/avaliacao/dados/desempenho/` (espelho usado na GitPage); canônico previsto em `avaliacao/dados/desempenho/` | [Avaliação de Eficiência de desempenho](#avaliacao-eficiencia-desempenho) |
+| Flexibilidade | Consolidados em [`flexibilidade/consolidado/`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/tree/main/avaliacao/dados/flexibilidade/consolidado) (instalação, checklist e migração) | [Avaliação de Flexibilidade](#avaliacao-flexibilidade) |
 
-**Participantes.** Códigos públicos: PA01 (Grupo A, iniciante); PB01, PB02 (piloto) e PB03 (Grupo B, frequentes). A tabela código → pessoa e os termos de consentimento ficam fora do repositório. Gravações de tela e áudio não são versionadas; a evidência pública da sessão são as atas, as fichas anonimizadas e `sessoes.csv`.
+**Participantes e privacidade.** Códigos públicos: PA01 (Grupo A, iniciante); PB01, PB02 (piloto) e PB03 (Grupo B, frequentes). A tabela código > pessoa e os termos de consentimento ficam fora do repositório. Gravações de tela e áudio não são versionadas; a evidência pública da sessão são as atas, as fichas anonimizadas e `sessoes.csv`.
 
-## Visão geral da coleta
+### Visão geral da coleta { #visao-geral-da-coleta }
 
-| Frente | Dados brutos | Métricas e análise | Situação objetiva |
+A coleta da Fase 4 materializa o plano da [Fase 3](fase3.md) em três frentes. O quadro abaixo indica apenas o método, o responsável e se a frente está concluída no repositório. Métricas, faixas e julgamento ficam nas seções de avaliação.
+
+| Frente | Método e responsável | Estado da coleta | Onde aprofundar |
 | --- | --- | --- | --- |
-| Capacidade de interação | [`Entrevistas/`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/tree/main/avaliacao/dados/interacao/bruto/Entrevistas) (PA01, PB01, PB02, PB03), atas, CSV `M-INT-*` | [`M-INT_metricas.csv`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/blob/main/avaliacao/dados/interacao/consolidado/M-INT_metricas.csv); [análise](avaliacao/analise/interacao.md) | Quatro participantes; um iniciante (PA01); três frequentes (PB02 piloto); métricas T<sub>rf</sub>, T<sub>aprend</sub>, T<sub>sa</sub>, T<sub>ct</sub> e T<sub>exec</sub> calculadas |
-| Eficiência de desempenho | CSV e gráficos em `docs/avaliacao/dados/desempenho/bruto/` e `docs/avaliacao/dados/` | [análise de desempenho](avaliacao/analise/desempenho.md) | Triangulação concluída em Ubuntu, Windows 11 e macOS; limitações específicas da API do Windows NT documentadas como variação controlada de plataforma |
-| Flexibilidade | [`flexibilidade-instalacao-tempo.csv`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/blob/main/avaliacao/dados/flexibilidade/consolidado/flexibilidade-instalacao-tempo.csv), [`flexibilidade-checklist-registro.csv`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/blob/main/avaliacao/dados/flexibilidade/consolidado/flexibilidade-checklist-registro.csv), [`flexibilidade-migracao.csv`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/blob/main/avaliacao/dados/flexibilidade/consolidado/flexibilidade-migracao.csv), gráficos de instalação e checklist | [análise de Flexibilidade](avaliacao/analise/flexibilidade.md); seção abaixo | Q1 e Q2 no alvo/excelente; Q3 com T<sub>pd</sub> = 100% e T<sub>sub</sub> na faixa mínimo |
+| Capacidade de interação | Entrevistas observadas (Dupla A), com TCLE (Termo de Consentimento Livre e Esclarecido) | Quatro sessões publicadas (PA01, PB01, PB02 piloto, PB03); consolidado `M-INT_metricas.csv` disponível | [Avaliação de Capacidade de interação](#avaliacao-capacidade-interacao) |
+| Eficiência de desempenho | Instrumentação multiplataforma (Dupla B) | Ensaios em Ubuntu, Windows 11 e macOS publicados; ressalvas de plataforma documentadas | [Avaliação de Eficiência de desempenho](#avaliacao-eficiencia-desempenho) |
+| Flexibilidade | Ensaios de laboratório (Dupla C): instalação, checklist e migração | Consolidados de instalação, checklist e migração M1/M2 publicados | [Avaliação de Flexibilidade](#avaliacao-flexibilidade) |
+
+**Leitura prática.** Se a dúvida for sobre um participante, abra a ficha e a ata da sessão. Se for sobre um tempo ou uma taxa GQM, abra o consolidado da frente e a seção de avaliação correspondente. Se for sobre esforço da equipe (horas, ICP, defeitos de processo), use a [Gestão PSM](gestao-psm.md), não esta página.
 
 ---
 
-## Capacidade de interação
+## Avaliação de Capacidade de interação { #avaliacao-capacidade-interacao }
 
-### Coleta e notas de cálculo
+Página estendida: [Avaliação de Capacidade de interação](avaliacao/analise/interacao.md).
 
-Quatro sessões com consentimento (TCLE, o Termo de Consentimento Livre e Esclarecido). A evidência pública no repositório são as fichas anonimizadas e as atas; as gravações de tela e áudio permanecem em diretório privado.
+### Coleta
+
+Quatro sessões com consentimento. A evidência pública no repositório são as fichas anonimizadas e as atas; as gravações de tela e áudio permanecem em diretório privado.
 
 | Código | Data | Modalidade / SO | Grupo e etapas | Evidência |
 | --- | --- | --- | --- | --- |
@@ -50,7 +67,7 @@ Quatro sessões com consentimento (TCLE, o Termo de Consentimento Livre e Esclar
 | PB02 | 13/11/2026 | Online, Windows 10 | B (frequente / piloto): Etapas 1, 4 e 5 | [ficha](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/blob/main/avaliacao/dados/interacao/bruto/Entrevistas/PB02_2026-11-13.md); [ata](avaliacao/atas/sessao-PB02_2026-11-13.md) |
 | PB03 | 21/11/2026 | Online, Windows 10 | B (frequente): Etapas 1, 4 e 5 | [ficha](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/blob/main/avaliacao/dados/interacao/bruto/Entrevistas/PB03_2026-11-21.md); [ata](avaliacao/atas/sessao-PB03_2026-11-21.md) |
 
-**Notas de cálculo.** O Grupo A executa Etapas 1 a 3 e 5. O Grupo B não executa Etapas 2 e 3. Em PB01, os tempos da seção Etapa 2 da ficha foram contabilizados como Etapa 4. Em PB02, os tempos da seção Etapa 3 foram contabilizados como Etapa 4. Em PB03, quatro tarefas da Etapa 4 têm tempo; B2 Revisar não foi coletada. A sessão **PB02** (piloto) permanece na avaliação geral como linha de base e dado consolidado. Detalhe em [interacao.md](avaliacao/analise/interacao.md).
+**Notas de cálculo.** O Grupo A executa Etapas 1 a 3 e 5. O Grupo B não executa Etapas 2 e 3. Em PB01, os tempos da seção Etapa 2 da ficha foram contabilizados como Etapa 4. Em PB02, os tempos da seção Etapa 3 foram contabilizados como Etapa 4. Em PB03, quatro tarefas da Etapa 4 têm tempo; B2 Revisar não foi coletada. A sessão **PB02** (piloto) permanece na avaliação geral como linha de base e dado consolidado.
 
 ### Resultados
 
@@ -59,7 +76,7 @@ Quatro sessões com consentimento (TCLE, o Termo de Consentimento Livre e Esclar
 | T<sub>rf</sub> | 16,7% (1/6) | Insatisfatório | 66,7% | Mínimo | 83,3% | Alvo | 66,7% | Mínimo |
 | T<sub>aprend</sub> | 7 min 36 s (456,05 s) | Excelente | n/a | - | n/a | - | n/a | - |
 | T<sub>sa</sub> | 100% (4/4 sem ajuda) | Excelente | n/a | - | n/a | - | n/a | - |
-| T<sub>ct</sub> | 80% → 100% (rodadas 1-2) | Mínimo → Excelente | 100% (Etapa 4) | Excelente | 100% (Etapa 4) | Excelente | 100% (4/4) | Excelente |
+| T<sub>ct</sub> | 80% para 100% (rodadas 1-2) | Mínimo para Excelente | 100% (Etapa 4) | Excelente | 100% (Etapa 4) | Excelente | 100% (4/4) | Excelente |
 | T<sub>exec</sub> mediana | 50 s | Excelente | 39,31 s | Excelente | 25 s | Excelente | 27,285 s | Excelente |
 
 **Agregados do Grupo B.** Média de T<sub>rf</sub> = 72,2% (faixa mínimo). T<sub>ct</sub> = 100% nos três frequentes. Mediana aproximada de T<sub>exec</sub> ≈ 30,5 s (faixa excelente).
@@ -88,7 +105,9 @@ Quatro sessões com consentimento (TCLE, o Termo de Consentimento Livre e Esclar
 
 ---
 
-## Eficiência de desempenho
+## Avaliação de Eficiência de desempenho { #avaliacao-eficiencia-desempenho }
+
+Página estendida: [Avaliação de Eficiência de desempenho](avaliacao/analise/desempenho.md).
 
 ### Coleta
 
@@ -106,7 +125,7 @@ Os CSV e gráficos usados nesta página estão em `docs/avaliacao/dados/desempen
 
 ### Resultados
 
-Valores tomados de [desempenho.md](avaliacao/analise/desempenho.md). As faixas abaixo seguem a Tabela VIII da [Fase 2](fase2.md), salvo quando a análise de desempenho registra enquadramento próprio e isso é indicado no texto.
+Valores tomados da [Avaliação de Eficiência de desempenho](avaliacao/analise/desempenho.md). As faixas abaixo seguem a Tabela VIII da [Fase 2](fase2.md), salvo quando essa avaliação registra enquadramento próprio e isso é indicado no texto.
 
 | Métrica | Ubuntu 24.04 | Windows 11 | macOS Sequoia | Enquadramento |
 | --- | --- | --- | --- | --- |
@@ -129,21 +148,21 @@ Valores tomados de [desempenho.md](avaliacao/analise/desempenho.md). As faixas a
 | **Q3 / H3** (capacidade e vazão) | Check Database em ~2–3 s; vazão ≫ 15.000 cards/min | H3 confirmada e superada (faixa excelente). |
 | **Q4 / H4** (threads / UI) | Main thread 2,35% (Ubuntu) e 1,30% (macOS); Windows 98,44% no TID #0 | H4 confirmada em Unix (faixa excelente). No Windows, o pico no índice #0 é registrado como limitação controlada da API NT (ausência de garantia de ordem cronológica em `proc.threads()`). |
 
-**Limitação controlada de plataforma (Windows 11).** A triangulação multiplataforma — destacada positivamente no [feedback do PC2](avaliacao/atas/feedback-PC2_2026-11-16.md) — evidencia que, sem privilégios elevados no Windows NT, a biblioteca `psutil` isola apenas o processo raiz (`anki.exe`, omitindo os renderizadores `QtWebEngineProcess`) e não garante que o índice `#0` de `proc.threads()` corresponda à thread de interface gráfica. Da mesma forma, o disparo de *cold start* no Windows e no macOS registra o *process creation time* (*launcher*), enquanto no Ubuntu registra o *Time-to-Interactive* completo (1,018 s). Por rigor metodológico, o julgamento quantitativo comparável 1:1 de Q2 (árvore completa de RAM), Q3 (vazão cronometrada) e Q4 (isolamento determinístico de *Main Thread*) adota Ubuntu 24.04 e macOS Sequoia como linha de base primária, preservando os registros brutos do Windows 11 para transparência da avaliação.
+**Limitação controlada de plataforma (Windows 11).** A triangulação multiplataforma, destacada positivamente no [feedback do PC2](avaliacao/atas/feedback-PC2_2026-11-16.md), evidencia que, sem privilégios elevados no Windows NT, a biblioteca `psutil` isola apenas o processo raiz (`anki.exe`, omitindo os renderizadores `QtWebEngineProcess`) e não garante que o índice `#0` de `proc.threads()` corresponda à thread de interface gráfica. Da mesma forma, o disparo de *cold start* no Windows e no macOS registra o *process creation time* (*launcher*), enquanto no Ubuntu registra o *Time-to-Interactive* completo (1,018 s). Por rigor metodológico, o julgamento quantitativo comparável 1:1 de Q2 (árvore completa de RAM), Q3 (vazão cronometrada) e Q4 (isolamento determinístico de *Main Thread*) adota Ubuntu 24.04 e macOS Sequoia como linha de base primária, preservando os registros brutos do Windows 11 para transparência da avaliação.
 
 ---
 
-## Flexibilidade
+## Avaliação de Flexibilidade { #avaliacao-flexibilidade }
 
-Detalhamento: [análise de Flexibilidade](avaliacao/analise/flexibilidade.md).
+Página estendida: [Avaliação de Flexibilidade](avaliacao/analise/flexibilidade.md).
 
-### Coleta (F4-C1 / F4-C2)
+### Coleta
 
 Os protocolos de [instalação](avaliacao/protocolos/flexibilidade-instalacao.md), [checklist](avaliacao/protocolos/flexibilidade-checklist.md) e [migração](avaliacao/protocolos/flexibilidade-migracao.md) preveem, em laboratório (Dupla C), as métricas T<sub>inst</sub>, T<sub>inst_t</sub>, N<sub>int</sub>, P<sub>int</sub>, T<sub>pd</sub> e T<sub>sub</sub> nas máquinas de referência Windows, macOS e Ubuntu ([Ambiente](avaliacao/protocolos/ambiente.md)).
 
 Publicados em [`avaliacao/dados/flexibilidade/consolidado/`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/tree/main/avaliacao/dados/flexibilidade/consolidado): tempos de instalação, checklist de integração (P<sub>int</sub>), migração M1/M2 (T<sub>pd</sub>, T<sub>sub</sub>) e dois gráficos. A pasta `bruto/` ainda não espelha os arquivos `diff_m*_rep*.csv` citados no consolidado.
 
-### Resultados (Q1, Q2 e Q3)
+### Resultados
 
 Fontes: [`flexibilidade-instalacao-tempo.csv`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/blob/main/avaliacao/dados/flexibilidade/consolidado/flexibilidade-instalacao-tempo.csv), [`flexibilidade-checklist-registro.csv`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/blob/main/avaliacao/dados/flexibilidade/consolidado/flexibilidade-checklist-registro.csv) e [`flexibilidade-migracao.csv`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/blob/main/avaliacao/dados/flexibilidade/consolidado/flexibilidade-migracao.csv). Faixas da Tabela XI da [Fase 2](fase2.md).
 
@@ -161,7 +180,7 @@ Fontes: [`flexibilidade-instalacao-tempo.csv`](https://github.com/FCTE-Qualidade
 
 *Figura. Pontuação do checklist de integração (P<sub>int</sub>) por sistema operacional.*
 
-**Migração (Q3).** Seis ensaios em 20/11/2026 (M1 `.apkg` e M2 AnkiWeb, três pares de SO cada): T<sub>pd</sub> = 100% (0 diferenças em 10.000 cartões; sem intervenção); T<sub>sub</sub> entre 2,33 e 2,66 min (média 2,51 min), faixa **mínimo**. Detalhamento: [análise de Flexibilidade](avaliacao/analise/flexibilidade.md).
+**Migração (Q3).** Seis ensaios em 20/11/2026 (M1 `.apkg` e M2 AnkiWeb, três pares de SO cada): T<sub>pd</sub> = 100% (0 diferenças em 10.000 cartões; sem intervenção); T<sub>sub</sub> entre 2,33 e 2,66 min (média 2,51 min), faixa **mínimo**.
 
 **Qualitativos (Parte C das entrevistas; complementam o laboratório).**
 
@@ -172,7 +191,7 @@ Fontes: [`flexibilidade-instalacao-tempo.csv`](https://github.com/FCTE-Qualidade
 | PB03 (Windows) | Instalação “um pouco confusa” no site (extensões externas); precisou de passo além do instalador. |
 | PA01 (Grupo A) | Anki já instalado pela equipe antes da sessão; perguntas de instalabilidade do Grupo B marcadas N/A. |
 
-### Análise (F4-C3)
+### Análise
 
 | Questão / hipótese (Fase 2) | Situação nesta página |
 | --- | --- |
@@ -185,37 +204,37 @@ Arquivos opcionais remanescentes: espelhar `diff_m*_rep*.csv` em `avaliacao/dado
 
 ---
 
-## Coerência com o propósito da Fase 1 (F4-C4)
+## Julgamento e coerência com a Fase 1 { #julgamento-e-coerencia }
 
 O [propósito da avaliação](fase1.md#propósito-da-avaliação-e-uso-pretendido) é **indicar pontos de melhoria** no Anki, sob o ponto de vista do estudante, para a requisitante (professora), com recomendações priorizadas para mantenedores e estudantes.
 
 | Expectativa da Fase 1 | Resultado da Fase 4 | Atende? |
 | --- | --- | --- |
 | Identificar barreiras de uso na interface (ênfase 5) | Q1 de Capacidade de interação não atendida (T<sub>rf</sub> do iniciante 16,7%); Q2 e Q3 atendidas no escopo amostral | Sim, com limitação de n = 4 (1 iniciante) |
-| Informar comportamento de desempenho em estudo prolongado | Cold start e vazão excelentes; RAM na faixa mínimo; Windows parcial | Parcial |
+| Informar comportamento de desempenho em estudo prolongado | Cold start e vazão excelentes; RAM na faixa insatisfatório em Unix; Windows parcial | Parcial |
 | Informar instalabilidade e migração entre SO | Instalação, checklist e migração publicados; T<sub>sub</sub> na faixa mínimo | Sim, com ressalva de tempo de migração acima de 1 min |
 | Fundamentar uma ação de melhoria | Protótipo de alta fidelidade para “Criar baralho” | Sim |
 
 O julgamento cumpre o uso pretendido na característica priorizada (Capacidade de interação), cobre instalabilidade, adaptabilidade e migração com dados de laboratório, e deixa explícitas a faixa mínimo de T<sub>sub</sub> e a incompletude de desempenho no Windows.
 
-## Relações entre características (Premissa 1)
+## Relações entre características { #relacoes-entre-caracteristicas }
 
 - **Capacidade de interação × Eficiência de desempenho.** Falhas de reconhecibilidade (T<sub>rf</sub> de PA01 = 16,7%; R1 falhou) elevam o esforço cognitivo na primeira sessão, mesmo com cold start e vazão de banco na faixa excelente. Evidência: [interacao.md](avaliacao/analise/interacao.md) e [desempenho.md](avaliacao/analise/desempenho.md).
-- **Eficiência de desempenho × uso em notebook.** RAM em repouso na faixa mínimo (≈ 780–950 MB em Ubuntu e macOS) e picos de 1,33–1,51 GB sob 100k cards podem afetar a fluidez percebida em máquinas de 8 GB (perfil Ubuntu da avaliação). Limitação: RAM do Windows ainda incompleta (só processo pai).
+- **Eficiência de desempenho × uso em notebook.** RAM em repouso na faixa insatisfatório (≈ 780–950 MB em Ubuntu e macOS) e picos de 1,33–1,51 GB sob 100k cards podem afetar a fluidez percebida em máquinas de 8 GB (perfil Ubuntu da avaliação). Limitação: RAM do Windows ainda incompleta (só processo pai).
 - **Flexibilidade × Capacidade de interação.** Com T<sub>inst_t</sub> excelente ou alvo e N<sub>int</sub> = 0 nos três sistemas, a barreira de primeiro uso observada nas entrevistas concentra-se na interface (vocabulário e “Criar baralho”), não no tempo de instalação em laboratório. A migração preserva 100% dos dados, mas leva em média 2,51 min (faixa mínimo), o que ainda pode somar esforço no primeiro uso ao trocar de máquina. Evidência: [flexibilidade.md](avaliacao/analise/flexibilidade.md).
 
 Onde os dados não permitem relação: afirmação causal entre o tempo de migração M1/M2 e T<sub>exec</sub> das sessões de entrevista (amostras e contextos distintos).
 
-## Sugestões priorizadas (F4-C5)
+## Sugestões priorizadas { #sugestoes-priorizadas }
 
 | Prioridade | Sugestão (ação concreta) | Base |
 | --- | --- | --- |
 | 1 | Destacar **Criar baralho** na tela inicial (lista de baralhos como home) | T<sub>rf</sub> R1; PA01 e PB02 |
 | 2 | Incluir glossário ou tooltips para nota, tipo de nota e cartão | Q1; respostas da Etapa 5 |
-| 3 | Revisar footprint de memória do QtWebEngine sob coleções grandes | RAM na faixa mínimo (Ubuntu 1,33 GB; macOS 1,51 GB com 100k cards) |
+| 3 | Revisar footprint de memória do QtWebEngine sob coleções grandes | RAM na faixa insatisfatório (Ubuntu 1,33 GB; macOS 1,51 GB com 100k cards) |
 | 4 | Reduzir o tempo de migração (T<sub>sub</sub> hoje ≈ 2,5 min) e fechar itens “refazer” no Windows | Q3 na faixa mínimo; desempenho parcial no Windows |
 
-## Ação de melhoria
+## Ação de melhoria { #acao-de-melhoria }
 
 **Problema.** “Criar baralho” não é reconhecido de imediato (T<sub>rf</sub> do iniciante 16,7%; PB02 só após três tentativas).
 
@@ -223,6 +242,6 @@ Onde os dados não permitem relação: afirmação causal entre o tempo de migra
 
 **Ação.** Protótipo de alta fidelidade com a lista de baralhos como tela inicial e destaque para **Criar Baralho**, além de tutorial introdutório guiado. Artefato: [Protótipo da ação de melhoria](prototipo-acao-melhoria.md) ([abrir interativo](prototipo-interativo/index.html)).
 
-**Validação proposta.** Nova sessão com iniciante: R1 correto e T<sub>rf</sub> ≥ 75% (alvo), ou localização espontânea em no máximo 10 s sem ajuda.
+**Validação.** Sessão de verificação com PA01 no protótipo: R1 correto na 1ª tentativa, funções principais 3/3, conceitos 3/3 e tempo até **Criar baralho** de 5 s (critério ≤ 10 s). Ata: [sessao-PA01-verificacao-prototipo_2026-11-22.md](avaliacao/atas/sessao-PA01-verificacao-prototipo_2026-11-22.md).
 
 **O que a ação não cobre.** Não reduz T<sub>sub</sub> da migração (Q3 de Flexibilidade) nem fecha as medições de desempenho no Windows.

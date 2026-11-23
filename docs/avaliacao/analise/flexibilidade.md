@@ -1,4 +1,4 @@
-# Análise de Flexibilidade
+# Avaliação de Flexibilidade
 
 Esta página interpreta as medidas de Flexibilidade (Dupla C) frente ao GQM da [Fase 2](../../fase2.md) e aos protocolos da [Fase 3](../../fase3.md). Os valores vêm dos CSV publicados em `avaliacao/dados/flexibilidade/consolidado/`, incluindo a migração M1/M2 publicada por Bryan70897 em 23/11/2026.
 
