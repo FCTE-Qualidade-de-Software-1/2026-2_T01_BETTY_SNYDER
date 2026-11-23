@@ -141,18 +141,20 @@ em que: - \(H_r^{\text{integrante}}\): esforço real do integrante, em horas, no
 
 ### Corte de 22/11 (E2) { #corte-2211-recursos }
 
-Terceiro corte da E2 (issue E2-P1), publicado em **22/11/2026** (corresponde ao “corte 3” previsto como 21/11 no planejamento). Fonte de \(H_r\): [`gestao-psm/2026-11-22_registro-horas.csv`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/blob/main/gestao-psm/2026-11-22_registro-horas.csv). Fonte de \(H_p\): E1 (78,10 h) + Planejamento E2 nos milestones **F3+F2+PC2+E2** (156,5 h), com rateio igual entre assignees das issues `#48` a `#81`. Arquivo: [`gestao-psm/2026-11-22_recursos-custos.csv`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/blob/main/gestao-psm/2026-11-22_recursos-custos.csv).
+Terceiro corte da E2 (issue E2-P1), publicado em **22/11/2026** (corresponde ao “corte 3” previsto como 21/11 no planejamento). Fonte canônica de \(H_r\): [`gestao-psm/2026-11-22_registro-horas.csv`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/blob/main/gestao-psm/2026-11-22_registro-horas.csv). Fonte de \(H_p\): E1 (78,10 h) + Planejamento E2 nos milestones **F3+F2+PC2+E2** (156,5 h), com rateio igual entre assignees das issues `#48` a `#81`. Arquivo: [`gestao-psm/2026-11-22_recursos-custos.csv`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/blob/main/gestao-psm/2026-11-22_recursos-custos.csv).
+
+**Deduplicação.** Se a mesma atividade aparecer no registro de horas e também na issue/Project, conta-se **uma vez** em \(H_r\) (o CSV de registro). O esforço planejado nas issues alimenta só \(H_p\) via Planejamento E2; não se soma de novo ao \(H_r\).
 
 | Medida | Valor | Como foi obtida |
 |---|---|---|
 | \(H_p\) equipe | 234,60 h | 78,10 (E1) + 156,5 (Planejamento E2 completo) |
-| \(H_r\) equipe | 117,24 h | Soma do registro de horas até 22/11 |
+| \(H_r\) equipe | 117,24 h | Soma exclusiva do registro de horas até 22/11 |
 | Desvio | −50,0% | \((H_r - H_p) / H_p\) |
 | Participação mínima | 5,4% (Dante); Bryan 6,7% | Ambos abaixo do limiar de 10% |
 
 **Interpretação.** O desvio negativo permanece elevado porque o Hp do corte incorpora todo o esforço planejado da E2, enquanto o registro de horas (117,24 h) cobre só parte do trabalho efetivo lançado. Em relação a 15/11 (−58,3%), o desvio melhora para −50,0% com o aumento de \(H_r\), mas a participação da Dupla C continua abaixo de 10%.
 
-**Decisão de gestão.** Acompanhar a subutilização agregada e a participação de Bryan e Dante. Não inventar horas: a próxima atualização deve vir do preenchimento real do registro, alinhado ao fechamento de `#76` (apresentação final; `#75` já fechada com a Release 2).
+**Decisão de gestão.** Acompanhar a subutilização agregada e a participação de Bryan e Dante. Não inventar horas nem somar esforço das issues ao registro: a próxima atualização de \(H_r\) vem só do preenchimento do CSV. O encaminhamento operacional de `#76` / `#75` está no [delta de Calendário](calendario-e-progresso.md#acompanhamento-pos-corte-2211), sem recontar horas aqui.
 
 ### Gráfico: esforço acumulado por recorte { #grafico-esforco-acumulado }
 
@@ -302,7 +304,7 @@ Terceiro corte da E2 (issue E2-P1), publicado em **22/11/2026** (corresponde ao 
     <text x="488" y="368">Participação mínima</text>
   </g>
 </svg>
-<figcaption>Desvio = (Hr − Hp) / Hp. Participação mínima = menor parcela individual do esforço real. Em 22/11, Dante fica em 5,4% e Bryan em 6,7% (ambos abaixo de 10%); o desvio da equipe é −50,0% com Hp completo da E2. Fontes: CSV de recursos em <code>gestao-psm/</code>.</figcaption>
+<figcaption>Desvio = (Hr − Hp) / Hp. Participação mínima = menor parcela individual do esforço real. Em 22/11, o desvio da equipe é −50,0% com Hp completo da E2. Fontes: CSV de recursos em <code>gestao-psm/</code>.</figcaption>
 </figure>
 
 ## Necessidade 2: Precisão e viabilidade das estimativas em nível de funcionalidade

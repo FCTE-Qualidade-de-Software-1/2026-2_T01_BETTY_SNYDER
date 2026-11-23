@@ -2,11 +2,11 @@
 
 **Categoria de informação:** Calendário e progresso  
 **Conceito mensurável:** Progresso da unidade de trabalho  
-**Responsável na Entrega 1:** Dupla C  
+**Responsável na Entrega 1:** Dupla C
 
-Esta página especifica o *measurement construct* da categoria Calendário e progresso, conforme o modelo de informação do PSM (RAMOS, 2026), o mapeamento estrutural da equipe e as especificações CID de *Committed vs Completed*, fluxo cumulativo, *Cycle Time* / *Lead Time* e vazão (JONES et al., 2021a; JONES et al., 2021b).
+Esta página especifica o _measurement construct_ da categoria Calendário e progresso, conforme o modelo de informação do PSM (RAMOS, 2026), o mapeamento estrutural da equipe e as especificações CID de _Committed vs Completed_, fluxo cumulativo, _Cycle Time_ / _Lead Time_ e vazão (JONES et al., 2021a; JONES et al., 2021b).
 
-Na Entrega 1, a medida operacional central foi o **Índice de Conformidade de Prazos (ICP)**. Após o Ponto de Controle 1, as tarefas do CSV foram materializadas em 46 issues. Em 04/11/2026, as 46 Issues estavam vinculadas ao Project `BETTY SNYDER` (#40), conforme o provisionamento descrito em [Organização no GitHub](github-organizacao.md). Data fim planejada e Data fim real sustentam o ICP; as transições de Status registram início e conclusão reais para medidas de fluxo como *Cycle Time* e *Throughput*.
+Na Entrega 1, a medida operacional central foi o **Índice de Conformidade de Prazos (ICP)**. Após o Ponto de Controle 1, as tarefas do CSV foram materializadas em 46 issues. Em 04/11/2026, as 46 Issues estavam vinculadas ao Project `BETTY SNYDER` (#40), conforme o provisionamento descrito em [Organização no GitHub](github-organizacao.md). Data fim planejada e Data fim real sustentam o ICP; as transições de Status registram início e conclusão reais para medidas de fluxo como _Cycle Time_ e _Throughput_.
 
 ## Necessidade 1: Entrega conforme o compromisso e risco de atraso
 
@@ -53,29 +53,29 @@ flowchart BT
   info --> need
 ```
 
-*Figura 1. Instância do Modelo de Informação do PSM para Calendário e progresso: compromisso e conformidade de prazos (estrutura conforme RAMOS, 2026).*
+_Figura 1. Instância do Modelo de Informação do PSM para Calendário e progresso: compromisso e conformidade de prazos (estrutura conforme RAMOS, 2026)._
 
 ### Medidas básicas
 
 #### Tarefas com prazo (\(T_p\)) e concluídas no prazo (\(T_c\))
 
-| Elemento | Descrição |
-|---|---|
-| Definição | \(T_p\): quantidade de itens com prazo até a data do corte. \(T_c\): quantidade desses itens com `concluida_no_prazo = sim`. |
-| Escala | Inteiro ≥ 0. |
-| Coleta | [`gestao-psm/calendario-progresso.csv`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/blob/main/gestao-psm/calendario-progresso.csv) (e cópia `2026-10-25_calendario-progresso.csv`). Campos: `data_corte`, `tarefa_id`, `prazo`, `status`, `concluida_no_prazo`, `evidencia_planilha_ou_ata`, `fonte_planejamento`. |
-| Cálculo | Filtrar pelo `data_corte`; contar \(T_p\) e \(T_c\). |
-| Análise | Base do ICP; identificação de itens em risco (`status` pendente/parcial ou `concluida_no_prazo = nao`). |
-| Observação metodológica | Na E1 a consolidação foi retrospectiva (atas e planilha). Após 25/10, as issues e o Project passam a ser fonte viva; o CSV permanece a série histórica dos cortes documentados. |
+| Elemento                | Descrição                                                                                                                                                                                                                                                                                                                                      |
+| ----------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Definição               | \(T_p\): quantidade de itens com prazo até a data do corte. \(T_c\): quantidade desses itens com `concluida_no_prazo = sim`.                                                                                                                                                                                                                   |
+| Escala                  | Inteiro ≥ 0.                                                                                                                                                                                                                                                                                                                                   |
+| Coleta                  | [`gestao-psm/calendario-progresso.csv`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/blob/main/gestao-psm/calendario-progresso.csv) (e cópia `2026-10-25_calendario-progresso.csv`). Campos: `data_corte`, `tarefa_id`, `prazo`, `status`, `concluida_no_prazo`, `evidencia_planilha_ou_ata`, `fonte_planejamento`. |
+| Cálculo                 | Filtrar pelo `data_corte`; contar \(T_p\) e \(T_c\).                                                                                                                                                                                                                                                                                           |
+| Análise                 | Base do ICP; identificação de itens em risco (`status` pendente/parcial ou `concluida_no_prazo = nao`).                                                                                                                                                                                                                                        |
+| Observação metodológica | Na E1 a consolidação foi retrospectiva (atas e planilha). Após 25/10, as issues e o Project passam a ser fonte viva; o CSV permanece a série histórica dos cortes documentados.                                                                                                                                                                |
 
 #### Work items comprometidos e concluídos (iteração e release)
 
-| Elemento | Descrição |
-|---|---|
-| Definição | Contagens inteiras de itens comprometidos e concluídos por iteração e por release, conforme o CID (JONES et al., 2021a; JONES et al., 2021b). |
-| Status | Parcial. |
-| Situação | Cortes por `data_corte` aproximam iterações semanais; milestones `PC1`, `F1`, `F2` e `E2` aproximam releases. O campo `status` permite contar concluídos; não há, ainda, story points nem campos distintos *committed each iteration* versus *committed each release*. |
-| Encaminhamento | Marcar explicitamente o conjunto comprometido de cada corte; contar concluídos por milestone. |
+| Elemento       | Descrição                                                                                                                                                                                                                                                              |
+| -------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Definição      | Contagens inteiras de itens comprometidos e concluídos por iteração e por release, conforme o CID (JONES et al., 2021a; JONES et al., 2021b).                                                                                                                          |
+| Status         | Parcial.                                                                                                                                                                                                                                                               |
+| Situação       | Cortes por `data_corte` aproximam iterações semanais; milestones `PC1`, `F1`, `F2` e `E2` aproximam releases. O campo `status` permite contar concluídos; não há, ainda, story points nem campos distintos _committed each iteration_ versus _committed each release_. |
+| Encaminhamento | Marcar explicitamente o conjunto comprometido de cada corte; contar concluídos por milestone.                                                                                                                                                                          |
 
 ### Medidas derivadas
 
@@ -86,13 +86,14 @@ flowchart BT
 \]
 
 em que: - \(T_c\): número de tarefas concluídas no prazo até a data do corte;
+
 - \(T_p\): número de tarefas com prazo definido até a data do corte.
 
-| Elemento | Descrição |
-|---|---|
-| Status | Aplicada. |
+| Elemento   | Descrição                                                                                                      |
+| ---------- | -------------------------------------------------------------------------------------------------------------- |
+| Status     | Aplicada.                                                                                                      |
 | Resultados | 11/10-56,3% (\(T_c/T_p = 9/16\)); 18/10-21,4% (\(3/14\)); 19/10 (PC1): 100% (\(1/1\)); 25/10-40,0% (\(6/15\)). |
-| Critério | ICP inferior a 70% associado às ações C2 e C4 da Retrospectiva E1. |
+| Critério   | ICP inferior a 70% associado às ações C2 e C4 da Retrospectiva E1.                                             |
 
 #### Percentual de work items concluídos
 
@@ -100,38 +101,39 @@ em que: - \(T_c\): número de tarefas concluídas no prazo até a data do corte;
 \text{Percentual concluído} = \frac{\sum \text{itens concluídos}}{\sum \text{itens comprometidos}} \times 100
 \]
 
-em que: - \(\sum \text{itens concluídos}\): quantidade de *work items* concluídos no recorte;
-- \(\sum \text{itens comprometidos}\): quantidade de *work items* assumidos como compromisso no mesmo recorte.
+em que: - \(\sum \text{itens concluídos}\): quantidade de _work items_ concluídos no recorte;
 
-| Elemento | Descrição |
-|---|---|
-| Status | Parcial. |
+- \(\sum \text{itens comprometidos}\): quantidade de _work items_ assumidos como compromisso no mesmo recorte.
+
+| Elemento                    | Descrição                                                                                                                                          |
+| --------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Status                      | Parcial.                                                                                                                                           |
 | Distinção em relação ao ICP | O percentual concluído responde “quanto do comprometido foi entregue”; o ICP responde “quanto foi entregue no prazo”. A série E1 privilegia o ICP. |
 
 ### Indicadores e decisões
 
-| Corte | Indicador | Decisão |
-|---|---|---|
-| 11/10 | ICP 56,3% (9/16) | Redistribuir |
-| 18/10 | ICP 21,4% (3/14) | Redistribuir |
-| 19/10 (PC1) | ICP 100% (1/1) | Apresentação realizada; amostra de um item |
-| 25/10 | ICP 40,0% (6/15) | Redistribuir 9 restantes |
-| 08/11 (E2) | ICP 0% (0/14); *throughput* 0 por semana; WIP 1 | Ver [Corte de 08/11](#corte-0811) |
-| 15/11 (E2) | ICP 42,9% (6/14 F3 fechadas até 15/11); 0 no prazo original | Ver [Corte de 15/11](#corte-1511) |
-| 22/11 (E2) | F3: 13/14 fechadas até 22/11 (92,9%); 0 no prazo original; escopo atual 33/34 | Ver [Corte de 22/11](#corte-2211) |
+| Corte       | Indicador                                                                     | Decisão                                    |
+| ----------- | ----------------------------------------------------------------------------- | ------------------------------------------ |
+| 11/10       | ICP 56,3% (9/16)                                                              | Redistribuir                               |
+| 18/10       | ICP 21,4% (3/14)                                                              | Redistribuir                               |
+| 19/10 (PC1) | ICP 100% (1/1)                                                                | Apresentação realizada; amostra de um item |
+| 25/10       | ICP 40,0% (6/15)                                                              | Redistribuir 9 restantes                   |
+| 08/11 (E2)  | ICP 0% (0/14); _throughput_ 0 por semana; WIP 1                               | Ver [Corte de 08/11](#corte-0811)          |
+| 15/11 (E2)  | ICP 42,9% (6/14 F3 fechadas até 15/11); 0 no prazo original                   | Ver [Corte de 15/11](#corte-1511)          |
+| 22/11 (E2)  | F3: 13/14 fechadas até 22/11 (92,9%); 0 no prazo original | Ver [Corte de 22/11](#corte-2211)          |
 
 ### Corte de 08/11 (E2) { #corte-0811 }
 
 Primeiro corte da E2 (issue E2-P2). Fonte: Project `BETTY SNYDER` (#40), com os prazos do campo Data fim planejada, e a situação de cada issue no GitHub. Arquivo: [`gestao-psm/2026-11-08_calendario-progresso.csv`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/blob/main/gestao-psm/2026-11-08_calendario-progresso.csv).
 
-| Medida | Valor | Como foi obtida |
-|---|---|---|
-| \(T_p\) | 14 | Issues da E2 com prazo de 05/11 a 08/11 (E2-00 a E2-40, milestone F3) |
-| \(T_c\) | 0 | Nenhuma dessas issues estava fechada em 08/11 |
-| ICP | 0% | \(T_c / T_p\) |
-| *Throughput* | 0 issue por semana | Issues da E2 fechadas entre 02/11 e 08/11 |
-| WIP | 1 (E2-02) | Issues em "Em andamento" no Project; contagem feita em 09/11 à noite, porque o Project não guarda o histórico de status. Valor aproximado para 08/11 |
-| Esforço planejado em atraso | 55,5 h | Soma do esforço planejado das 14 issues |
+| Medida                      | Valor              | Como foi obtida                                                                                                                                      |
+| --------------------------- | ------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
+| \(T_p\)                     | 14                 | Issues da E2 com prazo de 05/11 a 08/11 (E2-00 a E2-40, milestone F3)                                                                                |
+| \(T_c\)                     | 0                  | Nenhuma dessas issues estava fechada em 08/11                                                                                                        |
+| ICP                         | 0%                 | \(T_c / T_p\)                                                                                                                                        |
+| _Throughput_                | 0 issue por semana | Issues da E2 fechadas entre 02/11 e 08/11                                                                                                            |
+| WIP                         | 1 (E2-02)          | Issues em "Em andamento" no Project; contagem feita em 09/11 à noite, porque o Project não guarda o histórico de status. Valor aproximado para 08/11 |
+| Esforço planejado em atraso | 55,5 h             | Soma do esforço planejado das 14 issues                                                                                                              |
 
 **Interpretação.** O marco F3 (plano de avaliação, 08/11) previa concluir 14 issues na semana, e nenhuma foi fechada até o prazo. O ICP de 0% aciona o critério de 70%. A vazão observada (0) está muito abaixo da vazão do marco (14 issues), e o WIP baixo (1) mostra que o atraso não vem de trabalho acumulado em andamento, e sim de tarefas que não foram iniciadas ou não foram registradas no Project. Parte do trabalho pode ter sido feita sem atualização das issues, o que o próximo corte deve verificar.
 
@@ -146,18 +148,17 @@ Primeiro corte da E2 (issue E2-P2). Fonte: Project `BETTY SNYDER` (#40), com os 
 3. Se a coleta não couber até 13/11, levar à Reunião 05 (12/11) a decisão de cortes de escopo, conforme a seção de riscos do planejamento.
 4. Cada responsável move a issue para "Em andamento" ao começar, para que o WIP do próximo corte seja medido no dia.
 
-
 ### Corte de 15/11 (E2) { #corte-1511 }
 
 Segundo corte da E2 (issue E2-P2). Fonte: issues do milestone F3 no GitHub, cruzadas com os prazos de [`2026-11-08_calendario-progresso.csv`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/blob/main/gestao-psm/2026-11-08_calendario-progresso.csv). Arquivo: [`gestao-psm/2026-11-15_calendario-progresso.csv`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/blob/main/gestao-psm/2026-11-15_calendario-progresso.csv).
 
-| Medida | Valor | Como foi obtida |
-|---|---|---|
-| \(T_p\) | 14 | Mesmas issues do marco F3 (E2-00 a E2-40) |
-| \(T_c\) (fechadas até 15/11) | 6 | Issues `#48`, `#50`, `#51`, `#58`, `#59` e `#60` fechadas até 15/11 |
-| ICP (fechadas / comprometidas) | 42,9% | \(T_c / T_p\); nenhuma das 6 fechadas cumpriu o prazo original de 05 a 08/11 |
-| ICP no prazo original | 0% (0/14) | `concluida_no_prazo_original = nao` em todas as linhas do CSV |
-| Escopo F3+F2+PC2 até 15/11 | 23,1% (6/26) | Seis fechadas até 15/11 entre 26 issues desses milestones |
+| Medida                         | Valor        | Como foi obtida                                                              |
+| ------------------------------ | ------------ | ---------------------------------------------------------------------------- |
+| \(T_p\)                        | 14           | Mesmas issues do marco F3 (E2-00 a E2-40)                                    |
+| \(T_c\) (fechadas até 15/11)   | 6            | Issues `#48`, `#50`, `#51`, `#58`, `#59` e `#60` fechadas até 15/11          |
+| ICP (fechadas / comprometidas) | 42,9%        | \(T_c / T_p\); nenhuma das 6 fechadas cumpriu o prazo original de 05 a 08/11 |
+| ICP no prazo original          | 0% (0/14)    | `concluida_no_prazo_original = nao` em todas as linhas do CSV                |
+| Escopo F3+F2+PC2 até 15/11     | 23,1% (6/26) | Seis fechadas até 15/11 entre 26 issues desses milestones                    |
 
 **Interpretação.** Em relação a 08/11 (ICP 0%), seis issues do plano F3 foram fechadas até 15/11, elevando o indicador de fechamento para 42,9%. O atraso em relação aos prazos originais permanece: o ICP no prazo original continua 0%. Em 16/11, a maior parte das issues de F3 e F2 foi fechada no GitHub, o que deve aparecer no próximo corte (22/11), não neste.
 
@@ -165,21 +166,35 @@ Segundo corte da E2 (issue E2-P2). Fonte: issues do milestone F3 no GitHub, cruz
 
 ### Corte de 22/11 (E2) { #corte-2211 }
 
-Terceiro corte da E2 (issue E2-P2), publicado em **22/11/2026** (corresponde ao “corte 3” previsto como 21/11 no planejamento). Fonte: API pública das issues `#48` a `#81`, cruzada com os prazos do planejamento e do CSV de 15/11. Arquivo: [`gestao-psm/2026-11-22_calendario-progresso.csv`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/blob/main/gestao-psm/2026-11-22_calendario-progresso.csv).
+Terceiro corte da E2 (issue E2-P2), publicado em **22/11/2026** (corresponde ao “corte 3” previsto como 21/11 no planejamento). Arquivo: [`gestao-psm/2026-11-22_calendario-progresso.csv`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/blob/main/gestao-psm/2026-11-22_calendario-progresso.csv).
+
+**Regra de deduplicação.** CSV do recorte e issues podem alimentar indicadores deste mesmo corte, mas **cada atividade/issue conta uma vez**. Quando o CSV (`fechada_ate_22_11`, `data_fim_real`) e a issue (`situacao_atual`) descrevem o mesmo fechamento, usa-se o CSV como fonte canônica do indicador do dia do corte; a issue só entra no indicador de **delta** (o que mudou depois) ou como conferência, **sem somar de novo** ao numerador já contado.
+
+#### Indicadores do dia do corte (fonte canônica: CSV)
 
 | Medida | Valor | Como foi obtida |
-|---|---|---|
+| --- | --- | --- |
 | \(T_p\) (série F3) | 14 | Mesmas issues do marco F3 (E2-00 a E2-40), comparável a 08/11 e 15/11 |
-| Fechadas até 22/11 (F3) | 13 | Campo `fechada_ate_22_11 = sim`; `#61` fechou após o corte (UTC) |
+| Fechadas até 22/11 (F3) | 13 | Campo `fechada_ate_22_11 = sim` (não se soma de novo via API) |
 | ICP (fechadas / comprometidas, F3) | 92,9% | \(13 / 14\) |
-| ICP no prazo original (F3) | 0% (0/14) | Nenhuma issue F3 com `concluida_no_prazo_original = sim` |
-| Escopo E2 completo (situação atual em 23/11) | 97,1% (33/34) | Aberta: `#76` (E2-93). `#75` (E2-92) fechou após o corte, com a [Release 2](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/releases/tag/Release2) publicada |
-| *Throughput* desde 16/11 | 20 issues | Issues com `data_fim_real` entre 16/11 e 22/11 (inclusive no corte) |
-| Esforço planejado ainda em aberto | 4,0 h | Somente `#76` (4 h); `#75` (1 h) já fechada |
+| ICP no prazo original (F3) | 0% (0/14) | Campo `concluida_no_prazo_original` no CSV |
+| *Throughput* desde 16/11 | 20 issues | Contagem única por issue com `data_fim_real` entre 16/11 e 22/11 (inclusive) |
 
-**Interpretação.** A série F3 sobe de 42,9% (15/11) para 92,9% de fechamento até 22/11, mas o ICP no prazo original permanece 0%: o atraso em relação às datas de 05 a 08/11 não foi recuperado no calendário. Os indicadores `fechada_ate_22_11` permanecem congelados no corte. A **situação atual** (conferida em 23/11/2026 na API do GitHub) é 33/34 fechadas: seis issues (`#61`, `#75`, `#77`, `#78`, `#79`, `#81`) fecharam após o fim do dia 22/11 (horário de Brasília) e entram só em `situacao_atual`. Resta a apresentação final (`#76`).
+#### Delta após o congelamento do CSV (fonte: issues / `situacao_atual`) { #acompanhamento-pos-corte-2211 }
 
-**Decisão de gestão.** Manter os prazos originais na série histórica. Priorizar o fechamento de `#76` (apresentação final) e registrar evidências no Project. Não alterar o ICP da série F3 para incorporar fechamentos posteriores ao corte.
+Só entram issues que **ainda não** estavam em `fechada_ate_22_11 = sim`. Isso evita contar duas vezes o trabalho já no indicador F3 acima.
+
+| Medida | Valor | Como foi obtida |
+| --- | --- | --- |
+| Fechadas após o fim do dia 22/11 (Brasília) | 6 issues | Delta em `situacao_atual`: `#61`, `#75`, `#77`, `#78`, `#79`, `#81` (não entram no ICP F3 do corte) |
+| Escopo E2 atual (34 issues `#48`–`#81`) | 33/34 (97,1%) | Conferência na API em 23/11; aberta `#76` (E2-93). Agregado **distinto** da série F3 (14 issues): não somar 13 + 33 |
+| Esforço planejado ainda em aberto (delta) | 4,0 h | Somente `#76` (4 h). O 1 h de `#75` não se soma de novo: a issue fechou no delta e o esforço correspondente já estava no planejamento E2 / CSV de recursos |
+
+A [Release 2](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/releases/tag/Release2) corresponde ao fechamento de `#75` no delta (já listado acima).
+
+**Interpretação.** A série F3 sobe de 42,9% (15/11) para 92,9% de fechamento até 22/11; o ICP no prazo original permanece 0%. O escopo E2 atual (33/34) e o delta de seis issues descrevem o **mesmo universo** de trabalho visto depois do corte, sem reinscrever no numerador F3 as issues já fechadas em `fechada_ate_22_11`.
+
+**Decisão de gestão.** Manter os prazos originais na série histórica e não alterar o ICP F3 com fechamentos posteriores. Encaminhamento operacional (a partir do delta): fechar `#76` (apresentação final) e registrar evidências no Project.
 
 ### Gráfico: conformidade de prazos por recorte { #grafico-icp }
 
@@ -246,12 +261,12 @@ Terceiro corte da E2 (issue E2-P2), publicado em **22/11/2026** (corresponde ao 
 **Necessidades de informação.**
 
 1. O fluxo de trabalho avança ao longo da cadeia de valor?
-2. A vazão (*throughput*) é previsível?
+2. A vazão (_throughput_) é previsível?
 3. Existem filas ou atrasos que impedem otimizar a vazão?
 
 ### Instância do modelo de informação
 
-A Figura 2 aplica a mesma topologia do modelo da Aula 09 aos atributos de estado de fluxo. Os estados adotados são A Fazer (*To Do*), Em Andamento (*In Progress*) e Concluído (*Done*); Implantado (*Deployed*) permanece fora de escopo, conforme o mapeamento.
+A Figura 2 aplica a mesma topologia do modelo da Aula 09 aos atributos de estado de fluxo. Os estados adotados são A Fazer (_To Do_), Em Andamento (_In Progress_) e Concluído (_Done_); Implantado (_Deployed_) permanece fora de escopo, conforme o mapeamento.
 
 ```mermaid
 flowchart BT
@@ -288,28 +303,30 @@ flowchart BT
   info --> need
 ```
 
-*Figura 2. Instância do Modelo de Informação do PSM para fluxo, vazão e filas (estrutura conforme RAMOS, 2026).*
+_Figura 2. Instância do Modelo de Informação do PSM para fluxo, vazão e filas (estrutura conforme RAMOS, 2026)._
 
 ### Medidas derivadas de fluxo
 
-| Medida | Definição | Situação |
-|---|---|---|
-| Contagem por estado | Número de itens em A Fazer, Em Andamento e Concluído | Habilitada pelo Status do Project; série E1 ainda baseada no CSV |
-| Tempo de ciclo médio aproximado | Duração média do conjunto de itens concluídos no período | Coleta via Planned/Actual e histórico de Status |
-| Vazão (*Throughput*) | Média de itens concluídos por unidade de tempo | Idem |
-| Trabalho em andamento (WIP) | Média de itens Em Andamento por unidade de tempo | Idem |
+| Medida                          | Definição                                                | Situação                                                         |
+| ------------------------------- | -------------------------------------------------------- | ---------------------------------------------------------------- |
+| Contagem por estado             | Número de itens em A Fazer, Em Andamento e Concluído     | Habilitada pelo Status do Project; série E1 ainda baseada no CSV |
+| Tempo de ciclo médio aproximado | Duração média do conjunto de itens concluídos no período | Coleta via Planned/Actual e histórico de Status                  |
+| Vazão (_Throughput_)            | Média de itens concluídos por unidade de tempo           | Idem                                                             |
+| Trabalho em andamento (WIP)     | Média de itens Em Andamento por unidade de tempo         | Idem                                                             |
 
-**Procedimento de coleta, cálculo e análise.** Em cada corte semanal: (1) contar itens por estado no Project; (2) calcular *Throughput*, WIP médio e *Cycle Time* aproximado, ou aplicar a especificação individual de *Cycle Time* / *Lead Time* do CID quando houver durações por item (JONES et al., 2021b); (3) interpretar acúmulo em A Fazer ou Em Andamento como fila e confrontar a vazão com a demanda do marco (F2, E2).
+**Procedimento de coleta, cálculo e análise.** Em cada corte semanal: (1) contar itens por estado no Project; (2) calcular _Throughput_, WIP médio e _Cycle Time_ aproximado, ou aplicar a especificação individual de _Cycle Time_ / _Lead Time_ do CID quando houver durações por item (JONES et al., 2021b); (3) interpretar acúmulo em A Fazer ou Em Andamento como fila e confrontar a vazão com a demanda do marco (F2, E2).
 
-Na Entrega 1, a necessidade de fluxo foi atendida de forma indireta (ICP e lista de pendências). Com o Project constituído, os cortes seguintes combinam ICP com contagens por estado, *Throughput*, WIP e *Cycle Time*.
+Na Entrega 1, a necessidade de fluxo foi atendida de forma indireta (ICP e lista de pendências). Com o Project constituído, os cortes seguintes combinam ICP com contagens por estado, _Throughput_, WIP e _Cycle Time_.
 
 ## Fontes no repositório
 
 | Artefato | Papel |
-|---|---|
+| --- | --- |
 | `gestao-psm/calendario-progresso.csv` | Série histórica dos cortes ICP (Entrega 1) |
 | `gestao-psm/2026-11-*_calendario-progresso.csv` | Cortes da Entrega 2 (08/11, 15/11 e 22/11) |
-| Issues e milestones | Materialização pós-PC1 das tarefas |
+| No CSV de 22/11: `fechada_ate_22_11` | Fonte canônica do fechamento **no dia do corte** (ICP F3) |
+| No CSV de 22/11: `situacao_atual` | Espelho das issues para o **delta** pós-corte; não soma de novo o que já está em `fechada_ate_22_11` |
+| Issues e milestones | Materialização pós-PC1; conferência e delta, sem dupla contagem com o CSV |
 | [Organização no GitHub](github-organizacao.md) | Project, labels e vínculos CSV → issues |
 | [Retrospectiva E1](../retrospectiva-e1.md) | Limiar ICP inferior a 70%; ação C4 |
 
