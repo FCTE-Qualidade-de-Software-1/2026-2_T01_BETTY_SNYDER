@@ -1,38 +1,87 @@
 <div class="hero" markdown>
 
-# Anki
+<p class="hero__eyebrow">Equipe Betty Snyder · FGA0315 · Turma T01 · 2026-2</p>
 
-**Avaliação da qualidade de software**
+# Betty Snyder
 
-Turma T01 · Semestre 2026-2
+**Avaliação da qualidade do Anki**
+
+<p class="hero__lead">Documentação pública das Fases 1 a 4: requisitos, GQM, plano, coleta, julgamento e ação de melhoria, sob a ISO/IEC 25010:2023.</p>
 
 [Ver artigo](artigo.md){ .md-button .md-button--primary }
+[Release E2](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/releases/tag/Release2){ .md-button }
 [Release E1](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/releases/tag/Entrega1){ .md-button }
 [Repositório](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER){ .md-button }
 
 </div>
 
+## Homenagem: Betty Snyder
+
+<div class="homage" markdown>
+
+<figure class="homage__portrait">
+  <img src="https://www.computer.org/wp-media/2018/04/06201614/frances-holberton-e1523045838497.jpg" alt="Retrato de Frances Elizabeth Snyder Holberton (Betty Snyder)" width="220" height="280" loading="lazy" />
+</figure>
+
+<div class="homage__body" markdown>
+
+Nossa equipe leva o nome de **Frances Elizabeth Snyder Holberton** (1917 a 2001), conhecida como **Betty Snyder**, pioneira da computação e uma das seis programadoras originais do ENIAC (Electronic Numerical Integrator and Computer: o primeiro computador digital eletrônico de propósito geral operacional).
+
+Betty defendia que os computadores só prosperariam se fossem fáceis de programar e de operar. Trabalhou em ideias que anteciparam compiladores (gerador de ordenação e intercalação para o UNIVAC) e participou da comissão que ajudou a moldar a linguagem Cobol, pensada para programas rodarem em mais de uma máquina.
+
+Escolhemos esse nome porque a avaliação de qualidade, neste projeto, também pergunta se o software é compreensível, utilizável e confiável para quem estuda. A biografia e a premiação Computer Pioneer Award (1997) estão no perfil da IEEE Computer Society:
+
+[Frances Snyder Holberton · IEEE Computer Society](https://www.computer.org/profiles/frances-snyder-holberton){ .md-button }
+
+</div>
+
+</div>
+
 ## Percurso da avaliação (Fases 1 a 4)
 
-1. **[Fase 1](fase1.md):** requisitos, propósito e modelo ISO/IEC 25010:2023.  
-2. **[Fase 2](fase2.md):** especificação GQM (objetivos, questões, hipóteses, métricas e níveis).  
-3. **[Fase 3](fase3.md):** plano, protocolos, ambiente e cronograma.  
-4. **[Fase 4](fase4.md):** coleta, organização dos dados, julgamento, sugestões e [ação de melhoria (protótipo)](prototipo-acao-melhoria.md).  
+<ol class="path-steps">
+<li><a href="fase1.md"><strong>Fase 1</strong> · requisitos, propósito e modelo ISO/IEC 25010:2023</a></li>
+<li><a href="fase2.md"><strong>Fase 2</strong> · especificação GQM (objetivos, questões, hipóteses, métricas e níveis)</a></li>
+<li><a href="fase3.md"><strong>Fase 3</strong> · plano, protocolos, ambiente e cronograma</a></li>
+<li><a href="fase4.md"><strong>Fase 4</strong> · coleta, julgamento, sugestões e ação de melhoria (protótipo)</a></li>
+</ol>
 
-Releases: [página de releases](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/releases) (E1 publicada; E2 a criar na entrega final).
+Releases: [página de releases](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/releases) ([E1](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/releases/tag/Entrega1) e [E2](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/releases/tag/Release2) publicadas).
 
 ## Sobre o projeto
 
-Este projeto tem como objetivo avaliar a qualidade do software Anki segundo a ISO/IEC 25010:2023, por meio da análise de três características principais: **capacidade de interação, eficiência de desempenho e flexibilidade**.
+Este projeto avalia a qualidade do software Anki segundo a ISO/IEC 25010:2023, com três características priorizadas:
 
-- A **capacidade de interação** (antiga usabilidade) busca verificar se a interface é intuitiva e fácil de utilizar, permitindo que os usuários criem, organizem e revisem seus cartões de estudo com facilidade.
-- A **eficiência de desempenho** considera o comportamento do software durante a execução de suas funcionalidades, observando aspectos como tempo de resposta e utilização de recursos.
-- Já a **flexibilidade** (antiga portabilidade) avalia a capacidade do Anki de ser instalado e funcionar em diferentes sistemas operacionais e de migrar os dados entre computadores.
+<div class="trait-row" markdown>
 
-Dessa forma, pretende-se identificar os pontos positivos e as possíveis limitações do software em relação a essas características.
+<div class="trait trait--new" markdown>
+
+**Capacidade de interação**
+
+Verifica se a interface é compreensível e fácil de usar para criar, organizar e revisar cartões.
+
+</div>
+
+<div class="trait trait--learn" markdown>
+
+**Eficiência de desempenho**
+
+Observa tempo de resposta e uso de recursos (processador, memória, vazão) durante o uso.
+
+</div>
+
+<div class="trait trait--review" markdown>
+
+**Flexibilidade**
+
+Avalia instalação em diferentes sistemas e a migração de dados entre computadores.
+
+</div>
+
+</div>
 
 !!! info "O que é o Anki?"
-    Um software de código aberto para estudo com cartões de memorização (*flashcards*) e repetição espaçada. Seu principal objetivo é tornar o processo de aprendizagem mais eficiente, ajudando os usuários a revisar as informações nos intervalos mais adequados para favorecer a retenção do conhecimento a longo prazo. Seu sistema de revisão considera o desempenho do usuário e programa as próximas revisões de acordo com a dificuldade de cada cartão, priorizando os conteúdos que precisam de mais atenção.
+    Um software de código aberto para estudo com cartões de memorização (*flashcards*) e repetição espaçada. O objetivo é revisar no intervalo em que a retenção ainda é possível, priorizando o que precisa de mais atenção.
 
 ## Navegue pela documentação
 
@@ -74,7 +123,7 @@ Dessa forma, pretende-se identificar os pontos positivos e as possíveis limita�
 
     ---
 
-    Organização dos dados, coleta, análise GQM, julgamento, sugestões e ação de melhoria.
+    Visão geral da coleta, análise por característica, julgamento, sugestões e ação de melhoria.
 
     [:octicons-arrow-right-24: Abrir](fase4.md)
 
@@ -107,7 +156,7 @@ Dessa forma, pretende-se identificar os pontos positivos e as possíveis limita�
 
 </div>
 
-## Equipe
+## Equipe Betty Snyder
 
 <div class="team">
   <a href="https://github.com/Bryan70897"><img src="https://github.com/Bryan70897.png" alt="Bryan"><span>Bryan</span></a>
