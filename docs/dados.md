@@ -74,11 +74,11 @@ Exceção: `sessoes.csv` lista as entrevistas (data, formato e caminho da ata). 
 | Capacidade de interação | T<sub>aprend</sub>, T<sub>sa</sub>, T<sub>ct</sub>, T<sub>exec</sub> | [`M-INT_tarefas.csv`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/blob/main/avaliacao/dados/interacao/bruto/M-INT_tarefas.csv) | Idem |
 | Capacidade de interação | Evidência de sessão | [`Entrevistas/`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/tree/main/avaliacao/dados/interacao/bruto/Entrevistas); atas; [`sessoes.csv`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/blob/main/avaliacao/dados/interacao/bruto/sessoes.csv) | [Fase 4](fase4.md) |
 | Eficiência de desempenho | Cold start, CPU, RAM, threads, vazão | Preferência: `avaliacao/dados/desempenho/bruto/`; cópia usada na GitPage em `docs/avaliacao/dados/desempenho/bruto/` | [análise de desempenho](avaliacao/analise/desempenho.md) |
-| Flexibilidade | T<sub>inst</sub>, T<sub>inst_t</sub>, N<sub>int</sub>, P<sub>int</sub> | Consolidados em [`flexibilidade/consolidado/`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/tree/main/avaliacao/dados/flexibilidade/consolidado) (instalação e checklist); migração (T<sub>pd</sub>, T<sub>sub</sub>) ainda sem CSV | [análise de Flexibilidade](avaliacao/analise/flexibilidade.md) |
+| Flexibilidade | T<sub>inst</sub>, T<sub>inst_t</sub>, N<sub>int</sub>, P<sub>int</sub>, T<sub>pd</sub>, T<sub>sub</sub> | Consolidados em [`flexibilidade/consolidado/`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/tree/main/avaliacao/dados/flexibilidade/consolidado) (instalação, checklist e migração M1/M2) | [análise de Flexibilidade](avaliacao/analise/flexibilidade.md) |
 
 **Capacidade de interação (concluída na amostra atual):** fichas anonimizadas → CSV bruto → `M-INT_metricas.csv` → análise → Fase 4.
 
-**Flexibilidade (parcial):** instalação e checklist publicados; migração entre sistemas operacionais ainda sem CSV de T<sub>pd</sub> e T<sub>sub</sub>.
+**Flexibilidade:** instalação, checklist e migração publicados; T<sub>pd</sub> = 100%; T<sub>sub</sub> média 2,51 min (faixa mínimo).
 
 ## Participantes e privacidade
 

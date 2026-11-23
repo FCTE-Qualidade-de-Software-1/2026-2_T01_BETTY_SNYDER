@@ -23,7 +23,7 @@ avaliacao/
 | --- | --- | --- |
 | Capacidade de interação | [`M-INT-01_reconhecimento.csv`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/blob/main/avaliacao/dados/interacao/bruto/M-INT-01_reconhecimento.csv), [`M-INT_tarefas.csv`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/blob/main/avaliacao/dados/interacao/bruto/M-INT_tarefas.csv), [`Entrevistas/`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/tree/main/avaliacao/dados/interacao/bruto/Entrevistas), [`sessoes.csv`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/blob/main/avaliacao/dados/interacao/bruto/sessoes.csv) | [`M-INT_metricas.csv`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/blob/main/avaliacao/dados/interacao/consolidado/M-INT_metricas.csv); [análise](avaliacao/analise/interacao.md) |
 | Eficiência de desempenho | CSV em `docs/avaliacao/dados/desempenho/bruto/` (espelho usado na GitPage); canônico previsto em `avaliacao/dados/desempenho/` | [análise de desempenho](avaliacao/analise/desempenho.md) |
-| Flexibilidade | Consolidados de instalação e checklist em [`flexibilidade/consolidado/`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/tree/main/avaliacao/dados/flexibilidade/consolidado); migração ainda sem CSV | [análise de Flexibilidade](avaliacao/analise/flexibilidade.md) |
+| Flexibilidade | Consolidados de instalação, checklist e migração em [`flexibilidade/consolidado/`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/tree/main/avaliacao/dados/flexibilidade/consolidado) | [análise de Flexibilidade](avaliacao/analise/flexibilidade.md) |
 
 **Participantes.** Códigos públicos: PA01 (Grupo A, iniciante); PB01, PB02 (piloto) e PB03 (Grupo B, frequentes). A tabela código → pessoa e os termos de consentimento ficam fora do repositório. Gravações de tela e áudio não são versionadas; a evidência pública da sessão são as atas, as fichas anonimizadas e `sessoes.csv`.
 
@@ -33,7 +33,7 @@ avaliacao/
 | --- | --- | --- | --- |
 | Capacidade de interação | [`Entrevistas/`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/tree/main/avaliacao/dados/interacao/bruto/Entrevistas) (PA01, PB01, PB02, PB03), atas, CSV `M-INT-*` | [`M-INT_metricas.csv`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/blob/main/avaliacao/dados/interacao/consolidado/M-INT_metricas.csv); [análise](avaliacao/analise/interacao.md) | Quatro participantes; um iniciante (PA01); três frequentes (PB02 piloto); métricas T<sub>rf</sub>, T<sub>aprend</sub>, T<sub>sa</sub>, T<sub>ct</sub> e T<sub>exec</sub> calculadas |
 | Eficiência de desempenho | CSV e gráficos em `docs/avaliacao/dados/desempenho/bruto/` e `docs/avaliacao/dados/` | [análise de desempenho](avaliacao/analise/desempenho.md) | Triangulação concluída em Ubuntu, Windows 11 e macOS; limitações específicas da API do Windows NT documentadas como variação controlada de plataforma |
-| Flexibilidade | [`flexibilidade-instalacao-tempo.csv`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/blob/main/avaliacao/dados/flexibilidade/consolidado/flexibilidade-instalacao-tempo.csv), [`flexibilidade-checklist-registro.csv`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/blob/main/avaliacao/dados/flexibilidade/consolidado/flexibilidade-checklist-registro.csv), gráficos de instalação e checklist | [análise de Flexibilidade](avaliacao/analise/flexibilidade.md); seção abaixo | Q1 e Q2 com medidas; Q3 (migração) sem CSV |
+| Flexibilidade | [`flexibilidade-instalacao-tempo.csv`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/blob/main/avaliacao/dados/flexibilidade/consolidado/flexibilidade-instalacao-tempo.csv), [`flexibilidade-checklist-registro.csv`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/blob/main/avaliacao/dados/flexibilidade/consolidado/flexibilidade-checklist-registro.csv), [`flexibilidade-migracao.csv`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/blob/main/avaliacao/dados/flexibilidade/consolidado/flexibilidade-migracao.csv), gráficos de instalação e checklist | [análise de Flexibilidade](avaliacao/analise/flexibilidade.md); seção abaixo | Q1 e Q2 no alvo/excelente; Q3 com T<sub>pd</sub> = 100% e T<sub>sub</sub> na faixa mínimo |
 
 ---
 
@@ -141,11 +141,11 @@ Detalhamento: [análise de Flexibilidade](avaliacao/analise/flexibilidade.md).
 
 Os protocolos de [instalação](avaliacao/protocolos/flexibilidade-instalacao.md), [checklist](avaliacao/protocolos/flexibilidade-checklist.md) e [migração](avaliacao/protocolos/flexibilidade-migracao.md) preveem, em laboratório (Dupla C), as métricas T<sub>inst</sub>, T<sub>inst_t</sub>, N<sub>int</sub>, P<sub>int</sub>, T<sub>pd</sub> e T<sub>sub</sub> nas máquinas de referência Windows, macOS e Ubuntu ([Ambiente](avaliacao/protocolos/ambiente.md)).
 
-Publicados em [`avaliacao/dados/flexibilidade/consolidado/`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/tree/main/avaliacao/dados/flexibilidade/consolidado): tempos de instalação, checklist de integração (P<sub>int</sub>) e dois gráficos. A pasta `bruto/` ainda não espelha uma linha por tentativa com o padrão `<métrica>_<cenário>_<execução>`; a migração (T<sub>pd</sub>, T<sub>sub</sub>) permanece sem CSV.
+Publicados em [`avaliacao/dados/flexibilidade/consolidado/`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/tree/main/avaliacao/dados/flexibilidade/consolidado): tempos de instalação, checklist de integração (P<sub>int</sub>), migração M1/M2 (T<sub>pd</sub>, T<sub>sub</sub>) e dois gráficos. A pasta `bruto/` ainda não espelha os arquivos `diff_m*_rep*.csv` citados no consolidado.
 
-### Resultados (Q1 e Q2)
+### Resultados (Q1, Q2 e Q3)
 
-Fontes: [`flexibilidade-instalacao-tempo.csv`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/blob/main/avaliacao/dados/flexibilidade/consolidado/flexibilidade-instalacao-tempo.csv) e [`flexibilidade-checklist-registro.csv`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/blob/main/avaliacao/dados/flexibilidade/consolidado/flexibilidade-checklist-registro.csv). Faixas da Tabela XI da [Fase 2](fase2.md).
+Fontes: [`flexibilidade-instalacao-tempo.csv`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/blob/main/avaliacao/dados/flexibilidade/consolidado/flexibilidade-instalacao-tempo.csv), [`flexibilidade-checklist-registro.csv`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/blob/main/avaliacao/dados/flexibilidade/consolidado/flexibilidade-checklist-registro.csv) e [`flexibilidade-migracao.csv`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T01_BETTY_SNYDER/blob/main/avaliacao/dados/flexibilidade/consolidado/flexibilidade-migracao.csv). Faixas da Tabela XI da [Fase 2](fase2.md).
 
 | Sistema | T<sub>inst</sub> | T<sub>inst_t</sub> | N<sub>int</sub> | Faixas (T<sub>inst</sub> / T<sub>inst_t</sub> / N<sub>int</sub>) | P<sub>int</sub> | Faixa P<sub>int</sub> |
 | --- | --- | --- | --- | --- | --- | --- |
@@ -160,6 +160,8 @@ Fontes: [`flexibilidade-instalacao-tempo.csv`](https://github.com/FCTE-Qualidade
 ![Checklist de integração (P_int) nos três sistemas](assets/grafico-flexibilidade-checklist.png)
 
 *Figura. Pontuação do checklist de integração (P<sub>int</sub>) por sistema operacional.*
+
+**Migração (Q3).** Seis ensaios em 20/11/2026 (M1 `.apkg` e M2 AnkiWeb, três pares de SO cada): T<sub>pd</sub> = 100% (0 diferenças em 10.000 cartões; sem intervenção); T<sub>sub</sub> entre 2,33 e 2,66 min (média 2,51 min), faixa **mínimo**. Detalhamento: [análise de Flexibilidade](avaliacao/analise/flexibilidade.md).
 
 **Qualitativos (Parte C das entrevistas; complementam o laboratório).**
 
@@ -176,10 +178,10 @@ Fontes: [`flexibilidade-instalacao-tempo.csv`](https://github.com/FCTE-Qualidade
 | --- | --- |
 | **Q1 / H1** (instalabilidade) | Atendida nos três sistemas (T<sub>inst</sub> e T<sub>inst_t</sub> no alvo ou excelente; N<sub>int</sub> = 0). H1 parcial: no Ubuntu o tempo ficou abaixo de 2 min e sem intervenção, diferente da expectativa de 2 a 5 min com intervenção. |
 | **Q2 / H2** (adaptabilidade) | Atendida: P<sub>int</sub> = 10/10 nos três sistemas (faixa excelente). |
-| **Q3 / H3** (substituibilidade) | Sem julgamento quantitativo (ausência de CSV de T<sub>pd</sub> e T<sub>sub</sub>). |
-| **Objetivo G (Flexibilidade)** | Resposta parcial: Q1 e Q2 com evidência; Q3 aberta. |
+| **Q3 / H3** (substituibilidade) | T<sub>pd</sub> = 100% (preservação confirmada); T<sub>sub</sub> média 2,51 min (faixa mínimo). Q3 não atendida no alvo. H3 parcial: preservação sim; tempo &lt; 1 min não. |
+| **Objetivo G (Flexibilidade)** | Q1 e Q2 atendidas; Q3 com evidência completa na faixa mínimo (tempo de migração). |
 
-Arquivos ainda esperados para fechar Q3: CSV de migração em `avaliacao/dados/flexibilidade/bruto/migracao/` e consolidado com faixas da Tabela XI.
+Arquivos opcionais remanescentes: espelhar `diff_m*_rep*.csv` em `avaliacao/dados/flexibilidade/bruto/migracao/`.
 
 ---
 
@@ -191,18 +193,18 @@ O [propósito da avaliação](fase1.md#propósito-da-avaliação-e-uso-pretendid
 | --- | --- | --- |
 | Identificar barreiras de uso na interface (ênfase 5) | Q1 de Capacidade de interação não atendida (T<sub>rf</sub> do iniciante 16,7%); Q2 e Q3 atendidas no escopo amostral | Sim, com limitação de n = 4 (1 iniciante) |
 | Informar comportamento de desempenho em estudo prolongado | Cold start e vazão excelentes; RAM na faixa mínimo; Windows parcial | Parcial |
-| Informar instalabilidade e migração entre SO | Instalação e checklist publicados; migração sem CSV | Parcial (Q1/Q2 sim; Q3 não) |
+| Informar instalabilidade e migração entre SO | Instalação, checklist e migração publicados; T<sub>sub</sub> na faixa mínimo | Sim, com ressalva de tempo de migração acima de 1 min |
 | Fundamentar uma ação de melhoria | Protótipo de alta fidelidade para “Criar baralho” | Sim |
 
-O julgamento cumpre o uso pretendido na característica priorizada (Capacidade de interação), cobre instalabilidade e adaptabilidade com dados de laboratório e deixa explícitas a lacuna de migração (Q3) e a incompletude de desempenho no Windows.
+O julgamento cumpre o uso pretendido na característica priorizada (Capacidade de interação), cobre instalabilidade, adaptabilidade e migração com dados de laboratório, e deixa explícitas a faixa mínimo de T<sub>sub</sub> e a incompletude de desempenho no Windows.
 
 ## Relações entre características (Premissa 1)
 
 - **Capacidade de interação × Eficiência de desempenho.** Falhas de reconhecibilidade (T<sub>rf</sub> de PA01 = 16,7%; R1 falhou) elevam o esforço cognitivo na primeira sessão, mesmo com cold start e vazão de banco na faixa excelente. Evidência: [interacao.md](avaliacao/analise/interacao.md) e [desempenho.md](avaliacao/analise/desempenho.md).
 - **Eficiência de desempenho × uso em notebook.** RAM em repouso na faixa mínimo (≈ 780–950 MB em Ubuntu e macOS) e picos de 1,33–1,51 GB sob 100k cards podem afetar a fluidez percebida em máquinas de 8 GB (perfil Ubuntu da avaliação). Limitação: RAM do Windows ainda incompleta (só processo pai).
-- **Flexibilidade × Capacidade de interação.** Com T<sub>inst_t</sub> excelente ou alvo e N<sub>int</sub> = 0 nos três sistemas, a barreira de primeiro uso observada nas entrevistas concentra-se na interface (vocabulário e “Criar baralho”), não no tempo de instalação em laboratório. A migração entre computadores ainda não tem relação quantitativa (sem T<sub>pd</sub>/T<sub>sub</sub>). Evidência: [flexibilidade.md](avaliacao/analise/flexibilidade.md).
+- **Flexibilidade × Capacidade de interação.** Com T<sub>inst_t</sub> excelente ou alvo e N<sub>int</sub> = 0 nos três sistemas, a barreira de primeiro uso observada nas entrevistas concentra-se na interface (vocabulário e “Criar baralho”), não no tempo de instalação em laboratório. A migração preserva 100% dos dados, mas leva em média 2,51 min (faixa mínimo), o que ainda pode somar esforço no primeiro uso ao trocar de máquina. Evidência: [flexibilidade.md](avaliacao/analise/flexibilidade.md).
 
-Onde os dados não permitem relação: afirmação causal entre migração M1/M2 e T<sub>exec</sub>, enquanto Q3 de Flexibilidade estiver sem CSV.
+Onde os dados não permitem relação: afirmação causal entre o tempo de migração M1/M2 e T<sub>exec</sub> das sessões de entrevista (amostras e contextos distintos).
 
 ## Sugestões priorizadas (F4-C5)
 
@@ -211,7 +213,7 @@ Onde os dados não permitem relação: afirmação causal entre migração M1/M2
 | 1 | Destacar **Criar baralho** na tela inicial (lista de baralhos como home) | T<sub>rf</sub> R1; PA01 e PB02 |
 | 2 | Incluir glossário ou tooltips para nota, tipo de nota e cartão | Q1; respostas da Etapa 5 |
 | 3 | Revisar footprint de memória do QtWebEngine sob coleções grandes | RAM na faixa mínimo (Ubuntu 1,33 GB; macOS 1,51 GB com 100k cards) |
-| 4 | Completar CSV de migração (T<sub>pd</sub>, T<sub>sub</sub>) e itens “refazer” no Windows | Lacuna Q3 de Flexibilidade; desempenho parcial |
+| 4 | Reduzir o tempo de migração (T<sub>sub</sub> hoje ≈ 2,5 min) e fechar itens “refazer” no Windows | Q3 na faixa mínimo; desempenho parcial no Windows |
 
 ## Ação de melhoria
 
@@ -223,4 +225,4 @@ Onde os dados não permitem relação: afirmação causal entre migração M1/M2
 
 **Validação proposta.** Nova sessão com iniciante: R1 correto e T<sub>rf</sub> ≥ 75% (alvo), ou localização espontânea em no máximo 10 s sem ajuda.
 
-**O que a ação não cobre.** Não substitui o CSV de migração (Q3 de Flexibilidade) nem o fechamento das medições de desempenho no Windows.
+**O que a ação não cobre.** Não reduz T<sub>sub</sub> da migração (Q3 de Flexibilidade) nem fecha as medições de desempenho no Windows.

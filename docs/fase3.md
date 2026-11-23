@@ -44,7 +44,7 @@ A execução segue o GQM da Fase 2 e o instrumento unificado, em três frentes:
 | Entrevista de Capacidade de interação (PA01) | 14/11/2026 | Realizado: Grupo A, Etapas 1 a 3 e 5 |
 | Entrevista de Capacidade de interação (PB03) | 21/11/2026 | Realizado: Grupo B, Etapas 1, 4 e 5; B2 Revisar não coletada |
 | Coletas de Eficiência de desempenho (Ubuntu, Windows e macOS) | PC2 até Entrega 2 | [Análise publicada](avaliacao/analise/desempenho.md); itens “refazer” e medições incompletas no Windows permanecem abertos |
-| Coletas de Flexibilidade (instalação, integração e migração) | PC2 até Entrega 2 | Instalação e checklist publicados; migração sem CSV; ver [análise de Flexibilidade](avaliacao/analise/flexibilidade.md) |
+| Coletas de Flexibilidade (instalação, integração e migração) | PC2 até Entrega 2 | Instalação, checklist e migração (M1/M2) publicados; ver [análise de Flexibilidade](avaliacao/analise/flexibilidade.md) |
 | Cálculo das métricas a partir dos CSV e redação da análise de Capacidade de interação | 15/11/2026 a 16/11/2026 | `M-INT_metricas.csv` e [análise de Capacidade de interação](avaliacao/analise/interacao.md) publicados |
 | Julgamento, sugestões e ação de melhoria | Entrega 2 | Publicado em [Fase 4](fase4.md); protótipo em [Protótipo](prototipo-acao-melhoria.md) |
 | Cortes PSM | 08/11, 15/11 e 21/11/2026 | 08/11 e 15/11 publicados; 21/11 e Desempenho dos processos E2 ainda pendentes ([PSM](gestao-psm.md)) |
