@@ -1,24 +1,10 @@
 # Protótipo da ação de melhoria
 
-Este protótipo de alta fidelidade (representação visual e interativa próxima do produto final) materializa a ação de melhoria da [Fase 4](fase4.md): ao abrir o Anki, a tela inicial já apresenta a lista de baralhos, com destaque para **Criar Baralho**, em vez da tela intermediária de Início. A verificação com o participante PA01 está documentada na ata de [22/11/2026](avaliacao/atas/sessao-PA01-verificacao-prototipo_2026-11-22.md).
+Este protótipo de alta fidelidade (representação visual e interativa próxima do produto final) materializa a ação de melhoria da [Fase 4](fase4.md): torna a lista de baralhos a tela inicial, destaca **Criar Baralho**, inclui tutorial guiado e alinha o vocabulário a “cartão”, em contraste com o Anki Desktop 26.09.3 das entrevistas. A verificação com PA01 está na ata de [22/11/2026](avaliacao/atas/sessao-PA01-verificacao-prototipo_2026-11-22.md).
 
 ## Objetivo
 
 Reduzir a dificuldade de reconhecimento da ação de criar um baralho (problema observado nas entrevistas de Capacidade de interação) e encurtar o tempo necessário para compreender onde estudar e qual ação tomar em seguida.
-
-## Como usar
-
-1. Abra o [protótipo interativo](prototipo-interativo/index.html) em uma nova aba.
-2. Siga o tutorial guiado (ou reabra-o pelo menu **Ajuda**).
-3. Experimente **Criar Baralho**, **Adicionar**, opções do baralho e os controles de janela no padrão do Windows.
-
-<iframe
-  src="../prototipo-interativo/index.html"
-  title="Protótipo interativo da ação de melhoria do Anki"
-  style="width:100%;height:720px;border:1px solid #444;border-radius:8px;background:#1a1a1a;"
-></iframe>
-
-<p><a class="md-button md-button--primary" href="../prototipo-interativo/index.html" target="_blank" rel="noopener">Abrir protótipo em tela cheia</a></p>
 
 ## Pontos modificados e motivos
 
@@ -71,6 +57,20 @@ Cada alteração abaixo compara o comportamento do Anki Desktop 26.09.3 (linha d
 **O que mudou.** Barra de título com minimizar, maximizar ou restaurar e fechar; janelas minimizadas reaparecem em uma barra inferior (taskbar do protótipo). O visual acompanha o ambiente em que PA01 foi avaliado (Windows 11).
 
 **Motivo.** Manter fidelidade ao contexto da entrevista presencial e evitar que controles de janela atípicos contaminem a avaliação da ação de melhoria (a pessoa deve julgar a home e o **Criar Baralho**, não um chrome de sistema estranho).
+
+## Como usar
+
+1. Abra o [protótipo interativo](prototipo-interativo/index.html) em uma nova aba.
+2. Siga o tutorial guiado (ou reabra-o pelo menu **Ajuda**).
+3. Experimente **Criar Baralho**, **Adicionar**, opções do baralho e os controles de janela no padrão do Windows.
+
+<iframe
+  src="../prototipo-interativo/index.html"
+  title="Protótipo interativo da ação de melhoria do Anki"
+  style="width:100%;height:720px;border:1px solid #444;border-radius:8px;background:#1a1a1a;"
+></iframe>
+
+<p><a class="md-button md-button--primary" href="../prototipo-interativo/index.html" target="_blank" rel="noopener">Abrir protótipo em tela cheia</a></p>
 
 ## Validação com PA01
 
