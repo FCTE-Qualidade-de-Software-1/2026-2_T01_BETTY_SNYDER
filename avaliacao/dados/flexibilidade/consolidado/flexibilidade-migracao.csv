@@ -1,1 +1,7 @@
 cenario,repeticao,data,colecao,origem_so,destino_so,t_inicio,t_fim,t_sub_min,transferencia_min,notas_origem,cartoes_origem,baralhos_origem,revisoes_origem,n_totais,n_diferentes,arquivo_diff,detalhes_intervencoes,observacoes
+M1 (.apkg),1,2026-11-20,Coleção Padrão (texto),Windows 11,Ubuntu 26.04.1,2026-11-20T14:00,2026-11-20T14:02:30,2.5,1.2,5000,10000,1,25000,10000,0,diff_m1_rep1.csv,Nenhuma,"Coleção sem mídia pesada"
+M1 (.apkg),2,2026-11-20,Coleção Padrão (texto),Ubuntu 26.04.1,macOS 27,2026-11-20T14:15,2026-11-20T14:17:40,2.66,1.4,5000,10000,1,25000,10000,0,diff_m1_rep2.csv,Nenhuma,"Exportação com agendamento"
+M1 (.apkg),3,2026-11-20,Coleção Padrão (texto),macOS 27,Windows 11,2026-11-20T14:30,2026-11-20T14:32:20,2.33,1.1,5000,10000,1,25000,10000,0,diff_m1_rep3.csv,Nenhuma,
+M2 (AnkiWeb),1,2026-11-20,Coleção Padrão (texto),Windows 11,Ubuntu 26.04.1,2026-11-20T15:00,2026-11-20T15:02:30,2.5,1.5,5000,10000,1,25000,10000,0,diff_m2_rep1.csv,Nenhuma,"Sincronização completa"
+M2 (AnkiWeb),2,2026-11-20,Coleção Padrão (texto),Ubuntu 26.04.1,macOS 27,2026-11-20T15:15,2026-11-20T15:17:30,2.41,1.3,5000,10000,1,25000,10000,0,diff_m2_rep2.csv,Nenhuma,
+M2 (AnkiWeb),3,2026-11-20,Coleção Padrão (texto),macOS 27,Windows 11,2026-11-20T15:30,2026-11-20T15:32:40,2.66,1.6,5000,10000,1,25000,10000,0,diff_m2_rep3.csv,Nenhuma,
